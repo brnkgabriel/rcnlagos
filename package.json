@@ -1,7 +1,6 @@
 {
   "private": true,
-  "name": "rcnlagos",
-  "description": "Towards the rebirth of Apostolic Christianity. We are a ministry with a single minded focus on restoring the prayer commission of the church in fulfillment of Jesus proclamation in Matthew 21:13 that My house shall be called the house of prayer",
+  "name": "rcnlagos", 
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
