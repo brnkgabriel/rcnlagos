@@ -1,0 +1,8 @@
+node_modules
+resources
+.nuxt
+.yarn
+.nuxt
+.env
+.output
+dist

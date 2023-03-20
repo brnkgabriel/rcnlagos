@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__nuxt {
+  @apply h-full
+}
+:root {
+  --mainblue: #0B5CFF;
+  --mainorange: #EC6600;
+  --maindark: #333333;
+  --maingray500: #f5f5f5;
+  --maingray700: #eaeded;
+  --maingray900: #75757a;
+  --paystack: #0AA5DB;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.loaded {
+  opacity: 1 !important;
+  transition: opacity .2s linear;
+}
+
+
+.-preloader.-loading {
+  background-color: #dfdfdf;
+  background-size: 550px;
+  opacity: 1
+}
+
+.-preloader {
+  z-index: 2;
+  opacity: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.-preloader::before {
+  position: absolute;
+  content: '';
+  animation: unset;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent)
+}
+
+.-preloader.-loading::before {
+  animation: ssc-loading 1.3s infinite
+}
+
+@keyframes ssc-loading {
+  from {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%)
+  }
+
+  to {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%)
+  }
+}
+
+.-grid {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+  grid-auto-rows: 82px;
+  gap: 8px;
+}
+
+.-grid > div {
+  padding: 8px;
+  display: grid;
+  position: relative;
+}
+
+.-grid > div::before {
+  content: '';
+  padding-bottom: 100%;
+  display: block;
+}
+
+.gridcontent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+/* ======================== top & bottom navigations ========================== */
+.topnav,
+.bottomnav,
+.footer {
+  grid-column: 1 / 3;
+}
+
+.bottomnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.topnav {
+  padding: 0 8px;
+}
+
+.tabname {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* ======================== end top & bottom navigations ========================== */
+
+/* ======================== search icon ========================== */
+
+.search {
+  height: 40px;
+}
+
+ .search-btn {
+  right: 8px;
+  top: 0;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: var(--mainblue);
+  border-top-left-radius: unset;
+  border-bottom-left-radius: unset;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin: unset !important;
+}
+
+ .search-btn .spin-loader {
+  border: 2px solid white;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  display: none;
+}
+
+.search-btn.searching {
+  pointer-events: none;
+}
+
+.search-btn.searching .spin-loader {
+  display: block;
+}
+
+.search-btn.searching .search-icon {
+  display: none;
+}
+
+.search-btn .search-icon,
+.search-btn .search-btn-clickable {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -70%) scale(0.8);
+}
+
+.search-btn .search-btn-clickable {
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+  border-radius: 50%;
+  border: 3px solid white;
+  background-color: transparent;
+}
+
+.search-icon::before {
+  width: 0px;
+  height: 0px;
+  content: "";
+  display: block;
+  margin-top: 8px;
+  margin-left: 9px;
+  transform: translate(40%, 45%) rotate(-45deg);
+  border-bottom: 8px solid currentColor;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.search-icon::after {
+  content: "";
+  height: 12px;
+  width: 6px;
+  display: block;
+  background-color: currentColor;
+  transform: translate(320%, 0%) rotate(-45deg);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+/* ======================== end search icon ========================== */
+
+/* ======================== thumbnails ========================== */
+.thumbnailpane {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-rows: 40px calc(100% - 48px);
+  row-gap: 8px;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-rows: 120px;
+  grid-gap: 8px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.thumb {
+  background-color: white;
+  cursor: pointer;
+}
+/* ======================== end thumbnails ========================== */
+
+/* ======================== video & preview ========================== */
+
+.videopane {
+  position: sticky;
+  grid-column: 1 / 3;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+}
+
+.video {
+  overflow: hidden;
+}
+
+.iframe {
+  border: unset;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.details {
+
+}
+
+.detail {
+
+}
+
+.about {
+  height: 24px;
+  margin-bottom: 8px;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 8px;
+}
+
+.link {
+  border-radius: 50px;
+  padding: 8px 16px;
+  background-color: var(--mainblue);
+  color: white;
+  font-size: small;
+  font-weight: 500;
+  text-transform: capitalize;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  column-gap: 4px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-icn {
+  
+}
+
+/* ======================== end video & preview ========================== */
+
+
+/* ======================== phone devices ========================== */
+@media screen and (orientation: portrait) {
+  .gridcontent {
+    /* grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 56px calc((100% - 136px) / 2) calc((100% - 136px) / 2) 56px */
+    display: block;
+  }
+
+  .topnav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .bottomnav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 56px;
+    z-index: 5;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .thumbnailpane {
+    padding-bottom: 56px;
+  }
+
+  .video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1920 / 1080;
+  }
+
+  .thumbnails {
+    padding-bottom: 16px;
+  }
+}
+/* ======================== end phone devices ========================== */
+
+/* ======================== tab & desktop landscape ========================== */
+
+@media screen and (orientation: landscape) {
+
+  .gridcontent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 56px calc(100% - 64px)
+  }
+
+  .videopane {
+    grid-column: 1 / 2;
+  }
+
+  .video {
+    aspect-ratio: 1920 / 1080;
+  }
+
+  .thumbnailpane {
+    grid-column: 2 / 3;
+  }
+  .thumbnails {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .bottomnav {
+    display: none !important;
+  }
+}
+
+@media screen and (max-height: 567px) and (orientation: landscape) {
+  .gridcontent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 48px calc(100% - 64px)
+  }
+
+  .videopane {
+    grid-column: 1 / 2;
+    display: block;
+  }
+
+  .video {
+    position: relative;
+    aspect-ratio: 1920 / 1080;
+    width: 100%;
+  }
+
+  .thumbnailpane {
+    grid-column: 2 / 3;
+  }
+
+  .bottomnav {
+    display: none;
+  }
+}
+
+/* ======================== end tab & desktop landscape ========================== */
+
+
+/* ======================== flipper ========================== */
+.-tpane {
+  top: 48px;
+}
+.-front,
+.-back {
+  height: calc(100% - 48px);
+  width: 100%;
+  transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+  transition-duration: .5s;
+  transition-property: transform, opacity;
+  top: 48px;
+  left: 0;
+}
+
+.-front {
+  position: absolute;
+  transform: rotateX(0deg);
+  z-index: 1;
+}
+
+.-back {
+  position: absolute;
+  opacity: 0;
+  transform: rotateX(-180deg);
+}
+
+.-switch .-back {
+  opacity: 1;
+  transform: rotateX(0deg);
+  z-index: 1;
+}
+
+.-switch .-front {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
