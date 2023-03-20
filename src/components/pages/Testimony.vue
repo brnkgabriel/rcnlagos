@@ -1,6 +1,6 @@
 <template>
   <div>
-    privacy
+    give testimony
   </div>
 </template>
 <script setup lang="ts">

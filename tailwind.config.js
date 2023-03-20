@@ -18,19 +18,19 @@ module.exports = {
         xxs: ['0.25rem', { lineHeight: '1rem' }],
       },
       colors: {
-        mainblue: {
-          500: "#0B5CFF"
+        rcnaccent: {
+          500: "#DA561D",
+          700: "#171332"
         },
-        mainorange: {
-          500: "#EC6600"
+        rcntext: {
+          500: "#42526E",
+          700: "#42526E",
+          900: "#42526E"
         },
-        maindark: {
-          500: "#333333"
-        },
-        maingray: {
-          500: "#f5f5f5",
-          700: "#eaeded",
-          900: "#75757a"
+        rcnbg: {
+          500: "#FFFFFF",
+          700: "#F1F3F5",
+          900: "#E4E7EC"
         },
         paystack: {
           500: "#0AA5DB"
