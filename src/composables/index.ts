@@ -181,23 +181,37 @@ export const useGlobals = () => {
   return {  }
 }
  
+interface iHead {
+  name?: string;
+  description?: string;
+}
 
-export const head = {
-  title: "Tools n Tuts",
-  meta: [
-    { hid: 'og:image', property: 'og:image', content: "https://tools-n-tuts.vercel.app/images/background_1920x1080v3.jpg" },
-    { hid: 'og:title', property: 'og:title', content: "Tools n Tuts" },
-    { hid: 'og:name', property: 'og:name', content: "Tools n Tuts" },
-    { hid: 'og:name', property: 'og:name', content: "Tools n Tuts" },
-    { hid: 'og:type', property: 'og:type', content: "website" },
-    { hid: 'og:description', property: 'og:description', content: "The best open source tools and tutorials you need for work" },
-    { hid: 'og:image:type', property: 'og:image:type', content: 'JPEG' },
-    { hid: 'og:url', property: 'og:url', content: "https://tools-n-tuts.vercel.app/" },
-    { hid: 'keywords', name: 'keywords', content: "tools, tuts, productivity, plus, open, source, open source, design, develop, animate, blender, 3D, programming, JavaScript, editing, audio, video, modeling, animation, rendering, applications, apps, tutorials, ui/ux, drawing" },
-    { hid: 'google-site-verification', name: 'google-site-verification', content: "w04df0jczUYBXM5xDEK_EI4EE8RQ2JHa35WQQOQ-FSo" },
-    { hid: "robots", name: "robots", content: "index,follow" }
-  ]
-} 
+export const head = (headOptions: iHead) => {
+  const name = (headOptions.name as string) ? headOptions.name : 'Home | RCN Lagos'
+
+  const description = (headOptions.description as string) ? headOptions.description : 'Towards the rebirth of Apostolic Christianity. We are a ministry with a single minded focus on restoring the prayer commission of the church in fulfillment of Jesus proclamation in Matthew 21:13 that My house shall be called the house of prayer'
+
+  return {
+    title: name,
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: description },
+      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'og:image', property: 'og:image', content: "https://rcnlagos.netlify.app/banner_1920x1080.jpg" },
+      { hid: 'og:title', property: 'og:title', content: "RCN Lagos" },
+      { hid: 'og:name', property: 'og:name', content: "RCN Lagos" },
+      { hid: 'og:name', property: 'og:name', content: "RCN Lagos" },
+      { hid: 'og:type', property: 'og:type', content: "website" },
+      { hid: 'og:description', property: 'og:description', content: description },
+      { hid: 'og:image:type', property: 'og:image:type', content: 'JPEG' },
+      { hid: 'og:url', property: 'og:url', content: "https://rcnlagos.netlify.app/" },
+      { hid: 'keywords', name: 'keywords', content: 'rcn, rcnlagos, rcn lagos, apostolic, rebirth, transformation, christianity, Matthew 21:13, remnant, network, voice of one, the convergence, threshing floor, 10 hours' },
+      { hid: 'google-site-verification', name: 'google-site-verification', content: "tMUZvECDdArLkf1afuUeeitDTq2FoiFBeI86smuHx2g" },
+      { hid: "robots", name: "robots", content: "index,follow" }
+    ]
+  } 
+}
 
 export const getMachineId = () => {
     

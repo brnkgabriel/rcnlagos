@@ -8,6 +8,10 @@ import About from '../components/pages/About.vue';
 definePageMeta({
   layout: "default"
 })
+
+useHead(head({
+  name: "About | RCN Lagos",
+}))
 </script>
 <style lang="">
   

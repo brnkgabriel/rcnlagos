@@ -6,6 +6,9 @@ import Give from '../components/pages/Give.vue';
 definePageMeta({
   layout: "default"
 })
+useHead(head({
+  name: "Give | RCN Lagos",
+}))
 </script>
 <style lang="">
   
