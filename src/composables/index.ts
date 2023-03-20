@@ -187,7 +187,7 @@ interface iHead {
 }
 
 export const head = (headOptions: iHead) => {
-  const name = (headOptions.name as string) ? headOptions.name : 'Home | RCN Lagos'
+  const name = (headOptions.name as string).length > 0 ? headOptions.name : 'Home | RCN Lagos'
 
   const description = (headOptions.description as string) ? headOptions.description : 'Towards the rebirth of Apostolic Christianity. We are a ministry with a single minded focus on restoring the prayer commission of the church in fulfillment of Jesus proclamation in Matthew 21:13 that My house shall be called the house of prayer'
 

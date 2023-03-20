@@ -8,7 +8,7 @@ definePageMeta({
   layout: "default"
 })
 useHead(head({
-  name: "Prayercells | RCN Lagos",
+  name: "Prayer Cells | RCN Lagos",
 }))
 </script>
 <style lang="">
