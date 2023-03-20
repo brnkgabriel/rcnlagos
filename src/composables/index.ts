@@ -207,7 +207,7 @@ export const head = (headOptions: iHead) => {
       { hid: 'og:image:type', property: 'og:image:type', content: 'JPEG' },
       { hid: 'og:url', property: 'og:url', content: "https://rcnlagos.netlify.app/" },
       { hid: 'keywords', name: 'keywords', content: 'rcn, rcnlagos, rcn lagos, apostolic, rebirth, transformation, christianity, Matthew 21:13, remnant, network, voice of one, the convergence, threshing floor, 10 hours' },
-      { hid: 'google-site-verification', name: 'google-site-verification', content: "tMUZvECDdArLkf1afuUeeitDTq2FoiFBeI86smuHx2g" },
+      { hid: 'google-site-verification', name: 'google-site-verification', content: "CK4Vos3X1FaRfpLVkmu4rlgRX0qlUQiI6vE47Kt5mPg" },
       { hid: "robots", name: "robots", content: "index,follow" }
     ]
   } 
