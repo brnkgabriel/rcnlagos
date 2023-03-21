@@ -1,15 +1,17 @@
 <template>
-  <div class="-mobile-navigation">
-    <div class="-top">
-      <div class="-close-btn relative" data-type="close mobile menu"></div>
-    </div>
+  <div class="-mobile-navigation w-full h-full" data-type="mobile navigation">
+    <div class="-content">
+      <div class="-top">
+        <div class="-close-btn relative" data-type="close mobile menu"></div>
+      </div>
 
-    <div class="-links">
-      <NuxtLink data-type="mobile-link" href="/">home</NuxtLink>
-      <NuxtLink data-type="mobile-link" href="/events">events</NuxtLink>
-      <NuxtLink data-type="mobile-link" href="/blog">blog</NuxtLink>
-      <NuxtLink data-type="mobile-link" href="/prayercells">prayer cells</NuxtLink>
-      <NuxtLink data-type="mobile-link" class="-btn -give" href="/give">give</NuxtLink>
+      <div class="-links">
+        <NuxtLink data-type="mobile-link" href="/">home</NuxtLink>
+        <NuxtLink data-type="mobile-link" href="/events">events</NuxtLink>
+        <NuxtLink data-type="mobile-link" href="/blog">blog</NuxtLink>
+        <NuxtLink data-type="mobile-link" href="/prayercells">prayer cells</NuxtLink>
+        <NuxtLink data-type="mobile-link" class="-btn -give" href="/give">give</NuxtLink>
+      </div>
     </div>
   </div>
 </template>
@@ -23,14 +25,18 @@ onMounted(() => {
 </script>
 <style scoped>
 .-mobile-navigation {
-  background-color: var(--rcnaccentblue);
-  height: 100%;
-  width: 290px;
   position: fixed;
   left: 100%;
   top: 0;
   z-index: 2;
   transform: translate(0%);
+  display: flex;
+  justify-content: flex-end;
+}
+.-mobile-navigation .-content {
+  background-color: var(--rcnaccentblue);
+  height: 100%;
+  width: 290px;
 }
 
 

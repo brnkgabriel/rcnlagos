@@ -15,6 +15,7 @@ export const constants = {
   CONTENTTYPE: "content",
   HAMBURGERTYPE: "hamburger",
   CLOSEMOBILEMENUTYPE: "close mobile menu",
+  MOBILENAVIGATIONTYPE: "mobile navigation",
   CLICKEVENT: "click",
   DATATYPE: "data-type",
   OPEN: "open",
