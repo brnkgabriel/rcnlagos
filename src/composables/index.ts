@@ -17,7 +17,8 @@ export const constants = {
   CLOSEMOBILEMENUTYPE: "close mobile menu",
   CLICKEVENT: "click",
   DATATYPE: "data-type",
-  OPEN: "open"
+  OPEN: "open",
+  SOCIALLINK: "social link"
 }
 
 export const operatingSystem = () => {

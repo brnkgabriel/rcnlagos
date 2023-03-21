@@ -24,6 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 400px;
   background: url("/images/cover.png") no-repeat;
   background-position-y: 15%;
