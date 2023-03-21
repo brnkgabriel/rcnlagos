@@ -52,7 +52,7 @@
           :key="idx" />
       </div>
     </div>
-    <div class="-latestmessage">
+    <div class="-latestmessage -row">
       <div class="-meet-our-pastors relative">
         <div class="-note absolute">
           <div class="-title">
@@ -242,8 +242,7 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
   background-color: var(--rcnlightbg);
 }
 
-.-latestmessage {
-  padding: 16px;
+.-latestmessage { 
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   background-color: var(--global-palette7);
@@ -534,6 +533,12 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
   .-latestmessage .-meet-our-pastors .-note .-pastors {
     font-size: 2em;
   }
+
+  .-latestmessage .-message .-note {
+    flex-direction: column;
+    row-gap: 8px;
+    padding-top: unset;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -558,6 +563,10 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
     padding: 8px;
     line-height: 1;
     font-size: .8em;
+  }
+
+  .-latestmessage .-note .-watch-latest-message {
+    font-size: 1.5em;
   }
 }
 
