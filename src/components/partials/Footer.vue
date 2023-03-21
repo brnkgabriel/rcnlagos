@@ -71,6 +71,7 @@
         </div>
         <a href="/partner" class="-btn -partner-btn">become a partner</a>
       </div>
+      <iframe class="-mixlr" src="https://mixlr.com/users/7094849/embed"></iframe>
     </div>
     <div class="-copyright">
       <div class="-inner">

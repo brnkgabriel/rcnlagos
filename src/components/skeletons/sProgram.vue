@@ -4,9 +4,9 @@
       :src="program.image">
     <div class="-details">
       <h5 class="-name -subhead w-3/4 h-[16px] bg-rcnbg-900">{{ program.name }}</h5>
-      <p class="-about w-[302px] h-[58px] bg-rcnbg-900 my-2">{{ program.about }}</p>
+      <p class="-about h-[58px] bg-rcnbg-900 my-2">{{ program.about }}</p>
     </div>
-    <div class="-time absolute w-[114px] h-[21px] bg-rcnbg-900">{{ program.time }}</div>
+    <div class="-time absolute h-[21px] bg-rcnbg-900">{{ program.time }}</div>
   </div>
 </template>
 <script setup lang="ts">
@@ -30,6 +30,10 @@ defineProps<{
   row-gap: 8px;
 }
 
+.-program .-details .-about {
+  width: calc(100% - 16px);
+}
+
 .-program img {
   width: 100%;
 }
@@ -46,6 +50,7 @@ defineProps<{
   font-size: .7em;
   font-weight: 600;
   letter-spacing: .3px;
+  width: 31%;
 }
 
 .-program .-time {
