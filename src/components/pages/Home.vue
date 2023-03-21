@@ -174,6 +174,10 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
 }
 
 .-title-wrap .-txt {
+  width: 100%;
+}
+
+.-ourvalues .-title-wrap .-txt {
   width: 30%;
   text-transform: uppercase;
   text-align: center;
