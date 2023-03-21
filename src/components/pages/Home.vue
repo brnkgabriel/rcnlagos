@@ -81,8 +81,8 @@
       </div>
     </div>
     <div class="-blog relative px-4 -row">
-      <div class="-title-wrap">
-        <h5 class="-txt">blog</h5>
+      <div class="-title-wrap flex-col">
+        <h5 class="-txt -subhead">blog</h5>
         <p class="-subline">A community board seasoned to rejuvinate your heart</p>
       </div>
       <div class="-content">
@@ -428,6 +428,12 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
   line-height: 1;
 }
 
+.-blog .-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 @media screen and (max-width: 1024px) {
   .-rebirth-priesthood-transformation .-txt {
     font-size: 28px;
@@ -661,4 +667,5 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
     font-size: 11px;
     padding: 8px;
   }
-}</style>
+}
+</style>
