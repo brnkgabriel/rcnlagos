@@ -1,6 +1,6 @@
 <template>
   <div class="-home-component">
-    <div class="-hero-banner">
+    <div class="-hero-banner -row">
       <p class="-welcome">Welcome to</p>
       <h1 class="-hero-header -headfont">RCN Lagos</h1>
       <p class="-about px-4">We are a ministry with a single minded focus on restoring the prayer commission of the church
@@ -11,7 +11,7 @@
         <NuxtLink href="/about" class="-btn -know-more">know more</NuxtLink>
       </div>
     </div>
-    <div class="-home-slider relative">
+    <div class="-home-slider relative -row">
       <div class="-rebirth-priesthood-transformation absolute">
         <p class="-txt -rebirth">rebirth</p>
         <p class="-txt -priesthood">priesthood</p>
@@ -22,6 +22,22 @@
           alt="homepage slider skeleton" />
         <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''"
           :src="slider.image" :alt="slider.slideNo" />
+      </div>
+    </div>
+    <div class="-ourvalues -row">
+      <div class="-title-wrap">
+        <span class="-horizontal-line"></span>
+        <h5 class="-txt">our values</h5>
+        <span class="-horizontal-line"></span>
+      </div>
+      <div class="-values px-4">
+        <p>dedication</p>
+        <p>relevance</p>
+        <p>excellence</p>
+        <p>accountability</p>
+        <p>resilience</p>
+        <p>forbearance</p>
+        <p>faithfulness</p>
       </div>
     </div>
   </div>
@@ -198,4 +214,5 @@ const { globalState } = useGlobals()
 
 @media screen and (max-width: 420px) {}
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}
+</style>
