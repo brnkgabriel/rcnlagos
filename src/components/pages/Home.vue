@@ -46,7 +46,7 @@
         <p class="-subline">Join us in God's presence</p>
       </div>
       <div class="-programs px-4">
-        <sProgram v-if="!globalState.programs" v-for="(program, idx) in skeletonPrograms" :program="program" :key="idx" />
+        <sProgram v-if="!globalState.programs?.length" v-for="(program, idx) in skeletonPrograms" :program="program" :key="idx" />
         <Program v-if="globalState.programs" v-for="(program, idx) in globalState.programs" :program="program"
           :key="idx" />
       </div>
@@ -60,6 +60,9 @@ import sProgram from "../skeletons/sProgram.vue";
 import Program from "../partials/Program.vue";
 
 const { globalState } = useGlobals()
+const isProgramLoaded = computed(() => (globalState.value.programs?.length as number) > 0)
+
+
 </script>
 <style scoped>
 .-hero-banner {
@@ -229,6 +232,11 @@ const { globalState } = useGlobals()
     grid-template-columns: repeat(2, 1fr);
     width: 80%;
   }
+
+  
+  .-ourprograms .-programs {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -302,6 +310,10 @@ const { globalState } = useGlobals()
 
   .-title-wrap span {
     width: 100%;
+  }
+  
+  .-ourprograms .-programs {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

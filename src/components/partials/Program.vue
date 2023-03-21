@@ -1,6 +1,6 @@
 <template>
   <div class="-program relative shadow-custom">
-    <img :src="program.image">
+    <img v-loaded class="opacity-0" :src="program.image">
     <div class="-details">
       <h5 class="-name -subhead">{{ program.name }}</h5>
       <p class="-about">{{ program.about }}</p>
@@ -10,6 +10,7 @@
 </template>
 <script setup lang="ts">
 import { iProgram } from "~~/src/types/index"
+import { vLoaded } from "~~/src/helpers/directives";
 defineProps<{
   program: iProgram
 }>()
@@ -40,7 +41,7 @@ defineProps<{
 .-program .-time {
   background-color: var(--rcnaccentblue);
   color: #fff;
-  padding: 0px 8px;
+  padding: 4px 8px;
   border-radius: 4px;
   text-transform: uppercase;
   font-size: .7em;
@@ -55,7 +56,8 @@ defineProps<{
 
 @media screen and (max-width: 1024px) {}
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+}
 
 @media screen and (max-width: 576px) {}
 
