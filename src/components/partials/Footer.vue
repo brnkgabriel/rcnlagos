@@ -100,7 +100,7 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   row-gap: 4px;
 }
 
-.-col.-somedia {
+.-col.-somedia-partner {
   row-gap: 8px;
 }
 
