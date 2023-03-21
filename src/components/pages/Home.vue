@@ -52,30 +52,32 @@
           :key="idx" />
       </div>
     </div>
-    <div class="-latestmessage -row relative">
-      <div class="-meet-our-pastors">
-        <div class="-note -posabs">
+    <div class="-latestmessage">
+      <div class="-meet-our-pastors relative">
+        <div class="-note absolute">
           <div class="-title">
             <h5 class="-meet-our">meet our</h5>
-            <h3 class="-pastors">pastors</h3>
+            <h3 class="-pastors -headfont">pastors</h3>
           </div>
-          <p class="-about">Austin Ukporhe is the Point man ( Resident Pastor) Remnant Christian Network, Lagos chapter.
+          <p class="-about">Austin Ukporhe is the Point man (Resident Pastor) Remnant Christian Network, Lagos chapter.
             Raised in the Northern city of Sokoto, Rev Austin was trained in the peculiar firebrand evangelism of
-            Nigeria’s
-            Christian North and was ordained as a Pastor in 2001. He has experienced countless and diverse workings of the
-            faithfulness of God for over 17 years.</p>
+            Nigeria's Christian North and was ordained as a Pastor in 2001. He has experienced countless and diverse
+            workings of the faithfulness of God for over 17 years.</p>
           <div class="-cta">
             <a href="#" class="-btn -readmore">read more</a>
-            <a href="#" class="-btn -meetallpastors">meet all pastors</a>
+            <a href="/pastors" class="-btn -meetallpastors">meet all pastors</a>
           </div>
         </div>
-        <img v-loaded class="opacity-0" src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/images%2Frev-austin.png?alt=media&amp;token=e26f1901-2347-4c6d-9714-1dbdc1602fa6"
+        <img v-loaded class="loaded"
+          src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/images%2Frev-austin.png?alt=media&amp;token=e26f1901-2347-4c6d-9714-1dbdc1602fa6"
           alt="">
       </div>
-      <iframe class="-video" src="https://www.youtube.com/embed/1MkkwkXdvGk"></iframe>
-      <div class="-note">
-        <h5 class="-watch-latest-message">watch latest message</h5>
-        <a href="#" class="-see-all-messages -btn">see all messages</a>
+      <div class="-message">
+        <iframe class="-video" src="https://www.youtube.com/embed/1MkkwkXdvGk"></iframe>
+        <div class="-note">
+          <h5 class="-watch-latest-message -headfont">watch latest message</h5>
+          <a href="#" class="-see-all-messages -btn">see all messages</a>
+        </div>
       </div>
     </div>
   </div>
@@ -238,7 +240,107 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
 
 .-ourprograms {
   background-color: var(--rcnlightbg);
-  padding-bottom: 550px !important;
+}
+
+.-latestmessage {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: var(--global-palette7);
+  gap: 16px;
+}
+
+.-latestmessage .-message {
+  display: grid;
+  grid-template-columns: 67% 33%;
+  gap: 16px;
+}
+
+.-latestmessage .-meet-our-pastors {
+  background: radial-gradient(var(--rcntext), var(--rcnaccentblue));
+  border-radius: 4px;
+  width: 100%;
+}
+
+.-latestmessage .-meet-our-pastors .-note {
+  position: absolute;
+  left: 8.7%;
+  top: 50%;
+  color: #fff;
+  width: 45%;
+  row-gap: 32px;
+  transform: translateY(-50%);
+}
+
+.-latestmessage .-meet-our-pastors .-note .-meet-our {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin: unset;
+}
+
+.-latestmessage .-meet-our-pastors .-note .-pastors {
+  text-transform: capitalize;
+  color: #fff;
+  font-size: 4.5em;
+  margin: unset;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.-latestmessage .-meet-our-pastors .-note .-about {
+  margin: unset !important;
+}
+
+.-latestmessage .-meet-our-pastors .-note .-cta {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 8px;
+}
+
+.-latestmessage .-meet-our-pastors .-note .-cta .-readmore {
+  background: rgba(0, 0, 0, 0) !important;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 16px -5px #fff;
+}
+
+.-latestmessage .-meet-our-pastors .-note .-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.-latestmessage .-meet-our-pastors .-note .-cta .-meetallpastors {
+  background: #fff;
+  color: var(--rcnaccentblue) !important;
+  box-shadow: 0 2px 16px -5px #fff;
+}
+
+.-latestmessage .-meet-our-pastors img {
+  width: 100%;
+}
+
+.-latestmessage .-video {
+  border: unset;
+  width: 100%;
+  height: 440px;
+  border-radius: 4px;
+}
+
+.-latestmessage .-note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.-latestmessage .-note .-watch-latest-message {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 4em;
+  line-height: 1;
 }
 
 @media screen and (max-width: 1024px) {
@@ -250,6 +352,49 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
   .-ourvalues .-values {
     grid-template-columns: repeat(3, 1fr);
     width: 70%;
+  }
+
+  .-ourprograms {
+    padding-bottom: 32px !important;
+  }
+
+  .-latestmessage {
+    height: unset;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 32px !important;
+    gap: 16px;
+  }
+
+  .-latestmessage .-meet-our-pastors {
+    position: relative;
+    transform: unset !important;
+    grid-column-end: 3;
+    grid-column-start: 1;
+    width: unset !important;
+    left: unset !important;
+  }
+
+  .-latestmessage .-video {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    aspect-ratio: 560/315;
+    height: unset !important;
+  }
+
+  .-latestmessage .-message .-note {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+  }
+
+  .-latestmessage .-note .-watch-latest-message {
+    margin: unset;
+    font-size: 2.5em;
+    font-weight: 700;
   }
 }
 
@@ -264,9 +409,31 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
     width: 80%;
   }
 
-
   .-ourprograms .-programs {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .-latestmessage .-meet-our-pastors .-note .-title {
+    display: flex;
+    align-items: baseline;
+    column-gap: 4px;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note .-pastors {
+    font-size: 3em;
+    font-weight: 600;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note {
+    row-gap: 8px;
+    left: 3%;
+    width: 70%;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note .-cta .-btn {
+    padding: 8px;
+    line-height: 1;
+    font-size: .9em;
   }
 }
 
@@ -346,13 +513,58 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
   .-ourprograms .-programs {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .-latestmessage .-meet-our-pastors>.-note {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: unset !important;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 4px;
+    row-gap: 8px;
+    padding: 8px;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note .-about {
+    line-height: 1.5 !important;
+    font-size: .8em;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note .-pastors {
+    font-size: 2em;
+  }
 }
 
-@media screen and (max-width: 420px) {}
+@media screen and (max-width: 420px) {
+  .-latestmessage .-meet-our-pastors .-note .-about {
+    font-size: .6em;
+    letter-spacing: .5px;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note {
+    row-gap: 4px;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note .-meet-our {
+    font-size: .8em;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note .-pastors {
+    font-size: 1.2em;
+  }
+
+  .-latestmessage .-meet-our-pastors .-note .-cta .-btn {
+    padding: 8px;
+    line-height: 1;
+    font-size: .8em;
+  }
+}
 
 @media screen and (min-width: 320px) and (max-width: 420px) {
   .-rebirth-priesthood-transformation .-txt {
     font-size: 11px;
     padding: 8px;
   }
-}</style>
+}
+</style>

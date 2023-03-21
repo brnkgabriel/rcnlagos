@@ -4,7 +4,7 @@
       <div class="-col">
         <img class="h-[40px]" src="/images/rcn-logo-white.png" alt="remnant christian network white logo" />
         <p class="m-0">Academy Guest House, Plot 6A Lateef Jakande Rd. Agidingbi 101212, Ikeja</p>
-        <a href="tel:+2348186253251" class="-phone">(+234)818 625 3251</a>
+        <a href="tel:+2348186253251" class="-phone">(+234) 818 625 3251</a>
         <a href="tel:+2349061767430" class="-phone">(+234) 906 176 7430</a>
         <a href="mailto:info@rcnlagos.org?subject=Ministry Inquiries" class="-email">info@rcnlagos.org</a>
       </div>
