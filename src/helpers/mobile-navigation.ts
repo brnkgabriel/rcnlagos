@@ -1,19 +1,26 @@
-export class MobileNavigationController {
-
-  private closeMobileNavigationBtn: HTMLElement;
-  private mainContainer: HTMLElement;
-  private hamburgerBtn: HTMLElement;
+export class MobileNavigationController { 
+  private mainContainer: HTMLElement; 
   
-  constructor() {
-    this.closeMobileNavigationBtn = document.querySelector(".-close-btn") as HTMLElement
-    this.mainContainer = document.querySelector(".-main") as HTMLElement
-    this.hamburgerBtn = document.querySelector(".-hamburger") as HTMLElement
+  constructor() { 
+    this.mainContainer = document.querySelector(".-main") as HTMLElement 
 
     this.start()
   }
   
-  start() {
-    this.hamburgerBtn.addEventListener("click", () => this.mainContainer.classList.add("open"))
-    this.closeMobileNavigationBtn.addEventListener("click", () => this.mainContainer.classList.remove("open"))
+  start() { 
+    this.mainContainer.addEventListener(constants.CLICKEVENT, this.handleClick.bind(this))
+  }
+
+  handleClick(evt: Event) {
+    const target = evt.target as HTMLElement
+    const type = target.getAttribute(constants.DATATYPE)
+
+    console.log("data type is", type, "target is", target)
+
+    switch (type) {
+      case constants.MOBILELINKTYPE: return this.mainContainer.classList.remove(constants.OPEN)
+      case constants.HAMBURGERTYPE: return this.mainContainer.classList.add(constants.OPEN)
+      case constants.CLOSEMOBILEMENUTYPE: return this.mainContainer.classList.remove(constants.OPEN)
+    }
   }
 }

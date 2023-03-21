@@ -130,14 +130,16 @@ export const obj2Str = (obj: iDynamicObject) => Object.keys(obj)
   .reduce((acc, cur) => acc + `${cur}:${obj[cur]};`, "")
 
 export const constants = {
-  donateApiUrl: "/api/p-payment",
-  PayPalUrl: "https://www.paypal.com/donate/?hosted_button_id=5974UT4X3NAJJ",
-  PaystackUrl: "https://paystack.com/pay/tools-n-tuts",
-  toolsApiUrl: "/api/g-data/?path=tools",
-  tutsApiUrl: "/api/g-data/?path=tuts",
-  toolsnTutsApi: "/api/g-data",
+  
   globals: "globals",
-  maxItemsToLoad: 10
+  maxItemsToLoad: 10,
+  MOBILELINKTYPE: "mobile-link",
+  CONTENTTYPE: "content",
+  HAMBURGERTYPE: "hamburger",
+  CLOSEMOBILEMENUTYPE: "close mobile menu",
+  CLICKEVENT: "click",
+  DATATYPE: "data-type",
+  OPEN: "open"
 }
 
 export const operatingSystem = () => {

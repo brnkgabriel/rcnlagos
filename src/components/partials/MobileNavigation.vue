@@ -1,7 +1,15 @@
 <template>
   <div class="-mobile-navigation">
     <div class="-top">
-      <div class="-close-btn relative"></div>
+      <div class="-close-btn relative" data-type="close mobile menu"></div>
+    </div>
+
+    <div class="-links">
+      <NuxtLink data-type="mobile-link" href="/">home</NuxtLink>
+      <NuxtLink data-type="mobile-link" href="/events">events</NuxtLink>
+      <NuxtLink data-type="mobile-link" href="/blog">blog</NuxtLink>
+      <NuxtLink data-type="mobile-link" href="/prayercells">prayer cells</NuxtLink>
+      <NuxtLink data-type="mobile-link" class="-btn -give" href="/give">give</NuxtLink>
     </div>
   </div>
 </template>
@@ -14,7 +22,6 @@ onMounted(() => {
 })
 </script>
 <style scoped>
-
 .-mobile-navigation {
   background-color: var(--rcnaccentblue);
   height: 100%;
@@ -51,25 +58,42 @@ onMounted(() => {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 24px;
   height: 2px;
   background-color: white;
 }
 
 .-close-btn::before {
-  transform: translate(-500%,-8000%) rotate(45deg);
+  transform: translate(-500%, -8000%) rotate(45deg);
 }
+
 .-close-btn::after {
-  transform: translate(500%,-8000%) rotate(135deg);
+  transform: translate(500%, -8000%) rotate(135deg);
 }
 
 .open .-close-btn::before {
-  transform: translate(-50%,-50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
+
 .open .-close-btn::after {
-  transform: translate(-50%,-50%) rotate(135deg);
+  transform: translate(-50%, -50%) rotate(135deg);
 }
+
+.-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+
+.-links a {
+  border-bottom: 1px solid rgba(101,101,101,0.2);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 @media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 768px) {}
@@ -78,5 +102,4 @@ onMounted(() => {
 
 @media screen and (max-width: 420px) {}
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}
-</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
