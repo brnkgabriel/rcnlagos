@@ -142,6 +142,7 @@ export const vSlide = {
   },
   updated: (ele: Element) => {
     const images = all("img", ele as HTMLElement)
+    slider.stop()
     slider.start(images)
   }
 }

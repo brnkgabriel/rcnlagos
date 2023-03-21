@@ -24,6 +24,6 @@ export class Slider {
   stop() {
     this.currentIdx = 0
     clearInterval(this.interval)
-    this.elements
+    this.elements = all("no-element")
   }
 }
