@@ -216,7 +216,7 @@ const { globalState } = useGlobals()
 
 @media screen and (min-width: 320px) and (max-width: 420px) {
   .-rebirth-priesthood-transformation .-txt {
-    font-size: 13px;
+    font-size: 11px;
     padding: 8px;
   }
 }
