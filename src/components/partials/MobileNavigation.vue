@@ -92,6 +92,13 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.-links a.router-link-active {
+  color: var(--rcnaccentorange);
 }
 
 @media screen and (max-width: 1024px) {}
