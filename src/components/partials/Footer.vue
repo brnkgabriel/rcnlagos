@@ -71,6 +71,8 @@
         </div>
         <a href="/partner" class="-btn -partner-btn">become a partner</a>
       </div>
+    </div>
+    <div class="-inner -media">
       <iframe class="-mixlr" src="https://mixlr.com/users/7094849/embed"></iframe>
     </div>
     <div class="-copyright">
@@ -149,6 +151,14 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   color: var(--rcnaccentblue) !important;
   font-weight: bold;
   box-shadow: 0px 4px 20px -5px #fff !important;
+}
+
+.-media {
+  padding-bottom: 32px;
+}
+
+.-mixlr {
+  width: 100%;
 }
 
 @media screen and (max-width: 1024px) {
