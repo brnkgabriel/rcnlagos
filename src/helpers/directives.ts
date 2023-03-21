@@ -135,14 +135,19 @@ let slider: Slider
 if (process.client) {
   slider = new Slider()
 }
+
 export const vSlide = {
   mounted: (ele: Element) => {
     const images = all("img", ele as HTMLElement)
-    console.log("images from mounted", images)
+    slider.stop()
+    slider.start(images) 
   },
   updated: (ele: Element) => {
-    const images = all("img", ele as HTMLElement)
+    const images = all("img", ele as HTMLElement) 
     slider.stop()
-    slider.start(images)
+    slider.start(images) 
+  },
+  unmounted: () => {
+    slider.stop() 
   }
 }

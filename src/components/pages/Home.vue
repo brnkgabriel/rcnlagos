@@ -80,6 +80,92 @@
         </div>
       </div>
     </div>
+    <div class="-blog relative px-4 -row">
+      <div class="-title-wrap">
+        <h5 class="-txt">blog</h5>
+        <p class="-subline">A community board seasoned to rejuvinate your heart</p>
+      </div>
+      <div class="-content">
+        <div class="-content-item -selected -posrel">
+          <div class="-post -posabs">
+            <div class="-button" data-type="button"></div>
+            <div class="-postcontent">
+              <p>#HeartCheckTuesday: Walking before Working</p>
+              <p>How often do you check out your level of walking with God and working for God?</p>
+              <p>Do you know there's a possibility of working for God, yet not walking with Him? Oh yes, as simple as this
+                could sound, many people are not so sure of what they're doing!. Come to think of it, you can't obviously
+                speak of Kingdom service without a personal walk with God. Do you know why? The first posture in kingdom
+                service is the POSTURE OF DEVOTION.</p>
+              <p>Can we start our heart check from here today? What does your personal devotion to God look like? Personal
+                devotion is meant to be a moment of deep and sincere intimacy with God, that's why it's called
+                PERSONAL.<br>You must first understand followership even before workmanship; that's because it is in
+                walking His standards that His precepts are displayed.</p>
+              <p>2Kgs.20.3 - 'Remember now, O LORD, I pray, how I have walked before You in truth and with a loyal heart,
+                and have done what was good in Your sight.'</p>
+              <p>A relationship that stands over time consists of the walking, then workings of a man.</p>
+              <p>Dear HeartChecker, are you sure of a WALKING relationship with God? Have you been overwhelmed and even
+                carried away by your workings as kingdom service instead of walking with the one who first called
+                you!!<br>It's a call for a sincere rumination, to build a WALKING relationship. Abba beckons for intimacy.
+              </p>
+              <p>©RCNLagos</p>
+            </div>
+          </div>
+          <div class="-imgwrap"><img
+              src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/blog%2Fwalking-before-working_banner.jpg?alt=media&amp;token=f017c0a5-54f6-44d5-bdb8-a8ce0c8bd0a3"
+              alt="Walking before working"></div>
+        </div>
+        <div class="-content-item -thumbnails">
+          <div class="-thumbnail -posrel">
+            <div class="-img" data-blog="Walking" before="" working="" data-type="blog"><img
+                src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/blog%2Fwalking-before-working_thumbnail.png?alt=media&amp;token=2ab24257-85de-45d8-90b8-8154a38bb0ea"
+                alt="Walking before working" data-type="blog" data-blog="Walking before working"></div>
+            <div class="-details">
+              <div class="-clickable" data-blog="Walking before working" data-type="blog"></div>
+              <div class="-txt">
+                <h5 class="-title">Walking before working</h5>
+                <p class="-subline">How often do you check out your level of walking with God and working for God?</p>
+              </div>
+              <div class="-cta"><a href="#blog" class="-btn -readmore" data-type="blog"
+                  data-blog="Walking before working">read more</a><span class="-date">March 20, 2023</span></div>
+            </div>
+          </div>
+          <div class="-thumbnail -posrel">
+            <div class="-img" data-blog="Is" he="" your="" shepherd="" data-type="blog"><img
+                src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/blog%2Fis-he-your-shepherd_thumbnail.png?alt=media&amp;token=348baee5-ab11-4d34-b704-99bb6ac45bee"
+                alt="Is He your Shepherd" data-type="blog" data-blog="Is He your Shepherd"></div>
+            <div class="-details">
+              <div class="-clickable" data-blog="Is He your Shepherd" data-type="blog"></div>
+              <div class="-txt">
+                <h5 class="-title">Is He your Shepherd</h5>
+                <p class="-subline">Yes, you say you love the Lord. Yes, you are a worker in church. Yes, you go for
+                  Evangelism. You heal the sick in His name, and there's so much on your account as regards the Kingdom.
+                  Here's a question to ponder upon, Is He your Shepherd?</p>
+              </div>
+              <div class="-cta"><a href="#blog" class="-btn -readmore" data-type="blog"
+                  data-blog="Is He your Shepherd">read more</a><span class="-date">March 17, 2023</span></div>
+            </div>
+          </div>
+          <div class="-thumbnail -posrel">
+            <div class="-img" data-blog="Stick" to="" the="" instruction="" data-type="blog"><img
+                src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/blog%2Fstick-to-the-instruction_thumbnail.png?alt=media&amp;token=c8e13c4c-7bc0-47e7-b376-3f0d397a269f"
+                alt="Stick to the Instruction" data-type="blog" data-blog="Stick to the Instruction"></div>
+            <div class="-details">
+              <div class="-clickable" data-blog="Stick to the Instruction" data-type="blog"></div>
+              <div class="-txt">
+                <h5 class="-title">Stick to the Instruction</h5>
+                <p class="-subline">One thing you should never forget about God is the fact that His word never returns
+                  without fulfilling the purpose to which it was sent</p>
+              </div>
+              <div class="-cta"><a href="#blog" class="-btn -readmore" data-type="blog"
+                  data-blog="Stick to the Instruction">read more</a><span class="-date">March 14, 2023</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="-bottom">
+        <a href="/blog" class="-visitblog -btn">visit our blog</a>
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -242,7 +328,7 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
   background-color: var(--rcnlightbg);
 }
 
-.-latestmessage { 
+.-latestmessage {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   background-color: var(--global-palette7);
@@ -575,5 +661,4 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
     font-size: 11px;
     padding: 8px;
   }
-}
-</style>
+}</style>
