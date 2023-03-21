@@ -17,7 +17,7 @@
         <p class="-txt -priesthood">priesthood</p>
         <p class="-txt -transformation">transformation</p>
       </div>
-      <div class="-sliders absolute">
+      <div class="-sliders absolute" v-slide>
         <img v-if="globalState.sliders?.length === 0" class="active" src="/images/1326x602.png"
           alt="homepage slider skeleton" />
         <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''"
@@ -27,6 +27,8 @@
   </div>
 </template>
 <script setup lang="ts">
+
+import { vSlide } from "~~/src/helpers/directives"
 
 const { globalState } = useGlobals()
 </script>

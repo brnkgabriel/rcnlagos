@@ -18,7 +18,8 @@ export const constants = {
   CLICKEVENT: "click",
   DATATYPE: "data-type",
   OPEN: "open",
-  SOCIALLINK: "social link"
+  SOCIALLINK: "social link",
+  ACTIVE: "active"
 }
 
 export const operatingSystem = () => {

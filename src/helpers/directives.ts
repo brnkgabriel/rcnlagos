@@ -1,4 +1,5 @@
 import { all, el } from "~~/src/composables/index"
+import { Slider } from "./slider";
 
 class ImageObserver {
   private images: NodeListOf<Element> | [];
@@ -127,4 +128,20 @@ export const vInfiniteScroll = {
   updated: (ele: Element) => initializeObserver(ele, "updated"),
   mounted: (ele: Element) => initializeObserver(ele, "mounted"),
   unmounted: () => unobserveAll()
+}
+
+// ======================================================================== new directives ==============================================================
+let slider: Slider
+if (process.client) {
+  slider = new Slider()
+}
+export const vSlide = {
+  mounted: (ele: Element) => {
+    const images = all("img", ele as HTMLElement)
+    console.log("images from mounted", images)
+  },
+  updated: (ele: Element) => {
+    const images = all("img", ele as HTMLElement)
+    slider.start(images)
+  }
 }

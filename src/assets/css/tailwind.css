@@ -58,6 +58,10 @@ body {
   padding: 0 16px;
 }
 
+.lazy-image {
+  opacity: 0;
+}
+
 .loaded {
   opacity: 1 !important;
   transition: opacity .2s linear;
