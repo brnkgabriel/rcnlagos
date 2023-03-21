@@ -80,6 +80,10 @@
     width: calc(100% - 32px);
   }
 
+  .-hero-header {
+    font-size: 40px;
+  }
+
   .-hero-ctas {
     column-gap: unset;
     row-gap: 8px;
