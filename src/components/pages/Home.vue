@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="-home-component">
     <div class="-hero-banner">
       <p class="-welcome">Welcome to</p>
       <h1 class="-hero-header -headfont">RCN Lagos</h1>
@@ -11,9 +11,13 @@
         <NuxtLink href="/about" class="-btn -know-more">know more</NuxtLink>
       </div>
     </div>
+    <div class="-slides">
+
+    </div>
   </div>
 </template>
 <script setup lang="ts">
+
 </script>
 <style scoped>
 .-hero-banner {
