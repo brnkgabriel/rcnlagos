@@ -46,16 +46,43 @@
         <p class="-subline">Join us in God's presence</p>
       </div>
       <div class="-programs px-4">
-        <sProgram v-if="!globalState.programs?.length" v-for="(program, idx) in skeletonPrograms" :program="program" :key="idx" />
+        <sProgram v-if="!globalState.programs?.length" v-for="(program, idx) in skeletonPrograms" :program="program"
+          :key="idx" />
         <Program v-if="globalState.programs" v-for="(program, idx) in globalState.programs" :program="program"
           :key="idx" />
+      </div>
+    </div>
+    <div class="-latestmessage -row relative">
+      <div class="-meet-our-pastors">
+        <div class="-note -posabs">
+          <div class="-title">
+            <h5 class="-meet-our">meet our</h5>
+            <h3 class="-pastors">pastors</h3>
+          </div>
+          <p class="-about">Austin Ukporhe is the Point man ( Resident Pastor) Remnant Christian Network, Lagos chapter.
+            Raised in the Northern city of Sokoto, Rev Austin was trained in the peculiar firebrand evangelism of
+            Nigeria’s
+            Christian North and was ordained as a Pastor in 2001. He has experienced countless and diverse workings of the
+            faithfulness of God for over 17 years.</p>
+          <div class="-cta">
+            <a href="#" class="-btn -readmore">read more</a>
+            <a href="#" class="-btn -meetallpastors">meet all pastors</a>
+          </div>
+        </div>
+        <img v-loaded class="opacity-0" src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/images%2Frev-austin.png?alt=media&amp;token=e26f1901-2347-4c6d-9714-1dbdc1602fa6"
+          alt="">
+      </div>
+      <iframe class="-video" src="https://www.youtube.com/embed/1MkkwkXdvGk"></iframe>
+      <div class="-note">
+        <h5 class="-watch-latest-message">watch latest message</h5>
+        <a href="#" class="-see-all-messages -btn">see all messages</a>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 
-import { vSlide } from "~~/src/helpers/directives"
+import { vSlide, vLoaded } from "~~/src/helpers/directives"
 import sProgram from "../skeletons/sProgram.vue";
 import Program from "../partials/Program.vue";
 
@@ -175,14 +202,14 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
 
 .-title-wrap .-txt {
   width: 100%;
-}
-
-.-ourvalues .-title-wrap .-txt {
-  width: 30%;
   text-transform: uppercase;
   text-align: center;
   margin: unset;
   color: var(--rcnaccentblue);
+}
+
+.-ourvalues .-title-wrap .-txt {
+  width: 30%;
 }
 
 .-ourvalues .-values {
@@ -237,7 +264,7 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
     width: 80%;
   }
 
-  
+
   .-ourprograms .-programs {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -315,7 +342,7 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
   .-title-wrap span {
     width: 100%;
   }
-  
+
   .-ourprograms .-programs {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -328,5 +355,4 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
     font-size: 11px;
     padding: 8px;
   }
-}
-</style>
+}</style>
