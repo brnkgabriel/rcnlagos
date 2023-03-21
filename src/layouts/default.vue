@@ -1,7 +1,9 @@
 <template>
   <div class="font-body text-[13px]">
     <Header />
-    <slot></slot>
+    <div class="-inner">
+      <slot></slot>
+    </div>
     <Footer />
   </div>
 </template>

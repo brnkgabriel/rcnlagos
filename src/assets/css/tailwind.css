@@ -9,15 +9,23 @@ html, body, #__nuxt {
   @apply h-full
 }
 :root {
-  --mainblue: #0B5CFF;
+  --rcnaccentorange: #DA561D;
+  --rcnaccentblue: #171332;
+  --rcntext: #42526E;
+
   --mainorange: #EC6600;
   --maindark: #333333;
-  --maingray500: #f5f5f5;
-  --maingray700: #eaeded;
-  --maingray900: #75757a;
-  --paystack: #0AA5DB;
+  --rcnlighterbg: #F1F3F5;
+  --rcnlightbg: #E4E7EC;
 }
 
+.-btn {
+  background: var(--rcnaccentorange); 
+  box-shadow: 0px 4px 20px -5px var(--rcnaccentorange);
+  border-radius: 4px;
+  padding: 4px 16px;
+  color: white !important;
+}
 .-inner {
   width: 100%;
   max-width: 1290px;
