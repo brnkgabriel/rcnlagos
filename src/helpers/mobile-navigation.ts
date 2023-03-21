@@ -8,10 +8,12 @@ export class MobileNavigationController {
   }
   
   start() { 
-    this.mainContainer.addEventListener(constants.CLICKEVENT, this.handleClick.bind(this))
+    this.mainContainer.addEventListener(constants.CLICKEVENT, this.handleEvent.bind(this))
+    // this.mainContainer.addEventListener("touchstart", this.handleEvent.bind(this))
+    // this.mainContainer.addEventListener("touchmove", this.handleEvent.bind(this))
   }
 
-  handleClick(evt: Event) {
+  handleEvent(evt: Event) {
     const target = evt.target as HTMLElement
     const type = target.getAttribute(constants.DATATYPE)
 
