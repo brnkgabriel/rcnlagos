@@ -27,7 +27,7 @@
     <div class="-ourvalues -row">
       <div class="-title-wrap">
         <span class="-horizontal-line"></span>
-        <h5 class="-txt">our values</h5>
+        <h5 class="-txt -subhead">our values</h5>
         <span class="-horizontal-line"></span>
       </div>
       <div class="-values px-4">
@@ -40,11 +40,24 @@
         <p>faithfulness</p>
       </div>
     </div>
+    <div class="-ourprograms -row">
+      <div class="-title-wrap px-4 flex-col">
+        <h5 class="-txt -subhead">our programs</h5>
+        <p class="-subline">Join us in God's presence</p>
+      </div>
+      <div class="-programs px-4">
+        <sProgram v-if="!globalState.programs" v-for="(program, idx) in skeletonPrograms" :program="program" :key="idx" />
+        <Program v-if="globalState.programs" v-for="(program, idx) in globalState.programs" :program="program"
+          :key="idx" />
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
 
 import { vSlide } from "~~/src/helpers/directives"
+import sProgram from "../skeletons/sProgram.vue";
+import Program from "../partials/Program.vue";
 
 const { globalState } = useGlobals()
 </script>
@@ -143,10 +156,66 @@ const { globalState } = useGlobals()
   opacity: .8;
 }
 
+.-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+
+.-title-wrap span {
+  height: 1px;
+  width: 30%;
+  background-color: var(--rcntext);
+  opacity: .5;
+}
+
+.-title-wrap .-txt {
+  width: 30%;
+  text-transform: uppercase;
+  text-align: center;
+  margin: unset;
+  color: var(--rcnaccentblue);
+}
+
+.-ourvalues .-values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 70%;
+  margin: 0 auto;
+  gap: 8px;
+}
+
+.-ourvalues .-values p {
+  background-color: var(--rcnlighterbg);
+  text-transform: capitalize;
+  border-radius: 2px;
+  margin: unset !important;
+  padding: 8px 16px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.-ourprograms .-programs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.-ourprograms {
+  background-color: var(--rcnlightbg);
+  padding-bottom: 550px !important;
+}
+
 @media screen and (max-width: 1024px) {
   .-rebirth-priesthood-transformation .-txt {
     font-size: 28px;
     line-height: 32px !important;
+  }
+
+  .-ourvalues .-values {
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
   }
 }
 
@@ -154,6 +223,11 @@ const { globalState } = useGlobals()
   .-rebirth-priesthood-transformation .-txt {
     font-size: 16px;
     line-height: 24px !important;
+  }
+
+  .-ourvalues .-values {
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
   }
 }
 
@@ -208,6 +282,25 @@ const { globalState } = useGlobals()
   }
 
   .-home-slider .-sliders {
+    width: 100%;
+  }
+
+  .-ourvalues .-values {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+
+  .-title-wrap {
+    flex-direction: column;
+    padding-bottom: 16px;
+    text-align: center;
+  }
+
+  .-ourvalues .-title-wrap {
+    row-gap: 8px;
+  }
+
+  .-title-wrap span {
     width: 100%;
   }
 }

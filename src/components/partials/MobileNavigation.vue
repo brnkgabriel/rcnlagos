@@ -87,7 +87,7 @@ onMounted(() => {
 }
 
 .-links a {
-  border-bottom: 1px solid rgba(101,101,101,0.2);
+  border-bottom: 1px solid rgba(101, 101, 101, 0.2);
   height: 48px;
   display: flex;
   align-items: center;
@@ -109,4 +109,5 @@ onMounted(() => {
 
 @media screen and (max-width: 420px) {}
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}
+</style>

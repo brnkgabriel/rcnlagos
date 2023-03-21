@@ -1,4 +1,4 @@
-import {iDynamicObject, iGlobal} from "../types"
+import {iDynamicObject, iGlobal, iProgram} from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -98,3 +98,11 @@ export const getMachineId = () => {
 
   return machineId;
 }
+
+export const skeletonPrograms: iProgram[] = num2List(6).map((num: number) => ({
+  about: " ",
+  image: "/images/359x205.png",
+  name: " ",
+  status: " ",
+  time: " "
+}))
