@@ -48,7 +48,9 @@ export const el = (query: string, parent?: HTMLElement) => parent ? parent.query
 export const useGlobals = () => {
   const globalState = useState<iGlobal>(constants.globals)
 
-  return { globalState }
+  const setGlobals = (value: iGlobal) => globalState.value = value
+
+  return { globalState, setGlobals }
 }
  
 interface iHead {

@@ -55,6 +55,7 @@
   text-transform: uppercase;
   font-weight: 600;
   color: var(--rcntext);
+  padding: 8px;
 }
 .-header .-links .-give {
   padding: 4px 16px;
