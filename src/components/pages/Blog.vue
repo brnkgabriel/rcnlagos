@@ -1,6 +1,7 @@
 <template>
   <div>
-    Blog
+    <h1>Blog</h1>
+    <p></p>
   </div>
 </template>
 <script setup lang="ts">
