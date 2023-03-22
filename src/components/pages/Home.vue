@@ -695,6 +695,7 @@ onBeforeUnmount(() => {
 
   .-ourvalues .-title-wrap {
     row-gap: 8px;
+    flex-direction: column;
   }
 
   .-title-wrap span {
