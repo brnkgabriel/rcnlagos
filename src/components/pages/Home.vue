@@ -124,7 +124,7 @@
           </div>
         </div>
         <div class="-bottom">
-          <a href="/ourtestimonies" class="-btn -visitblog">share your testimony with us</a>
+          <NuxtLink href="/testimony" class="-btn">share your testimony with us</NuxtLink>
         </div>
       </div>
     </div>
