@@ -68,7 +68,7 @@
             workings of the faithfulness of God for over 17 years.</p>
           <div class="-cta">
             <a href="#" class="-btn -readmore">read more</a>
-            <a href="/pastors" class="-btn -meetallpastors">meet all pastors</a>
+            <NuxtLink href="/pastors" class="-btn -meetallpastors">meet all pastors</NuxtLink>
           </div>
         </div>
         <img v-loaded class="loaded"
@@ -106,7 +106,7 @@
         </div>
       </div>
       <div class="-bottom">
-        <a href="/blog" class="-visitblog -btn">visit our blog</a>
+        <NuxtLink href="/blog" class="-visitblog -btn">visit our blog</NuxtLink>
       </div>
     </div>
     <div class="-testify relative -row">
