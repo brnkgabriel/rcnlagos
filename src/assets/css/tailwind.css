@@ -71,7 +71,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: var(--box-shadow);
-  z-index: 5;
+  z-index: 1;
 }
 
 .active .-directionalbutton {
