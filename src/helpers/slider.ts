@@ -18,13 +18,12 @@ export class Slider {
       this.currentIdx = 0
     }
     this.elements?.forEach((ele: Element) => ele.classList.remove(constants.ACTIVE))
-    this.elements[this.currentIdx].classList.add(constants.ACTIVE) 
-    console.log("currentIdx is", this.currentIdx)
+    this.elements[this.currentIdx].classList.add(constants.ACTIVE)
   }
 
   stop() {
     this.currentIdx = 0
     clearInterval(this.interval) 
-    // this.elements = all("no-element") 
+    this.elements = all("no-element") 
   }
 }

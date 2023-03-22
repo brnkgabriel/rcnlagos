@@ -128,7 +128,7 @@ defineProps<{
 
   .-thumbnail .-details .-title {
     margin: unset !important;
-    font-size: 1em;
+    font-size: .9em;
     text-align: center;
     width: 100%;
     color: #fff;
@@ -150,6 +150,8 @@ defineProps<{
     width: fit-content;
     left: 50%;
     transform: translateX(-50%);
+    justify-content: center;
+    width: 100%;
   }
 
   .-thumbnail .-details .-cta .-readmore {
@@ -170,9 +172,16 @@ defineProps<{
 
 @media screen and (max-width: 576px) {
 
+  .-thumbnail .-details .-title {
+    font-size: .8em;
+  }
 }
 
-@media screen and (max-width: 420px) {}
+@media screen and (max-width: 420px) {
+  .-thumbnail .-details .-title {
+    font-size: .7em;
+  }
+}
 
 @media screen and (min-width: 320px) and (max-width: 420px) {}
 </style>

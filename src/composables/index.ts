@@ -1,4 +1,4 @@
-import {iDynamicObject, iGlobal, iProgram} from "../types"
+import {iBlog, iDynamicObject, iGlobal, iProgram} from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -20,7 +20,14 @@ export const constants = {
   DATATYPE: "data-type",
   OPEN: "open",
   SOCIALLINK: "social link",
-  ACTIVE: "active"
+  ACTIVE: "active",
+  BLOG: "blog",
+  BUTTON: "button",
+  SELECTEDBLOGIMGWRAPQUERY: ".-blog .-content .-selected .-imgwrap",
+  SELECTEDBLOGQUERY: ".-blog .-content .-selected",
+  SELECTEDPOSTCONTENT: ".-blog .-content .-selected .-postcontent",
+  SITECONTENT: "#__nuxt",
+  BLOGTHUMBNAILSQUERY: "#blog .-content .-thumbnails",
 }
 
 export const operatingSystem = () => {
@@ -106,6 +113,15 @@ export const skeletonPrograms: iProgram[] = num2List(6).map((num: number) => ({
   name: " ",
   status: " ",
   time: " "
+}))
+export const skeletonBlogs: iBlog[] = num2List(3).map((num: number) => ({
+  banner: "/images/680x680.png",
+  datetime: " ",
+  htmlContent: " ",
+  status: " ",
+  subline: " ",
+  thumbnail: "/images/680x680.png",
+  title: " "
 }))
 
 export const reorder = (list:any[]) => { 

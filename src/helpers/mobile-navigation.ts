@@ -9,8 +9,6 @@ export class MobileNavigationController {
   
   start() { 
     this.mainContainer.addEventListener(constants.CLICKEVENT, this.handleEvent.bind(this))
-    // this.mainContainer.addEventListener("touchstart", this.handleEvent.bind(this))
-    // this.mainContainer.addEventListener("touchmove", this.handleEvent.bind(this))
   }
 
   handleEvent(evt: Event) {

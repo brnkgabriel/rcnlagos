@@ -89,26 +89,7 @@
         <div class="-content-item -selected relative">
           <div class="-post absolute">
             <div class="-directionalbutton" data-type="button"></div>
-            <div class="-postcontent">
-              <p>#HeartCheckTuesday: Walking before Working</p>
-              <p>How often do you check out your level of walking with God and working for God?</p>
-              <p>Do you know there's a possibility of working for God, yet not walking with Him? Oh yes, as simple as this
-                could sound, many people are not so sure of what they're doing!. Come to think of it, you can't obviously
-                speak of Kingdom service without a personal walk with God. Do you know why? The first posture in kingdom
-                service is the POSTURE OF DEVOTION.</p>
-              <p>Can we start our heart check from here today? What does your personal devotion to God look like? Personal
-                devotion is meant to be a moment of deep and sincere intimacy with God, that's why it's called
-                PERSONAL.<br>You must first understand followership even before workmanship; that's because it is in
-                walking His standards that His precepts are displayed.</p>
-              <p>2Kgs.20.3 - 'Remember now, O LORD, I pray, how I have walked before You in truth and with a loyal heart,
-                and have done what was good in Your sight.'</p>
-              <p>A relationship that stands over time consists of the walking, then workings of a man.</p>
-              <p>Dear HeartChecker, are you sure of a WALKING relationship with God? Have you been overwhelmed and even
-                carried away by your workings as kingdom service instead of walking with the one who first called
-                you!!<br>It's a call for a sincere rumination, to build a WALKING relationship. Abba beckons for intimacy.
-              </p>
-              <p>©RCNLagos</p>
-            </div>
+            <div class="-postcontent" v-html="reorderedBlogs[0]?.htmlContent"></div>
           </div>
           <div class="-imgwrap">
             <img v-if="!isRemoteDataLoaded" src="/images/680x680.png" alt="blog skeleton" />
@@ -117,7 +98,8 @@
           </div>
         </div>
         <div class="-content-item -thumbnails">
-          <BlogThumbnail v-for="(blog, idx) in reorderedBlogs" :key="idx" :blog="blog" />
+          <sBlogThumbnail v-if="!isRemoteDataLoaded" v-for="(blog, idx) in skeletonBlogs" :key="idx" :blog="blog" />
+          <BlogThumbnail v-if="isRemoteDataLoaded" v-for="(blog, idx) in reorderedBlogs" :key="idx" :blog="blog" />
         </div>
       </div>
       <div class="-bottom">
@@ -132,12 +114,24 @@ import { vSlide, vLoaded } from "~~/src/helpers/directives"
 import sProgram from "../skeletons/sProgram.vue";
 import Program from "../partials/Program.vue";
 import BlogThumbnail from "../partials/BlogThumbnail.vue";
+import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import { iBlog } from "~~/src/types";
+import { Controller } from "~~/src/helpers/controller";
 
 const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programs?.length as number) > 0)
 const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
+ 
+let controller: Controller 
 
+onMounted(() => {
+  controller = new Controller()
+  controller.start()
+})
+
+onBeforeUnmount(() => {
+  controller.stop()
+})
 
 </script>
 <style scoped>
@@ -417,9 +411,17 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
 
 .-blog .-selected .-post .-postcontent {
   padding: 8px;
-  padding-top: 32px;
+  padding-top: 48px;
   height: 100%;
   overflow: auto;
+  color: #fff;
+  font-weight: 300;
+  font-size: .9em;
+  opacity: 0;
+}
+
+.-blog .-selected.active .-post .-postcontent {
+  opacity: 1;
 }
 
 .-blog .-thumbnails {
@@ -429,6 +431,19 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
   justify-content: space-between;
   height: 100%;
 }
+
+.-blog .-selected.active .-post {
+    transform: translateY(0%);
+    background-color: rgba(0,0,0,.8);
+}
+ 
+.-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+
 
 @media screen and (max-width: 1024px) {
   .-rebirth-priesthood-transformation .-txt {
@@ -529,6 +544,8 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
     gap: 16px;
     grid-template-rows: calc((100% - 16px)/2) calc((100% - 16px)/2);
   }
+
+
 }
 
 @media screen and (max-width: 576px) {
@@ -647,11 +664,16 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
     width: 100%;
   }
 
-  
+
   .-blog .-thumbnails {
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
+  }
+
+  .-bottom .-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 

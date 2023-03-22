@@ -18,7 +18,7 @@ html, body, #__nuxt {
   --mainorange: #EC6600;
   --maindark: #333333;
   --rcnlighterbg: #F1F3F5;
-  --rcnlightbg: #E4E7EC;
+  --rcnlightbg: #E4E7EC; 
 }
 
 *,*::before, *::after {
@@ -52,8 +52,8 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
+  cursor: pointer;
 }
-
 
 .-directionalbutton {
   width: 32px;
@@ -66,6 +66,11 @@ body {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: var(--box-shadow);
+  z-index: 5;
+}
+
+.active .-directionalbutton {
+  transform: translate(-50%, 8px) scale(1);
 }
 
 .-directionalbutton::before {
@@ -81,7 +86,9 @@ body {
   transform: translate(-50%, -20%) rotate(45deg);
   opacity: .6;
 }
-
+.active .-directionalbutton::before {
+  transform: translate(-50%, -55%) rotate(-135deg);
+}
 .-btn {
   background: var(--rcnaccentorange); 
   box-shadow: 0px 4px 20px -5px var(--rcnaccentorange);
