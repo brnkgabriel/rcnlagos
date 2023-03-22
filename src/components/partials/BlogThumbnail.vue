@@ -79,4 +79,100 @@ defineProps<{
   font-weight: 600;
   font-size: 1.3em;
 }
+
+.-thumbnail .-details .-subline {
+  white-space: initial;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin: unset !important;
+  line-height: 1.4 !important;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .-thumbnail .-details .-subline {
+    -webkit-line-clamp: 2;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .-thumbnail {
+    flex-direction: column;
+    height: 100%;
+    background-color: #000;
+    cursor: pointer;
+    display: unset;
+  }
+
+  .-thumbnail img {
+    width: 100%;
+    height: unset;
+    opacity: .4;
+  }
+
+  .-thumbnail .-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .-thumbnail .-details .-txt {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .-thumbnail .-details .-title {
+    margin: unset !important;
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    line-height: 1.1;
+    padding: 8px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .-thumbnail .-details .-subline {
+    display: none;
+  }
+
+  .-thumbnail .-details .-cta {
+    position: absolute;
+    top: 8px;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .-thumbnail .-details .-cta .-readmore {
+    display: none;
+  }
+
+  .-thumbnail .-date {
+    background-color: rgba(0, 0, 0, 0) !important;
+    padding: unset !important;
+    font-size: .6em;
+  }
+
+  .-thumbnail .-details,
+  .-thumbnail .-details .-txt {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+}
+
+@media screen and (max-width: 420px) {}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {}
 </style>

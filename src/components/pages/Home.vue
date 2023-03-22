@@ -80,7 +80,7 @@
         </div>
       </div>
     </div>
-    <div class="-blog relative px-4 -row">
+    <div class="-blog relative -row">
       <div class="-title-wrap flex-col">
         <h5 class="-txt -subhead">blog</h5>
         <p class="-subline">A community board seasoned to rejuvinate your heart</p>
@@ -111,8 +111,9 @@
             </div>
           </div>
           <div class="-imgwrap">
-            <img v-if="!isRemoteDataLoaded" src="/images/680x680.png" alt="blog skeleton"/>
-            <img v-if="isRemoteDataLoaded" class="opacity-0" v-loaded :src="reorderedBlogs[0]?.banner" :alt="reorderedBlogs[0]?.title">
+            <img v-if="!isRemoteDataLoaded" src="/images/680x680.png" alt="blog skeleton" />
+            <img v-if="isRemoteDataLoaded" class="opacity-0" v-loaded :src="reorderedBlogs[0]?.banner"
+              :alt="reorderedBlogs[0]?.title">
           </div>
         </div>
         <div class="-content-item -thumbnails">
@@ -521,6 +522,13 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
     line-height: 1;
     font-size: .9em;
   }
+
+  .-blog .-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    grid-template-rows: calc((100% - 16px)/2) calc((100% - 16px)/2);
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -625,6 +633,25 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
     flex-direction: column;
     row-gap: 8px;
     padding-top: unset;
+  }
+
+  .-blog .-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 94.444vw 31vw;
+    gap: 16px;
+  }
+
+  .-blog .-content .-content-item,
+  .-blog .-thumbnails {
+    width: 100%;
+  }
+
+  
+  .-blog .-thumbnails {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
   }
 }
 
