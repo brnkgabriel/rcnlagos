@@ -5,7 +5,7 @@
       <slot></slot>
       <Footer />
     </div>
-    <!-- <MobileNavigation /> -->
+    <MobileNavigation />
   </div> 
 </template>
 <script setup lang="ts">
