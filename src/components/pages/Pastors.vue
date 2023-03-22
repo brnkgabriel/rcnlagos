@@ -1,6 +1,6 @@
 <template>
   <div>
-    Pastors
+    <h1>The Pastorates</h1>
   </div>
 </template>
 <script setup lang="ts">
