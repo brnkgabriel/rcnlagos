@@ -54,6 +54,34 @@ body {
   left: 0;
 }
 
+
+.-directionalbutton {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+
+.-directionalbutton::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--rcntext);
+  border-right: unset;
+  border-bottom: unset;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%) rotate(45deg);
+  opacity: .6;
+}
+
 .-btn {
   background: var(--rcnaccentorange); 
   box-shadow: 0px 4px 20px -5px var(--rcnaccentorange);

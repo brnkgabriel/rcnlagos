@@ -107,3 +107,7 @@ export const skeletonPrograms: iProgram[] = num2List(6).map((num: number) => ({
   status: " ",
   time: " "
 }))
+
+export const reorder = (list:any[]) => { 
+  return list.sort((a:any, b:any) => +new Date(b.datetime) - +new Date(a.datetime))
+}

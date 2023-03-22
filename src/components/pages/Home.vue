@@ -86,9 +86,9 @@
         <p class="-subline">A community board seasoned to rejuvinate your heart</p>
       </div>
       <div class="-content">
-        <div class="-content-item -selected -posrel">
-          <div class="-post -posabs">
-            <div class="-button" data-type="button"></div>
+        <div class="-content-item -selected relative">
+          <div class="-post absolute">
+            <div class="-directionalbutton" data-type="button"></div>
             <div class="-postcontent">
               <p>#HeartCheckTuesday: Walking before Working</p>
               <p>How often do you check out your level of walking with God and working for God?</p>
@@ -110,56 +110,13 @@
               <p>©RCNLagos</p>
             </div>
           </div>
-          <div class="-imgwrap"><img
-              src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/blog%2Fwalking-before-working_banner.jpg?alt=media&amp;token=f017c0a5-54f6-44d5-bdb8-a8ce0c8bd0a3"
-              alt="Walking before working"></div>
+          <div class="-imgwrap">
+            <img v-if="!isRemoteDataLoaded" src="/images/680x680.png" alt="blog skeleton"/>
+            <img v-if="isRemoteDataLoaded" class="opacity-0" v-loaded :src="reorderedBlogs[0]?.banner" :alt="reorderedBlogs[0]?.title">
+          </div>
         </div>
         <div class="-content-item -thumbnails">
-          <div class="-thumbnail -posrel">
-            <div class="-img" data-blog="Walking" before="" working="" data-type="blog"><img
-                src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/blog%2Fwalking-before-working_thumbnail.png?alt=media&amp;token=2ab24257-85de-45d8-90b8-8154a38bb0ea"
-                alt="Walking before working" data-type="blog" data-blog="Walking before working"></div>
-            <div class="-details">
-              <div class="-clickable" data-blog="Walking before working" data-type="blog"></div>
-              <div class="-txt">
-                <h5 class="-title">Walking before working</h5>
-                <p class="-subline">How often do you check out your level of walking with God and working for God?</p>
-              </div>
-              <div class="-cta"><a href="#blog" class="-btn -readmore" data-type="blog"
-                  data-blog="Walking before working">read more</a><span class="-date">March 20, 2023</span></div>
-            </div>
-          </div>
-          <div class="-thumbnail -posrel">
-            <div class="-img" data-blog="Is" he="" your="" shepherd="" data-type="blog"><img
-                src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/blog%2Fis-he-your-shepherd_thumbnail.png?alt=media&amp;token=348baee5-ab11-4d34-b704-99bb6ac45bee"
-                alt="Is He your Shepherd" data-type="blog" data-blog="Is He your Shepherd"></div>
-            <div class="-details">
-              <div class="-clickable" data-blog="Is He your Shepherd" data-type="blog"></div>
-              <div class="-txt">
-                <h5 class="-title">Is He your Shepherd</h5>
-                <p class="-subline">Yes, you say you love the Lord. Yes, you are a worker in church. Yes, you go for
-                  Evangelism. You heal the sick in His name, and there's so much on your account as regards the Kingdom.
-                  Here's a question to ponder upon, Is He your Shepherd?</p>
-              </div>
-              <div class="-cta"><a href="#blog" class="-btn -readmore" data-type="blog"
-                  data-blog="Is He your Shepherd">read more</a><span class="-date">March 17, 2023</span></div>
-            </div>
-          </div>
-          <div class="-thumbnail -posrel">
-            <div class="-img" data-blog="Stick" to="" the="" instruction="" data-type="blog"><img
-                src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/blog%2Fstick-to-the-instruction_thumbnail.png?alt=media&amp;token=c8e13c4c-7bc0-47e7-b376-3f0d397a269f"
-                alt="Stick to the Instruction" data-type="blog" data-blog="Stick to the Instruction"></div>
-            <div class="-details">
-              <div class="-clickable" data-blog="Stick to the Instruction" data-type="blog"></div>
-              <div class="-txt">
-                <h5 class="-title">Stick to the Instruction</h5>
-                <p class="-subline">One thing you should never forget about God is the fact that His word never returns
-                  without fulfilling the purpose to which it was sent</p>
-              </div>
-              <div class="-cta"><a href="#blog" class="-btn -readmore" data-type="blog"
-                  data-blog="Stick to the Instruction">read more</a><span class="-date">March 14, 2023</span></div>
-            </div>
-          </div>
+          <BlogThumbnail v-for="(blog, idx) in reorderedBlogs" :key="idx" :blog="blog" />
         </div>
       </div>
       <div class="-bottom">
@@ -173,9 +130,12 @@
 import { vSlide, vLoaded } from "~~/src/helpers/directives"
 import sProgram from "../skeletons/sProgram.vue";
 import Program from "../partials/Program.vue";
+import BlogThumbnail from "../partials/BlogThumbnail.vue";
+import { iBlog } from "~~/src/types";
 
 const { globalState } = useGlobals()
-const isProgramLoaded = computed(() => (globalState.value.programs?.length as number) > 0)
+const isRemoteDataLoaded = computed(() => (globalState.value.programs?.length as number) > 0)
+const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
 
 
 </script>
@@ -432,6 +392,41 @@ const isProgramLoaded = computed(() => (globalState.value.programs?.length as nu
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.-blog .-content .-content-item {
+  width: calc((100% - 16px)/2);
+  aspect-ratio: 500/500;
+  overflow: hidden;
+}
+
+.-blog .-selected .-post {
+  background-color: rgba(0, 0, 0, .4);
+  width: 100%;
+  top: 0;
+  height: 100%;
+  transform: translateY(calc(100% - 40px));
+  border-radius: 4px;
+}
+
+.-blog .-selected img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.-blog .-selected .-post .-postcontent {
+  padding: 8px;
+  padding-top: 32px;
+  height: 100%;
+  overflow: auto;
+}
+
+.-blog .-thumbnails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
 }
 
 @media screen and (max-width: 1024px) {
