@@ -1,17 +1,17 @@
 <template>
   <div class="-home-component">
-    <div class="-hero-banner -row">
+    <div class="-hero-banner -row -inner">
       <p class="-welcome">Welcome to</p>
       <h1 class="-hero-header -headfont">RCN Lagos</h1>
       <p class="-about px-4">We are a ministry with a single minded focus on restoring the prayer commission of the church
         in fulfillment of
         Jesus' proclamation in Matthew 21:13 that <strong>My house shall be called the house of prayer</strong></p>
-      <div class="-hero-ctas">
+      <div class="-hero-ctas px-4">
         <a href="https://www.youtube.com/@RCNLagos/streams" class="-btn -stream-live">stream live</a>
         <NuxtLink href="/about" class="-btn -know-more">know more</NuxtLink>
       </div>
     </div>
-    <div class="-home-slider relative -row">
+    <div class="-home-slider relative -row -inner">
       <div class="-rebirth-priesthood-transformation absolute">
         <p class="-txt -rebirth">rebirth</p>
         <p class="-txt -priesthood">priesthood</p>
@@ -24,13 +24,13 @@
           :src="slider.image" :alt="slider.slideNo" />
       </div>
     </div>
-    <div class="-ourvalues -row">
+    <div class="-ourvalues -row -inner">
       <div class="-title-wrap">
         <span class="-horizontal-line"></span>
         <h5 class="-txt -subhead">our values</h5>
         <span class="-horizontal-line"></span>
       </div>
-      <div class="-values px-4">
+      <div class="-values">
         <p>dedication</p>
         <p>relevance</p>
         <p>excellence</p>
@@ -41,18 +41,21 @@
       </div>
     </div>
     <div class="-ourprograms -row">
-      <div class="-title-wrap px-4 flex-col">
-        <h5 class="-txt -subhead">our programs</h5>
-        <p class="-subline">Join us in God's presence</p>
-      </div>
-      <div class="-programs px-4">
-        <sProgram v-if="!globalState.programs?.length" v-for="(program, idx) in skeletonPrograms" :program="program"
-          :key="idx" />
-        <Program v-if="globalState.programs" v-for="(program, idx) in globalState.programs" :program="program"
-          :key="idx" />
+      <div class="-inner">
+
+        <div class="-title-wrap flex-col">
+          <h5 class="-txt -subhead">our programs</h5>
+          <p class="-subline">Join us in God's presence</p>
+        </div>
+        <div class="-programs">
+          <sProgram v-if="!globalState.programs?.length" v-for="(program, idx) in skeletonPrograms" :program="program"
+            :key="idx" />
+          <Program v-if="globalState.programs" v-for="(program, idx) in globalState.programs" :program="program"
+            :key="idx" />
+        </div>
       </div>
     </div>
-    <div class="-latestmessage -row">
+    <div class="-latestmessage -row -inner">
       <div class="-meet-our-pastors relative">
         <div class="-note absolute">
           <div class="-title">
@@ -80,7 +83,7 @@
         </div>
       </div>
     </div>
-    <div class="-blog relative -row">
+    <div class="-blog relative -row -inner">
       <div class="-title-wrap flex-col">
         <h5 class="-txt -subhead">blog</h5>
         <p class="-subline">A community board seasoned to rejuvinate your heart</p>
@@ -106,23 +109,43 @@
         <a href="/blog" class="-visitblog -btn">visit our blog</a>
       </div>
     </div>
+    <div class="-testify relative -row">
+      <div class="-inner">
+        <div class="-title-wrap">
+          <h5 class="-txt -subhead">testimonials</h5>
+          <p class="-subline">Read the life inspiring encounters of our members</p>
+        </div>
+        <div class="-testimonials relative">
+          <div class="-directionalbutton -prev absolute" data-dir="prev" data-type="testimonialbtn"></div>
+          <div class="-directionalbutton -next absolute" data-dir="next" data-type="testimonialbtn"></div>
+          <div class="-wrap relative">
+            <TestimonialCard v-for="(testimonial, idx) in globalState.testimonials" :class="idx === 0 ? 'active' : ''"
+              :key="idx" :testimonial="testimonial" />
+          </div>
+        </div>
+        <div class="-bottom">
+          <a href="/ourtestimonies" class="-btn -visitblog">share your testimony with us</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
 
 import { vSlide, vLoaded } from "~~/src/helpers/directives"
-import sProgram from "../skeletons/sProgram.vue";
 import Program from "../partials/Program.vue";
+import sProgram from "../skeletons/sProgram.vue";
 import BlogThumbnail from "../partials/BlogThumbnail.vue";
 import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
+import TestimonialCard from "../partials/TestimonialCard.vue";
 import { iBlog } from "~~/src/types";
 import { Controller } from "~~/src/helpers/controller";
 
 const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programs?.length as number) > 0)
 const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
- 
-let controller: Controller 
+
+let controller: Controller
 
 onMounted(() => {
   controller = new Controller()
@@ -229,11 +252,19 @@ onBeforeUnmount(() => {
   opacity: .8;
 }
 
+
 .-title-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding-bottom: 16px;
+  text-align: center;
+}
+
+.-ourvalues .-title-wrap {
+  padding-bottom: 16px;
+  flex-direction: row;
 }
 
 .-title-wrap span {
@@ -433,10 +464,10 @@ onBeforeUnmount(() => {
 }
 
 .-blog .-selected.active .-post {
-    transform: translateY(0%);
-    background-color: rgba(0,0,0,.8);
+  transform: translateY(0%);
+  background-color: rgba(0, 0, 0, .8);
 }
- 
+
 .-bottom {
   display: flex;
   justify-content: center;
@@ -444,6 +475,51 @@ onBeforeUnmount(() => {
   margin-top: 16px;
 }
 
+.-testify {
+  background-color: var(--rcnlightbg);
+}
+
+.-testify .-testimonials {
+  white-space: nowrap;
+  overflow-x: auto;
+  position: relative;
+}
+
+.-testify .-directionalbutton[data-dir=prev],
+.-testify .-directionalbutton[data-dir=next] {
+  top: 50%;
+}
+
+.-testify .-directionalbutton[data-dir=prev] {
+  left: 20%;
+  transform: translate(calc(-100% - 8px), -50%) scale(1);
+}
+
+.-testify .-directionalbutton[data-dir=next] {
+  left: calc(80% + 8px);
+  transform: translateY(-50%) scale(1);
+}
+
+#testimonials .-directionalbutton[data-dir=next] {
+  left: calc(80% + 8px);
+  transform: translateY(-50%) scale(1);
+}
+
+.-testify .-testimonials .-wrap {
+  width: 60%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 249px;
+}
+
+.-testify .-directionalbutton[data-dir=prev]::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.-testify .-directionalbutton[data-dir=next]::before {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
 
 @media screen and (max-width: 1024px) {
   .-rebirth-priesthood-transformation .-txt {
@@ -545,7 +621,17 @@ onBeforeUnmount(() => {
     grid-template-rows: calc((100% - 16px)/2) calc((100% - 16px)/2);
   }
 
+  .-testify .-testimonials .-wrap {
+    width: 80%;
+  }
 
+  .-testify .-directionalbutton[data-dir=next] {
+    left: calc(90% + 8px);
+  }
+
+  .-testify .-directionalbutton[data-dir=prev] {
+    left: 10%;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -605,12 +691,6 @@ onBeforeUnmount(() => {
   .-ourvalues .-values {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
-  }
-
-  .-title-wrap {
-    flex-direction: column;
-    padding-bottom: 16px;
-    text-align: center;
   }
 
   .-ourvalues .-title-wrap {
@@ -675,6 +755,32 @@ onBeforeUnmount(() => {
     width: 100%;
     text-align: center;
   }
+
+  .-testify .-testimonials .-wrap {
+    width: 100%;
+  }
+
+  .-testify .-directionalbutton[data-dir=next],
+  .-testify .-directionalbutton[data-dir=prev] {
+    background-color: rgba(0, 0, 0, .6);
+  }
+
+  .-testify .-directionalbutton[data-dir=next]::before,
+  .-testify .-directionalbutton[data-dir=prev]::before {
+    border-color: #fff;
+  }
+
+
+
+  .-testify .-directionalbutton[data-dir=prev] {
+    left: 8px;
+    transform: translate(0%, -50%) scale(1);
+  }
+
+  .-testify .-directionalbutton[data-dir=next] {
+    left: calc(100%);
+    transform: translate(calc(-100% - 8px), -50%) scale(1);
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -703,6 +809,10 @@ onBeforeUnmount(() => {
 
   .-latestmessage .-note .-watch-latest-message {
     font-size: 1.5em;
+  }
+
+  .-testify .-testimonials .-wrap {
+    height: 350px;
   }
 }
 

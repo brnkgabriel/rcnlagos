@@ -2,9 +2,7 @@
   <div class="font-body text-[13px] -main" data-type="main">
     <div class="-content" data-type="content">
       <Header />
-      <div class="-inner">
-        <slot></slot>
-      </div>
+      <slot></slot>
       <Footer />
     </div>
     <MobileNavigation />

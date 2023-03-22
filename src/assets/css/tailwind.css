@@ -7,9 +7,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #__nuxt {
+html,
+body,
+#__nuxt {
   @apply h-full
 }
+
 :root {
   --rcnaccentorange: #DA561D;
   --rcnaccentblue: #171332;
@@ -18,17 +21,19 @@ html, body, #__nuxt {
   --mainorange: #EC6600;
   --maindark: #333333;
   --rcnlighterbg: #F1F3F5;
-  --rcnlightbg: #E4E7EC; 
+  --rcnlightbg: #E4E7EC;
 }
 
-*,*::before, *::after {
+*,
+*::before,
+*::after {
 
   transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 body {
   color: var(--rcntext);
-}
+} 
 
 .-headfont {
   font-family: Figtree, Poppins;
@@ -86,17 +91,20 @@ body {
   transform: translate(-50%, -20%) rotate(45deg);
   opacity: .6;
 }
+
 .active .-directionalbutton::before {
   transform: translate(-50%, -55%) rotate(-135deg);
 }
+
 .-btn {
-  background: var(--rcnaccentorange); 
+  background: var(--rcnaccentorange);
   box-shadow: 0px 4px 20px -5px var(--rcnaccentorange);
   border-radius: 4px;
   padding: 8px 16px;
   color: white !important;
   text-transform: uppercase;
 }
+
 .-inner {
   width: 100%;
   max-width: 1290px;
@@ -134,7 +142,7 @@ body {
   animation: unset;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent)
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .3), transparent)
 }
 
 .-preloader.-loading::before {
@@ -143,13 +151,13 @@ body {
 
 @keyframes ssc-loading {
   from {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%)
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%)
   }
 
   to {
-      -webkit-transform: translateX(100%);
-      transform: translateX(100%)
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%)
   }
 }
 
@@ -159,7 +167,7 @@ body {
   height: 40px;
 }
 
- .search-btn {
+.search-btn {
   right: 8px;
   top: 0;
   width: 40px !important;
@@ -172,7 +180,7 @@ body {
   margin: unset !important;
 }
 
- .search-btn .spin-loader {
+.search-btn .spin-loader {
   border: 2px solid white;
   border-bottom-color: transparent;
   border-top-color: transparent;
@@ -205,6 +213,7 @@ body {
   height: 100%;
   z-index: 2;
 }
+
 .search-icon {
   width: 20px;
   height: 20px;
@@ -237,4 +246,5 @@ body {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
 /* ======================== end search icon ========================== */

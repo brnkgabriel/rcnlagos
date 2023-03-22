@@ -4,7 +4,8 @@ export class Controller {
   private selectedBlogImgWrap: HTMLElement;
   private selectedBlog: HTMLElement;
   private selectedPostContent: HTMLElement; 
-  private siteContent: HTMLElement;  
+  private siteContent: HTMLElement; 
+  private testimonialIdx: number = 0
  
   constructor() {
 
@@ -30,6 +31,7 @@ export class Controller {
     switch (type) {
       case constants.BLOG: return this.updateBlog(target)
       case constants.BUTTON: return this.selectedBlog.classList.toggle(constants.ACTIVE)
+      case constants.TESTIMONIALBTN: return this.updateTestimonials(target)
     }
   }
 
@@ -44,5 +46,26 @@ export class Controller {
   chooseBlog(blog: iBlog) {
     this.selectedBlogImgWrap.innerHTML = `<img src=${blog.banner} alt="${blog.title}" />`
     this.selectedPostContent.innerHTML = blog.htmlContent as string
+  }
+
+  updateTestimonials(target: HTMLElement) {
+    const direction = target.getAttribute(constants.DATADIR);
+    this.testimonialIdx = direction === constants.NEXT ? this.testimonialIdx + 1 : this.testimonialIdx - 1
+    
+    const testimonials = all(constants.TESTIMONIALQUERY)
+
+    if (this.testimonialIdx === testimonials.length) {
+      this.testimonialIdx = 0
+    }
+
+    if (this.testimonialIdx < 0) {
+      this.testimonialIdx = testimonials.length - 1
+    }
+
+    testimonials.forEach((testimonial: Element) => testimonial.classList.remove(constants.ACTIVE))
+    testimonials[this.testimonialIdx].classList.add(constants.ACTIVE)
+
+    console.log("testimonial idx is", this.testimonialIdx)
+    
   }
 }
