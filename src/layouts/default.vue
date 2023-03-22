@@ -5,8 +5,8 @@
       <slot></slot>
       <Footer />
     </div>
-    <MobileNavigation />
-  </div>
+    <!-- <MobileNavigation /> -->
+  </div> 
 </template>
 <script setup lang="ts">
 import Header from '../components/partials/Header.vue';

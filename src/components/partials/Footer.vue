@@ -92,6 +92,9 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
 
 </script>
 <style scoped>
+.-footer {
+  overflow: hidden;
+}
 .-footer .-links {
   padding-top: 24px;
   padding-bottom: 24px;
