@@ -14,7 +14,7 @@
         <a href="https://rcnministry.org/">RCN Global</a>
         <NuxtLink href="/programs">Our Programs</NuxtLink>
         <NuxtLink href="/events/?q=past">Our Sermons</NuxtLink>
-        <NuxtLink href="/events">Events</NuxtLink>
+        <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
       </div>
       <div class="-col">
         <h5 class="-links-category">resources</h5>
