@@ -128,7 +128,7 @@
         </div>
       </div>
     </div>
-    <div class="-subscription-upcoming relative px-4 -row">
+    <div class="-subscription-upcoming relative px-4 -row -inner">
       <div class="-subup -subscription">
         <div class="-title-wrap">
           <h5 class="-txt -subhead">join our community</h5>
@@ -143,6 +143,10 @@
           </button>
         </div>
         <p class="-status" data-type="error"></p>
+        <p class="flex justify-start items-center gap-1">
+          <span>Your data is safe in our hands</span>
+          <NuxtLink class="underline font-semibold" href="/privacy">Privacy Policy</NuxtLink>
+        </p>
       </div>
       <div class="-subup -upcoming">
         <div class="-title-wrap">
@@ -547,14 +551,13 @@ onBeforeUnmount(() => {
 
 .-testify .-directionalbutton[data-dir=next]::before {
   transform: translate(-50%, -50%) rotate(135deg);
-}
-
+} 
 .-subscription-upcoming {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  width: 60%;
-  margin: 0 auto;
+  max-width: 768px;
+  align-items: center;
 }
 
 .-subscription-upcoming .-subup {
@@ -582,6 +585,12 @@ onBeforeUnmount(() => {
 
 .-upcoming .-title-wrap {
   padding-bottom: unset;
+}
+
+.-subscription-upcoming .-subup .-form-field .-btn,
+.-upcoming-register-btn {
+  width: 100%;
+  text-align: center;
 }
 
 @media screen and (max-width: 1024px) {
@@ -699,7 +708,7 @@ onBeforeUnmount(() => {
   .-subscription-upcoming {
     grid-template-columns: repeat(1, 1fr);
     width: 80%;
-  } 
+  }
 
   .-subscription-upcoming .-subup .-form-field,
   .-subscription-upcoming .-subup {
@@ -860,18 +869,11 @@ onBeforeUnmount(() => {
     left: calc(100%);
     transform: translate(calc(-100% - 8px), -50%) scale(1);
   }
-  .-subscription-upcoming { 
-    width: 100%;
-  }
-  
-  .-subscription-upcoming .-subup .-form-field .-btn {
+
+  .-subscription-upcoming {
     width: 100%;
   }
 
-  .-upcoming-register-btn {
-    width: 100%;
-    text-align: center;
-  }
 }
 
 @media screen and (max-width: 420px) {
