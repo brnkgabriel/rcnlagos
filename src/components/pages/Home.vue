@@ -134,7 +134,7 @@
           <h5 class="-txt -subhead">join our community</h5>
           <p class="-subline">Get the latest updates about our programs, blogs and other public related activities</p>
         </div>
-        <form @submit.prevent="postData" class="-form-field">
+        <form @submit.prevent="dummyFxn" class="-form-field">
           <input v-model="email" type="email" class="-subscribe" placeholder="Email address" required />
           <button type="submit" class="-btn relative">
             <span class="-clickable absolute" data-type="subscribe"></span>
@@ -179,32 +179,27 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
 
 const email = ref("")
 
-const postData = async () => {
-  const options = {
-    headers: { "Content-type": "multipart/form-data" },
-    method: 'POST',
-    body: {
-      date: new Date().toLocaleString(),
-      email: email.value,
-      type: constants.SUBSCRIPTION
-    },
-    params: {
-      table: "",
-      column: "",
-      value: "",
-      update: "",
-      foreignkey: ""
-    }
-  }
+const dummyFxn = async () => {
+  console.log("call from dataFxn")
+  // const options = {
+  //   headers: { "Content-type": "multipart/form-data" },
+  //   method: 'POST',
+  //   body: {
+  //     date: new Date().toLocaleString(),
+  //     email: email.value,
+  //     type: constants.SUBSCRIPTION
+  //   }
+  // }
 
-  try {
+  // try {
 
-    const response = await useFetch(constants.POSTAPI, options)
+  //   const response = await useFetch(constants.POSTAPI, options)
 
-    console.log("response", response)
-  } catch (error: any) {
-    console.log("error is", error)
-  }
+  //   console.log("response data from post", response.data.value)
+  //   console.log("response error from post", response.error.value)
+  // } catch (error: any) {
+  //   console.log("error from post is", error)
+  // }
 }
 
 let controller: Controller
@@ -597,20 +592,13 @@ onBeforeUnmount(() => {
   row-gap: 8px;
 }
 
-.-subscription-upcoming .-subup .-form-field {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 8px;
-  width: 100%;
-}
 
 .-subscription-upcoming .-subup .-img {
   width: 100%;
 }
 
 .-subscription-upcoming .-subup input {
-  width: 100%;
+  width: 100%; 
 }
 
 .-upcoming .-title-wrap {
@@ -621,6 +609,34 @@ onBeforeUnmount(() => {
 .-upcoming-register-btn {
   width: 100%;
   text-align: center;
+}
+
+.-subscription-upcoming .-subup .-form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8px;
+  width: 100%; 
+}
+
+.-subscription-upcoming .-subup.-loading {
+  pointer-events: none;
+}
+
+.-subscription-upcoming .-subup .-btn .-txt {
+  display: block;
+}
+.-subscription-upcoming .-subup.-loading .-btn .-txt {
+  display: none;
+}
+
+.-subscription-upcoming .-subup .-btn .-spin-loader {
+  display: none;
+}
+
+.-subscription-upcoming .-subup.-loading .-btn .-spin-loader {
+  display: block;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1024px) {

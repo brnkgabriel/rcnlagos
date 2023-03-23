@@ -19,9 +19,7 @@ const { setGlobals } = useGlobals()
 const { data, refresh } = await useLazyFetch(() => constants.API)
 
 watch(data, () => {
-  const globals: iGlobal = data.value as iGlobal
-
-  console.log("remote global data is", globals)
+  const globals: iGlobal = data.value as iGlobal 
   setGlobals(globals)
 })
 
