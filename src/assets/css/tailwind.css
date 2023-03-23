@@ -51,6 +51,8 @@ textarea {
   line-height: 2;
 }
 
+select,
+textarea,
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -77,6 +79,8 @@ textarea {
   box-shadow: 0px 0px 0px -7px rgba(0, 0, 0, 0);
 }
 
+select:focus,
+textarea:focus,
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,

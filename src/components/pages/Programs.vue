@@ -2,8 +2,8 @@
   <div class="-programs">
     <div class="-hero-section -inner -row px-4 relative">
       <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video fixed"></iframe>
-      <div class="-filters -inner fixed">
-        <h5 class="-selection">selection</h5>
+      <div class="-filters -inner sticky">
+        <h5 class="-program-selection -subhead">Programs</h5>
         <div class="relative -form-control -categories">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="-select-category-icon absolute">
@@ -28,9 +28,9 @@
       </div>
       <div class="-video-n-filters relative">
         <div class="-caption absolute">
-          <h1 class="-mainline">Encountering the Word</h1>
+          <h1 class="-mainline -headfont">Encountering the Word</h1>
           <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
-          <a href="#" class="-btn">subscribe</a>
+          <a href="#" class="-btn -subscribe">subscribe</a>
         </div>
         <img
           src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/events%2Fevents.jpg?alt=media&amp;token=8974f87a-e41f-41a4-b7c6-3623f39f2a10"
@@ -182,9 +182,10 @@
   gap: 8px;
   z-index: 2;
   background-color: #fff;
-  padding: 8px 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 8px 0px;
+  top: 72px;
+  left: 0;
+  z-index: 2;
 }
 
 .-hero-section .-filters .-categories .-select-category-icon,
@@ -194,6 +195,57 @@
   left: 8px;
   width: 24px;
   height: 24px;
+}
+
+.-hero-section .-filters #selectCategory,
+.-hero-section .-filters .-search .-search-input {
+  padding-left: 56px;
+  height: 40px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.-hero-section .-filters .-program-selection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.-video-n-filters .-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 8%;
+  width: 32.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 16px;
+  z-index: 1;
+}
+
+.-video-n-filters {
+  background-color: black;
+}
+
+.-video-n-filters .-caption .-mainline {
+  color: white;
+  font-size: 60px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.-video-n-filters .-caption .-subline {
+  color: white;
+}
+
+.-video-n-filters .-caption .-subscribe.-btn {
+  width: fit-content;
+}
+
+.-video-n-filters img {
+  opacity: .6;
 }
 
 @media screen and (max-width: 1024px) {}
