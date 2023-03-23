@@ -39,7 +39,7 @@
           </div>
           <div class="-right">
             <p>starts in</p>
-            <span>4d : 3h : 50m : 2s</span>
+            <span>4d : 3h : 50m : 20s</span>
           </div>
         </div>
         <img
@@ -47,126 +47,54 @@
           alt="events hero">
       </div>
       <div class="-catalog">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique expedita fugit ipsa necessitatibus ut.
-        Incidunt
-        nam beatae recusandae, modi itaque non! Numquam eius tempore explicabo unde aspernatur dolor eveniet molestias?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur praesentium consequatur quas? Sit velit,
-        tempore magni perferendis voluptatibus sequi suscipit! Nobis dolores dignissimos harum fugiat voluptatem, odit
-        earum
-        iusto placeat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi impedit quos aperiam explicabo
-        facere
-        magni fugiat doloremque officiis cupiditate sunt sint optio blanditiis qui praesentium, vitae nam? Eos, assumenda
-        at. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequuntur animi praesentium, sint doloremque
-        expedita eveniet aperiam cumque nesciunt voluptate inventore quidem ea, facilis quam quis consequatur, temporibus
-        reprehenderit voluptates? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quidem voluptatum
-        architecto, aut aperiam quas debitis incidunt itaque! Consequatur, sed impedit? Quod cumque ratione accusamus
-        quidem
-        unde corrupti necessitatibus! Repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-        libero
-        deserunt, quidem illum labore aliquam expedita praesentium velit, excepturi minima, mollitia accusantium nulla
-        dolor! Nostrum nam fugiat culpa odio dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-        culpa dolor ipsa. Adipisci enim quos, illo blanditiis culpa repudiandae repellendus repellat commodi
-        exercitationem?
-        Tempora voluptatum dolores quod libero veritatis nemo. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Veniam reiciendis est veritatis qui nam adipisci tenetur accusamus quia, incidunt quam, doloribus dignissimos
-        quis,
-        earum voluptatem ullam! Fugit sit praesentium delectus?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique expedita fugit ipsa necessitatibus ut.
-        Incidunt
-        nam beatae recusandae, modi itaque non! Numquam eius tempore explicabo unde aspernatur dolor eveniet molestias?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur praesentium consequatur quas? Sit velit,
-        tempore magni perferendis voluptatibus sequi suscipit! Nobis dolores dignissimos harum fugiat voluptatem, odit
-        earum
-        iusto placeat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi impedit quos aperiam explicabo
-        facere
-        magni fugiat doloremque officiis cupiditate sunt sint optio blanditiis qui praesentium, vitae nam? Eos, assumenda
-        at. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequuntur animi praesentium, sint doloremque
-        expedita eveniet aperiam cumque nesciunt voluptate inventore quidem ea, facilis quam quis consequatur, temporibus
-        reprehenderit voluptates? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quidem voluptatum
-        architecto, aut aperiam quas debitis incidunt itaque! Consequatur, sed impedit? Quod cumque ratione accusamus
-        quidem
-        unde corrupti necessitatibus! Repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-        libero
-        deserunt, quidem illum labore aliquam expedita praesentium velit, excepturi minima, mollitia accusantium nulla
-        dolor! Nostrum nam fugiat culpa odio dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-        culpa dolor ipsa. Adipisci enim quos, illo blanditiis culpa repudiandae repellendus repellat commodi
-        exercitationem?
-        Tempora voluptatum dolores quod libero veritatis nemo. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Veniam reiciendis est veritatis qui nam adipisci tenetur accusamus quia, incidunt quam, doloribus dignissimos
-        quis,
-        earum voluptatem ullam! Fugit sit praesentium delectus?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique expedita fugit ipsa necessitatibus ut.
-        Incidunt
-        nam beatae recusandae, modi itaque non! Numquam eius tempore explicabo unde aspernatur dolor eveniet molestias?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur praesentium consequatur quas? Sit velit,
-        tempore magni perferendis voluptatibus sequi suscipit! Nobis dolores dignissimos harum fugiat voluptatem, odit
-        earum
-        iusto placeat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi impedit quos aperiam explicabo
-        facere
-        magni fugiat doloremque officiis cupiditate sunt sint optio blanditiis qui praesentium, vitae nam? Eos, assumenda
-        at. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequuntur animi praesentium, sint doloremque
-        expedita eveniet aperiam cumque nesciunt voluptate inventore quidem ea, facilis quam quis consequatur, temporibus
-        reprehenderit voluptates? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quidem voluptatum
-        architecto, aut aperiam quas debitis incidunt itaque! Consequatur, sed impedit? Quod cumque ratione accusamus
-        quidem
-        unde corrupti necessitatibus! Repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-        libero
-        deserunt, quidem illum labore aliquam expedita praesentium velit, excepturi minima, mollitia accusantium nulla
-        dolor! Nostrum nam fugiat culpa odio dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-        culpa dolor ipsa. Adipisci enim quos, illo blanditiis culpa repudiandae repellendus repellat commodi
-        exercitationem?
-        Tempora voluptatum dolores quod libero veritatis nemo. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Veniam reiciendis est veritatis qui nam adipisci tenetur accusamus quia, incidunt quam, doloribus dignissimos
-        quis,
-        earum voluptatem ullam! Fugit sit praesentium delectus?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique expedita fugit ipsa necessitatibus ut.
-        Incidunt
-        nam beatae recusandae, modi itaque non! Numquam eius tempore explicabo unde aspernatur dolor eveniet molestias?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur praesentium consequatur quas? Sit velit,
-        tempore magni perferendis voluptatibus sequi suscipit! Nobis dolores dignissimos harum fugiat voluptatem, odit
-        earum
-        iusto placeat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi impedit quos aperiam explicabo
-        facere
-        magni fugiat doloremque officiis cupiditate sunt sint optio blanditiis qui praesentium, vitae nam? Eos, assumenda
-        at. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequuntur animi praesentium, sint doloremque
-        expedita eveniet aperiam cumque nesciunt voluptate inventore quidem ea, facilis quam quis consequatur, temporibus
-        reprehenderit voluptates? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quidem voluptatum
-        architecto, aut aperiam quas debitis incidunt itaque! Consequatur, sed impedit? Quod cumque ratione accusamus
-        quidem
-        unde corrupti necessitatibus! Repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-        libero
-        deserunt, quidem illum labore aliquam expedita praesentium velit, excepturi minima, mollitia accusantium nulla
-        dolor! Nostrum nam fugiat culpa odio dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-        culpa dolor ipsa. Adipisci enim quos, illo blanditiis culpa repudiandae repellendus repellat commodi
-        exercitationem?
-        Tempora voluptatum dolores quod libero veritatis nemo. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Veniam reiciendis est veritatis qui nam adipisci tenetur accusamus quia, incidunt quam, doloribus dignissimos
-        quis,
-        earum voluptatem ullam! Fugit sit praesentium delectus?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique expedita fugit ipsa necessitatibus ut.
-        Incidunt
-        nam beatae recusandae, modi itaque non! Numquam eius tempore explicabo unde aspernatur dolor eveniet molestias?
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur praesentium consequatur quas? Sit velit,
-        tempore magni perferendis voluptatibus sequi suscipit! Nobis dolores dignissimos harum fugiat voluptatem, odit
-        earum
-        iusto placeat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi impedit quos aperiam explicabo
-        facere
-        magni fugiat doloremque officiis cupiditate sunt sint optio blanditiis qui praesentium, vitae nam? Eos, assumenda
-        at. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequuntur animi praesentium, sint doloremque
-        expedita eveniet aperiam cumque nesciunt voluptate inventore quidem ea, facilis quam quis consequatur, temporibus
-        reprehenderit voluptates? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quidem voluptatum
-        architecto, aut aperiam quas debitis incidunt itaque! Consequatur, sed impedit? Quod cumque ratione accusamus
-        quidem
-        unde corrupti necessitatibus! Repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-        libero
-        deserunt, quidem illum labore aliquam expedita praesentium velit, excepturi minima, mollitia accusantium nulla
-        dolor! Nostrum nam fugiat culpa odio dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-        culpa dolor ipsa. Adipisci enim quos, illo blanditiis culpa repudiandae repellendus repellat commodi
-        exercitationem?
-        Tempora voluptatum dolores quod libero veritatis nemo. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Veniam reiciendis est veritatis qui nam adipisci tenetur accusamus quia, incidunt quam, doloribus dignissimos
-        quis,
-        earum voluptatem ullam! Fugit sit praesentium delectus?
+        <div class="-program">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving.png?alt=media&token=5de7c097-2e0f-4a3a-898c-45b18f158c39"
+            alt="" />
+          <div class="-details">
+            <h5 class="-subhead">concerning giving and receiving</h5>
+            <div class="-ctas">
+              <h5 class="-minister">Rev. John Adetola</h5>
+              <div class="-btn">play</div>
+            </div>
+          </div>
+        </div>
+        <div class="-program">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving.png?alt=media&token=5de7c097-2e0f-4a3a-898c-45b18f158c39"
+            alt="" />
+          <div class="-details">
+            <h5 class="-subhead">concerning giving and receiving</h5>
+            <div class="-ctas">
+              <h5 class="-minister">Rev. John Adetola</h5>
+              <div class="-btn">play</div>
+            </div>
+          </div>
+        </div>
+        <div class="-program">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving.png?alt=media&token=5de7c097-2e0f-4a3a-898c-45b18f158c39"
+            alt="" />
+          <div class="-details">
+            <h5 class="-subhead">concerning giving and receiving</h5>
+            <div class="-ctas">
+              <h5 class="-minister">Rev. John Adetola</h5>
+              <div class="-btn">play</div>
+            </div>
+          </div>
+        </div>
+        <div class="-program">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving.png?alt=media&token=5de7c097-2e0f-4a3a-898c-45b18f158c39"
+            alt="" />
+          <div class="-details">
+            <h5 class="-subhead">concerning giving and receiving</h5>
+            <div class="-ctas">
+              <h5 class="-minister">Rev. John Adetola</h5>
+              <div class="-btn">play</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -174,6 +102,9 @@
 <script setup lang="ts">
 </script>
 <style scoped>
+.-programs {
+  background-color: var(--rcnlightbg);
+}
 .-hero-section .-video {
   border: unset;
   border-radius: 4px;
@@ -192,7 +123,7 @@
   gap: 8px;
   z-index: 2;
   background-color: #fff;
-  padding: 8px 0px;
+  padding: 8px;
   top: 72px;
   left: 0;
   z-index: 2;
@@ -281,12 +212,44 @@
   color: white;
 }
 
-.-video-n-filters .-upcoming-program h5 { 
+.-video-n-filters .-upcoming-program h5 {
   text-transform: uppercase;
 }
 
 .-video-n-filters .-upcoming-program span {}
 
+.-programs .-catalog {
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.-programs .-catalog .-program {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+}
+
+.-programs .-catalog .-program .-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  padding: 8px;
+}
+
+.-programs .-catalog .-program .-details > h5 {
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 95%;
+}
+.-programs .-catalog .-program .-details .-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 @media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 768px) {}

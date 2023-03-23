@@ -7,13 +7,9 @@ export default defineEventHandler(async (event: H3Event) => {
     const query = getQuery(event) as iQuery
     const data = await readBody(event) as iSubscribe
 
-    console.log("query", query, "data", data)
-
     const options: iOptions = { ...query, data }
 
     const response = await checkAndStoreDoc(options)
-
-    console.log("response", response)
 
     return response
   } catch (error: any) {
@@ -22,7 +18,6 @@ export default defineEventHandler(async (event: H3Event) => {
       success: false,
       message: error.message
     }
-    console.log("response", response)
     return response
   }
 }) 

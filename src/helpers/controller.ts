@@ -1,4 +1,4 @@
-import { iBlog, iError, iSubscribe } from "../types";
+import { iBlog, iSubscribe } from "../types";
 
 export class Controller {
   private selectedBlogImgWrap: HTMLElement;
@@ -94,21 +94,15 @@ export class Controller {
       }
     }
 
-    const response = await useFetch(constants.SUBSCRIBEAPI, options) 
+    const { data } = await useFetch(constants.SUBSCRIBEAPI, options)
+    
+    const remoteData = data.value as iSubscribe
 
     this.subscriptionWrap.classList.remove("-loading") 
-    this.handleResponse(response)
+    this.handleResponse(remoteData)
   }
 
-  handleResponse(response: any) {
-    let data: iSubscribe
-
-    if (response.data.value) {
-      data = response.data.value as iSubscribe
-    } else {
-      console.log("response.error.value", response.error.value)
-      data = { error: false, message: "Successfully subscribed", success: true }
-    } 
+  handleResponse(data: iSubscribe) { 
     this.subscriptionWrap.classList.remove("-loading")
     this.subscriptionStatus.textContent = data.message as string
     this.subscriptionStatus.setAttribute("data-type", data.error ? constants.ERROR : constants.SUCCESS)
