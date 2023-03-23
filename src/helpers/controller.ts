@@ -80,7 +80,8 @@ export class Controller {
     const email = this.subscribeInput.value
     this.subscriptionWrap.classList.add("-loading")
     const options = {
-      headers: { "Content-type": "multipart/form-data" },
+      // headers: { "Content-type": "multipart/form-data" },
+      headers: { "Content-type": "application/json" },
       method: 'POST',
       body: {
         date: new Date().toLocaleString(),
