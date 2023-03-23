@@ -128,6 +128,34 @@
         </div>
       </div>
     </div>
+    <div class="-subscription-upcoming relative px-4 -row">
+      <div class="-subup -subscription">
+        <div class="-title-wrap">
+          <h5 class="-txt -subhead">join our community</h5>
+          <p class="-subline">Get the latest updates about our programs, blogs and other public related activities</p>
+        </div>
+        <div class="-form-field">
+          <input type="email" class="-subscribe" placeholder="Email address" required />
+          <button type="submit" class="-btn relative">
+            <span class="-clickable -posabs" data-type="subscribe"></span>
+            <span class="-spin-loader"></span>
+            <span class="-txt">subscribe</span>
+          </button>
+        </div>
+        <p class="-status" data-type="error"></p>
+      </div>
+      <div class="-subup -upcoming">
+        <div class="-title-wrap">
+          <h5 class="-txt -subhead">upcoming event</h5>
+        </div>
+        <div class="-img">
+          <img decoding="async" class="-upcoming-img"
+            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving-2.png?alt=media&amp;token=37de2dfa-bc4f-4794-b3c8-8f7a35e16c83"
+            alt="upcoming event">
+        </div>
+        <a href="#" type="submit" class="-btn -upcoming-register-btn">register</a>
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -521,6 +549,41 @@ onBeforeUnmount(() => {
   transform: translate(-50%, -50%) rotate(135deg);
 }
 
+.-subscription-upcoming {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.-subscription-upcoming .-subup {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.-subscription-upcoming .-subup .-form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8px;
+  width: 100%;
+}
+
+.-subscription-upcoming .-subup .-img {
+  width: 100%;
+}
+
+.-subscription-upcoming .-subup input {
+  width: 100%;
+}
+
+.-upcoming .-title-wrap {
+  padding-bottom: unset;
+}
+
 @media screen and (max-width: 1024px) {
   .-rebirth-priesthood-transformation .-txt {
     font-size: 28px;
@@ -631,6 +694,21 @@ onBeforeUnmount(() => {
 
   .-testify .-directionalbutton[data-dir=prev] {
     left: 10%;
+  }
+
+  .-subscription-upcoming {
+    grid-template-columns: repeat(1, 1fr);
+    width: 80%;
+  } 
+
+  .-subscription-upcoming .-subup .-form-field,
+  .-subscription-upcoming .-subup {
+    align-items: center;
+  }
+
+  .-subscription-upcoming .-subup .-img,
+  .-subscription-upcoming .-subup .-img img {
+    width: 100%;
   }
 }
 
@@ -781,6 +859,18 @@ onBeforeUnmount(() => {
   .-testify .-directionalbutton[data-dir=next] {
     left: calc(100%);
     transform: translate(calc(-100% - 8px), -50%) scale(1);
+  }
+  .-subscription-upcoming { 
+    width: 100%;
+  }
+  
+  .-subscription-upcoming .-subup .-form-field .-btn {
+    width: 100%;
+  }
+
+  .-upcoming-register-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 

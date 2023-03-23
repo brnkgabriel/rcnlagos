@@ -27,6 +27,7 @@ export const constants = {
   DATADIR: "data-dir",
   NEXT: "next",
   PREV: "prev",
+  SUBSCRIBE: "subscribe",
   TESTIMONIALQUERY: ".-testimonial",
   SELECTEDBLOGIMGWRAPQUERY: ".-blog .-content .-selected .-imgwrap",
   SELECTEDBLOGQUERY: ".-blog .-content .-selected",

@@ -15,8 +15,6 @@
         <NuxtLink href="#">RCN President</NuxtLink>
         <NuxtLink href="/pastors">Our Pastors</NuxtLink>
         <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
-        <NuxtLink href="/request">Prayer Request</NuxtLink>
-        <NuxtLink href="/testimony">Give Testimony</NuxtLink>
       </div>
       <div class="-col">
         <h5 class="-links-category">resources</h5>
@@ -25,6 +23,8 @@
         <NuxtLink href="/blog">Blog</NuxtLink>
         <NuxtLink href="/contact">Contact Us</NuxtLink>
         <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
+        <NuxtLink href="/request">Prayer Request</NuxtLink>
+        <NuxtLink href="/testimony">Give Testimony</NuxtLink>
       </div>
       <div class="-col -somedia-partner">
         <h5 class="-links-category">follow us</h5>

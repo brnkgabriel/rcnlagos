@@ -17,7 +17,7 @@ body,
   --rcnaccentorange: #DA561D;
   --rcnaccentblue: #171332;
   --rcntext: #42526E;
-
+  --darkgray:#CBD5E0;
   --mainorange: #EC6600;
   --maindark: #333333;
   --rcnlighterbg: #F1F3F5;
@@ -33,7 +33,65 @@ body,
 
 body {
   color: var(--rcntext);
-} 
+}
+
+input,
+select,
+optgroup,
+textarea {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  -webkit-appearance: none;
+  color: var(--rcntext);
+  border: 1px solid var(--darkgray);
+  border-radius: 3px;
+  padding: 0.4em 0.5em;
+  max-width: 100%;
+  background: white;
+  box-shadow: 0px 0px 0px -7px rgba(0, 0, 0, 0);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  color: var(--rcnaccentblue);
+  border-color: var(--rcntext);
+  outline: 0;
+  box-shadow: 0px 5px 15px -7px rgba(0, 0, 0, 0.1);
+}
 
 .-headfont {
   font-family: Figtree, Poppins;
