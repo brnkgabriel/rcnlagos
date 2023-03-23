@@ -86,10 +86,14 @@ export class Controller {
         date: new Date().toLocaleString(),
         email,
         type: constants.SUBSCRIPTION
+      },
+      params: {
+        col: "rcnlagos",
+        id: "subscribers"
       }
     }
 
-    const response = await useFetch(constants.POSTAPI, options) 
+    const response = await useFetch(constants.SUBSCRIBEAPI, options) 
 
     this.subscriptionWrap.classList.remove("-loading") 
     this.handleResponse(response)

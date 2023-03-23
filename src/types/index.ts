@@ -122,4 +122,13 @@ export interface iSubscribe {
 
 export interface iError {
   message?: string;
-} 
+}
+
+export interface iQuery {
+  col?: string;
+  id?: string;
+}
+
+export interface iOptions extends iQuery {
+  data?: any;
+}

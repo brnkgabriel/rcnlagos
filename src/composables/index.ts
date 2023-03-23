@@ -10,6 +10,7 @@ export const obj2Str = (obj: iDynamicObject) => Object.keys(obj)
 export const constants = {
   API: "/api/g-data",
   POSTAPI: "/api/p-data",
+  SUBSCRIBEAPI: "/api/subscribe",
   globals: "globals",
   maxItemsToLoad: 10,
   MOBILELINKTYPE: "mobile-link",

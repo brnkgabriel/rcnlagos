@@ -143,7 +143,7 @@
           </button>
         </form>
         <p class="-status" data-type="error"></p>
-        <p class="flex justify-start items-center gap-1">
+        <p class="-your-data">
           <span>Your data is safe in our hands</span>
           <NuxtLink class="underline font-semibold" href="/privacy">Privacy Policy</NuxtLink>
         </p>
@@ -670,6 +670,13 @@ onBeforeUnmount(() => {
   width: fit-content;
 }
 
+.-your-data {
+  display: flex;
+  column-gap: 4px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 @media screen and (max-width: 1024px) {
   .-rebirth-priesthood-transformation .-txt {
     font-size: 28px;
@@ -951,6 +958,11 @@ onBeforeUnmount(() => {
     width: 100%;
   }
 
+  .-your-data {
+    row-gap: 4px;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 420px) {
