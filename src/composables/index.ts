@@ -9,6 +9,7 @@ export const obj2Str = (obj: iDynamicObject) => Object.keys(obj)
 
 export const constants = {
   API: "/api/g-data",
+  POSTAPI: "/api/p-data",
   globals: "globals",
   maxItemsToLoad: 10,
   MOBILELINKTYPE: "mobile-link",
@@ -28,6 +29,8 @@ export const constants = {
   NEXT: "next",
   PREV: "prev",
   SUBSCRIBE: "subscribe",
+  POST: "post",
+  SUBSCRIPTION: "email subscription",
   TESTIMONIALQUERY: ".-testimonial",
   SELECTEDBLOGIMGWRAPQUERY: ".-blog .-content .-selected .-imgwrap",
   SELECTEDBLOGQUERY: ".-blog .-content .-selected",

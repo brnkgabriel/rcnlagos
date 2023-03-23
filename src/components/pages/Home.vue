@@ -134,14 +134,14 @@
           <h5 class="-txt -subhead">join our community</h5>
           <p class="-subline">Get the latest updates about our programs, blogs and other public related activities</p>
         </div>
-        <div class="-form-field">
-          <input type="email" class="-subscribe" placeholder="Email address" required />
+        <form @submit.prevent="postData" class="-form-field">
+          <input v-model="email" type="email" class="-subscribe" placeholder="Email address" required />
           <button type="submit" class="-btn relative">
-            <span class="-clickable -posabs" data-type="subscribe"></span>
+            <span class="-clickable absolute" data-type="subscribe"></span>
             <span class="-spin-loader"></span>
             <span class="-txt">subscribe</span>
           </button>
-        </div>
+        </form>
         <p class="-status" data-type="error"></p>
         <p class="flex justify-start items-center gap-1">
           <span>Your data is safe in our hands</span>
@@ -177,8 +177,37 @@ const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programs?.length as number) > 0)
 const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
 
-let controller: Controller
+const email = ref("")
 
+const postData = async () => {
+  const options = {
+    headers: { "Content-type": "multipart/form-data" },
+    method: 'POST',
+    body: {
+      date: new Date().toLocaleString(),
+      email: email.value,
+      type: constants.SUBSCRIPTION
+    },
+    params: {
+      table: "",
+      column: "",
+      value: "",
+      update: "",
+      foreignkey: ""
+    }
+  }
+
+  try {
+
+    const response = await useFetch(constants.POSTAPI, options)
+
+    console.log("response", response)
+  } catch (error: any) {
+    console.log("error is", error)
+  }
+}
+
+let controller: Controller
 onMounted(() => {
   controller = new Controller()
   controller.start()
@@ -551,7 +580,8 @@ onBeforeUnmount(() => {
 
 .-testify .-directionalbutton[data-dir=next]::before {
   transform: translate(-50%, -50%) rotate(135deg);
-} 
+}
+
 .-subscription-upcoming {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
