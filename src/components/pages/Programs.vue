@@ -32,6 +32,16 @@
           <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
           <a href="#" class="-btn -subscribe">subscribe</a>
         </div>
+        <div class="-upcoming-program absolute">
+          <div class="-left">
+            <h5 class="-subhead">upcoming program</h5>
+            <p>10 Hours Prayer | March Edition</p>
+          </div>
+          <div class="-right">
+            <p>starts in</p>
+            <span>4d : 3h : 50m : 2s</span>
+          </div>
+        </div>
         <img
           src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/events%2Fevents.jpg?alt=media&amp;token=8974f87a-e41f-41a4-b7c6-3623f39f2a10"
           alt="events hero">
@@ -248,6 +258,35 @@
   opacity: .6;
 }
 
+
+.-video-n-filters .-upcoming-program {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  width: 100%;
+  z-index: 1;
+  bottom: 0;
+}
+
+.-video-n-filters .-upcoming-program .-left {}
+
+.-video-n-filters .-upcoming-program .-right {}
+
+
+.-video-n-filters .-upcoming-program h5,
+.-video-n-filters .-upcoming-program p,
+.-video-n-filters .-upcoming-program span {
+  color: white;
+}
+
+.-video-n-filters .-upcoming-program h5 { 
+  text-transform: uppercase;
+}
+
+.-video-n-filters .-upcoming-program span {}
+
 @media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 768px) {}
@@ -256,4 +295,5 @@
 
 @media screen and (max-width: 420px) {}
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}
+</style>
