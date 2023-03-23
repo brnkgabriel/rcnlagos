@@ -12,7 +12,7 @@
         <h5 class="-links-category">ministry</h5>
         <NuxtLink href="/about">RCN Lagos</NuxtLink>
         <a href="https://rcnministry.org/">RCN Global</a>
-        <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+        <NuxtLink href="#">RCN President</NuxtLink>
         <NuxtLink href="/request">Prayer Request</NuxtLink>
         <NuxtLink href="/testimony">Give Testimony</NuxtLink>
       </div>
@@ -20,7 +20,7 @@
         <h5 class="-links-category">resources</h5>
         <NuxtLink href="/programs">Our Programs</NuxtLink>
         <NuxtLink href="/events/">Events</NuxtLink>
-        <NuxtLink href="/events/?q=past">Our Sermons</NuxtLink>
+        <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
         <NuxtLink href="/blog">Blog</NuxtLink>
         <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
       </div>
