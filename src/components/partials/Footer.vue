@@ -23,6 +23,7 @@
         <NuxtLink href="/programs">Our Programs</NuxtLink>
         <NuxtLink href="/events/">Events</NuxtLink>
         <NuxtLink href="/blog">Blog</NuxtLink>
+        <NuxtLink href="/contact">Contact Us</NuxtLink>
         <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
       </div>
       <div class="-col -somedia-partner">
@@ -109,6 +110,11 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   flex-direction: column;
   align-items: flex-start;
   row-gap: 4px;
+}
+
+.-col a {
+  display: block;
+  width: 100%;
 }
 
 .-col.-somedia-partner {
