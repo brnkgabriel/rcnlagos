@@ -22,6 +22,12 @@ body,
   --maindark: #333333;
   --rcnlighterbg: #F1F3F5;
   --rcnlightbg: #E4E7EC;
+  --green: #137333;
+  --green-bg: #e6f4ea;
+  --orange: #f68b1e;
+  --orange-bg: #fde7db;
+  --red: #a50e0e;
+  --red-bg: #fce8e6;
 }
 
 *,

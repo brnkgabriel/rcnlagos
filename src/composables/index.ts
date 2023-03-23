@@ -30,6 +30,11 @@ export const constants = {
   PREV: "prev",
   SUBSCRIBE: "subscribe",
   POST: "post",
+  SUCCESS: "success",
+  ERROR: "error",
+  INTERNALSERVERERROR: "500 Internal Server Error (/api/p-data)",
+  FAILEDTOFETCH: "Failed to fetch",
+  SUBSCRIPTIONSTATUSQUERY: ".-subscription-upcoming .-subup .-status",
   SUBSCRIPTION: "email subscription",
   TESTIMONIALQUERY: ".-testimonial",
   SELECTEDBLOGIMGWRAPQUERY: ".-blog .-content .-selected .-imgwrap",
@@ -38,7 +43,7 @@ export const constants = {
   SUBSCRIBEINPUTQUERY: ".-subscription-upcoming .-subup input",
   SELECTEDPOSTCONTENT: ".-blog .-content .-selected .-postcontent",
   SITECONTENT: "#__nuxt",
-  BLOGTHUMBNAILSQUERY: "#blog .-content .-thumbnails",
+  BLOGTHUMBNAILSQUERY: ".-blog .-content .-thumbnails",
 }
 
 export const operatingSystem = () => {

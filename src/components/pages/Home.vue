@@ -639,6 +639,37 @@ onBeforeUnmount(() => {
   margin: 0 auto;
 }
 
+
+.-subscription-upcoming .-subup .-status {
+  padding: 16px;
+  border-radius: 16px;
+  border: 2px dashed var(--green);
+  display: none;
+  width: 100%;
+}
+
+.-subscription-upcoming .-subup.-show-status .-status {
+  display: block;
+}
+.-subscription-upcoming .-subup .-status[data-type="error"] {
+  background-color: var(--red-bg);
+  color: var(--red);
+  border-color: var(--red);
+}
+.-subscription-upcoming .-subup .-status[data-type="success"] {
+  background-color: var(--green-bg);
+  color: var(--green);
+}
+
+.footer-social-wrap .-partner-btn {
+  background-color: #fff !important;
+  box-shadow: 0px 4px 20px -5px #fff !important;
+  color: var(--global-palette3) !important;
+  display: block;
+  margin-top: 10px;
+  width: fit-content;
+}
+
 @media screen and (max-width: 1024px) {
   .-rebirth-priesthood-transformation .-txt {
     font-size: 28px;

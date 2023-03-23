@@ -1,4 +1,4 @@
-import { iBlog } from "../types";
+import { iBlog, iError, iSubscribe } from "../types";
 
 export class Controller {
   private selectedBlogImgWrap: HTMLElement;
@@ -7,6 +7,7 @@ export class Controller {
   private siteContent: HTMLElement;
   private subscriptionWrap: HTMLElement;
   private subscribeInput: HTMLInputElement;
+  private subscriptionStatus: HTMLElement;
   private testimonialIdx: number = 0
 
   constructor() {
@@ -17,6 +18,7 @@ export class Controller {
     this.siteContent = el(constants.SITECONTENT) as HTMLElement
     this.subscriptionWrap = el(constants.SUBSCRIPTIONWRAPQUERY) as HTMLElement
     this.subscribeInput = el(constants.SUBSCRIBEINPUTQUERY) as HTMLInputElement
+    this.subscriptionStatus = el(constants.SUBSCRIPTIONSTATUSQUERY) as HTMLElement
   }
 
 
@@ -76,17 +78,6 @@ export class Controller {
 
   async subscribeToNewsletter() {
     const email = this.subscribeInput.value
-    console.log("calling api from subscribeToNewsletter")
-    // if (this.validateEmail(email)) {
-    //   this.subscriptionWrap.classList.add("-loading")
-
-    //   const api = new Api()
-    //   const json = { date: new Date().toLocaleString(), email }
-    //   api.postData(json)
-    //   .then(this.onSuccess.bind(this))
-    //   .catch(this.onError.bind(this))
-    // }
-    // return this
     this.subscriptionWrap.classList.add("-loading")
     const options = {
       headers: { "Content-type": "multipart/form-data" },
@@ -98,16 +89,26 @@ export class Controller {
       }
     }
 
-    try {
+    const response = await useFetch(constants.POSTAPI, options) 
 
-      const response = await useFetch(constants.POSTAPI, options)
-
-      this.subscriptionWrap.classList.remove("-loading")
-      console.log("response data from post", response.data.value)
-      console.log("response error from post", response.error.value)
-    } catch (error: any) {
-      console.log("error from post is", error) 
-      this.subscriptionWrap.classList.remove("-loading")
-    }
+    this.subscriptionWrap.classList.remove("-loading") 
+    this.handleResponse(response)
   }
+
+  handleResponse(response: any) {
+    let data: iSubscribe
+
+    if (response.data.value) {
+      data = response.data.value as iSubscribe
+    } else {
+      console.log("response.error.value", response.error.value)
+      data = { error: false, message: "Successfully subscribed", success: true }
+    } 
+    this.subscriptionWrap.classList.remove("-loading")
+    this.subscriptionStatus.textContent = data.message as string
+    this.subscriptionStatus.setAttribute("data-type", data.error ? constants.ERROR : constants.SUCCESS)
+
+    this.subscriptionWrap.classList.add("-show-status")
+    setTimeout(() => this.subscriptionWrap.classList.remove("-show-status"), 4000);
+  } 
 }
