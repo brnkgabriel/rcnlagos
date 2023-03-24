@@ -1,27 +1,24 @@
 <template>
   <div class="-pastor relative">
     <div class="-img relative">
-      <img class="-icon" src="/images/icon_500x500.png" alt="icon" />
-      <img v-loaded class="-picture absolute opacity-0" :src="pastor.image" :alt="pastor.name" />
+      <img class="-icon" src="/images/680x680.png" alt="icon" /> 
     </div>
     <div class="-detail">
-      <h5 class="-name">{{ pastor.name }}</h5>
-      <div class="-cta">
-        <span>view profile</span>
-        <span>🠒</span>
+      <h5 class="-name h-[19.5px] w-full">{{ pastor.name }}</h5>
+      <div class="-cta h-[19.5px] w-3/4">
+        <span></span>
+        <span></span>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { iPastorate } from '~~/src/types';
-import { vLoaded } from '~~/src/helpers/directives';
 
 defineProps<{
   pastor: iPastorate
 }>()
 </script>
-
 <style scoped>
 .-pastor {
   cursor: pointer;
@@ -35,16 +32,19 @@ defineProps<{
   font-weight: 600;
   text-transform: capitalize;
   text-align: center;
+  background-color: var(--rcnlightbg);
 }
 
-.-pastor .-detail{
-    display: flex;
-    flex-direction: column;
-    row-gap: 4px;
-    padding: 8px;
-    background-color: white;
-    box-shadow: var(--box-shadow);
-    border-radius: 4px;
+.-pastor .-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+  padding: 8px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  width: 90%;
 }
 
 .-pastor .-img {
@@ -60,8 +60,7 @@ defineProps<{
   transform: translate(-50%, -50%);
 }
 
-.-pastor .-img .-icon { 
-}
+.-pastor .-img .-icon {}
 
 .-pastor .-img .-picture {
   top: 70%;
@@ -72,26 +71,12 @@ defineProps<{
   justify-content: center;
   align-items: center;
   column-gap: 4px;
+  background-color: var(--rcnlightbg);
 }
 
 .-pastor .-cta span {
   text-transform: uppercase;
 }
 
-.-pastor .-icon {
-  
-}
-@media screen and (max-width: 1024px) {
-  
-}
-
-@media screen and (max-width: 768px) {
-
-}
-
-@media screen and (max-width: 576px) {}
-
-@media screen and (max-width: 420px) {}
-
-@media screen and (min-width: 320px) and (max-width: 420px) {}
+.-pastor .-icon {}
 </style>
