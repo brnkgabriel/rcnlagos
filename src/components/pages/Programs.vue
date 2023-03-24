@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="-catalog">
-        <RecordedProgram v-for="(program, idx) in globalState.events" :key="idx" :program="program"
+        <RecordedProgram v-for="(program, idx) in reorder(globalState.events)" :key="idx" :program="program"
           @click="showVideo(program)" />
       </div>
     </div>
