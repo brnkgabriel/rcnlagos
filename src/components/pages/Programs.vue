@@ -1,7 +1,7 @@
 <template>
   <div class="-programs">
     <div class="-hero-section -inner px-4 relative">
-      <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video fixed"></iframe>
+      <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video fixed" :class="{ show }"></iframe>
       <div class="-filters -inner sticky">
         <h5 class="-program-selection -subhead">Programs</h5>
         <div class="relative -form-control -categories">
@@ -47,59 +47,19 @@
           alt="events hero">
       </div>
       <div class="-catalog">
-        <div class="-program">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving.png?alt=media&token=5de7c097-2e0f-4a3a-898c-45b18f158c39"
-            alt="" />
-          <div class="-details">
-            <h5 class="-subhead">concerning giving and receiving</h5>
-            <div class="-ctas">
-              <h5 class="-minister">Rev. John Adetola</h5>
-              <div class="-btn">play</div>
-            </div>
-          </div>
-        </div>
-        <div class="-program">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving.png?alt=media&token=5de7c097-2e0f-4a3a-898c-45b18f158c39"
-            alt="" />
-          <div class="-details">
-            <h5 class="-subhead">concerning giving and receiving</h5>
-            <div class="-ctas">
-              <h5 class="-minister">Rev. John Adetola</h5>
-              <div class="-btn">play</div>
-            </div>
-          </div>
-        </div>
-        <div class="-program">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving.png?alt=media&token=5de7c097-2e0f-4a3a-898c-45b18f158c39"
-            alt="" />
-          <div class="-details">
-            <h5 class="-subhead">concerning giving and receiving</h5>
-            <div class="-ctas">
-              <h5 class="-minister">Rev. John Adetola</h5>
-              <div class="-btn">play</div>
-            </div>
-          </div>
-        </div>
-        <div class="-program">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving.png?alt=media&token=5de7c097-2e0f-4a3a-898c-45b18f158c39"
-            alt="" />
-          <div class="-details">
-            <h5 class="-subhead">concerning giving and receiving</h5>
-            <div class="-ctas">
-              <h5 class="-minister">Rev. John Adetola</h5>
-              <div class="-btn">play</div>
-            </div>
-          </div>
-        </div>
+        <RecordedProgram v-for="(program, idx) in globalState.events" :key="idx" :program="program" @click="showVideo" />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+import RecordedProgram from '../partials/RecordedProgram.vue';
+
+const show = ref(false)
+
+const showVideo = () => show.value = true
+
+const { globalState } = useGlobals()
 </script>
 <style scoped>
 .-programs {
@@ -131,7 +91,7 @@
   padding: 8px;
   top: 72px;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 .-hero-section .-filters .-categories .-select-category-icon,
@@ -230,34 +190,10 @@
   gap: 16px;
 }
 
-.-programs .-catalog .-program {
-  background-color: white;
-  box-shadow: var(--box-shadow);
-  border-radius: 4px;
-  cursor: pointer;
-}
-.-programs .-catalog .-program img {
-  width: 100%;
-}
-
-.-programs .-catalog .-program .-details {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-  padding: 8px;
-}
-
-.-programs .-catalog .-program .-details > h5 {
-  text-transform: capitalize;
-  line-height: 1.2;
-}
-.-programs .-catalog .-program .-details .-ctas {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 @media screen and (max-width: 1024px) {
-  
+  .-hero-section .-filters {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {

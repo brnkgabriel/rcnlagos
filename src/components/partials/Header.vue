@@ -30,7 +30,7 @@
   position: sticky;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 5;
   background-color: white;
 }
 .-header .-inner {
