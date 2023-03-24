@@ -6,6 +6,7 @@
       </NuxtLink>
       <div class="-links">
         <NuxtLink href="/">home</NuxtLink>
+        <NuxtLink href="/about">about</NuxtLink>
         <NuxtLink href="/programs">programs</NuxtLink>
         <NuxtLink href="/blog">blog</NuxtLink>
         <NuxtLink href="/prayercells">prayer cells</NuxtLink>

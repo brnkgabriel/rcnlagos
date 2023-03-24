@@ -7,6 +7,7 @@
 
       <div class="-links">
         <NuxtLink data-type="mobile-link" href="/">home</NuxtLink>
+        <NuxtLink data-type="mobile-link" href="/about">about</NuxtLink>
         <NuxtLink data-type="mobile-link" href="/programs">programs</NuxtLink>
         <NuxtLink data-type="mobile-link" href="/blog">blog</NuxtLink>
         <NuxtLink data-type="mobile-link" href="/prayercells">prayer cells</NuxtLink>
