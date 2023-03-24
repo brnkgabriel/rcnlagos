@@ -112,9 +112,10 @@
 }
 
 .-content {
-  width: 100%;
-  max-width: 768px;
   margin: 0 auto;
+  max-width: 768px;
+  width: 100%;
+  margin-top: 16px;
 }
 
 .-content .-subhead {
@@ -204,4 +205,5 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}
+</style>
