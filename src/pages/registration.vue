@@ -1,13 +1,14 @@
 <template>
-  <Departments />
+  <Registration />
 </template>
 <script setup lang="ts">
-import Departments from '../components/pages/Departments.vue';
+import Registration from '../components/pages/Registration.vue';
+
 definePageMeta({
   layout: "default"
 })
 useHead(head({
-  name: "Departments | RCN Lagos",
+  name: "Registration | RCN Lagos",
 }))
 </script>
 <style lang="">
