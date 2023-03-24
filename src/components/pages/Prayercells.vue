@@ -23,6 +23,7 @@ const { globalState } = useGlobals()
 <style scoped>
 .-prayercells .-hero-banner {
   background-color: black;
+  aspect-ratio: 1511 / 495;
 }
 
 .-prayercells .-hero-banner .-hero-title {
@@ -87,9 +88,16 @@ const { globalState } = useGlobals()
   .-mobile {
     display: block;
   }
+
   .-desktop {
     display: none;
   }
+
+  .-prayercells .-hero-banner {
+    background-color: black;
+    aspect-ratio: 1000 / 495;
+  }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -121,5 +129,4 @@ const { globalState } = useGlobals()
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}
-</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
