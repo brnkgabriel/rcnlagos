@@ -74,6 +74,8 @@
   align-items: flex-end;
   gap: 96px;
   margin-bottom: 16px;
+  width: calc(100% - 32px);
+  margin: 0 auto;
 }
 
 .-hero-header .-left h1 {
@@ -190,6 +192,7 @@
   .-hero-header .-right img {
     width: 100%;
   }
+
   .-footnotes {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -201,5 +204,4 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}
-</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
