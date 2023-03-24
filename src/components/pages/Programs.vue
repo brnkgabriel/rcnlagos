@@ -60,6 +60,12 @@ const show = ref(false)
 const showVideo = () => show.value = true
 
 const { globalState } = useGlobals()
+
+onMounted(() => {
+  document.addEventListener("scroll", () => {
+    console.log("scrolling")
+  })
+}),
 </script>
 <style scoped>
 .-programs {
