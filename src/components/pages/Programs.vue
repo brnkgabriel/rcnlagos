@@ -1,8 +1,7 @@
 <template>
   <div class="-programs">
     <div class="-hero-section -inner px-4 relative">
-      <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video fixed" :class="{ show }"></iframe>
-      <div class="-filters -inner sticky">
+      <div class="-filters -inner sticky -desktop">
         <h5 class="-program-selection -subhead">Programs</h5>
         <div class="relative -form-control -categories">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -27,6 +26,7 @@
         </div>
       </div>
       <div class="-video-n-filters relative">
+        <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video absolute" :class="{ show }"></iframe>
         <div class="-caption absolute">
           <h1 class="-mainline -headfont">Encountering the Word</h1>
           <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
@@ -65,20 +65,19 @@ const { globalState } = useGlobals()
 .-programs {
   background-color: var(--rcnlightbg);
 }
+
 .-hero-section .-video {
-  border: unset;
-  border-radius: 4px;
-  aspect-ratio: 560/315;
-  height: 56.25vw;
-  z-index: 2;
-  top: 136px;
-  transform: translateX(-110%);
-  max-height: 315px;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 4px; 
+  z-index: 2; 
   opacity: 0;
 }
 
 .-hero-section .-video.show {
-  transform: translateX(0%);
   opacity: 1;
 }
 
@@ -133,6 +132,10 @@ const { globalState } = useGlobals()
 
 .-video-n-filters {
   background-color: black;
+  position: sticky;
+  top: 72px;
+  left: 0;
+  z-index: 1;
 }
 
 .-video-n-filters .-caption .-mainline {
@@ -206,6 +209,10 @@ const { globalState } = useGlobals()
   .-programs .-catalog {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .-hero-section .-filters.-desktop {
+    display: none;
+  }
 }
 
 
@@ -214,9 +221,6 @@ const { globalState } = useGlobals()
     left: 50%;
   }
 
-  .-hero-section .-video.show {
-    transform: translateX(-50%);
-  }
   .-programs .-catalog {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -226,15 +230,15 @@ const { globalState } = useGlobals()
   .-hero-section .-video-n-filters {
     aspect-ratio: 560 / 315;
   }
+
   .-programs .-catalog {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .-video-n-filters .-caption .-mainline {
     font-size: 28px;
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {
-
-}
+@media screen and (min-width: 320px) and (max-width: 420px) {}
 </style>
