@@ -292,18 +292,6 @@ onMounted(() => {
   }
 }
 
-@media screen and (min-width: 420px) and (max-width: 576px) {
-  .-program .-details .-ctas .-name-time {
-    width: 40%;
-  }
-  .-program .-details .-ctas .-name-time h5 {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
 @media screen and (max-width: 420px) {
   .-hero-section .-video-n-shorts {
     aspect-ratio: 560 / 315;

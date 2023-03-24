@@ -29,8 +29,8 @@ const src = computed(() => props.program?.image ? props.program.image : youTubeT
   border-radius: 4px;
   cursor: pointer;
 }
- 
-.-program img  {
+
+.-program img {
   width: 100%;
   aspect-ratio: 560 / 315;
   object-fit: cover;
@@ -70,5 +70,18 @@ const src = computed(() => props.program?.image ? props.program.image : youTubeT
 
 .-program .-details .-ctas .-minister {
   line-height: 1.2;
+}
+
+@media screen and (min-width: 420px) and (max-width: 576px) {
+  .-program .-details .-ctas .-name-time {
+    width: calc(100% - 100px);
+  }
+
+  .-program .-details .-ctas .-name-time h5 {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 </style>
