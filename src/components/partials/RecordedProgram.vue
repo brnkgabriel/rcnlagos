@@ -51,4 +51,7 @@ defineProps<{
   align-items: center;
   justify-content: space-between;
 }
+.-program .-details .-ctas .-minister {
+  line-height: 1.2;
+}
 </style>
