@@ -8,7 +8,7 @@
       <h5 class="-name">{{ pastor.name }}</h5>
       <div class="-cta">
         <span>view profile</span>
-        <span>🠒</span>
+        <span class="-right-arrow"></span>
       </div>
     </div>
   </div>
@@ -37,14 +37,14 @@ defineProps<{
   text-align: center;
 }
 
-.-pastor .-detail{
-    display: flex;
-    flex-direction: column;
-    row-gap: 4px;
-    padding: 8px;
-    background-color: white;
-    box-shadow: var(--box-shadow);
-    border-radius: 4px;
+.-pastor .-detail {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  padding: 8px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
 }
 
 .-pastor .-img {
@@ -60,8 +60,7 @@ defineProps<{
   transform: translate(-50%, -50%);
 }
 
-.-pastor .-img .-icon { 
-}
+.-pastor .-img .-icon {}
 
 .-pastor .-img .-picture {
   top: 70%;
@@ -78,16 +77,41 @@ defineProps<{
   text-transform: uppercase;
 }
 
-.-pastor .-icon {
-  
-}
-@media screen and (max-width: 1024px) {
-  
+.-pastor .-cta .-right-arrow {
+  width: 16px;
+  height: 16px;
+  position: relative;
 }
 
-@media screen and (max-width: 768px) {
-
+.-pastor .-cta .-right-arrow::before,
+.-pastor .-cta .-right-arrow::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
 }
+
+.-pastor .-cta .-right-arrow::before {
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--rcntext);
+  border-left: unset;
+  border-bottom: unset;
+  transform: translate(-35%, -50%) rotate(45deg);
+}
+
+.-pastor .-cta .-right-arrow::after {
+  width: 12px;
+  height: 1px;
+  background-color: var(--rcntext);
+  transform: translate(-45%, -50%);
+}
+
+.-pastor .-icon {}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {}
 
 @media screen and (max-width: 576px) {}
 
