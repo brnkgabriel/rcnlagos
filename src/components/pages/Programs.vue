@@ -66,11 +66,14 @@ const showVideo = (program: iEvent) => {
 
 const { globalState } = useGlobals()
 
-onMounted(() => {
-  document.addEventListener("scroll", () => {
+const reset = () => {
     show.value = false
     iframeSrc.value = constants.DEFAULTVIDEO
-  })
+}
+
+onMounted(() => {
+  document.addEventListener("scroll", () => reset())
+  document.addEventListener("touchstart", () => reset())
 })
 </script>
 <style scoped>
