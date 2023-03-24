@@ -1,5 +1,5 @@
 <template>
-  <div class="-programs">
+  <div class="-programs"> 
     <div class="-hero-section -inner px-4 relative">
       <div class="-filters -inner sticky -desktop">
         <h5 class="-program-selection -subhead">Programs</h5>
@@ -55,7 +55,7 @@ import { iEvent } from '~~/src/types';
 import RecordedProgram from '../partials/RecordedProgram.vue';
 
 const show = ref(false)
-const iframeSrc = ref(constants.DEFAULTVIDEO)
+const iframeSrc = ref(constants.DEFAULTVIDEO) 
 
 const showVideo = (program: iEvent) => {
   const embedLink = youTubeLinkToEmbedLink(program.videourl as string)
@@ -66,14 +66,13 @@ const showVideo = (program: iEvent) => {
 
 const { globalState } = useGlobals()
 
-const reset = () => {
-    show.value = false
-    iframeSrc.value = constants.DEFAULTVIDEO
+const reset = (evt: Event) => {
+  show.value = false
+  iframeSrc.value = constants.DEFAULTVIDEO 
 }
 
 onMounted(() => {
-  document.addEventListener("scroll", () => reset())
-  document.addEventListener("touchstart", () => reset())
+  addEventListener("scroll", evt => reset(evt)) 
 })
 </script>
 <style scoped>
@@ -321,4 +320,5 @@ onMounted(() => {
 @media screen and (max-height: 567px) and (orientation: landscape) {
 
   /* phone landscape styles */
-}</style>
+}
+</style>
