@@ -75,7 +75,7 @@ const src = computed(() => props.program?.image ? props.program.image : youTubeT
 
 @media screen and (min-width: 420px) and (max-width: 576px) {
   .-program .-details .-ctas .-name-time {
-    width: calc(100% - 100px);
+    width: calc(100% - 72px);
   }
 
   .-program .-details .-ctas .-name-time h5 {
