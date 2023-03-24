@@ -44,7 +44,8 @@
         </div>
       </div>
       <div class="-catalog">
-        <RecordedProgram v-for="(program, idx) in globalState.events" :key="idx" :program="program" @click="showVideo(program)" />
+        <RecordedProgram v-for="(program, idx) in globalState.events" :key="idx" :program="program"
+          @click="showVideo(program)" />
       </div>
     </div>
   </div>
@@ -229,6 +230,7 @@ onMounted(() => {
     left: 2.5%;
     row-gap: 4px;
   }
+
   .-programs .-catalog {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -240,7 +242,7 @@ onMounted(() => {
   .-hero-section .-filters {
     display: grid;
     grid-template-columns: 60% 10% 30%
-  } 
+  }
 
   .-hero-section .-filters.-desktop {
     display: none;
@@ -290,6 +292,18 @@ onMounted(() => {
   }
 }
 
+@media screen and (min-width: 420px) and (max-width: 576px) {
+  .-program .-details .-ctas .-name-time {
+    width: 40%;
+  }
+  .-program .-details .-ctas .-name-time h5 {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .-hero-section .-video-n-shorts {
     aspect-ratio: 560 / 315;
@@ -316,5 +330,4 @@ onMounted(() => {
 @media screen and (max-height: 567px) and (orientation: landscape) {
 
   /* phone landscape styles */
-}
-</style>
+}</style>
