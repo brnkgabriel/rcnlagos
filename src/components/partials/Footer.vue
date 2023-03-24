@@ -16,9 +16,10 @@
         <NuxtLink href="/pastors">Our Pastors</NuxtLink>
       </div>
       <div class="-col">
-        <h5 class="-links-category">ministry</h5>
-        <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+        <h5 class="-links-category">rcn lagos</h5>
         <NuxtLink href="/programs">Programs</NuxtLink> 
+        <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+        <NuxtLink href="/departments">Departments</NuxtLink>
         <NuxtLink href="/blog">Blog</NuxtLink>
       </div>
       <div class="-col">
