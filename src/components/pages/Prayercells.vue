@@ -1,11 +1,125 @@
 <template>
-  <div>
-    <h1>Prayer Cells</h1>
-    <p>As iron sharpens iron, so one person sharpens another. RCN Lagos has prayer centers in various locations in Lagos for the purpose of convenience and continual fellowship. We meet once every week. Check out the details below.</p>
+  <div class="-prayercells -inner">
+    <div class="-hero-banner relative">
+      <div class="-hero-title absolute">
+        <h1 class="-headfont">Prayer Cells</h1>
+        <p>As iron sharpens iron, so one person sharpens another. RCN Lagos has prayer centers in various locations in
+          Lagos
+          for the purpose of convenience and continual fellowship. We meet once every week. Check out the details below.
+        </p>
+      </div>
+      <img class="-desktop" src="/images/prayercells_1511x495.jpg" alt="prayercell banner" />
+      <img class="-mobile" src="/images/prayercells_1000x495.jpg" alt="prayercell banner" />
+    </div>
+    <div class="-cells">
+      <div class="-cell" v-for="(cell, idx) in globalState.prayercells" :key="idx">{{ cell.name }}</div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
+
+const { globalState } = useGlobals()
 </script>
-<style lang="">
-  
+<style scoped>
+.-prayercells .-hero-banner {
+  background-color: black;
+}
+
+.-prayercells .-hero-banner .-hero-title {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.-prayercells .-hero-banner .-hero-title h1,
+.-prayercells .-hero-banner .-hero-title p {
+  color: white;
+  text-align: center;
+}
+
+.-prayercells .-hero-banner .-hero-title h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.-prayercells img {
+  opacity: .2;
+}
+
+.-mobile {
+  display: none;
+}
+
+.-cells {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 64px 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.-cells .-cell {
+  background-color: var(--rcnlightbg);
+  text-align: center;
+  padding: 8px 16px;
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+
+  .-cells {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  .-prayercells .-hero-banner .-hero-title h1 {
+    font-size: 40px
+  }
+
+  .-prayercells .-hero-banner .-hero-title {
+    width: 90%;
+  }
+
+  .-mobile {
+    display: block;
+  }
+  .-desktop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  .-cells {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .-prayercells .-hero-banner .-hero-title h1 {
+    font-size: 29px
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+
+  .-cells {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+
+  .-prayercells .-hero-banner .-hero-title p {
+    font-size: .8em;
+  }
+
+  .-prayercells .-hero-banner .-hero-title {
+    width: calc(100% - 16px);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {}
 </style>
