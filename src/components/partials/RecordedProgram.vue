@@ -28,6 +28,7 @@ const src = computed(() => props.program?.image ? props.program.image : youTubeT
   box-shadow: var(--box-shadow);
   border-radius: 4px;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .-program img {
