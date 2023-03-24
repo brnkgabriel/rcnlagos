@@ -151,3 +151,15 @@ export const skeletonPastors: iPastorate[] = num2List(6).map((num: number) => ({
 export const reorder = (list:any[]) => { 
   return list.sort((a:any, b:any) => +new Date(b.datetime) - +new Date(a.datetime))
 }
+
+export const youTubeThumbnail = (link: string) => {
+  const url = new URL(link)
+  const pieces = url.pathname.split("/")
+  return `https://img.youtube.com/vi/${pieces[1]}/0.jpg`
+}
+
+export const youTubeLinkToEmbedLink = (link: string) => {
+  const url = new URL(link)
+  const pieces = url.pathname.split("/")
+  return `https://www.youtube.com/embed/${pieces[1]}`
+}

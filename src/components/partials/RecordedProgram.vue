@@ -39,6 +39,12 @@ defineProps<{
 .-program .-details > h5 {
   text-transform: capitalize;
   line-height: 1.2;
+  white-space: initial;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 .-program .-details .-ctas {
   display: flex;

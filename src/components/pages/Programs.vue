@@ -34,16 +34,10 @@
             <a href="#" class="-btn -subscribe">subscribe</a>
           </div>
           <div class="-upcoming-program absolute">
-            <div class="-left">
-              <h5 class="-subhead">upcoming program</h5>
-              <p>10 Hours Prayer | March Edition</p>
-            </div>
-            <div class="-right">
-              <p>starts in</p>
-              <span>4d : 3h : 50m : 20s</span>
-            </div>
+            <h5 class="-subhead">upcoming program</h5>
+            <p>The Convergence | April 21 - 22, 2023</p>
           </div>
-          <img src="/images/programs_1511x495.jpg" alt="events hero">
+          <img src="/images/programs_1500x844.jpg" alt="events hero">
         </div>
         <div class="-shorts">
           shorts
@@ -163,7 +157,7 @@ onMounted(() => {
 
 .-video-n-shorts .-caption .-mainline {
   color: white;
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1;
   font-weight: bold;
 }
@@ -184,12 +178,13 @@ onMounted(() => {
 .-video-n-shorts .-upcoming-program {
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px;
   width: 100%;
   z-index: 1;
   bottom: 0;
+  flex-direction: column;
 }
 
 .-video-n-shorts .-upcoming-program .-left {}
@@ -222,8 +217,9 @@ onMounted(() => {
   }
 
   .-video-n-shorts .-caption {
-    width: 90%;
-    left: 5%;
+    width: 95%;
+    left: 2.5%;
+    row-gap: 4px;
   }
 
 }
@@ -243,6 +239,18 @@ onMounted(() => {
     display: none;
   }
 
+  .-video-n-shorts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .-video-n-shorts .-video-wrap {
+    max-width: unset !important;
+  }
+
+  .-video-n-shorts .-shorts {
+    display: none;
+  }
+
   .-video-n-shorts .-caption {
     width: 90%;
     left: 5%;
@@ -250,7 +258,7 @@ onMounted(() => {
   }
 
   .-video-n-shorts .-caption .-mainline {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 
@@ -286,7 +294,17 @@ onMounted(() => {
 
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}
+@media screen and (min-width: 320px) and (max-width: 420px) {
+
+  .-video-n-shorts .-upcoming-program h5,
+  .-video-n-shorts .-upcoming-program p {
+    font-size: .8em !important;
+  }
+
+  .-video-n-shorts .-upcoming-program {
+    padding: 4px 8px;
+  }
+}
 
 @media screen and (max-height: 567px) and (orientation: landscape) {
 

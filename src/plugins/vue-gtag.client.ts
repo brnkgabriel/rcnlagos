@@ -1,4 +1,5 @@
 import VueGtag from "vue-gtag-next"
+import { getMachineId } from "../composables"
 
 export default defineNuxtPlugin(nuxtApp => {
 
