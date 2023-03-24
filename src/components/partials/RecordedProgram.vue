@@ -85,4 +85,10 @@ const src = computed(() => props.program?.image ? props.program.image : youTubeT
     text-overflow: ellipsis;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .-program .-details>h5 {
+    font-size: 14px !important;
+  }
+}
 </style>
