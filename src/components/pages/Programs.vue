@@ -1,6 +1,6 @@
 <template>
   <div class="-programs">
-    <div class="-hero-section -inner -row px-4 relative">
+    <div class="-hero-section -inner px-4 relative">
       <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video fixed"></iframe>
       <div class="-filters -inner sticky">
         <h5 class="-program-selection -subhead">Programs</h5>
@@ -117,6 +117,11 @@
   opacity: 0;
 }
 
+.-hero-section .-video.show {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
 .-hero-section .-filters {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -229,6 +234,10 @@
   background-color: white;
   box-shadow: var(--box-shadow);
   border-radius: 4px;
+  cursor: pointer;
+}
+.-programs .-catalog .-program img {
+  width: 100%;
 }
 
 .-programs .-catalog .-program .-details {
@@ -240,23 +249,56 @@
 
 .-programs .-catalog .-program .-details > h5 {
   text-transform: capitalize;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 95%;
+  line-height: 1.2;
 }
 .-programs .-catalog .-program .-details .-ctas {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  
+}
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
 
-@media screen and (max-width: 576px) {}
+  .-hero-section .-filters {
+    display: grid;
+    grid-template-columns: 60% 10% 30%
+  }
 
-@media screen and (max-width: 420px) {}
+  .-programs .-catalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}
+
+@media screen and (max-width: 576px) {
+  .-hero-section .-video {
+    left: 50%;
+  }
+
+  .-hero-section .-video.show {
+    transform: translateX(-50%);
+  }
+  .-programs .-catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .-hero-section .-video-n-filters {
+    aspect-ratio: 560 / 315;
+  }
+  .-programs .-catalog {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .-video-n-filters .-caption .-mainline {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+
+}
 </style>
