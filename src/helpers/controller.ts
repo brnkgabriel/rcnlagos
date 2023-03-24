@@ -78,28 +78,30 @@ export class Controller {
 
   async subscribeToNewsletter() {
     const email = this.subscribeInput.value
-    this.subscriptionWrap.classList.add("-loading")
-    const options = {
-      // headers: { "Content-type": "multipart/form-data" },
-      headers: { "Content-type": "application/json" },
-      method: 'POST',
-      body: {
-        date: new Date().toLocaleString(),
-        email,
-        type: constants.SUBSCRIPTION
-      },
-      params: {
-        col: "rcnlagos",
-        id: "subscribers"
+    if (email.length > 0) {
+      this.subscriptionWrap.classList.add("-loading")
+      const options = {
+        // headers: { "Content-type": "multipart/form-data" },
+        headers: { "Content-type": "application/json" },
+        method: 'POST',
+        body: {
+          date: new Date().toLocaleString(),
+          email,
+          type: constants.SUBSCRIPTION
+        },
+        params: {
+          col: "rcnlagos",
+          id: "subscribers"
+        }
       }
+  
+      const { data } = await useFetch(constants.SUBSCRIBEAPI, options)
+      
+      const remoteData = data.value as iSubscribe
+  
+      this.subscriptionWrap.classList.remove("-loading") 
+      this.handleResponse(remoteData)
     }
-
-    const { data } = await useFetch(constants.SUBSCRIBEAPI, options)
-    
-    const remoteData = data.value as iSubscribe
-
-    this.subscriptionWrap.classList.remove("-loading") 
-    this.handleResponse(remoteData)
   }
 
   handleResponse(data: iSubscribe) { 
