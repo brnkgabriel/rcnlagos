@@ -25,26 +25,29 @@
           <input type="text" class="-search-input" placeholder="Search">
         </div>
       </div>
-      <div class="-video-n-filters relative">
-        <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video absolute" :class="{ show }"></iframe>
-        <div class="-caption absolute">
-          <h1 class="-mainline -headfont">Encountering the Word</h1>
-          <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
-          <a href="#" class="-btn -subscribe">subscribe</a>
-        </div>
-        <div class="-upcoming-program absolute">
-          <div class="-left">
-            <h5 class="-subhead">upcoming program</h5>
-            <p>10 Hours Prayer | March Edition</p>
+      <div class="-video-n-shorts">
+        <div class="-video-wrap relative">
+          <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video absolute" :class="{ show }"></iframe>
+          <div class="-caption absolute">
+            <h1 class="-mainline -headfont">Encountering the Word</h1>
+            <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
+            <a href="#" class="-btn -subscribe">subscribe</a>
           </div>
-          <div class="-right">
-            <p>starts in</p>
-            <span>4d : 3h : 50m : 20s</span>
+          <div class="-upcoming-program absolute">
+            <div class="-left">
+              <h5 class="-subhead">upcoming program</h5>
+              <p>10 Hours Prayer | March Edition</p>
+            </div>
+            <div class="-right">
+              <p>starts in</p>
+              <span>4d : 3h : 50m : 20s</span>
+            </div>
           </div>
+          <img src="/images/programs_1511x495.jpg" alt="events hero">
         </div>
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/events%2Fevents.jpg?alt=media&amp;token=8974f87a-e41f-41a4-b7c6-3623f39f2a10"
-          alt="events hero">
+        <div class="-shorts">
+          shorts
+        </div>
       </div>
       <div class="-catalog">
         <RecordedProgram v-for="(program, idx) in globalState.events" :key="idx" :program="program" @click="showVideo" />
@@ -63,9 +66,9 @@ const { globalState } = useGlobals()
 
 onMounted(() => {
   document.addEventListener("scroll", () => {
-    console.log("scrolling")
+    show.value = false
   })
-}),
+})
 </script>
 <style scoped>
 .-programs {
@@ -77,10 +80,14 @@ onMounted(() => {
   height: 100%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  border-radius: 4px; 
-  z-index: 2; 
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  z-index: 2;
   opacity: 0;
+}
+
+.-desktop {
+  display: none !important;
 }
 
 .-hero-section .-video.show {
@@ -124,11 +131,11 @@ onMounted(() => {
   font-weight: 600;
 }
 
-.-video-n-filters .-caption {
-  top: 50%;
+.-video-n-shorts .-caption {
+  top: 40%;
   transform: translateY(-50%);
   left: 8%;
-  width: 32.3%;
+  width: 84%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -136,36 +143,46 @@ onMounted(() => {
   z-index: 1;
 }
 
-.-video-n-filters {
-  background-color: black;
+.-video-n-shorts {
   position: sticky;
   top: 72px;
   left: 0;
   z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
 }
 
-.-video-n-filters .-caption .-mainline {
+.-video-n-shorts .-video-wrap {
+  aspect-ratio: 560 / 315;
+  max-width: 560px;
+  background-color: black;
+}
+
+.-video-n-shorts .-caption .-mainline {
   color: white;
-  font-size: 60px;
+  font-size: 40px;
   line-height: 1;
   font-weight: bold;
 }
 
-.-video-n-filters .-caption .-subline {
+.-video-n-shorts .-caption .-subline {
   color: white;
 }
 
-.-video-n-filters .-caption .-subscribe.-btn {
+.-video-n-shorts .-caption .-subscribe.-btn {
   width: fit-content;
 }
 
-.-video-n-filters img {
+.-video-n-shorts img {
   opacity: .6;
 }
 
 
-.-video-n-filters .-upcoming-program {
-  background-color: black;
+.-video-n-shorts .-upcoming-program {
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -175,22 +192,22 @@ onMounted(() => {
   bottom: 0;
 }
 
-.-video-n-filters .-upcoming-program .-left {}
+.-video-n-shorts .-upcoming-program .-left {}
 
-.-video-n-filters .-upcoming-program .-right {}
+.-video-n-shorts .-upcoming-program .-right {}
 
 
-.-video-n-filters .-upcoming-program h5,
-.-video-n-filters .-upcoming-program p,
-.-video-n-filters .-upcoming-program span {
+.-video-n-shorts .-upcoming-program h5,
+.-video-n-shorts .-upcoming-program p,
+.-video-n-shorts .-upcoming-program span {
   color: white;
 }
 
-.-video-n-filters .-upcoming-program h5 {
+.-video-n-shorts .-upcoming-program h5 {
   text-transform: uppercase;
 }
 
-.-video-n-filters .-upcoming-program span {}
+.-video-n-shorts .-upcoming-program span {}
 
 .-programs .-catalog {
   padding: 16px 0;
@@ -203,6 +220,12 @@ onMounted(() => {
   .-hero-section .-filters {
     display: none;
   }
+
+  .-video-n-shorts .-caption {
+    width: 90%;
+    left: 5%;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -219,6 +242,16 @@ onMounted(() => {
   .-hero-section .-filters.-desktop {
     display: none;
   }
+
+  .-video-n-shorts .-caption {
+    width: 90%;
+    left: 5%;
+    row-gap: 4px;
+  }
+
+  .-video-n-shorts .-caption .-mainline {
+    font-size: 32px;
+  }
 }
 
 
@@ -230,10 +263,20 @@ onMounted(() => {
   .-programs .-catalog {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .-video-n-shorts .-caption[data-v-ade7f127] {
+    width: calc(100% - 16px);
+    left: 8px;
+    row-gap: 4px;
+  }
+
+  .-video-n-shorts .-caption .-mainline {
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 420px) {
-  .-hero-section .-video-n-filters {
+  .-hero-section .-video-n-shorts {
     aspect-ratio: 560 / 315;
   }
 
@@ -241,10 +284,12 @@ onMounted(() => {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .-video-n-filters .-caption .-mainline {
-    font-size: 28px;
-  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 420px) {}
+
+@media screen and (max-height: 567px) and (orientation: landscape) {
+
+  /* phone landscape styles */
+}
 </style>
