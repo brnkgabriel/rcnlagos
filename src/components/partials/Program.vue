@@ -39,17 +39,6 @@ defineProps<{
 }
 
 .-program .-time {
-  background-color: var(--rcnaccentblue);
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-size: .7em;
-  font-weight: 600;
-  letter-spacing: .3px;
-}
-
-.-program .-time {
   bottom: 8px;
   right: 8px;
 }

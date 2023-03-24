@@ -27,7 +27,7 @@
       </div>
       <div class="-video-n-shorts">
         <div class="-video-wrap relative">
-          <iframe src="https://www.youtube.com/embed/dHapOpZpzA0" class="-video absolute" :class="{ show }"></iframe>
+          <iframe :src="iframeSrc" class="-video absolute" :class="{ show }"></iframe>
           <div class="-caption absolute">
             <h1 class="-mainline -headfont">Encountering the Word</h1>
             <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
@@ -44,23 +44,31 @@
         </div>
       </div>
       <div class="-catalog">
-        <RecordedProgram v-for="(program, idx) in globalState.events" :key="idx" :program="program" @click="showVideo" />
+        <RecordedProgram v-for="(program, idx) in globalState.events" :key="idx" :program="program" @click="showVideo(program)" />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+import { iEvent } from '~~/src/types';
 import RecordedProgram from '../partials/RecordedProgram.vue';
 
 const show = ref(false)
+const iframeSrc = ref(constants.DEFAULTVIDEO)
 
-const showVideo = () => show.value = true
+const showVideo = (program: iEvent) => {
+  const embedLink = youTubeLinkToEmbedLink(program.videourl as string)
+  console.log("embed link", embedLink)
+  iframeSrc.value = embedLink
+  show.value = true
+}
 
 const { globalState } = useGlobals()
 
 onMounted(() => {
   document.addEventListener("scroll", () => {
     show.value = false
+    iframeSrc.value = constants.DEFAULTVIDEO
   })
 })
 </script>
@@ -221,6 +229,9 @@ onMounted(() => {
     left: 2.5%;
     row-gap: 4px;
   }
+  .-programs .-catalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
 }
 
@@ -229,11 +240,7 @@ onMounted(() => {
   .-hero-section .-filters {
     display: grid;
     grid-template-columns: 60% 10% 30%
-  }
-
-  .-programs .-catalog {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  } 
 
   .-hero-section .-filters.-desktop {
     display: none;

@@ -45,6 +45,7 @@ export const constants = {
   SELECTEDPOSTCONTENT: ".-blog .-content .-selected .-postcontent",
   SITECONTENT: "#__nuxt",
   BLOGTHUMBNAILSQUERY: ".-blog .-content .-thumbnails",
+  DEFAULTVIDEO: "https://www.youtube.com/embed/dHapOpZpzA0"
 }
 
 export const operatingSystem = () => {
@@ -153,13 +154,26 @@ export const reorder = (list:any[]) => {
 }
 
 export const youTubeThumbnail = (link: string) => {
+  const id = obtainYouTubeID(link)
+  return `https://img.youtube.com/vi/${id}/0.jpg`
+}
+
+const obtainYouTubeID = (link:string) => {
   const url = new URL(link)
+  const search = url.search.split("?v=")
+  let searchTarget = ""
+  if (search[1] && search[1].length > 0) {
+    searchTarget = search[1].split("&t=")[0]
+  }
   const pieces = url.pathname.split("/")
-  return `https://img.youtube.com/vi/${pieces[1]}/0.jpg`
+
+  let id = ""
+  if (searchTarget && searchTarget.length > 0) id = searchTarget
+  if (pieces[2] && pieces[2].length > 0) id = pieces[2]
+  return id
 }
 
 export const youTubeLinkToEmbedLink = (link: string) => {
-  const url = new URL(link)
-  const pieces = url.pathname.split("/")
-  return `https://www.youtube.com/embed/${pieces[1]}`
+  const id = obtainYouTubeID(link)
+  return `https://www.youtube.com/embed/${id}`
 }
