@@ -33,6 +33,7 @@ defineProps<{
 .-pastor .-name {
   font-weight: 600;
   text-transform: capitalize;
+  text-align: center;
 }
 
 .-pastor .-detail {
