@@ -169,6 +169,10 @@
     margin: 0 auto;
   }
 
+  .-content {
+    margin-top: 16px;
+  }
+
   .-footnotes {
     margin-top: 16px;
   }
