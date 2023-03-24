@@ -51,11 +51,12 @@ defineProps<{
   font-weight: 600;
   letter-spacing: .3px;
   width: 31%;
+  bottom: 8px;
+  right: 8px;
+  background-color: var(--rcnlightbg) !important;
 }
 
 .-program .-time {
-  bottom: 8px;
-  right: 8px;
 }
 
 @media screen and (max-width: 1024px) {}
