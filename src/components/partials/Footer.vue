@@ -14,17 +14,19 @@
         <a href="https://rcnministry.org/">RCN Global</a>
         <NuxtLink href="#">RCN President</NuxtLink>
         <NuxtLink href="/pastors">Our Pastors</NuxtLink>
+      </div>
+      <div class="-col">
+        <h5 class="-links-category">ministry</h5>
         <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+        <NuxtLink href="/programs">Programs</NuxtLink> 
+        <NuxtLink href="/blog">Blog</NuxtLink>
       </div>
       <div class="-col">
         <h5 class="-links-category">resources</h5>
-        <NuxtLink href="/programs">Our Programs</NuxtLink>
-        <NuxtLink href="/events/">Events</NuxtLink>
-        <NuxtLink href="/blog">Blog</NuxtLink>
         <NuxtLink href="/contact">Contact Us</NuxtLink>
-        <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
         <NuxtLink href="/request">Prayer Request</NuxtLink>
         <NuxtLink href="/testimony">Give Testimony</NuxtLink>
+        <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
       </div>
       <div class="-col -somedia-partner">
         <h5 class="-links-category">follow us</h5>
@@ -101,7 +103,7 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   padding-top: 24px;
   padding-bottom: 24px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 32px;
 }
 
