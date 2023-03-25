@@ -4,9 +4,7 @@
       <div class="-hero-banner relative">
         <div class="-hero-title absolute">
           <h1 class="-headfont">Give</h1>
-          <p>If you will like to be a part of what the LORD is doing at RCN Lagos, you're welcome to give using the
-            details
-            below</p>
+          <p>You are welcome to be a part of what the LORD is doing at RCN Lagos. Kindly find below our account details</p>
         </div>
         <img class="-desktop" src="/images/prayercells_1511x495.jpg" alt="prayercell banner" />
         <img class="-mobile" src="/images/prayercells_1000x495.jpg" alt="prayercell banner" />
