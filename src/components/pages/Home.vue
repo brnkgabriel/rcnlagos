@@ -67,7 +67,7 @@
             Nigeria's Christian North and was ordained as a Pastor in 2001. He has experienced countless and diverse
             workings of the faithfulness of God for over 17 years.</p>
           <div class="-cta">
-            <a href="#" class="-btn -readmore">read more</a>
+            <NuxtLink href="/pastors/austin-ukporhe" class="-btn -readmore">read more</NuxtLink>
             <NuxtLink href="/pastors" class="-btn -meetallpastors">meet all pastors</NuxtLink>
           </div>
         </div>

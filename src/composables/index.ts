@@ -186,3 +186,5 @@ export const youTubeLinkToEmbedLink = (link: string) => {
   const id = obtainYouTubeID(link)
   return `https://www.youtube.com/embed/${id}`
 }
+
+export const slug = (pastor: iPastorate) => pastor.name?.toLowerCase().split(" ").join("-")

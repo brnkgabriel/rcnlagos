@@ -1,25 +1,28 @@
 <template>
-  <div class="-pastor relative">
+  <NuxtLink :href="href" class="-pastor relative">
     <div class="-img relative">
       <img class="-icon" src="/images/icon_500x500.png" alt="icon" />
       <img v-loaded class="-picture absolute opacity-0" :src="pastor.image" :alt="pastor.name" />
     </div>
     <div class="-detail">
-      <h5 class="-name">{{ pastor.name }}</h5>
+      <h5 class="-name">{{ name }}</h5>
       <div class="-cta">
         <span>view profile</span>
         <span class="-right-arrow"></span>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 <script setup lang="ts">
 import { iPastorate } from '~~/src/types';
 import { vLoaded } from '~~/src/helpers/directives';
 
-defineProps<{
+const props = defineProps<{
   pastor: iPastorate
 }>()
+
+const name = ref(`${props.pastor.title} ${props.pastor.name}`)
+const href = ref(`/pastors/${slug(props.pastor)}`)
 </script>
 
 <style scoped>

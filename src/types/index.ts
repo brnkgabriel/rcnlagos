@@ -51,6 +51,7 @@ export interface iPastorate {
   profile?: string;
   role?: string;
   status?: string;
+  title?: string;
 }
 
 export interface iPrayercell {

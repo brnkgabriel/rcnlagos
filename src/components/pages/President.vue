@@ -15,7 +15,7 @@
     <div class="-content">
       <div class="-letter">
         <p>
-          <strong>Arome Osayi (The Set Man of Remnant Christian Network)</strong> was born on 2<sup>nd</sup> December, 1977, the fifth child in a family of seven, to
+          <strong>Arome Osayi</strong> (The Set Man of Remnant Christian Network) was born on 2<sup>nd</sup> December, 1977, the fifth child in a family of seven, to
           late Chief Paul Ameh Osayi - a career civil servant and Mrs. Mamuna Osayi - a career nurse in the capital city
           of Makurdi, Benue State, Nigeria. His parents were devout Christians and were fully invested in raising him and
           his siblings in the ways of the Lord. His parents' commitment to God would yield hundred percent result as he
@@ -31,7 +31,7 @@
 
         <p>
           His tongue would be loosened in a momentous encounter he had with Jesus at the age of thirteen. It was at this
-          encounter that he received the call to be God’s mouthpiece to the nations. His teenage years right into his mid
+          encounter that he received the call to be God's mouthpiece to the nations. His teenage years right into his mid
           twenties were replete with pushing, stretching, daring and adventuring into the full gamut of this call. His
           progress was slow but steady; his strides in the pursuit of God were rhythmic and his following o f Jesus Christ
           has been a concatenation of obedience, consistency and service born out of deep-seated hunger and love for God.
@@ -201,7 +201,7 @@
     gap: 8px;
   }
 
-  .-hero-header .-right img {
+  .-hero-header .-right .-bg-img {
     width: 100%;
   } 
 }
