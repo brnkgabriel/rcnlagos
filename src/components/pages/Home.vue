@@ -79,7 +79,7 @@
         <iframe class="-video" src="https://www.youtube.com/embed/1MkkwkXdvGk"></iframe>
         <div class="-note">
           <h5 class="-watch-latest-message -headfont">watch latest message</h5>
-          <a href="#" class="-see-all-messages -btn">see all messages</a>
+          <NuxtLink href="/programs" class="-see-all-messages -btn">see all messages</NuxtLink>
         </div>
       </div>
     </div>
@@ -962,6 +962,11 @@ onBeforeUnmount(() => {
     row-gap: 4px;
     align-items: center;
     flex-direction: column;
+  }
+
+  .-see-all-messages {
+    width: 100%;
+    text-align: center;
   }
 }
 
