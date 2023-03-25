@@ -103,6 +103,15 @@ export interface iTestimonial {
   image?: string;
 }
 
+export interface iAccount {
+  accountName?: string;
+  accountNumber?: string;
+  bank?: string;
+  currencyName?: string;
+  currencySymbol?: string;
+  status?: string;
+}
+
 export interface iGlobal {
   departments?: iDepartment[];
   pastorates?: iPastorate[];
@@ -111,7 +120,8 @@ export interface iGlobal {
   sliders?: iSlider[];
   programs?: iProgram[];
   blogs?: iBlog[],
-  testimonials?: iTestimonial[]
+  testimonials?: iTestimonial[],
+  accounts?: iAccount[]
 }
 
 export interface iSubscribe {

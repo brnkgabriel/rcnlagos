@@ -11,6 +11,7 @@ export default defineNuxtPlugin(nuxtApp => {
     sliders: [],
     programs: [],
     blogs: [],
-    testimonials: []
+    testimonials: [],
+    accounts: []
   }))
 })
