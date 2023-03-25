@@ -281,6 +281,7 @@ const { globalState } = useGlobals()
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  text-align: right;
 }
 
 .-accounts .-account .-table .-value {
