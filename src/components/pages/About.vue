@@ -48,12 +48,12 @@
         <p>Dedication, Relevance, Excellence, Accountability, Resilience, Forbearance, Faithfulness</p>
       </div>
       <div class="-note -mission">
-        <h5 class="-subhead">our mission</h5>
+        <h5 class="-subhead">our vision</h5>
         <p>To equip ministers of the gospel of our LORD Jesus Christ in Africa and Europe to become effective in the work
           of the ministry</p>
       </div>
       <div class="-note -vision">
-        <h5 class="-subhead">our vision</h5>
+        <h5 class="-subhead">our mission</h5>
         <p>To strive for the rebirth of Apostolic Christianity in our generation. <br /><br />Preservation of biblical
           doctrine and living out the truth of God's Word as it is in the Holy Scriptures</p>
       </div>

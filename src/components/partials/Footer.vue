@@ -10,8 +10,8 @@
       </div>
       <div class="-col">
         <h5 class="-links-category">ministry</h5>
-        <NuxtLink href="https://rcnministry.org/">RCN Global</NuxtLink>
-        <NuxtLink href="#">RCN President</NuxtLink>
+        <NuxtLink href="/about">RCN Global</NuxtLink>
+        <NuxtLink href="/president">RCN President</NuxtLink>
         <NuxtLink href="/about">RCN Lagos</NuxtLink>
         <NuxtLink href="/pastors">Pastors</NuxtLink>
       </div>
