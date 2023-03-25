@@ -151,25 +151,33 @@ export const vSlide = {
     slider.stop()
   }
 }
-function copyToClipboard(text: string) {
-  navigator.clipboard.writeText(text)
-    .then(() => {
-      console.log('Text copied to clipboard');
-    })
-    .catch((err) => {
-      console.error('Error copying text: ', err);
-    });
+
+const copyReaction = (btn: HTMLElement, msg: string) => {
+  const originalHTML = btn.innerHTML
+  btn.innerHTML = msg
+  setTimeout(() => btn.innerHTML = originalHTML, 1000);
 }
+
+const handleCopy = (btn: HTMLElement, textToCopy: string) => {
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => copyReaction(btn, "Copied!"))
+    .catch((err) => copyReaction(btn, "Copy Error :("));
+}
+
 export const vCopyToClipboard = {
   mounted: (ele: HTMLElement) => {
-    const pTag = el("p", ele)
-    const copyBtn = el(".-btn", ele)
-    console.log("pTag", pTag)
+    const textToCopy = (el("p", ele) as HTMLElement).textContent as string
+    const copyBtn = el(".-btn", ele) as HTMLElement
+    copyBtn.addEventListener("click", () => handleCopy(copyBtn, textToCopy))
   },
   updated: (ele: HTMLElement) => {
-
+    const textToCopy = (el("p", ele) as HTMLElement).textContent as string
+    const copyBtn = el(".-btn", ele) as HTMLElement
+    copyBtn.addEventListener("click", () => handleCopy(copyBtn, textToCopy))
   },
-  unmounted: () => {
-
+  unmounted: (ele: HTMLElement) => {
+    const textToCopy = (el("p", ele) as HTMLElement).textContent as string
+    const copyBtn = el(".-btn", ele) as HTMLElement
+    copyBtn.removeEventListener("click", () => handleCopy(copyBtn, textToCopy))
   }
 }
