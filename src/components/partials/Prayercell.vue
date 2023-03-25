@@ -1,7 +1,7 @@
 <template>
   <div class="-cell">
     <div class="-img relative">
-      <a target="_blank" :href="cell.location" class="-clickable"></a>
+      <a target="_blank" :href="whatsappIcon(cell.phoneNumber as string)" class="-clickable"></a>
       <p class="-cellname">{{ cell.name }}</p>
       <img src="/images/prayer_678x452.jpeg" alt="prayer" />
     </div>
@@ -22,22 +22,13 @@
               clip-rule="evenodd" />
           </svg>
         </NuxtLink>
-        <NuxtLink target="_blank" :href="whatsappIcon(cell.phoneNumber as string)" class="-whatsapp">
-          <svg width="100%" height="100%" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-            <g transform="matrix(0.815,0,0,0.815,74,74)">
-              <path
-                d="M-0,800L68.8,593.614C33.89,534.897 13.793,466.372 13.793,393.103C13.793,176 189.793,-0 406.897,-0C624,-0 800,176 800,393.103C800,610.207 624,786.207 406.897,786.207C340.841,786.207 278.634,769.834 224,741.062L-0,800Z"
-                style="fill:rgb(44,183,66);fill-rule:nonzero;" />
-              <path
-                d="M-58.201,780.598C-65.325,801.969 -60.164,825.526 -44.757,841.96C-29.35,858.394 -6.175,865.062 15.611,859.33L217.48,806.215C275.138,832.709 339.272,847.557 406.897,847.557C657.882,847.557 861.35,644.089 861.35,393.103C861.35,142.118 657.882,-61.35 406.897,-61.35C155.911,-61.35 -47.557,142.118 -47.557,393.103C-47.557,467.524 -29.616,537.708 2.105,599.694C-16.297,654.895 -58.201,780.598 -58.201,780.598ZM-0,800L68.8,593.614C33.89,534.897 13.793,466.372 13.793,393.103C13.793,176 189.793,-0 406.897,-0C624,-0 800,176 800,393.103C800,610.207 624,786.207 406.897,786.207C340.841,786.207 278.634,769.834 224,741.062L-0,800Z"
-                style="fill:white;" />
-              <path
-                d="M657.697,523.931C639.545,489.628 572.607,450.4 572.607,450.4C557.462,441.766 539.186,440.8 530.552,456.193C530.552,456.193 508.8,482.276 503.269,486.028C478,503.145 454.593,502.483 430.966,478.855L321.145,369.034C297.517,345.407 296.855,322 313.972,296.731C317.724,291.2 343.807,269.448 343.807,269.448C359.2,260.8 358.234,242.538 349.6,227.393C349.6,227.393 310.372,160.455 276.069,142.303C261.476,134.579 243.559,137.283 231.89,148.952L207.641,173.2C130.717,250.124 168.593,336.966 245.517,413.89L386.124,554.497C463.048,631.421 549.89,669.297 626.814,592.372L651.062,568.124C662.731,556.428 665.421,538.51 657.697,523.931Z"
-                style="fill:white;fill-rule:nonzero;" />
-            </g>
+        <NuxtLink target="_blank" :href="whatsappIcon(cell.phoneNumber as string)" class="-btn -whatsapp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path fill-rule="evenodd"
+              d="M5.337 21.718a6.707 6.707 0 01-.533-.074.75.75 0 01-.44-1.223 3.73 3.73 0 00.814-1.686c.023-.115-.022-.317-.254-.543C3.274 16.587 2.25 14.41 2.25 12c0-5.03 4.428-9 9.75-9s9.75 3.97 9.75 9c0 5.03-4.428 9-9.75 9-.833 0-1.643-.097-2.417-.279a6.721 6.721 0 01-4.246.997z"
+              clip-rule="evenodd" />
           </svg>
+
         </NuxtLink>
         <NuxtLink target="_blank" :href="phone(cell.phoneNumber as string)" class="-btn -phone">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
@@ -133,12 +124,12 @@ const props = defineProps<{
 .-cell .-details .-ctas {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 8px;
 }
 
 
-.-cell .-details .-ctas a.-phone,
-.-cell .-details .-ctas a.-map {
+.-cell .-details .-ctas a {
   width: 36px;
   height: 36px;
   display: flex;
@@ -146,15 +137,6 @@ const props = defineProps<{
   align-items: center;
   padding: unset !important;
   border-radius: 50%;
-}
-
-.-cell .-details .-ctas a.-phone {
-  background-color: var(--rcnaccentblue);
-  box-shadow: 0px 4px 20px -5px var(--rcnaccentblue);
-}
-
-.-cell .-details .-ctas a.-whatsapp {
-  width: 48px;
 }
 
 @media screen and (min-width: 420px) and (max-width: 576px) {}
