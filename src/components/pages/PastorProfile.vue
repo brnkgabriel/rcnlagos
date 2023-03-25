@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="-content">
+    <div class="-content px-4">
       <blockquote class="-letter" v-html="pastor?.profile"></blockquote>
     </div>
     

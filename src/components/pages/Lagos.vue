@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="-content">
+    <div class="-content px-4">
       <blockquote class="-letter">
         <p>Apostle Arome came into my life at a time when my business was adrift. The year was 2015, I was battling a
           multitude of issues and had pretty much put ministry on hold. My younger brother, who felt that I needed

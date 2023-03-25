@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="-content">
+    <div class="-content px-4">
       <div class="-letter">
         <p>
           <strong>Arome Osayi</strong> (The Set Man of Remnant Christian Network) was born on 2<sup>nd</sup> December, 1977, the fifth child in a family of seven, to
