@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="-content px-4">
+    <div class="-content">
       <blockquote class="-letter" v-html="pastor?.profile"></blockquote>
     </div>
     
@@ -99,8 +99,8 @@ const pastor = computed<iPastorate>(() => {
 }
 
 .-content {
-  margin: 0 auto; 
-  width: 100%;
+  width: calc(100% - 32px);
+  margin: 0 auto;
   margin-top: 32px;
 }
 
@@ -139,15 +139,6 @@ const pastor = computed<iPastorate>(() => {
   .-mobile {
     display: block;
     text-align: center;
-  }
-
-  .-content {
-    width: calc(100% - 32px);
-    margin: 0 auto;
-  }
-
-  .-content {
-    margin-top: 32px;
   } 
 
   .-hero-header .-left h1 {

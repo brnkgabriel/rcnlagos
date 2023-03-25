@@ -111,9 +111,10 @@
   box-shadow: 0 16px 2px rgba(0, 0, 0, 0.3);
 }
 
+
 .-content {
+  width: calc(100% - 32px);
   margin: 0 auto;
-  width: 100%;
   margin-top: 32px;
 }
 
@@ -165,10 +166,6 @@
   .-footnotes {
     width: calc(100% - 32px);
     margin: 0 auto;
-  }
-
-  .-content {
-    margin-top: 16px;
   }
 
   .-footnotes {

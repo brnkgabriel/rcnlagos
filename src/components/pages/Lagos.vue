@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="-content px-4">
+    <div class="-content">
       <blockquote class="-letter">
         <p>Apostle Arome came into my life at a time when my business was adrift. The year was 2015, I was battling a
           multitude of issues and had pretty much put ministry on hold. My younger brother, who felt that I needed
@@ -106,8 +106,8 @@
 }
 
 .-content {
+  width: calc(100% - 32px);
   margin: 0 auto;
-  width: 100%;
   margin-top: 32px;
 }
 
@@ -138,15 +138,6 @@
   .-mobile {
     display: block;
     text-align: center;
-  }
-
-  .-content {
-    width: calc(100% - 32px);
-    margin: 0 auto;
-  }
-
-  .-content {
-    margin-top: 32px;
   }
 
   .-hero-header .-left h1 {
