@@ -278,7 +278,9 @@ const { globalState } = useGlobals()
 }
 
 .-accounts .-account .-table>p {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .-accounts .-account .-table .-value {
@@ -314,9 +316,8 @@ const { globalState } = useGlobals()
   background-color: var(--red);
   box-shadow: 0px 4px 20px -5px var(--red);
 }
-.-accounts .-account .-table .-value .-icon {
 
-}
+.-accounts .-account .-table .-value .-icon {}
 
 .-paystack {
   background-color: var(--paystack);
