@@ -5,10 +5,10 @@
       <p class="-cellname">{{ cell.name }}</p>
       <img src="/images/prayer_678x452.jpeg" alt="prayer" />
     </div>
-    <div class="-details"> 
+    <div class="-details">
       <div class="-cell-row">
         <sub>coordinator</sub>
-        <h5 class="-subhead">{{ cell.coordinator }}</h5>
+        <h5 class="-subhead -coordinator">{{ cell.coordinator }}</h5>
       </div>
       <div class="-cell-row">
         <sub>address</sub>
@@ -70,7 +70,7 @@ const props = defineProps<{
 }
 
 .-cell-row .-address {
-  
+
   white-space: initial;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -80,6 +80,12 @@ const props = defineProps<{
   margin: unset !important;
   line-height: 1.4 !important;
   height: 55px;
+}
+
+.-coordinator {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .-cell .-cellname {
