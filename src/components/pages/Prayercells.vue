@@ -1,26 +1,39 @@
 <template>
-  <div class="-prayercells -inner">
-    <div class="-hero-banner relative">
-      <div class="-hero-title absolute">
-        <h1 class="-headfont">Prayer Cells</h1>
-        <p>As iron sharpens iron, so one person sharpens another. RCN Lagos has prayer centers in various locations in
-          Lagos
-          for the purpose of convenience and continual fellowship. We meet once every week. Check out the details below.
-        </p>
+  <div class="-prayercells">
+    <div class="-cells-wrap -inner">
+      <div class="-hero-banner relative">
+        <div class="-hero-title absolute">
+          <h1 class="-headfont">Prayer Cells</h1>
+          <p>As iron sharpens iron, so one person sharpens another. RCN Lagos has prayer centers in various locations in
+            Lagos
+            for the purpose of convenience and continual fellowship. We meet once every week. Check out the details below.
+          </p>
+        </div>
+        <img class="-desktop" src="/images/prayercells_1511x495.jpg" alt="prayercell banner" />
+        <img class="-mobile" src="/images/prayercells_1000x495.jpg" alt="prayercell banner" />
       </div>
-      <img class="-desktop" src="/images/prayercells_1511x495.jpg" alt="prayercell banner" />
-      <img class="-mobile" src="/images/prayercells_1000x495.jpg" alt="prayercell banner" />
-    </div>
-    <div class="-cells">
-      <div class="-cell" v-for="(cell, idx) in globalState.prayercells" :key="idx">{{ cell.name }}</div>
+      <div class="-cells">
+        <!-- <div class="-cell" v-for="(cell, idx) in globalState.prayercells" :key="idx">{{ cell.name }}</div> -->
+        <Prayercell v-for="(cell, idx) in globalState.prayercells" :key="idx" :cell="cell" />
+      </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-
+import Prayercell from '../partials/Prayercell.vue';
 const { globalState } = useGlobals()
 </script>
 <style scoped>
+.-prayercells {
+  background-color: var(--rcnlightbg);
+}
+
+.-cells-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
 .-prayercells .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
@@ -56,15 +69,12 @@ const { globalState } = useGlobals()
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  padding: 64px 0;
-  width: 80%;
   margin: 0 auto;
 }
 
 .-cells .-cell {
-  background-color: var(--rcnlightbg);
+  background-color: white;
   text-align: center;
-  padding: 8px 16px;
 }
 
 @media screen and (max-width: 1024px) {}
@@ -129,4 +139,5 @@ const { globalState } = useGlobals()
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}
+</style>

@@ -59,6 +59,8 @@ export interface iPrayercell {
   location?: string;
   name?: string;
   status?: string;
+  coordinator?: string;
+  phoneNumber?: string;
 }
 
 export interface iEvent {
