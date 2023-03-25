@@ -12,7 +12,7 @@
         <h5 class="-links-category">ministry</h5>
         <NuxtLink href="/about">RCN Global</NuxtLink>
         <NuxtLink href="/president">RCN President</NuxtLink>
-        <NuxtLink href="/about">RCN Lagos</NuxtLink>
+        <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
         <NuxtLink href="/programs">Programs</NuxtLink> 
       </div>
       <div class="-col">
