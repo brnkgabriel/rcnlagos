@@ -45,7 +45,7 @@ definePageMeta({
   layout: "default"
 })
 useHead(head({
-  name: `${pastor.value.name} | RCN Lagos`,
+  name: `${pastor.value?.name} | RCN Lagos`,
 }))
 </script>
 <style scoped>
