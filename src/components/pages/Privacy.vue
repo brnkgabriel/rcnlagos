@@ -11,7 +11,7 @@
       phone number, and other details that you voluntarily provide.</p>
     <h5 class="-subhead">Use of Personal Information</h5>
     <p>
-      We may use your personal information to communicate with you about our ministry, events, and services. We may also
+      We may use your personal information to communicate with you about our ministry, programs, and outreaches. We may also
       use your information to process donations and to provide you with receipts and other information related to your
       donations. Additionally, we may use your information for administrative purposes, such as maintaining our database
       and analyzing our ministry's effectiveness.
