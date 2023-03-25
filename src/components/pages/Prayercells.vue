@@ -90,7 +90,6 @@ const isLoaded = computed(() => (globalState.value.prayercells as iPrayercell[])
   .-cells {
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    padding: 16px 0;
   }
 
   .-prayercells .-hero-banner .-hero-title h1 {
