@@ -1,9 +1,9 @@
 <template>
   <div class="-cell">
-    <div class="-img relative">
+    <NuxtLink target="_blank" :href="cell.location" class="-img relative">
       <p class="-cellname">{{ cell.name }}</p>
       <img src="/images/prayer_678x452.jpeg" alt="prayer" />
-    </div>
+    </NuxtLink>
     <div class="-details">
       <sub>coordinator</sub>
       <h5 class="-subhead">{{ cell.coordinator }}</h5>
