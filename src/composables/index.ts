@@ -190,13 +190,13 @@ export const youTubeLinkToEmbedLink = (link: string) => {
 export const slug = (pastor: iPastorate) => pastor.name?.toLowerCase().split(" ").join("-")
 
 export const phone = (number: string) => {
-  if (!number) return ""
+  if (!number) return "tel:"
   switch (number[0]) {
-    case "0": return "+234" + number.slice(1, number.length)
-    case "1": return "+1" + number.slice(1, number.length)
-    case "2": return "+234" + number.slice(3, number.length)
-    case "+": return number[1] === "2" ? "+234" + number.slice(4, number.length) : "+1" + number.slice(4, number.length)
-    default: return number
+    case "0": return "tel:+234" + number.slice(1, number.length)
+    case "1": return "tel:+1" + number.slice(1, number.length)
+    case "2": return "tel:+234" + number.slice(3, number.length)
+    case "+": return number[1] === "2" ? "tel:+234" + number.slice(4, number.length) : "tel:+1" + number.slice(4, number.length)
+    default: return "tel:" + number
   }
 }
 

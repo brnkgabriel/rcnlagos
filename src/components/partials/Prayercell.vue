@@ -1,12 +1,19 @@
 <template>
   <div class="-cell">
-    <NuxtLink target="_blank" :href="cell.location" class="-img relative">
+    <div class="-img relative">
+      <a target="_blank" :href="cell.location" class="-clickable"></a>
       <p class="-cellname">{{ cell.name }}</p>
       <img src="/images/prayer_678x452.jpeg" alt="prayer" />
-    </NuxtLink>
-    <div class="-details">
-      <sub>coordinator</sub>
-      <h5 class="-subhead">{{ cell.coordinator }}</h5>
+    </div>
+    <div class="-details"> 
+      <div class="-cell-row">
+        <sub>coordinator</sub>
+        <h5 class="-subhead">{{ cell.coordinator }}</h5>
+      </div>
+      <div class="-cell-row">
+        <sub>address</sub>
+        <p class="-address">{{ cell.address }}</p>
+      </div>
       <div class="-ctas">
         <NuxtLink target="_blank" v-if="(cell?.location as string).length > 0" :href="cell.location" class="-btn -map">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
@@ -55,8 +62,24 @@ const props = defineProps<{
   background-color: white;
   box-shadow: var(--box-shadow);
   border-radius: 4px;
-  cursor: pointer;
   overflow: hidden;
+}
+
+.-cell sub {
+  text-transform: capitalize;
+}
+
+.-cell-row .-address {
+  
+  white-space: initial;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin: unset !important;
+  line-height: 1.4 !important;
+  height: 55px;
 }
 
 .-cell .-cellname {
