@@ -25,7 +25,7 @@ class ImageObserver {
       image.onload = () => this.afterLoad(image)
     } else this.afterLoad(image)
   }
-  
+
   afterLoad(image: HTMLImageElement) {
     image.classList.add("loaded")
     const preloader = el(".-preloader", image.parentElement as HTMLElement)
@@ -140,14 +140,36 @@ export const vSlide = {
   mounted: (ele: Element) => {
     const images = all("img", ele as HTMLElement)
     slider.stop()
-    slider.start(images) 
+    slider.start(images)
   },
   updated: (ele: Element) => {
-    const images = all("img", ele as HTMLElement) 
+    const images = all("img", ele as HTMLElement)
     slider.stop()
-    slider.start(images) 
+    slider.start(images)
   },
   unmounted: () => {
-    slider.stop() 
+    slider.stop()
+  }
+}
+function copyToClipboard(text: string) {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      console.log('Text copied to clipboard');
+    })
+    .catch((err) => {
+      console.error('Error copying text: ', err);
+    });
+}
+export const vCopyToClipboard = {
+  mounted: (ele: HTMLElement) => {
+    const pTag = el("p", ele)
+    const copyBtn = el(".-btn", ele)
+    console.log("pTag", pTag)
+  },
+  updated: (ele: HTMLElement) => {
+
+  },
+  unmounted: () => {
+
   }
 }

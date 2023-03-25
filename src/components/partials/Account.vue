@@ -3,7 +3,7 @@
     <h5 class="-subhead">{{ currency }}</h5>
     <div class="-table">
       <p>Bank Name:</p>
-      <div class="-value">
+      <div class="-value" v-copy-to-clipboard>
         <p>{{ account.bank }}</p>
         <div class="-icon -btn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-4 h-4">
@@ -15,7 +15,7 @@
         </div>
       </div>
       <p>Account Name:</p>
-      <div class="-value">
+      <div class="-value" v-copy-to-clipboard>
         <p>{{ account.accountName }}</p>
         <div class="-icon -btn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-4 h-4">
@@ -27,7 +27,7 @@
         </div>
       </div>
       <p>Account Number:</p>
-      <div class="-value">
+      <div class="-value" v-copy-to-clipboard>
         <p>{{ account.accountNumber }}</p>
         <div class="-icon -btn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-4 h-4">
@@ -43,6 +43,7 @@
 </template>
 <script setup lang="ts">
 import { iAccount } from '~~/src/types';
+import { vCopyToClipboard } from "~/helpers/directives"
 
 const props = defineProps<{
   account: iAccount
