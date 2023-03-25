@@ -1,4 +1,4 @@
-import {iAccount, iBlog, iDynamicObject, iGlobal, iPastorate, iProgram} from "../types"
+import {iAccount, iBlog, iDynamicObject, iGlobal, iPastorate, iPrayercell, iProgram} from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -155,6 +155,15 @@ export const skeletonAccounts: iAccount[] = num2List(4).map((num: number) => ({
   bank: " ",
   currencyName: " ",
   currencySymbol: " ",
+  status: " "
+}))
+
+export const skeletonPrayercells: iPrayercell[] = num2List(8).map((num: number) => ({
+  address: " ",
+  coordinator: " ",
+  location: " ",
+  name: " ",
+  phoneNumber: " ",
   status: " "
 }))
 

@@ -13,15 +13,20 @@
         <img class="-mobile" src="/images/prayercells_1000x495.jpg" alt="prayercell banner" />
       </div>
       <div class="-cells">
-        <!-- <div class="-cell" v-for="(cell, idx) in globalState.prayercells" :key="idx">{{ cell.name }}</div> -->
-        <Prayercell v-for="(cell, idx) in globalState.prayercells" :key="idx" :cell="cell" />
+        <Prayercell v-if="isLoaded" v-for="(cell, idx) in globalState.prayercells" :key="idx" :cell="cell" />
+        <sPrayercell v-if="!isLoaded" v-for="(_, idx) in sPrayercell" :key="idx" />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+import { iPrayercell } from '~~/src/types';
 import Prayercell from '../partials/Prayercell.vue';
+import sPrayercell from '../skeletons/sPrayercell.vue';
+
 const { globalState } = useGlobals()
+
+const isLoaded = computed(() => (globalState.value.prayercells as iPrayercell[]).length > 0)
 </script>
 <style scoped>
 .-prayercells {
@@ -32,6 +37,7 @@ const { globalState } = useGlobals()
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  padding-bottom: 16px;
 }
 
 .-prayercells .-hero-banner {
