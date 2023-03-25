@@ -21,7 +21,7 @@
     </div>
 
     <div class="-content">
-      <blockquote class="-letter" v-html="pastor?.profile"></blockquote>
+      <blockquote class="-letter" v-html="profile"></blockquote>
     </div>
     
     <div class="-footnotes px-4">
@@ -36,6 +36,8 @@ const params = useRoute().params
 const id = params.id as string
 
 const { globalState } = useGlobals()
+
+const profile = computed(() => pastor.value?.profile ? pastor.value.profile : "Loading...")
 
 const pastor = computed<iPastorate>(() => {
   const pst = globalState.value.pastorates?.filter((pastor: iPastorate) => id.toLowerCase() === slug(pastor))[0]
