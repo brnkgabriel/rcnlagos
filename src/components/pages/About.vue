@@ -103,7 +103,7 @@
 }
 
 .-hero-header .-right img {
-  width: 80%;
+  width: 70%;
   margin-right: auto;
   background-color: var(--rcnaccentblue);
   padding: 16px;
@@ -113,9 +113,8 @@
 
 .-content {
   margin: 0 auto;
-  max-width: 768px;
   width: 100%;
-  margin-top: 16px;
+  margin-top: 32px;
 }
 
 .-content .-subhead {
@@ -133,9 +132,8 @@
 .-footnotes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 64px;
   width: 100%;
-  max-width: 768px;
   margin: 0 auto;
   margin-top: 16px;
 }
@@ -175,6 +173,7 @@
 
   .-footnotes {
     margin-top: 16px;
+    gap: 16px;
   }
 
   .-hero-header .-left h1 {

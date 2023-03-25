@@ -15,7 +15,7 @@
     <div class="-content">
       <div class="-letter">
         <p>
-          <strong>Arome Osayi</strong> was born on 2<sup>nd</sup> December, 1977, the fifth child in a family of seven, to
+          <strong>Arome Osayi (The Set Man of Remnant Christian Network)</strong> was born on 2<sup>nd</sup> December, 1977, the fifth child in a family of seven, to
           late Chief Paul Ameh Osayi - a career civil servant and Mrs. Mamuna Osayi - a career nurse in the capital city
           of Makurdi, Benue State, Nigeria. His parents were devout Christians and were fully invested in raising him and
           his siblings in the ways of the Lord. His parents' commitment to God would yield hundred percent result as he
@@ -79,22 +79,6 @@
           Arome Osayi is an apostle of the Lord Jesus Christ, author, mentor, entrepreneur and philanthropist. He is
           married to Dinna, and their union is blessed with two children
         </p>
-      </div>
-    </div>
-    <div class="-footnotes">
-      <div class="-note -values">
-        <h5 class="-subhead">our values</h5>
-        <p>Dedication, Relevance, Excellence, Accountability, Resilience, Forbearance, Faithfulness</p>
-      </div>
-      <div class="-note -mission">
-        <h5 class="-subhead">our mission</h5>
-        <p>To equip ministers of the gospel of our LORD Jesus Christ in Africa and Europe to become effective in the work
-          of the ministry</p>
-      </div>
-      <div class="-note -vision">
-        <h5 class="-subhead">our vision</h5>
-        <p>To strive for the rebirth of Apostolic Christianity in our generation. <br /><br />Preservation of biblical
-          doctrine and living out the truth of God's Word as it is in the Holy Scriptures</p>
       </div>
     </div>
   </div>
@@ -173,22 +157,7 @@
   row-gap: 16px;
 
 }
-
-.-footnotes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 64px;
-  width: 100%; 
-  margin: 0 auto;
-  margin-top: 16px;
-}
-
-.-footnotes .-note {}
-
-.-footnotes .-note .-subhead {}
-
-.-footnotes .-note p {}
-
+ 
 .-mobile {
   display: none;
 }
@@ -206,20 +175,14 @@
     text-align: center;
   }
 
-  .-content,
-  .-footnotes {
+  .-content {
     width: calc(100% - 32px);
     margin: 0 auto;
   }
 
   .-content {
     margin-top: 32px;
-  }
-
-  .-footnotes {
-    margin-top: 16px;
-    gap: 16px;
-  }
+  } 
 
   .-hero-header .-left h1 {
     font-weight: bold;
@@ -240,17 +203,10 @@
 
   .-hero-header .-right img {
     width: 100%;
-  }
-
-  .-footnotes {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  } 
 }
 
-@media screen and (max-width: 420px) {
-  .-footnotes {
-    grid-template-columns: repeat(1, 1fr);
-  }
+@media screen and (max-width: 420px) { 
 }
 
 @media screen and (min-width: 320px) and (max-width: 420px) {}</style>

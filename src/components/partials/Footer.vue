@@ -13,18 +13,18 @@
         <NuxtLink href="/about">RCN Global</NuxtLink>
         <NuxtLink href="/president">RCN President</NuxtLink>
         <NuxtLink href="/about">RCN Lagos</NuxtLink>
-        <NuxtLink href="/pastors">Pastors</NuxtLink>
+        <NuxtLink href="/programs">Programs</NuxtLink> 
       </div>
       <div class="-col">
-        <h5 class="-links-category">rcn lagos</h5>
-        <NuxtLink href="/programs">Programs</NuxtLink> 
-        <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+        <h5 class="-links-category">community</h5>
+        <NuxtLink href="/pastors">Pastors</NuxtLink>
         <NuxtLink href="/departments">Departments</NuxtLink>
-        <NuxtLink href="/blog">Blog</NuxtLink>
+        <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+        <NuxtLink href="/contact">Contact Us</NuxtLink>
       </div>
       <div class="-col">
         <h5 class="-links-category">resources</h5>
-        <NuxtLink href="/contact">Contact Us</NuxtLink>
+        <NuxtLink href="/blog">Blog</NuxtLink>
         <NuxtLink href="/request">Prayer Request</NuxtLink>
         <NuxtLink href="/testimony">Give Testimony</NuxtLink>
         <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
