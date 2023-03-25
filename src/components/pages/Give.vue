@@ -317,7 +317,9 @@ const { globalState } = useGlobals()
   box-shadow: 0px 4px 20px -5px var(--red);
 }
 
-.-accounts .-account .-table .-value .-icon {}
+.-accounts .-account .-table .-value .-icon {
+  cursor: pointer;
+}
 
 .-paystack {
   background-color: var(--paystack);
@@ -359,6 +361,10 @@ const { globalState } = useGlobals()
   .-give .-hero-banner .-hero-title h1 {
     font-size: 29px
   }
+  .-paystack {
+    width: 100%;
+    text-align: center;
+  }
 
 }
 
@@ -371,6 +377,7 @@ const { globalState } = useGlobals()
   .-give .-hero-banner .-hero-title {
     width: calc(100% - 16px);
   }
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 420px) {}
