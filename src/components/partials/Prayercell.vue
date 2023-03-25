@@ -89,7 +89,7 @@ const props = defineProps<{
   z-index: 1;
   font-weight: bold;
   font-size: 1.3em;
-  width: 100%;
+  width: calc(100% - 16px);
 }
 
 .-cell .-img {
