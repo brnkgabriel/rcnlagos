@@ -14,7 +14,7 @@
       </div>
       <div class="-cells">
         <Prayercell v-if="isLoaded" v-for="(cell, idx) in globalState.prayercells" :key="idx" :cell="cell" />
-        <sPrayercell v-if="!isLoaded" v-for="(_, idx) in sPrayercell" :key="idx" />
+        <sPrayercell v-if="!isLoaded" v-for="(_, idx) in skeletonPrayercells" :key="idx" />
       </div>
     </div>
   </div>
