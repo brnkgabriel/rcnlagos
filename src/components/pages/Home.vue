@@ -509,6 +509,9 @@ onBeforeUnmount(() => {
 
 .-blog .-selected.active .-post .-postcontent {
   opacity: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
 }
 
 .-blog .-thumbnails {
@@ -598,7 +601,7 @@ onBeforeUnmount(() => {
 }
 
 .-subscription-upcoming .-subup input {
-  width: 100%; 
+  width: 100%;
 }
 
 .-upcoming .-title-wrap {
@@ -616,7 +619,7 @@ onBeforeUnmount(() => {
   flex-direction: column;
   align-items: flex-start;
   row-gap: 8px;
-  width: 100%; 
+  width: 100%;
 }
 
 .-subscription-upcoming .-subup.-loading {
@@ -626,6 +629,7 @@ onBeforeUnmount(() => {
 .-subscription-upcoming .-subup .-btn .-txt {
   display: block;
 }
+
 .-subscription-upcoming .-subup.-loading .-btn .-txt {
   display: none;
 }
@@ -651,11 +655,13 @@ onBeforeUnmount(() => {
 .-subscription-upcoming .-subup.-show-status .-status {
   display: block;
 }
+
 .-subscription-upcoming .-subup .-status[data-type="error"] {
   background-color: var(--red-bg);
   color: var(--red);
   border-color: var(--red);
 }
+
 .-subscription-upcoming .-subup .-status[data-type="success"] {
   background-color: var(--green-bg);
   color: var(--green);
@@ -1008,5 +1014,4 @@ onBeforeUnmount(() => {
     font-size: 11px;
     padding: 8px;
   }
-}
-</style>
+}</style>
