@@ -4,7 +4,7 @@ export default defineEventHandler(async (event: H3Event) => {
 
   const body = await readBody(event)
   console.log("body", body)
-  const url = `https://script.google.com/macros/s/AKfycbwNMhE0g1kz3fb-KoTAfC4McOiC8ciQ-dYsYvI1M3gSYAlTvcbTIMpwPtJXJZBENVrVeA/exec`
+  const url = `https://script.google.com/macros/s/AKfycbxMAx8GD8Ak8MwI-0L0prHDSNZyHdKhwJntyRSfAZxZtgB-HAIVv115kIhGZTSXkBtjLA/exec`
   const response = await fetch(url, {
     method: "POST", 
     mode: "cors",
