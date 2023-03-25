@@ -12,18 +12,21 @@
         <img class="-mobile" src="/images/prayercells_1000x495.jpg" alt="prayercell banner" />
       </div>
       <div class="-accounts">
-        <Account v-for="(account, idx) in globalState.accounts" :key="idx" :account="account" />
+        <Account v-if="isLoaded" v-for="(account, idx) in globalState.accounts" :key="idx" :account="account" />
+        <sAccount v-if="!isLoaded" v-for="(account, idx) in skeletonAccounts" :key="idx" :account="account" />
       </div>
       <NuxtLink target="_blank" href="https://paystack.com/pay/RCNLagosGive" class="-paystack -btn">paystack</NuxtLink>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+import { iAccount } from '~~/src/types';
 import Account from '../partials/Account.vue';
+import sAccount from '../skeletons/sAccount.vue';
 
 const { globalState } = useGlobals()
-
-watch(globalState, () => console.log("globalState", globalState.value))
+const isLoaded = computed(() => (globalState.value.accounts as iAccount[]).length > 0)
+ 
 </script>
 <style scoped>
 .-give {

@@ -1,4 +1,4 @@
-import {iBlog, iDynamicObject, iGlobal, iPastorate, iProgram} from "../types"
+import {iAccount, iBlog, iDynamicObject, iGlobal, iPastorate, iProgram} from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -146,6 +146,15 @@ export const skeletonPastors: iPastorate[] = num2List(6).map((num: number) => ({
   name: " ",
   profile: " ",
   role: " ",
+  status: " "
+}))
+
+export const skeletonAccounts: iAccount[] = num2List(4).map((num: number) => ({
+  accountName: " ",
+  accountNumber: " ",
+  bank: " ",
+  currencyName: " ",
+  currencySymbol: " ",
   status: " "
 }))
 
