@@ -41,7 +41,12 @@ const pastor = computed<iPastorate>(() => {
   const pst = globalState.value.pastorates?.filter((pastor: iPastorate) => id.toLowerCase() === slug(pastor))[0]
   return pst as iPastorate
 })
-
+definePageMeta({
+  layout: "default"
+})
+useHead(head({
+  name: `${pastor.value.name} | RCN Lagos`,
+}))
 </script>
 <style scoped>
 .-about {
