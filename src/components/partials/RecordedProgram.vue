@@ -7,8 +7,14 @@
         <h5 class="-minister">{{ program.minister }}</h5>
         <div class="-time">{{ program.datetime }}</div>
       </div>
+      <div class="-audio">
+        <audio controls  v-if="hasAudio">
+          <source :src="program.audiourl" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
       <div class="-ctas">
-        <NuxtLink class="-btn -download" download href="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/audio%2FChoosing%20ur%20lyf%20partner.mp3?alt=media&token=5be64585-fbac-4a48-8909-8701b3f2c8c3">
+        <NuxtLink v-if="hasAudio" class="-btn -download" download :href="program.audiourl">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
             viewBox="0 0 32 32" class="w-4 h-4">
             <title>download</title>
@@ -17,13 +23,6 @@
             </path>
           </svg>
         </NuxtLink>
-        <div class="-btn -play-audio">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-            <path d="M8.25 4.5a3.75 3.75 0 117.5 0v8.25a3.75 3.75 0 11-7.5 0V4.5z" />
-            <path
-              d="M6 10.5a.75.75 0 01.75.75v1.5a5.25 5.25 0 1010.5 0v-1.5a.75.75 0 011.5 0v1.5a6.751 6.751 0 01-6 6.709v2.291h3a.75.75 0 010 1.5h-7.5a.75.75 0 010-1.5h3v-2.291a6.751 6.751 0 01-6-6.709v-1.5A.75.75 0 016 10.5z" />
-          </svg>
-        </div>
         <div class="-btn -play-video" @click="playVideo">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
             <path
@@ -49,14 +48,15 @@ const props = defineProps<{
   showVideo: (program: iEvent) => void;
 }>()
 
+const hasAudio = computed(() => (props.program.audiourl as string).length > 0)
 const src = computed(() => props.program?.image ? props.program.image : youTubeThumbnail(props.program.videourl as string))
 
 const playVideo = () => {
   props.showVideo(props.program)
 }
-const playAudio = () => {}
-const downloadAudio = () => {}
-const copyLink = () => {}
+const playAudio = () => { }
+const downloadAudio = () => { }
+const copyLink = () => { }
 
 </script>
 <style scoped>
@@ -79,6 +79,14 @@ const copyLink = () => {}
   flex-direction: column;
   row-gap: 8px;
   padding: 8px;
+}
+
+.-program .-details .-audio {
+  height: 54px;
+}
+
+.-program .-details .-audio audio {
+  width: 100%;
 }
 
 .-program .-details>h5 {
@@ -126,9 +134,9 @@ const copyLink = () => {}
 .-status {
   color: var(--rcntext);
   font-weight: 600;
-  top: calc(100% - 64px);
+  top: 100%;
   right: 8px;
-  transform: translate(0%, -50%);
+  transform: translate(0%, calc(-50% - 22px));
 }
 
 @media screen and (min-width: 420px) and (max-width: 576px) {

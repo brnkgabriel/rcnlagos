@@ -1,31 +1,7 @@
 <template>
   <div class="-programs">
-    <div class="-hero-section -inner px-4 relative">
-      <div class="-filters -inner sticky -desktop">
-        <h5 class="-program-selection -subhead">Programs</h5>
-        <div class="relative -form-control -categories">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="-select-category-icon absolute">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z">
-            </path>
-          </svg>
-          <select name="categories" id="selectCategory">
-            <option value="Community Bible Study">Community Bible Study</option>
-            <option value="Threshing Floor">Threshing Floor</option>
-            <option value="Threshing Floor">Threshing Floor</option>
-          </select>
-        </div>
-        <div class="relative -form-control -search">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="-search-icon absolute">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
-          </svg>
-          <input type="text" class="-search-input" placeholder="Search">
-        </div>
-      </div>
-      <div class="-video-n-shorts">
+    <div class="-inner px-4 relative"> 
+      <div class="-video-n-shorts -hero-section">
         <div class="-video-wrap relative">
           <iframe :src="iframeSrc" class="-video absolute" :class="{ show }"></iframe>
           <div class="-caption absolute">
@@ -42,10 +18,6 @@
           <img src="/images/programs_1500x844.jpg" alt="events hero">
         </div>
         <div class="-shorts">
-          <audio controls> 
-            <source src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/audio%2FChoosing%20ur%20lyf%20partner.mp3?alt=media&token=5be64585-fbac-4a48-8909-8701b3f2c8c3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
         </div>
       </div>
       <div class="-catalog">
