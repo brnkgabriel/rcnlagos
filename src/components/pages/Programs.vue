@@ -1,6 +1,6 @@
 <template>
   <div class="-programs">
-    <div class="-inner px-4 relative"> 
+    <div class="-inner px-4 relative">
       <div class="-video-n-shorts -hero-section">
         <div class="-video-wrap relative">
           <iframe :src="iframeSrc" class="-video absolute" :class="{ show }"></iframe>
@@ -9,7 +9,7 @@
             <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
           </div>
           <div class="-upcoming-program absolute">
-            <div class="-left"> 
+            <div class="-left">
               <h5 class="-subhead">upcoming program</h5>
               <p>The Convergence | April 21 - 22, 2023</p>
             </div>
@@ -21,7 +21,8 @@
         </div>
       </div>
       <div class="-catalog">
-        <RecordedProgram v-for="(program, idx) in reorder(globalState.events as any)" :key="idx" :program="program" :show-video="showVideo" />
+        <RecordedProgram v-for="(program, idx) in reorder(globalState.events as any)" :key="idx" :program="program"
+          :show-video="showVideo" />
       </div>
     </div>
   </div>
@@ -114,14 +115,14 @@ onMounted(() => {
 }
 
 .-video-n-shorts .-caption {
-  top: 40%;
-  transform: translateY(-50%);
-  left: 8%;
-  width: 84%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  left: 8px;
   row-gap: 16px;
+  top: 40%;
+  transform: translateY(-50%);
+  width: calc(100% - 16px);
   z-index: 1;
 }
 
@@ -146,7 +147,7 @@ onMounted(() => {
 
 .-video-n-shorts .-caption .-mainline {
   color: white;
-  font-size: 32px;
+  font-size: 60px;
   line-height: 1;
   font-weight: bold;
 }
@@ -174,6 +175,7 @@ onMounted(() => {
   z-index: 1;
   bottom: 0;
 }
+
 .-video-n-shorts .-upcoming-program .-left {
   display: flex;
   flex-direction: column;
@@ -252,7 +254,7 @@ onMounted(() => {
   }
 
   .-video-n-shorts .-caption .-mainline {
-    font-size: 36px;
+    font-size: 40px;
   }
 }
 
@@ -270,11 +272,7 @@ onMounted(() => {
     width: calc(100% - 16px);
     left: 8px;
     row-gap: 4px;
-  }
-
-  .-video-n-shorts .-caption .-mainline {
-    font-size: 24px;
-  }
+  } 
 }
 
 @media screen and (max-width: 420px) {
