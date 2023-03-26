@@ -181,3 +181,28 @@ export const vCopyToClipboard = {
     copyBtn.removeEventListener("click", () => handleCopy(copyBtn, textToCopy))
   }
 }
+
+
+export const vCopyShareLink = {
+  mounted: (ele: HTMLElement) => {
+    const copyBtn = ele as HTMLElement
+    const program = copyBtn.parentElement?.parentElement?.parentElement as HTMLElement
+    const status = el(".-status", program) as HTMLElement
+    const textToCopy = copyBtn.getAttribute(constants.DATAVIDEO) as string
+    copyBtn.addEventListener("click", () => handleCopy(status, textToCopy))
+  },
+  updated: (ele: HTMLElement) => {
+    const copyBtn = ele as HTMLElement
+    const program = copyBtn.parentElement?.parentElement?.parentElement as HTMLElement
+    const status = el(".-status", program) as HTMLElement
+    const textToCopy = copyBtn.getAttribute(constants.DATAVIDEO) as string
+    copyBtn.addEventListener("click", () => handleCopy(status, textToCopy))
+  },
+  unmounted: (ele: HTMLElement) => {
+    const copyBtn = ele as HTMLElement
+    const program = copyBtn.parentElement?.parentElement?.parentElement as HTMLElement
+    const status = el(".-status", program) as HTMLElement
+    const textToCopy = copyBtn.getAttribute(constants.DATAVIDEO) as string
+    copyBtn.removeEventListener("click", () => handleCopy(status, textToCopy))
+  }
+}

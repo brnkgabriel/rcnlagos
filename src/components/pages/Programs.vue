@@ -1,24 +1,21 @@
 <template>
   <div class="-programs">
+    <!-- <Modal /> -->
     <div class="-inner px-4 relative">
-      <div class="-video-n-shorts -hero-section">
-        <div class="-video-wrap relative">
-          <iframe :src="iframeSrc" class="-video absolute" :class="{ show }"></iframe>
-          <div class="-caption absolute">
-            <h1 class="-mainline -headfont">Encountering the Word</h1>
-            <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
-          </div>
-          <div class="-upcoming-program absolute">
-            <div class="-left">
-              <h5 class="-subhead">upcoming program</h5>
-              <p>The Convergence | April 21 - 22, 2023</p>
-            </div>
-            <NuxtLink href="/registration" class="-btn -subscribe">Register</NuxtLink>
-          </div>
-          <img src="/images/programs_1500x844.jpg" alt="events hero">
+      <div class="-hero-banner relative">
+        <div class="-hero-title absolute -caption">
+          <h1 class="-headfont -mainline">Encounter the Word</h1>
+          <p class="-subline">Explore our programs and events and get notified of upcoming events.</p>
         </div>
-        <div class="-shorts">
+        <div class="-upcoming-program absolute">
+          <div class="-left">
+            <h5 class="-subhead">upcoming program</h5>
+            <p>The Convergence | April 21 - 22, 2023</p>
+          </div>
+          <NuxtLink href="/registration" class="-btn -subscribe">Register</NuxtLink>
         </div>
+        <img class="-desktop" src="/images/programs_1511x495.jpg" alt="prayercell banner" />
+        <img class="-mobile" src="/images/programs_1500x844.jpg" alt="prayercell banner" />
       </div>
       <div class="-catalog">
         <RecordedProgram v-for="(program, idx) in reorder(globalState.events as any)" :key="idx" :program="program"
@@ -30,6 +27,7 @@
 <script setup lang="ts">
 import { iEvent } from '~~/src/types';
 import RecordedProgram from '../partials/RecordedProgram.vue';
+import Modal from '../partials/ProgramsModal.vue';
 
 const show = ref(false)
 const iframeSrc = ref(constants.DEFAULTVIDEO)
@@ -67,8 +65,9 @@ onMounted(() => {
   opacity: 0;
 }
 
-.-desktop {
-  display: none !important;
+
+.-mobile {
+  display: none;
 }
 
 .-hero-section .-video.show {
@@ -114,7 +113,7 @@ onMounted(() => {
   font-weight: 600;
 }
 
-.-video-n-shorts .-caption {
+.-hero-banner .-caption {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -124,48 +123,41 @@ onMounted(() => {
   transform: translateY(-50%);
   width: calc(100% - 16px);
   z-index: 1;
+  text-align: center;
 }
 
-.-video-n-shorts {
-  position: sticky;
-  top: 72px;
-  left: 0;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: var(--box-shadow);
-  overflow: hidden;
+.-hero-banner {
+  background-color: black;
+  aspect-ratio: 1511 / 495;
 }
 
-.-video-n-shorts .-video-wrap {
+/* .-hero-banner .-video-wrap {
   aspect-ratio: 560 / 315;
   max-width: 560px;
   background-color: black;
-}
+} */
 
-.-video-n-shorts .-caption .-mainline {
+.-hero-banner .-caption .-mainline {
   color: white;
   font-size: 60px;
   line-height: 1;
   font-weight: bold;
 }
 
-.-video-n-shorts .-caption .-subline {
+.-hero-banner .-caption .-subline {
   color: white;
 }
 
-.-video-n-shorts .-caption .-subscribe.-btn {
+.-hero-banner .-caption .-subscribe.-btn {
   width: fit-content;
 }
 
-.-video-n-shorts img {
+.-hero-banner img {
   opacity: .6;
 }
 
 
-.-video-n-shorts .-upcoming-program {
+.-hero-banner .-upcoming-program {
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
@@ -174,31 +166,29 @@ onMounted(() => {
   width: 100%;
   z-index: 1;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.-video-n-shorts .-upcoming-program .-left {
+.-hero-banner .-upcoming-program .-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
 
-.-video-n-shorts .-upcoming-program .-left {}
 
-.-video-n-shorts .-upcoming-program .-right {}
-
-
-.-video-n-shorts .-upcoming-program h5,
-.-video-n-shorts .-upcoming-program p,
-.-video-n-shorts .-upcoming-program span {
+.-hero-banner .-upcoming-program h5,
+.-hero-banner .-upcoming-program p,
+.-hero-banner .-upcoming-program span {
   color: white;
 }
 
-.-video-n-shorts .-upcoming-program h5 {
+.-hero-banner .-upcoming-program h5 {
   text-transform: uppercase;
 }
 
-.-video-n-shorts .-upcoming-program span {}
+.-hero-banner .-upcoming-program span {}
 
 .-programs .-catalog {
   padding: 16px 0;
@@ -212,9 +202,9 @@ onMounted(() => {
     display: none;
   }
 
-  .-video-n-shorts .-caption {
-    width: 95%;
-    left: 2.5%;
+  .-hero-banner .-caption {
+    width: calc(100% - 16px);
+    left: 8px;
     row-gap: 4px;
   }
 
@@ -226,35 +216,32 @@ onMounted(() => {
 
 @media screen and (max-width: 768px) {
 
-  .-hero-section .-filters {
-    display: grid;
-    grid-template-columns: 60% 10% 30%
-  }
-
-  .-hero-section .-filters.-desktop {
-    display: none;
-  }
-
-  .-video-n-shorts {
+  .-hero-banner {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .-video-n-shorts .-video-wrap {
+  .-hero-banner .-video-wrap {
     max-width: unset !important;
   }
 
-  .-video-n-shorts .-shorts {
+  .-hero-banner .-shorts {
     display: none;
   }
 
-  .-video-n-shorts .-caption {
-    width: 90%;
-    left: 5%;
-    row-gap: 4px;
+  .-hero-banner .-caption .-mainline {
+    font-size: 40px;
   }
 
-  .-video-n-shorts .-caption .-mainline {
-    font-size: 40px;
+  .-mobile {
+    display: block;
+  }
+
+  .-desktop {
+    display: none;
+  }
+
+  .-hero-banner {
+    aspect-ratio: 1500 / 844;
   }
 }
 
@@ -268,17 +255,9 @@ onMounted(() => {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .-video-n-shorts .-caption[data-v-ade7f127] {
-    width: calc(100% - 16px);
-    left: 8px;
-    row-gap: 4px;
-  } 
 }
 
 @media screen and (max-width: 420px) {
-  .-hero-section .-video-n-shorts {
-    aspect-ratio: 560 / 315;
-  }
 
   .-programs .-catalog {
     grid-template-columns: repeat(1, 1fr);
@@ -288,13 +267,26 @@ onMounted(() => {
 
 @media screen and (min-width: 320px) and (max-width: 420px) {
 
-  .-video-n-shorts .-upcoming-program h5,
-  .-video-n-shorts .-upcoming-program p {
+  .-hero-banner .-upcoming-program h5,
+  .-hero-banner .-upcoming-program p {
     font-size: .8em !important;
   }
 
-  .-video-n-shorts .-upcoming-program {
-    padding: 4px 8px;
+  .-hero-banner .-upcoming-program p {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80%;
+    text-overflow: ellipsis;
+  }
+
+  .-hero-banner .-upcoming-program {
+    padding: 8px;
+  }
+  .-hero-banner .-caption .-mainline {
+    font-size: 32px;
+  }
+  .-hero-banner .-caption .-subline {
+    font-size: 12px;
   }
 }
 

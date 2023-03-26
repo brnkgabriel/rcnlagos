@@ -46,7 +46,8 @@ export const constants = {
   SITECONTENT: "#__nuxt",
   BLOGTHUMBNAILSQUERY: ".-blog .-content .-thumbnails",
   DEFAULTVIDEO: "",
-  DEFAULTAUDIO: ""
+  DEFAULTAUDIO: "",
+  DATAVIDEO: "data-video"
 }
 
 export const operatingSystem = () => {
