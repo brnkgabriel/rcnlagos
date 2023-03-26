@@ -42,7 +42,7 @@
 </script>
 <style scoped>
 .-head {
-  font-size: 3em;
+  font-size: 60px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
