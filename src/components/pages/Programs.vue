@@ -1,6 +1,6 @@
 <template>
   <div class="-programs">
-    <!-- <Modal /> -->
+    <!-- <Modal :program="selectedProgram" /> -->
     <div class="-inner px-4 relative">
       <div class="-hero-banner relative">
         <div class="-hero-title absolute -caption">
@@ -18,21 +18,23 @@
         <img class="-mobile" src="/images/programs_1500x844.jpg" alt="prayercell banner" />
       </div>
       <div class="-catalog">
-        <RecordedProgram v-for="(program, idx) in reorder(globalState.events as any)" :key="idx" :program="program"
-          :show-video="showVideo" />
+        <Program v-for="(program, idx) in reorder(globalState.programs as any)" :key="idx" :program="program" />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { iEvent } from '~~/src/types';
-import RecordedProgram from '../partials/RecordedProgram.vue';
+import { iProgram } from '~~/src/types';
+import Program from '../partials/Program.vue';
 import Modal from '../partials/ProgramsModal.vue';
 
 const show = ref(false)
 const iframeSrc = ref(constants.DEFAULTVIDEO)
+const selectedProgram = ref<iProgram>(skeletonPrograms[0])
 
-const showVideo = (program: iEvent) => {
+
+const showVideo = (program: iProgram) => {
+  selectedProgram.value = program as iProgram
   const embedLink = youTubeLinkToEmbedLink(program.videourl as string)
   iframeSrc.value = embedLink
   show.value = true
@@ -131,12 +133,6 @@ onMounted(() => {
   aspect-ratio: 1511 / 495;
 }
 
-/* .-hero-banner .-video-wrap {
-  aspect-ratio: 560 / 315;
-  max-width: 560px;
-  background-color: black;
-} */
-
 .-hero-banner .-caption .-mainline {
   color: white;
   font-size: 60px;
@@ -188,7 +184,6 @@ onMounted(() => {
   text-transform: uppercase;
 }
 
-.-hero-banner .-upcoming-program span {}
 
 .-programs .-catalog {
   padding: 16px 0;
@@ -220,10 +215,6 @@ onMounted(() => {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .-hero-banner .-video-wrap {
-    max-width: unset !important;
-  }
-
   .-hero-banner .-shorts {
     display: none;
   }
@@ -247,9 +238,6 @@ onMounted(() => {
 
 
 @media screen and (max-width: 576px) {
-  .-hero-section .-video {
-    left: 0%;
-  }
 
   .-programs .-catalog {
     grid-template-columns: repeat(2, 1fr);

@@ -10,9 +10,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import { iProgram } from "~~/src/types/index"
+import { iProgramCategory } from "~~/src/types/index"
 defineProps<{
-  program: iProgram
+  program: iProgramCategory
 }>()
 </script>
 <style scoped>

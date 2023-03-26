@@ -54,3 +54,5 @@ api: https://script.google.com/macros/s/AKfycbyzfNWhPnxgEcbt4tSiCMKsoSurroruxBs2
 #14 - to enable post request to google sheets: https://developers.google.com/sheets/api/quickstart/js
 
 #15 - copy to clipboard: https://codepen.io/KimmoCommit/pen/mPYpBE
+
+#16 - One thin line in this project is that iEvent type is called programs with youTubeVideo & audio. It's a little conflicting with iProgram on the homepage

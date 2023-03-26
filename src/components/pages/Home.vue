@@ -48,9 +48,9 @@
           <p class="-subline">Join us in God's presence</p>
         </div>
         <div class="-programs">
-          <sProgram v-if="!globalState.programs?.length" v-for="(program, idx) in skeletonPrograms" :program="program"
+          <sProgramCategory v-if="!isRemoteDataLoaded" v-for="(program, idx) in skeletonProgramCategories" :program="program"
             :key="idx" />
-          <Program v-if="globalState.programs" v-for="(program, idx) in globalState.programs" :program="program"
+          <ProgramCategory v-if="isRemoteDataLoaded" v-for="(program, idx) in globalState.programCategories" :program="program"
             :key="idx" />
         </div>
       </div>
@@ -168,8 +168,8 @@
 <script setup lang="ts">
 
 import { vSlide, vLoaded } from "~~/src/helpers/directives"
-import Program from "../partials/Program.vue";
-import sProgram from "../skeletons/sProgram.vue";
+import ProgramCategory from "../partials/ProgramCategory.vue";
+import sProgramCategory from "../skeletons/sProgramCategory.vue";
 import BlogThumbnail from "../partials/BlogThumbnail.vue";
 import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import TestimonialCard from "../partials/TestimonialCard.vue";
@@ -177,7 +177,7 @@ import { iBlog } from "~~/src/types";
 import { Controller } from "~~/src/helpers/controller";
 
 const { globalState } = useGlobals()
-const isRemoteDataLoaded = computed(() => (globalState.value.programs?.length as number) > 0)
+const isRemoteDataLoaded = computed(() => (globalState.value.programCategories?.length as number) > 0)
 const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
 
 const email = ref("")

@@ -165,7 +165,7 @@ const handleCopy = (btn: HTMLElement, textToCopy: string) => {
 }
 
 const handleShare = (title: string, url: string) => {
-  navigator.share({ title, url })
+  navigator.share({ title, text: title, url })
     .then(() => console.log("successful share"))
     .catch((err) => console.log("Error sharing", err))
 }

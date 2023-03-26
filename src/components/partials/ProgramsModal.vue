@@ -1,18 +1,18 @@
 <template>
-  <div class="fixed inset-0 flex items-center justify-center">
+  <!-- <div class="fixed inset-0 flex items-center justify-center">
     <button type="button" @click="openModal"
       class="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
       Open dialog
     </button>
-  </div>
+  </div> -->
   <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="closeModal" class="relative z-10">
+    <Dialog as="div" @close="closeModal" class="relative z-1">
       <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100"
         leave="duration-200 ease-in" leave-from="opacity-100" leave-to="opacity-0">
         <div class="fixed inset-0 bg-black bg-opacity-25" />
       </TransitionChild>
 
-      <div class="fixed inset-0 overflow-y-auto">
+      <div class="fixed inset-0 overflow-y-auto font-body">
         <div class="flex min-h-full items-center justify-center p-4 text-center">
           <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95"
             enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
@@ -23,10 +23,7 @@
                 Payment successful
               </DialogTitle>
               <div class="mt-2">
-                <p class="text-sm text-gray-500">
-                  Your payment has been successfully submitted. We've sent you
-                  an email with all of the details of your order.
-                </p>
+                <iframe src="" class="-video"></iframe>
               </div>
 
               <div class="mt-4">
@@ -44,7 +41,7 @@
   </TransitionRoot>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import {
   TransitionRoot,
@@ -52,7 +49,7 @@ import {
   Dialog,
   DialogPanel,
   DialogTitle,
-} from '@headlessui/vue'
+} from '@headlessui/vue' 
 
 const isOpen = ref(true)
 
@@ -63,3 +60,6 @@ function openModal() {
   isOpen.value = true
 }
 </script>
+<style scoped>
+
+</style>

@@ -6,12 +6,13 @@ export default defineNuxtPlugin(nuxtApp => {
   useState<iGlobal>(constants.globals, () => ({ 
     departments: [],
     pastorates: [],
-    prayercells: [],
-    events: [],
+    prayercells: [], 
     sliders: [],
     programs: [],
     blogs: [],
     testimonials: [],
-    accounts: []
+    accounts: [],
+    selectedProgram: {},
+    showProgramModal: false
   }))
 })

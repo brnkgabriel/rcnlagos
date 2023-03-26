@@ -5,12 +5,7 @@
     <loc>https://rcnlagos.netlify.app/</loc>
     <lastmod>2023-03-21T06:32:48+00:00</lastmod>
     <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/events</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
+  </url> 
   <url>
     <loc>https://rcnlagos.netlify.app/blog</loc>
     <lastmod>2023-03-21T06:32:48+00:00</lastmod>
@@ -30,17 +25,7 @@
     <loc>https://rcnlagos.netlify.app/about</loc>
     <lastmod>2023-03-21T06:32:48+00:00</lastmod>
     <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/events/?q=past</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/events/?q=future</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
+  </url> 
   <url>
     <loc>https://rcnlagos.netlify.app/request</loc>
     <lastmod>2023-03-21T06:32:48+00:00</lastmod>

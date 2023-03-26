@@ -1,4 +1,4 @@
-import {iAccount, iBlog, iDynamicObject, iGlobal, iPastorate, iPrayercell, iProgram} from "../types"
+import {iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory} from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -80,8 +80,10 @@ export const useGlobals = () => {
   const globalState = useState<iGlobal>(constants.globals)
 
   const setGlobals = (value: iGlobal) => globalState.value = value
+  const setSelectedProgram = (program: iProgram) => globalState.value.selectedProgram = program
+  const setShowProgramModal = (flag: boolean) => globalState.value.showProgramModal = flag
 
-  return { globalState, setGlobals }
+  return { globalState, setGlobals, setSelectedProgram, setShowProgramModal }
 }
  
 interface iHead {
@@ -128,7 +130,7 @@ export const getMachineId = () => {
   return machineId;
 }
 
-export const skeletonPrograms: iProgram[] = num2List(6).map((num: number) => ({
+export const skeletonProgramCategories: iProgramCategory[] = num2List(6).map((num: number) => ({
   about: " ",
   image: "/images/359x205.png",
   name: " ",
@@ -168,6 +170,17 @@ export const skeletonPrayercells: iPrayercell[] = num2List(8).map((num: number) 
   name: " ",
   phoneNumber: " ",
   status: " "
+}))
+
+export const skeletonPrograms: iProgram[] = num2List(8).map((num: number) => ({ 
+  audiourl: "",
+  datetime: "",
+  image: "",
+  minister: "",
+  status: "",
+  theme: "",
+  type: "",
+  videourl: ""
 }))
 
 export const reorder = (list:any[]) => { 

@@ -63,7 +63,7 @@ export interface iPrayercell {
   phoneNumber?: string;
 }
 
-export interface iEvent {
+export interface iProgram {
   audiourl?: string;
   datetime?: string;
   image?: string;
@@ -82,7 +82,7 @@ export interface iSlider {
   page?: string;
 }
 
-export interface iProgram {
+export interface iProgramCategory {
   about?: string;
   image?: string;
   name?: string;
@@ -119,12 +119,14 @@ export interface iGlobal {
   departments?: iDepartment[];
   pastorates?: iPastorate[];
   prayercells?: iPrayercell[];
-  events?: iEvent[];
-  sliders?: iSlider[];
   programs?: iProgram[];
-  blogs?: iBlog[],
-  testimonials?: iTestimonial[],
-  accounts?: iAccount[]
+  sliders?: iSlider[];
+  programCategories?: iProgramCategory[];
+  blogs?: iBlog[];
+  testimonials?: iTestimonial[];
+  accounts?: iAccount[];
+  selectedProgram?: iProgram;
+  showProgramModal?: boolean;
 }
 
 export interface iSubscribe {
