@@ -1,6 +1,6 @@
 <template>
   <div class="-inner -privacy -row">
-    <h1 class="-head">Privacy Policy</h1>
+    <h1 class="-head -headfont">Privacy Policy</h1>
     <p>At Remnant Christian Network Lagos, we are committed to protecting the privacy of our members, donors, partners,
       and all visitors to our website. We respect your privacy and we are committed to safeguarding any personal
       information that we collect from you. This policy outlines how we collect, use, store, and disclose your personal

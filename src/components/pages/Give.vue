@@ -113,11 +113,7 @@ const isLoaded = computed(() => (globalState.value.accounts as iAccount[]).lengt
   }
 }
 
-@media screen and (max-width: 576px) {
-
-  .-give .-hero-banner .-hero-title h1 {
-    font-size: 29px
-  }
+@media screen and (max-width: 576px) { 
   .-paystack {
     width: 100%;
     text-align: center;
