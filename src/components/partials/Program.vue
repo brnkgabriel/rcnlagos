@@ -47,12 +47,17 @@ import { vShare } from '~/helpers/directives'
 const props = defineProps<{
   program: iProgram; 
 }>()
+const emit = defineEmits<{
+  (e: 'selected', program: iProgram): void
+}>()
 
 const hasAudio = computed(() => (props.program.audiourl as string).length > 0)
 const src = computed(() => props.program?.image ? props.program.image : youTubeThumbnail(props.program.videourl as string))
 
 
-const playVideo = () => { }
+const playVideo = () => {
+  emit("selected", props.program)
+}
 const playAudio = () => { }
 const downloadAudio = () => { }
 const copyLink = () => { }

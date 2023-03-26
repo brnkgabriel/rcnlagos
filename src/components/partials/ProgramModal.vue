@@ -1,10 +1,4 @@
 <template>
-  <!-- <div class="fixed inset-0 flex items-center justify-center">
-    <button type="button" @click="openModal"
-      class="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-      Open dialog
-    </button>
-  </div> -->
   <TransitionRoot appear :show="isOpen" as="template">
     <Dialog as="div" @close="closeModal" class="relative z-1">
       <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100"
@@ -18,15 +12,16 @@
             enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
             leave-to="opacity-0 scale-95">
             <DialogPanel
-              class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+              class="w-full max-w-[45rem] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
               <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
-                Payment successful
+                {{ program.theme }}
               </DialogTitle>
               <div class="mt-2">
-                <iframe src="" class="-video"></iframe>
+                <iframe :src="src" class="-video"></iframe>
               </div>
 
-              <div class="mt-4">
+              <div class="mt-4 -footer">
+                <p>{{ program.minister }}</p>
                 <button type="button"
                   class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                   @click="closeModal">
@@ -49,17 +44,43 @@ import {
   Dialog,
   DialogPanel,
   DialogTitle,
-} from '@headlessui/vue' 
+} from '@headlessui/vue'
+import { iProgram } from '~~/src/types';
+const props = defineProps<{
+  program: iProgram;
+}>()
 
-const isOpen = ref(true)
+const src = ref(youTubeLinkToEmbedLink(props.program.videourl as string))
 
+watch(() => props.program, () => {
+  src.value = youTubeLinkToEmbedLink(props.program.videourl as string)
+})
+
+const isOpen = ref(false)
 function closeModal() {
   isOpen.value = false
+  src.value = ""
 }
 function openModal() {
   isOpen.value = true
 }
+
+defineExpose({
+  isOpen
+})
 </script>
 <style scoped>
+.-video {
+  aspect-ratio: 560 / 315;
+  max-height: 315px;
+  width: 100%;
+  border-radius: 4px;
+}
 
+.-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>

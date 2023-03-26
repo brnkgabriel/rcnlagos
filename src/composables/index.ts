@@ -178,7 +178,7 @@ export const skeletonPrograms: iProgram[] = num2List(8).map((num: number) => ({
   image: "",
   minister: "",
   status: "",
-  theme: "",
+  theme: "Loading...",
   type: "",
   videourl: ""
 }))
@@ -208,8 +208,11 @@ const obtainYouTubeID = (link:string) => {
 }
 
 export const youTubeLinkToEmbedLink = (link: string) => {
-  const id = obtainYouTubeID(link)
-  return `https://www.youtube.com/embed/${id}`
+  if (link.length > 0) {
+    const id = obtainYouTubeID(link)
+    return `https://www.youtube.com/embed/${id}`
+  }
+  return ""
 }
 
 export const slug = (pastor: iPastorate) => pastor.name?.toLowerCase().split(" ").join("-")

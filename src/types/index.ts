@@ -126,7 +126,7 @@ export interface iGlobal {
   testimonials?: iTestimonial[];
   accounts?: iAccount[];
   selectedProgram?: iProgram;
-  showProgramModal?: boolean;
+  showProgramModal: boolean;
 }
 
 export interface iSubscribe {

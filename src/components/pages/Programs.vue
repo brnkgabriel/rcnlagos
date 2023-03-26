@@ -1,6 +1,6 @@
 <template>
   <div class="-programs">
-    <!-- <Modal :program="selectedProgram" /> -->
+    <ProgramModal ref="programModal" :program="selectedProgram" />
     <div class="-inner px-4 relative">
       <div class="-hero-banner relative">
         <div class="-hero-title absolute -caption">
@@ -18,7 +18,7 @@
         <img class="-mobile" src="/images/programs_1500x844.jpg" alt="prayercell banner" />
       </div>
       <div class="-catalog">
-        <Program v-for="(program, idx) in reorder(globalState.programs as any)" :key="idx" :program="program" />
+        <Program v-for="(program, idx) in reorder(globalState.programs as any)" :key="idx" :program="program" @selected="showProgram" />
       </div>
     </div>
   </div>
@@ -26,29 +26,39 @@
 <script setup lang="ts">
 import { iProgram } from '~~/src/types';
 import Program from '../partials/Program.vue';
-import Modal from '../partials/ProgramsModal.vue';
+import ProgramModal from '../partials/ProgramModal.vue';
 
-const show = ref(false)
-const iframeSrc = ref(constants.DEFAULTVIDEO)
+// const show = ref(false)
+// const iframeSrc = ref(constants.DEFAULTVIDEO)
 const selectedProgram = ref<iProgram>(skeletonPrograms[0])
 
 
-const showVideo = (program: iProgram) => {
-  selectedProgram.value = program as iProgram
-  const embedLink = youTubeLinkToEmbedLink(program.videourl as string)
-  iframeSrc.value = embedLink
-  show.value = true
+// const showVideo = (program: iProgram) => {
+//   selectedProgram.value = program as iProgram
+//   const embedLink = youTubeLinkToEmbedLink(program.videourl as string)
+//   iframeSrc.value = embedLink
+//   show.value = true
+// }
+
+
+const programModal = ref()
+
+const showProgram = (program: iProgram) => {
+  programModal.value.isOpen = true
+  selectedProgram.value = program
+  console.log("currently showing program", program)
 }
 
 const { globalState } = useGlobals()
 
-const reset = (evt: Event) => {
-  show.value = false
-  iframeSrc.value = constants.DEFAULTVIDEO
-}
+// const reset = (evt: Event) => {
+//   show.value = false
+//   iframeSrc.value = constants.DEFAULTVIDEO
+// }
 
 onMounted(() => {
-  addEventListener("scroll", evt => reset(evt))
+  console.log("programModal is", programModal.value.isOpen)
+  // addEventListener("scroll", evt => reset(evt))
 })
 </script>
 <style scoped>
