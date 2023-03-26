@@ -1,6 +1,6 @@
 <template>
   <div class="-program relative">
-    <img :src="src" :alt="program.theme" />
+    <img :src="src" :alt="program.theme"  @click="playVideo" />
     <div class="-details">
       <div class="-name-time">
         <h5 class="-subhead -name">{{ program.theme }}</h5>
