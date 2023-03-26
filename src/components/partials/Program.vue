@@ -8,7 +8,7 @@
         <div class="-time">{{ program.datetime }}</div>
       </div>
       <div class="-audio">
-        <audio controls  v-if="hasAudio">
+        <audio controls v-if="hasAudio">
           <source :src="program.audiourl" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
@@ -25,8 +25,9 @@
         </NuxtLink>
         <div class="-btn -play-video" @click="playVideo">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-            <path
-              d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z" />
+            <path fill-rule="evenodd"
+              d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+              clip-rule="evenodd" />
           </svg>
         </div>
         <div class="-btn -share" :data-title="program.theme" :data-url="program.videourl" v-share>
@@ -37,14 +38,14 @@
           </svg>
         </div>
       </div>
-    </div> 
+    </div>
   </div>
 </template>
 <script setup lang="ts">
 import { iProgram } from '~~/src/types';
 import { vShare } from '~/helpers/directives'
 const props = defineProps<{
-  program: iProgram; 
+  program: iProgram;
 }>()
 const emit = defineEmits<{
   (e: 'selected', program: iProgram): void
@@ -133,7 +134,7 @@ const copyLink = () => { }
 .-program .-details .-ctas .-minister {
   line-height: 1.2;
 }
- 
+
 @media screen and (min-width: 420px) and (max-width: 576px) {
   .-program .-details .-ctas .-name-time {
     width: calc(100% - 72px);
