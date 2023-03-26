@@ -187,7 +187,7 @@ export const skeletonPrograms: iProgram[] = num2List(8).map((num: number) => ({
   image: "",
   minister: "",
   status: "",
-  theme: "Loading...",
+  theme: "",
   type: "",
   videourl: ""
 }))

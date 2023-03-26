@@ -1,42 +1,18 @@
 <template>
   <div class="-program relative">
-    <img :src="src" :alt="program.theme" />
+    <img src="/images/560x315.png" alt="program skeleton image" />
     <div class="-details">
       <div class="-name-time">
-        <h5 class="-subhead -name">{{ program.theme }}</h5>
+      <h5 class="-subhead -name">{{ program.theme }}</h5>
         <h5 class="-minister">{{ program.minister }}</h5>
         <div class="-time">{{ program.datetime }}</div>
       </div>
-      <div class="-audio">
-        <audio controls v-if="hasAudio">
-          <source :src="program.audiourl" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
+      <div class="-audio"> 
       </div>
       <div class="-ctas">
-        <NuxtLink v-if="hasAudio" class="-btn -download" download :href="program.audiourl">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-            viewBox="0 0 32 32" class="w-4 h-4">
-            <title>download</title>
-            <path
-              d="M16 18l8-8h-6v-8h-4v8h-6zM23.273 14.727l-2.242 2.242 8.128 3.031-13.158 4.907-13.158-4.907 8.127-3.031-2.242-2.242-8.727 3.273v8l16 6 16-6v-8z">
-            </path>
-          </svg>
-        </NuxtLink>
-        <div class="-btn -play-video" @click="playVideo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-            <path fill-rule="evenodd"
-              d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
-              clip-rule="evenodd" />
-          </svg>
-        </div>
-        <div class="-btn -share" :data-title="program.theme" :data-url="program.videourl" v-share>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-            <path fill-rule="evenodd"
-              d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
-              clip-rule="evenodd" />
-          </svg>
-        </div>
+        <div class="-btn"></div>
+        <div class="-btn"></div>
+        <div class="-btn"></div>
       </div>
     </div>
   </div>
@@ -51,19 +27,39 @@ const emit = defineEmits<{
   (e: 'selected', program: iProgram): void
 }>()
 
-const hasAudio = computed(() => (props.program.audiourl as string).length > 0)
-const src = computed(() => props.program?.image ? props.program.image : youTubeThumbnail(props.program.videourl as string))
-
+const hasAudio = computed(() => (props.program.audiourl as string).length > 0) 
 
 const playVideo = () => {
   emit("selected", props.program)
-}
-const playAudio = () => { }
-const downloadAudio = () => { }
-const copyLink = () => { }
+} 
 
 </script>
 <style scoped>
+.-program .-details .-name,
+.-program .-details .-minister,
+.-program .-details .-time,
+.-program .-details .-audio,
+.-program .-details .-ctas .-btn {
+  background-color: var(--rcnlightbg) !important;
+}
+
+.-program .-details .-name {
+  width: 100%;
+  height: 16.8px;
+}
+.-program .-details .-minister {
+  width: 80%;
+  height: 19.5px;
+}
+.-program .-details .-time {
+  width: 40%;
+  height: 21.65px;
+}
+
+.-program .-details .-ctas .-btn {
+  box-shadow: unset !important;
+}
+
 .-program {
   background-color: white;
   box-shadow: var(--box-shadow);
@@ -87,12 +83,10 @@ const copyLink = () => { }
 
 .-program .-details .-audio {
   height: 54px;
-}
-
-.-program .-details .-audio audio {
   width: 100%;
+  border-radius: 50px;
 }
-
+ 
 .-program .-details .-name {
   text-transform: capitalize;
   line-height: 1.2;

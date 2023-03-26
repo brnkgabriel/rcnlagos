@@ -19,11 +19,17 @@
       </div>
       <div class="-catalog" v-infinite-scroll>
         <Program
+          v-if="isLoaded"
           v-for="(program, idx) in reorder(globalState.renderedPrograms as any)"
           :key="idx"
           :program="program"
           :class="(idx === globalState.renderedPrograms.length - 1) ? '-lastprogram' : ''"
           @selected="showProgram" />
+        <sProgram
+          v-if="!isLoaded"
+          v-for="(program, idx) in skeletonPrograms"
+          :key="idx"
+          :program="program" />
       </div>
     </div>
   </div>
@@ -31,12 +37,16 @@
 <script setup lang="ts">
 import { iProgram } from '~~/src/types';
 import Program from '../partials/Program.vue';
+import sProgram from '../skeletons/sProgram.vue';
 import ProgramModal from '../partials/ProgramModal.vue';
 import { vInfiniteScroll } from "~/helpers/directives"
+
+const { globalState } = useGlobals()
 
 // const show = ref(false)
 // const iframeSrc = ref(constants.DEFAULTVIDEO)
 const selectedProgram = ref<iProgram>(skeletonPrograms[0])
+const isLoaded = computed(() => (globalState.value.programs as iProgram[]).length)
 
 
 // const showVideo = (program: iProgram) => {
@@ -55,7 +65,6 @@ const showProgram = (program: iProgram) => {
   console.log("currently showing program", program)
 }
 
-const { globalState } = useGlobals()
 
 // const reset = (evt: Event) => {
 //   show.value = false
