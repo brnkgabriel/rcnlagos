@@ -1,5 +1,5 @@
 <template>
-  <div class="-programs"> 
+  <div class="-programs">
     <div class="-hero-section -inner px-4 relative">
       <div class="-filters -inner sticky -desktop">
         <h5 class="-program-selection -subhead">Programs</h5>
@@ -31,21 +31,25 @@
           <div class="-caption absolute">
             <h1 class="-mainline -headfont">Encountering the Word</h1>
             <p class="-subline">Explore our programs and events<br>Get notified of upcoming events.</p>
-            <a href="#" class="-btn -subscribe">subscribe</a>
           </div>
           <div class="-upcoming-program absolute">
-            <h5 class="-subhead">upcoming program</h5>
-            <p>The Convergence | April 21 - 22, 2023</p>
+            <div class="-left"> 
+              <h5 class="-subhead">upcoming program</h5>
+              <p>The Convergence | April 21 - 22, 2023</p>
+            </div>
+            <NuxtLink href="/registration" class="-btn -subscribe">Register</NuxtLink>
           </div>
           <img src="/images/programs_1500x844.jpg" alt="events hero">
         </div>
         <div class="-shorts">
-          shorts
+          <audio controls> 
+            <source src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/audio%2FChoosing%20ur%20lyf%20partner.mp3?alt=media&token=5be64585-fbac-4a48-8909-8701b3f2c8c3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
         </div>
       </div>
       <div class="-catalog">
-        <RecordedProgram v-for="(program, idx) in reorder(globalState.events as any)" :key="idx" :program="program"
-          @click="showVideo(program)" />
+        <RecordedProgram v-for="(program, idx) in reorder(globalState.events as any)" :key="idx" :program="program" :show-video="showVideo" />
       </div>
     </div>
   </div>
@@ -55,11 +59,10 @@ import { iEvent } from '~~/src/types';
 import RecordedProgram from '../partials/RecordedProgram.vue';
 
 const show = ref(false)
-const iframeSrc = ref(constants.DEFAULTVIDEO) 
+const iframeSrc = ref(constants.DEFAULTVIDEO)
 
 const showVideo = (program: iEvent) => {
   const embedLink = youTubeLinkToEmbedLink(program.videourl as string)
-  console.log("embed link", embedLink)
   iframeSrc.value = embedLink
   show.value = true
 }
@@ -68,11 +71,11 @@ const { globalState } = useGlobals()
 
 const reset = (evt: Event) => {
   show.value = false
-  iframeSrc.value = constants.DEFAULTVIDEO 
+  iframeSrc.value = constants.DEFAULTVIDEO
 }
 
 onMounted(() => {
-  addEventListener("scroll", evt => reset(evt)) 
+  addEventListener("scroll", evt => reset(evt))
 })
 </script>
 <style scoped>
@@ -84,8 +87,8 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0%;
+  transform: translate(-100%, -50%);
   border-radius: 4px;
   z-index: 2;
   opacity: 0;
@@ -97,6 +100,8 @@ onMounted(() => {
 
 .-hero-section .-video.show {
   opacity: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .-hero-section .-filters {
@@ -189,13 +194,18 @@ onMounted(() => {
 .-video-n-shorts .-upcoming-program {
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px;
   width: 100%;
   z-index: 1;
   bottom: 0;
+}
+.-video-n-shorts .-upcoming-program .-left {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .-video-n-shorts .-upcoming-program .-left {}
@@ -276,7 +286,7 @@ onMounted(() => {
 
 @media screen and (max-width: 576px) {
   .-hero-section .-video {
-    left: 50%;
+    left: 0%;
   }
 
   .-programs .-catalog {

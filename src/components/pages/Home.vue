@@ -83,30 +83,33 @@
         </div>
       </div>
     </div>
-    <div class="-blog relative -row -inner">
-      <div class="-title-wrap flex-col">
-        <h5 class="-txt -subhead">blog</h5>
-        <p class="-subline">A community board seasoned to rejuvinate your heart</p>
-      </div>
-      <div class="-content">
-        <div class="-content-item -selected relative">
-          <div class="-post absolute">
-            <div class="-directionalbutton" data-type="button"></div>
-            <div class="-postcontent" v-html="reorderedBlogs[0]?.htmlContent"></div>
+    <div class="-blog relative -row">
+      <div class="-blog-wrap -inner">
+
+        <div class="-title-wrap flex-col">
+          <h5 class="-txt -subhead">blog</h5>
+          <p class="-subline">A community board seasoned to rejuvinate your heart</p>
+        </div>
+        <div class="-content">
+          <div class="-content-item -selected relative">
+            <div class="-post absolute">
+              <div class="-directionalbutton" data-type="button"></div>
+              <div class="-postcontent" v-html="reorderedBlogs[0]?.htmlContent"></div>
+            </div>
+            <div class="-imgwrap">
+              <img v-if="!isRemoteDataLoaded" src="/images/680x680.png" alt="blog skeleton" />
+              <img v-if="isRemoteDataLoaded" class="opacity-0" v-loaded :src="reorderedBlogs[0]?.banner"
+                :alt="reorderedBlogs[0]?.title">
+            </div>
           </div>
-          <div class="-imgwrap">
-            <img v-if="!isRemoteDataLoaded" src="/images/680x680.png" alt="blog skeleton" />
-            <img v-if="isRemoteDataLoaded" class="opacity-0" v-loaded :src="reorderedBlogs[0]?.banner"
-              :alt="reorderedBlogs[0]?.title">
+          <div class="-content-item -thumbnails">
+            <sBlogThumbnail v-if="!isRemoteDataLoaded" v-for="(blog, idx) in skeletonBlogs" :key="idx" :blog="blog" />
+            <BlogThumbnail v-if="isRemoteDataLoaded" v-for="(blog, idx) in reorderedBlogs" :key="idx" :blog="blog" />
           </div>
         </div>
-        <div class="-content-item -thumbnails">
-          <sBlogThumbnail v-if="!isRemoteDataLoaded" v-for="(blog, idx) in skeletonBlogs" :key="idx" :blog="blog" />
-          <BlogThumbnail v-if="isRemoteDataLoaded" v-for="(blog, idx) in reorderedBlogs" :key="idx" :blog="blog" />
+        <div class="-bottom">
+          <NuxtLink href="/blog" class="-visitblog -btn">visit our blog</NuxtLink>
         </div>
-      </div>
-      <div class="-bottom">
-        <NuxtLink href="/blog" class="-visitblog -btn">visit our blog</NuxtLink>
       </div>
     </div>
     <div class="-testify relative -row">
@@ -468,6 +471,10 @@ onBeforeUnmount(() => {
   font-weight: 800;
   font-size: 4em;
   line-height: 1;
+}
+
+.-blog {
+  background-color: var(--rcnlighterbg);
 }
 
 .-blog .-content {
@@ -1014,4 +1021,5 @@ onBeforeUnmount(() => {
     font-size: 11px;
     padding: 8px;
   }
-}</style>
+}
+</style>

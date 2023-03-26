@@ -30,6 +30,8 @@ defineProps<{
   align-items: flex-start;
   column-gap: 16px;
   border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  background-color: white;
 }
 
 .-thumbnail .-img {
@@ -49,7 +51,9 @@ defineProps<{
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 100%;
+  height: calc(100% - 16px);
+  margin-top: 8px;
+  padding-right: 8px;
 }
 
 .-thumbnail .-details .-cta {
