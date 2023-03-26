@@ -134,7 +134,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 64px;
-  width: 100%;
+  width: calc(100% - 32px);
   margin: 0 auto;
   margin-top: 16px;
 }

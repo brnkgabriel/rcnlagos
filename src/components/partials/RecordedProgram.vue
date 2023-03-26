@@ -8,7 +8,7 @@
         <div class="-time">{{ program.datetime }}</div>
       </div>
       <div class="-ctas">
-        <div class="-btn -download">
+        <NuxtLink class="-btn -download" download href="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/audio%2FChoosing%20ur%20lyf%20partner.mp3?alt=media&token=5be64585-fbac-4a48-8909-8701b3f2c8c3">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
             viewBox="0 0 32 32" class="w-4 h-4">
             <title>download</title>
@@ -16,7 +16,7 @@
               d="M16 18l8-8h-6v-8h-4v8h-6zM23.273 14.727l-2.242 2.242 8.128 3.031-13.158 4.907-13.158-4.907 8.127-3.031-2.242-2.242-8.727 3.273v8l16 6 16-6v-8z">
             </path>
           </svg>
-        </div>
+        </NuxtLink>
         <div class="-btn -play-audio">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
             <path d="M8.25 4.5a3.75 3.75 0 117.5 0v8.25a3.75 3.75 0 11-7.5 0V4.5z" />

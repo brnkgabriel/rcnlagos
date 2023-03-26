@@ -163,6 +163,7 @@ onMounted(() => {
   background-color: white;
   border-radius: 4px;
   box-shadow: var(--box-shadow);
+  overflow: hidden;
 }
 
 .-video-n-shorts .-video-wrap {
