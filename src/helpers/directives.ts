@@ -1,4 +1,5 @@
 import { all, el } from "~~/src/composables/index"
+import { iProgram } from "../types";
 import { Slider } from "./slider";
 
 class ImageObserver {
@@ -109,10 +110,13 @@ const loadMore = () => {
   const eIdx = sIdx + data.maxItem
   const more = globalState.value.searchedPrograms.slice(sIdx, eIdx)
 
-  rLen === sLen ? unobserveAll() : addToRenderedPrograms(more)
+  // rLen === sLen ? unobserveAll() : addToRenderedPrograms(more)
+  addToRenderedPrograms(more)
 }
 
 const unobserveAll = () => {
+  const { globalState, setRenderedPrograms } = useGlobals()
+  setRenderedPrograms((globalState.value.programs as iProgram[]).slice(0, constants.MAXPROGRAMS))
   const lastStudents = all(constants.LASTPROGRAMQUERY)
   lastStudents.forEach(lastStudent => data.observer?.unobserve(lastStudent))
   data.observer = null
