@@ -164,20 +164,10 @@ const handleCopy = (btn: HTMLElement, textToCopy: string) => {
     .catch(() => copyReaction(btn, "Copy Error :("));
 }
 
-const share = (textToCopy: string) => {
-  navigator.share({
-    title: "share",
-    text: textToCopy,
-    url: textToCopy
-  }).then(() => console.log("successful share"))
-  .catch((err) => console.log("Error sharing", err))
-}
-
-const handleCopyAndShare = (btn: HTMLElement, textToCopy: string) => {
-  return navigator.clipboard.writeText(textToCopy)
-    .then(() => copyReaction(btn, "Copied!"))
-    .then(() => share(textToCopy))
-    .catch(() => copyReaction(btn, "Copy Error :("));
+const handleShare = (title: string, url: string) => {
+  navigator.share({ title, text: title, url })
+    .then(() => console.log("successful share"))
+    .catch((err) => console.log("Error sharing", err))
 }
 
 
@@ -200,26 +190,23 @@ export const vCopyToClipboard = {
 }
 
 
-export const vCopyShareLink = {
+export const vShare = {
   mounted: (ele: HTMLElement) => {
     const copyBtn = ele as HTMLElement
-    const program = copyBtn.parentElement?.parentElement?.parentElement as HTMLElement
-    const status = el(".-status", program) as HTMLElement
-    const textToCopy = copyBtn.getAttribute(constants.DATAVIDEO) as string
-    copyBtn.addEventListener("click", () => handleCopyAndShare(status, textToCopy))
+    const url = copyBtn.getAttribute(constants.DATAURL) as string
+    const title = copyBtn.getAttribute(constants.DATATITLE) as string
+    copyBtn.addEventListener("click", () => handleShare(title, url))
   },
   updated: (ele: HTMLElement) => {
     const copyBtn = ele as HTMLElement
-    const program = copyBtn.parentElement?.parentElement?.parentElement as HTMLElement
-    const status = el(".-status", program) as HTMLElement
-    const textToCopy = copyBtn.getAttribute(constants.DATAVIDEO) as string
-    copyBtn.addEventListener("click", () => handleCopyAndShare(status, textToCopy))
+    const url = copyBtn.getAttribute(constants.DATAURL) as string
+    const title = copyBtn.getAttribute(constants.DATATITLE) as string
+    copyBtn.addEventListener("click", () => handleShare(title, url))
   },
   unmounted: (ele: HTMLElement) => {
     const copyBtn = ele as HTMLElement
-    const program = copyBtn.parentElement?.parentElement?.parentElement as HTMLElement
-    const status = el(".-status", program) as HTMLElement
-    const textToCopy = copyBtn.getAttribute(constants.DATAVIDEO) as string
-    copyBtn.removeEventListener("click", () => handleCopyAndShare(status, textToCopy))
+    const url = copyBtn.getAttribute(constants.DATAURL) as string
+    const title = copyBtn.getAttribute(constants.DATATITLE) as string
+    copyBtn.removeEventListener("click", () => handleShare(title, url))
   }
 }

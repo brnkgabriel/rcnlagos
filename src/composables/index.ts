@@ -47,7 +47,8 @@ export const constants = {
   BLOGTHUMBNAILSQUERY: ".-blog .-content .-thumbnails",
   DEFAULTVIDEO: "",
   DEFAULTAUDIO: "",
-  DATAVIDEO: "data-video"
+  DATAURL: "data-url",
+  DATATITLE: "data-title"
 }
 
 export const operatingSystem = () => {
