@@ -89,38 +89,41 @@ interface iData {
 }
 
 const data: iData = {
-  maxItem: constants.maxItemsToLoad,
+  maxItem: constants.MAXPROGRAMS,
   observer: null,
   observation: (entries: IntersectionObserverEntry[]) => {
     const entry = entries[0]
     if (!entry.isIntersecting) return
+    console.log("target", entry.target, "is intersecting")
     loadMore()
-    entry.target.classList.remove("last")
+    entry.target.classList.remove("-lastprogram")
     data.observer?.unobserve(entry.target)
   }
 }
 
 const loadMore = () => {
-  // const { globalState, addToRenderedStudents } = useGlobals()
-  // const sLen = globalState.value.searchedStudents.length
-  // const rLen = globalState.value.renderedStudents.length
-  // const sIdx = rLen
-  // const eIdx = sIdx + data.maxItem
-  // const more = globalState.value.searchedStudents.slice(sIdx, eIdx)
+  const { globalState, addToRenderedPrograms } = useGlobals()
+  const sLen = globalState.value.searchedPrograms.length
+  const rLen = globalState.value.renderedPrograms.length
+  const sIdx = rLen
+  const eIdx = sIdx + data.maxItem
+  const more = globalState.value.searchedPrograms.slice(sIdx, eIdx)
 
-  // rLen === sLen ? unobserveAll() : addToRenderedStudents(more)
+  rLen === sLen ? unobserveAll() : addToRenderedPrograms(more)
 }
 
 const unobserveAll = () => {
-  const lastStudents = all(`div[aria-label="studentwrap"]:last-child`)
+  const lastStudents = all(constants.LASTPROGRAMQUERY)
   lastStudents.forEach(lastStudent => data.observer?.unobserve(lastStudent))
   data.observer = null
 }
 
 const initializeObserver = (ele: Element, from: string) => {
-  const options = { threshold: 1, root: ele }
+  // not specifying root means the document is the root
+  // basically your root is the element that scrolls
+  const options = { threshold: 1 }
   data.observer = new IntersectionObserver(data.observation, options)
-  const last = el(`.-laststudent`, ele as HTMLElement)
+  const last = el(constants.LASTPROGRAMQUERY, ele as HTMLElement)
   if (last) data.observer.observe(last as Element)
 }
 

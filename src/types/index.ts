@@ -125,8 +125,8 @@ export interface iGlobal {
   blogs?: iBlog[];
   testimonials?: iTestimonial[];
   accounts?: iAccount[];
-  selectedProgram?: iProgram;
-  showProgramModal: boolean;
+  renderedPrograms: iProgram[];
+  searchedPrograms: iProgram[];
 }
 
 export interface iSubscribe {

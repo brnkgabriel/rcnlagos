@@ -37,8 +37,7 @@
           </svg>
         </div>
       </div>
-    </div>
-    <div class="absolute -status">...</div>
+    </div> 
   </div>
 </template>
 <script setup lang="ts">
@@ -134,15 +133,7 @@ const copyLink = () => { }
 .-program .-details .-ctas .-minister {
   line-height: 1.2;
 }
-
-.-status {
-  color: var(--rcntext);
-  font-weight: 600;
-  top: 100%;
-  right: 8px;
-  transform: translate(0%, calc(-50% - 22px));
-}
-
+ 
 @media screen and (min-width: 420px) and (max-width: 576px) {
   .-program .-details .-ctas .-name-time {
     width: calc(100% - 72px);

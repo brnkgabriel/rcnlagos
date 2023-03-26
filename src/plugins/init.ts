@@ -12,7 +12,7 @@ export default defineNuxtPlugin(nuxtApp => {
     blogs: [],
     testimonials: [],
     accounts: [],
-    selectedProgram: {},
-    showProgramModal: false
+    renderedPrograms: [],
+    searchedPrograms: []
   }))
 })

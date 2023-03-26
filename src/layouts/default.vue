@@ -12,15 +12,18 @@
 import Header from '../components/partials/Header.vue';
 import Footer from '../components/partials/Footer.vue';
 import MobileNavigation from '../components/partials/MobileNavigation.vue';
-import { iGlobal } from '../types';
+import { iGlobal, iProgram } from '../types';
 
 
-const { setGlobals } = useGlobals()
+const { globalState, setGlobals, setSearchedPrograms, setRenderedPrograms } = useGlobals()
 const { data, refresh } = await useLazyFetch(() => constants.API)
 
 watch(data, () => {
-  const globals: iGlobal = data.value as iGlobal 
+  const globals: iGlobal = data.value as iGlobal
   setGlobals(globals)
+  const reordered = reorder((globals.programs as iProgram[]))
+  setSearchedPrograms(reordered)
+  setRenderedPrograms(globalState.value.searchedPrograms.slice(0, constants.MAXPROGRAMS))
 })
 
 onMounted(async () => await refresh())

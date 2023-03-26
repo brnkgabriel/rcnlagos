@@ -17,8 +17,13 @@
         <img class="-desktop" src="/images/programs_1511x495.jpg" alt="prayercell banner" />
         <img class="-mobile" src="/images/programs_1500x844.jpg" alt="prayercell banner" />
       </div>
-      <div class="-catalog">
-        <Program v-for="(program, idx) in reorder(globalState.programs as any)" :key="idx" :program="program" @selected="showProgram" />
+      <div class="-catalog" v-infinite-scroll>
+        <Program
+          v-for="(program, idx) in reorder(globalState.renderedPrograms as any)"
+          :key="idx"
+          :program="program"
+          :class="(idx === globalState.renderedPrograms.length - 1) ? '-lastprogram' : ''"
+          @selected="showProgram" />
       </div>
     </div>
   </div>
@@ -27,6 +32,7 @@
 import { iProgram } from '~~/src/types';
 import Program from '../partials/Program.vue';
 import ProgramModal from '../partials/ProgramModal.vue';
+import { vInfiniteScroll } from "~/helpers/directives"
 
 // const show = ref(false)
 // const iframeSrc = ref(constants.DEFAULTVIDEO)

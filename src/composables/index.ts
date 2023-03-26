@@ -12,7 +12,6 @@ export const constants = {
   POSTAPI: "/api/p-data",
   SUBSCRIBEAPI: "/api/subscribe",
   globals: "globals",
-  maxItemsToLoad: 10,
   MOBILELINKTYPE: "mobile-link",
   CONTENTTYPE: "content",
   HAMBURGERTYPE: "hamburger",
@@ -48,7 +47,9 @@ export const constants = {
   DEFAULTVIDEO: "",
   DEFAULTAUDIO: "",
   DATAURL: "data-url",
-  DATATITLE: "data-title"
+  DATATITLE: "data-title",
+  MAXPROGRAMS: 4,
+  LASTPROGRAMQUERY: `.-lastprogram`
 }
 
 export const operatingSystem = () => {
@@ -80,10 +81,18 @@ export const useGlobals = () => {
   const globalState = useState<iGlobal>(constants.globals)
 
   const setGlobals = (value: iGlobal) => globalState.value = value
-  const setSelectedProgram = (program: iProgram) => globalState.value.selectedProgram = program
-  const setShowProgramModal = (flag: boolean) => globalState.value.showProgramModal = flag
+  const addToRenderedPrograms = (value: iProgram[]) => {
+    globalState.value.renderedPrograms = [
+      ...globalState.value.renderedPrograms,
+      ...value
+    ]
+  }
 
-  return { globalState, setGlobals, setSelectedProgram, setShowProgramModal }
+  const setSearchedPrograms = (value: iProgram[]) => globalState.value.searchedPrograms = value
+
+  const setRenderedPrograms = (value: iProgram[]) => globalState.value.renderedPrograms = value
+
+  return { globalState, setGlobals, setRenderedPrograms, addToRenderedPrograms, setSearchedPrograms }
 }
  
 interface iHead {
