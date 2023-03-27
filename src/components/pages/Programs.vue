@@ -20,7 +20,7 @@
       <div class="-catalog" v-infinite-scroll>
         <Program
           v-if="isLoaded"
-          v-for="(program, idx) in reorder(globalState.renderedPrograms as any)"
+          v-for="(program, idx) in globalState.renderedPrograms"
           :key="idx"
           :program="program"
           :class="(idx === globalState.renderedPrograms.length - 1) ? '-lastprogram' : ''"

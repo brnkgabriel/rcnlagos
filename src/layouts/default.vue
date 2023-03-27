@@ -21,8 +21,8 @@ const { data, refresh } = await useLazyFetch(() => constants.API)
 watch(data, () => {
   const globals: iGlobal = data.value as iGlobal
   setGlobals(globals)
-  const reordered = reorder((globals.programs as iProgram[]))
-  setSearchedPrograms(reordered)
+  const programs = globals.programs as iProgram[]
+  setSearchedPrograms(programs)
   setRenderedPrograms(globalState.value.searchedPrograms.slice(0, constants.MAXPROGRAMS))
 })
 
