@@ -49,7 +49,8 @@ export const constants = {
   DATAURL: "data-url",
   DATATITLE: "data-title",
   MAXPROGRAMS: 4,
-  LASTPROGRAMQUERY: `.-lastprogram`
+  LASTPROGRAMQUERY: `.-lastprogram`,
+  PROGRAMS: "programs"
 }
 
 export const operatingSystem = () => {

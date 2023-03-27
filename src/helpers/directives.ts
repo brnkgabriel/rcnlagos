@@ -94,8 +94,7 @@ const data: iData = {
   observer: null,
   observation: (entries: IntersectionObserverEntry[]) => {
     const entry = entries[0]
-    if (!entry.isIntersecting) return
-    console.log("target", entry.target, "is intersecting")
+    if (!entry.isIntersecting) return 
     loadMore()
     entry.target.classList.remove("-lastprogram")
     data.observer?.unobserve(entry.target)

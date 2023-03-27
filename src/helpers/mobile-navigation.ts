@@ -13,9 +13,7 @@ export class MobileNavigationController {
 
   handleEvent(evt: Event) {
     const target = evt.target as HTMLElement
-    const type = target.getAttribute(constants.DATATYPE)
-
-    console.log("data type is", type, "target is", target)
+    const type = target.getAttribute(constants.DATATYPE) 
 
     switch (type) {
       case constants.MOBILELINKTYPE: return this.mainContainer.classList.remove(constants.OPEN)

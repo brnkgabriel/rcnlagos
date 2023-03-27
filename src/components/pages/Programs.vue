@@ -18,18 +18,9 @@
         <img class="-mobile" src="/images/programs_1500x844.jpg" alt="prayercell banner" />
       </div>
       <div class="-catalog" v-infinite-scroll>
-        <Program
-          v-if="isLoaded"
-          v-for="(program, idx) in globalState.renderedPrograms"
-          :key="idx"
-          :program="program"
-          :class="(idx === globalState.renderedPrograms.length - 1) ? '-lastprogram' : ''"
-          @selected="showProgram" />
-        <sProgram
-          v-if="!isLoaded"
-          v-for="(program, idx) in skeletonPrograms"
-          :key="idx"
-          :program="program" />
+        <Program v-if="isLoaded" v-for="(program, idx) in globalState.renderedPrograms" :key="idx" :program="program"
+          :class="(idx === globalState.renderedPrograms.length - 1) ? '-lastprogram' : ''" @selected="showProgram" />
+        <sProgram v-if="!isLoaded" v-for="(program, idx) in skeletonPrograms" :key="idx" :program="program" />
       </div>
     </div>
   </div>
@@ -43,18 +34,8 @@ import { vInfiniteScroll } from "~/helpers/directives"
 
 const { globalState } = useGlobals()
 
-// const show = ref(false)
-// const iframeSrc = ref(constants.DEFAULTVIDEO)
 const selectedProgram = ref<iProgram>(skeletonPrograms[0])
 const isLoaded = computed(() => (globalState.value.programs as iProgram[]).length)
-
-
-// const showVideo = (program: iProgram) => {
-//   selectedProgram.value = program as iProgram
-//   const embedLink = youTubeLinkToEmbedLink(program.videourl as string)
-//   iframeSrc.value = embedLink
-//   show.value = true
-// }
 
 
 const programModal = ref()
@@ -62,19 +43,8 @@ const programModal = ref()
 const showProgram = (program: iProgram) => {
   programModal.value.isOpen = true
   selectedProgram.value = program
-  console.log("currently showing program", program)
 }
 
-
-// const reset = (evt: Event) => {
-//   show.value = false
-//   iframeSrc.value = constants.DEFAULTVIDEO
-// }
-
-onMounted(() => {
-  console.log("programModal is", programModal.value.isOpen)
-  // addEventListener("scroll", evt => reset(evt))
-})
 </script>
 <style scoped>
 .-programs {
@@ -215,7 +185,7 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-}
+} 
 
 @media screen and (max-width: 1024px) {
   .-hero-section .-filters {
@@ -295,9 +265,11 @@ onMounted(() => {
   .-hero-banner .-upcoming-program {
     padding: 8px;
   }
+
   .-hero-banner .-caption .-mainline {
     font-size: 32px;
   }
+
   .-hero-banner .-caption .-subline {
     font-size: 12px;
   }
