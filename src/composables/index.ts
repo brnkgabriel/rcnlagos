@@ -133,7 +133,7 @@ export const getMachineId = () => {
   let machineId = localStorage.getItem('MachineId');
   
   if (!machineId) {
-      machineId = crypto.randomUUID();
+      machineId = Date.now().toString()
       localStorage.setItem('MachineId', machineId);
   }
 
