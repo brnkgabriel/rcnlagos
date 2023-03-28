@@ -9,11 +9,11 @@
               d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
               clip-rule="evenodd" />
           </svg>
-          <input type="text" placeholder="Search programs" />
+          <input type="text" placeholder="Search programs" v-model="searchTerm" />
         </div>
         <div class="-close -subhead" data-type="fab">Close</div>
       </div>
-      <hr/>
+      <hr />
     </div>
     <div class="-fab -btn relative">
       <span class="-clickable" data-type="fab"></span>
@@ -26,10 +26,26 @@
 </template>
 <script setup lang="ts">
 import { vFabFilter } from '~~/src/helpers/directives';
-
-const route = useRoute()
+import { iProgram } from '~~/src/types';
 
 const show = ref(false)
+const searchTerm = ref("")
+const route = useRoute()
+const { globalState } = useGlobals()
+
+const searchResult = computed(() => {
+  const term = searchTerm.value.toLowerCase()
+  return globalState.value.programs?.filter((program: iProgram) => {
+    const themeIdx = program.theme?.toLowerCase().indexOf(term)
+    const typeIdx = program.type?.toLowerCase().indexOf(term)
+    const ministerIdx = program.minister?.toLowerCase().indexOf(term)
+    const datetimeIdx = program.datetime?.toLowerCase().indexOf(term)
+
+    console.log("themeIdx =", themeIdx, "typeIdx =", typeIdx, "ministerIdx =", ministerIdx, "datetimeIdx =", datetimeIdx)
+  })
+})
+
+watch(searchResult, () => console.log("search results", searchResult.value))
 
 const displayCondition = () => route.name === constants.PROGRAMS
 
@@ -69,6 +85,7 @@ onMounted(() => show.value = displayCondition())
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   transform: translate(0%, 100%);
+  box-shadow: var(--box-shadow);
   /* padding: 8px 16px; */
 }
 
@@ -88,8 +105,9 @@ onMounted(() => show.value = displayCondition())
   transform: translate(-50%, -50%);
 }
 
-.-search-close {
-  display: flex;
+.-search-close { 
+  display: grid !important;
+  grid-template-columns: calc(100% - 57px) 57px;
   justify-content: space-between;
   align-items: center;
   margin: 16px auto;

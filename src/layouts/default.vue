@@ -24,9 +24,14 @@ watch(data, () => {
   const globals: iGlobal = data.value as iGlobal
   setGlobals(globals)
   const programs = globals.programs as iProgram[]
-  setSearchedPrograms(programs)
-  setRenderedPrograms(globalState.value.searchedPrograms.slice(0, constants.MAXPROGRAMS))
+  setSearchedAndRenderedPrograms(programs)
 })
+
+const setSearchedAndRenderedPrograms = (programs: iProgram[]) => {
+  const { setSearchedPrograms, setRenderedPrograms } = useGlobals()
+  setSearchedPrograms(programs)
+  setRenderedPrograms(programs.slice(0, constants.MAXPROGRAMS))
+}
 
 onMounted(async () => await refresh())
 
