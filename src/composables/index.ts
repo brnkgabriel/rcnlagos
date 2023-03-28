@@ -128,12 +128,12 @@ export const head = (headOptions: iHead) => {
       { hid: 'google-site-verification', name: 'google-site-verification', content: "CK4Vos3X1FaRfpLVkmu4rlgRX0qlUQiI6vE47Kt5mPg" },
       { hid: "robots", name: "robots", content: "index,follow" }
     ],
-    // link: [
-    //   {
-    //     rel: "stylesheet",
-    //     href: "/css/output.css"
-    //   }
-    // ]
+    link: [
+      {
+        rel: "stylesheet",
+        href: "/css/styles.css"
+      }
+    ]
   } 
 }
 
