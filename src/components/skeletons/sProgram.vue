@@ -15,7 +15,7 @@
           <div class="-btn"></div>
         </div> 
         <div class="-type"></div>
-      </div>
+      </div> 
     </div>
   </div>
 </template>
