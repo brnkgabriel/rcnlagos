@@ -1,5 +1,5 @@
 <template>
-  <div class="-programs">
+  <div class="-programs" id="programs">
     <ProgramModal ref="programModal" :program="selectedProgram" />
     <div class="-inner px-4 relative">
       <div class="-hero-banner relative">
