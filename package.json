@@ -25,7 +25,6 @@
     "@heroicons/vue": "^2.0.13",
     "@nuxt/kit": "3.2.3",
     "@nuxt/schema": "3.2.3",
-    "@nuxt/telemetry": "latest",
     "base64-arraybuffer": "^1.0.2",
     "firebase": "^9.18.0",
     "vue-gtag-next": "^1.14.0",

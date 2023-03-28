@@ -1528,32 +1528,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:^3.2.0":
-  version: 3.3.2
-  resolution: "@nuxt/kit@npm:3.3.2"
-  dependencies:
-    "@nuxt/schema": 3.3.2
-    c12: ^1.2.0
-    consola: ^2.15.3
-    defu: ^6.1.2
-    globby: ^13.1.3
-    hash-sum: ^2.0.0
-    ignore: ^5.2.4
-    jiti: ^1.18.2
-    knitwork: ^1.0.0
-    lodash.template: ^4.5.0
-    mlly: ^1.2.0
-    pathe: ^1.1.0
-    pkg-types: ^1.0.2
-    scule: ^1.0.0
-    semver: ^7.3.8
-    unctx: ^2.1.2
-    unimport: ^3.0.4
-    untyped: ^1.2.2
-  checksum: b61d5c4ebff5251a0e7a7244db5375371135b2eb7621c3b1aaabc1e9eb17120298a333563726a95169c66f15c78e78bcae629ed5d27afe60df99826d2a91376d
-  languageName: node
-  linkType: hard
-
 "@nuxt/postcss8@npm:^1.1.3":
   version: 1.1.3
   resolution: "@nuxt/postcss8@npm:1.1.3"
@@ -1611,27 +1585,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/schema@npm:3.3.2":
-  version: 3.3.2
-  resolution: "@nuxt/schema@npm:3.3.2"
-  dependencies:
-    c12: ^1.2.0
-    create-require: ^1.1.1
-    defu: ^6.1.2
-    hookable: ^5.5.0
-    jiti: ^1.18.2
-    pathe: ^1.1.0
-    pkg-types: ^1.0.2
-    postcss-import-resolver: ^2.0.0
-    scule: ^1.0.0
-    std-env: ^3.3.2
-    ufo: ^1.1.1
-    unimport: ^3.0.4
-    untyped: ^1.2.2
-  checksum: e8d8777386f3b1b59dacd89297e221f6972e65e606df31f995633c6dc98fb1753cea93b4faac04ee1930d6bca5ac7d6471758d904f38884e56f1c3a56c66c7fa
-  languageName: node
-  linkType: hard
-
 "@nuxt/telemetry@npm:^2.1.8":
   version: 2.1.8
   resolution: "@nuxt/telemetry@npm:2.1.8"
@@ -1659,36 +1612,6 @@ __metadata:
   bin:
     nuxt-telemetry: bin/nuxt-telemetry.mjs
   checksum: 5f1c67f5d18e86bf28753e0f4292c71c04ae4a86d290abffff831bd3dc8e646b265dc1d9d46be2e86a1b7f1f6e0ee7302378e3827b636dbc7842912f90558937
-  languageName: node
-  linkType: hard
-
-"@nuxt/telemetry@npm:latest":
-  version: 2.1.10
-  resolution: "@nuxt/telemetry@npm:2.1.10"
-  dependencies:
-    "@nuxt/kit": ^3.2.0
-    chalk: ^5.2.0
-    ci-info: ^3.8.0
-    consola: ^2.15.3
-    create-require: ^1.1.1
-    defu: ^6.1.2
-    destr: ^1.2.2
-    dotenv: ^16.0.3
-    fs-extra: ^10.1.0
-    git-url-parse: ^13.1.0
-    inquirer: ^9.1.4
-    is-docker: ^3.0.0
-    jiti: ^1.17.1
-    mri: ^1.2.0
-    nanoid: ^4.0.1
-    node-fetch: ^3.3.0
-    ofetch: ^1.0.1
-    parse-git-config: ^3.0.0
-    rc9: ^2.0.1
-    std-env: ^3.3.2
-  bin:
-    nuxt-telemetry: bin/nuxt-telemetry.mjs
-  checksum: d7fc7b9efd8edc45d791e8def2171cfe2e11c6707c55150b42b108a3e1326125677490393b063a9e07c6773365a6ceb006bb4308c5ee511e74ce15a793828fe3
   languageName: node
   linkType: hard
 
@@ -2823,7 +2746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"c12@npm:^1.1.2, c12@npm:^1.2.0":
+"c12@npm:^1.1.2":
   version: 1.2.0
   resolution: "c12@npm:1.2.0"
   dependencies:
@@ -2973,7 +2896,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^5.0.0, chalk@npm:^5.1.2, chalk@npm:^5.2.0":
+"chalk@npm:^5.0.0, chalk@npm:^5.1.2":
   version: 5.2.0
   resolution: "chalk@npm:5.2.0"
   checksum: 03d8060277de6cf2fd567dc25fcf770593eb5bb85f460ce443e49255a30ff1242edd0c90a06a03803b0466ff0687a939b41db1757bec987113e83de89a003caa
@@ -3031,13 +2954,6 @@ __metadata:
   version: 3.7.0
   resolution: "ci-info@npm:3.7.0"
   checksum: 6e5df0250382ff3732703b36b958d2d892dd3c481f9671666f96c2ab7888be744bc4dca81395be958dcb828502d94f18fa9aa8901c5a3c9923cda212df02724c
-  languageName: node
-  linkType: hard
-
-"ci-info@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "ci-info@npm:3.8.0"
-  checksum: d0a4d3160497cae54294974a7246202244fff031b0a6ea20dd57b10ec510aa17399c41a1b0982142c105f3255aff2173e5c0dd7302ee1b2f28ba3debda375098
   languageName: node
   linkType: hard
 
@@ -4936,13 +4852,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hookable@npm:^5.5.0":
-  version: 5.5.2
-  resolution: "hookable@npm:5.5.2"
-  checksum: 048dc68fc93a134d2c3725aedf1beff8e0272a3ef5edf758c645f6820355617801be31294f07c48f44c9d7e2cf191f0421bc291512f40cbe1dcd3999c3133ffe
-  languageName: node
-  linkType: hard
-
 "html-escaper@npm:^2.0.0":
   version: 2.0.2
   resolution: "html-escaper@npm:2.0.2"
@@ -5509,7 +5418,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^1.17.1, jiti@npm:^1.17.2, jiti@npm:^1.18.2":
+"jiti@npm:^1.17.1, jiti@npm:^1.17.2":
   version: 1.18.2
   resolution: "jiti@npm:1.18.2"
   bin:
@@ -5946,15 +5855,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.30.0":
-  version: 0.30.0
-  resolution: "magic-string@npm:0.30.0"
-  dependencies:
-    "@jridgewell/sourcemap-codec": ^1.4.13
-  checksum: 7bdf22e27334d8a393858a16f5f840af63a7c05848c000fd714da5aa5eefa09a1bc01d8469362f25cc5c4a14ec01b46557b7fff8751365522acddf21e57c488d
-  languageName: node
-  linkType: hard
-
 "make-dir@npm:^3.0.0, make-dir@npm:^3.1.0, make-dir@npm:~3.1.0":
   version: 3.1.0
   resolution: "make-dir@npm:3.1.0"
@@ -6321,15 +6221,6 @@ __metadata:
   bin:
     nanoid: bin/nanoid.js
   checksum: 7d5946df5c6d383694195b781ae7b5067c149d164ec71e910d6b06676309c3459b68af570b944fb5ecd5065d19df464f05700d141d70bb712ff8ca06642fd8df
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^4.0.1":
-  version: 4.0.2
-  resolution: "nanoid@npm:4.0.2"
-  bin:
-    nanoid: bin/nanoid.js
-  checksum: 747c399cea4664dd0be1d0ec498ffd1ef8f1f5221676fc8b577e3f46f66d9afcddb9595d63d19a2e78d0bc6cc33984f65e66bf1682c850b9e26288883d96b53f
   languageName: node
   linkType: hard
 
@@ -6708,17 +6599,6 @@ __metadata:
     node-fetch-native: ^1.0.1
     ufo: ^1.0.0
   checksum: a1afc0797bf724ce82bc6c3ccd4eeacb7e786df43a6d13e96e05e01ea092b169c8750bd9a1113200da09147e1ab8ac39b6b106f53bf73e324463f793201cd968
-  languageName: node
-  linkType: hard
-
-"ofetch@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "ofetch@npm:1.0.1"
-  dependencies:
-    destr: ^1.2.2
-    node-fetch-native: ^1.0.2
-    ufo: ^1.1.0
-  checksum: f5bc96c8bb5467ec84b3a89315ac06ccf02a3917b534f137ad0b54b935173297f6c6cb9163b62678919710f64bb73e68d8e911a744ea7c7f029a3ed422b08a42
   languageName: node
   linkType: hard
 
@@ -7779,7 +7659,6 @@ __metadata:
     "@nuxt/image-edge": ^1.0.0-27840416.dc1ed65
     "@nuxt/kit": 3.2.3
     "@nuxt/schema": 3.2.3
-    "@nuxt/telemetry": latest
     "@nuxtjs/tailwindcss": ^6.1.3
     "@tailwindcss/aspect-ratio": ^0.4.2
     "@vitest/coverage-c8": ^0.25.8
@@ -8470,15 +8349,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strip-literal@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "strip-literal@npm:1.0.1"
-  dependencies:
-    acorn: ^8.8.2
-  checksum: ab40496820f02220390d95cdd620a997168efb69d5bd7d180bc4ef83ca562a95447843d8c7c88b8284879a29cf4eedc89d8001d1e098c1a1e23d12a9c755dff4
-  languageName: node
-  linkType: hard
-
 "stylehacks@npm:^5.1.1":
   version: 5.1.1
   resolution: "stylehacks@npm:5.1.1"
@@ -8831,7 +8701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ufo@npm:^1.1.0, ufo@npm:^1.1.1":
+"ufo@npm:^1.1.1":
   version: 1.1.1
   resolution: "ufo@npm:1.1.1"
   checksum: 6bd210ed93d8c0dedd76c456b1d1dfb0e3b08c2216ee6080e61f0f545de0bac24b3d3a5530cd6a403810855f8d8fc3922583965296142e04cfc287442635e6c7
@@ -8939,25 +8809,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unimport@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "unimport@npm:3.0.4"
-  dependencies:
-    "@rollup/pluginutils": ^5.0.2
-    escape-string-regexp: ^5.0.0
-    fast-glob: ^3.2.12
-    local-pkg: ^0.4.3
-    magic-string: ^0.30.0
-    mlly: ^1.2.0
-    pathe: ^1.1.0
-    pkg-types: ^1.0.2
-    scule: ^1.0.0
-    strip-literal: ^1.0.1
-    unplugin: ^1.3.1
-  checksum: 8fffa08da9df0c1307a723043fbc4853e127ecc24b9ecc546090badfecafb3d3aabcf3e0b87cbed4ba0ee804deb6c52b726784641c2d5c5e2b16a9b0e68b894d
-  languageName: node
-  linkType: hard
-
 "unique-filename@npm:^2.0.0":
   version: 2.0.1
   resolution: "unique-filename@npm:2.0.1"
@@ -8995,7 +8846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin@npm:^1.0.1, unplugin@npm:^1.3.1":
+"unplugin@npm:^1.0.1":
   version: 1.3.1
   resolution: "unplugin@npm:1.3.1"
   dependencies:

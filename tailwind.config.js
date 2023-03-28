@@ -2,6 +2,8 @@
 let plugin = require("tailwindcss/plugin")
 module.exports = {
   darkMode: "class",
+  mode: 'jit',
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   content: [
     './assets/**/*.{vue,js,css}',
     './components/**/*.{vue,js}',
