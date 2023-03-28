@@ -264,7 +264,7 @@ const handlePlayEvent = (evt: Event) => {
 
 export const vAudio = {
 
-  mounted: (audio: HTMLElement) => {
+  mounted: (audio: HTMLElement) => { 
     audio.addEventListener(constants.PLAYEVENT, handlePlayEvent)
   },
   updated: (audio: HTMLElement) => {
