@@ -61,3 +61,9 @@ api: https://script.google.com/macros/s/AKfycbyzfNWhPnxgEcbt4tSiCMKsoSurroruxBs2
     - https://codepen.io/aybukeceylan/full/zYNpWdj
     - https://codepen.io/dev_loop/pen/MWgXRzP
     - css filter icon: https://codepen.io/tidusxujun/pen/GgNxxP
+
+#18 - Sonar effects
+    - https://codepen.io/CarlosMtz/details/yNjQdo
+    - https://codepen.io/fabghis/pen/qBZZBW?css-preprocessor=sass
+    - https://codepen.io/xmalinov/pen/VKrYox
+    - https://codepen.io/jdigi/pen/kNQQwQ

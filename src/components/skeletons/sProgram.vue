@@ -3,23 +3,24 @@
     <img src="/images/560x315.png" alt="program skeleton image" />
     <div class="-details">
       <div class="-name-time">
-      <h5 class="-subhead -name">{{ program.theme }}</h5>
+        <h5 class="-subhead -name">{{ program.theme }}</h5>
         <h5 class="-minister">{{ program.minister }}</h5>
         <div class="-time">{{ program.datetime }}</div>
       </div>
-      <div class="-audio"> 
+      <div class="-audio">
       </div>
       <div class="-ctas">
-        <div class="-btn"></div>
-        <div class="-btn"></div>
-        <div class="-btn"></div>
+        <div class="-btns"> 
+          <div class="-btn"></div>
+          <div class="-btn"></div>
+        </div>
+        <div class="-type"></div>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { iProgram } from '~~/src/types';
-import { vShare } from '~/helpers/directives'
+import { iProgram } from '~~/src/types'; 
 const props = defineProps<{
   program: iProgram;
 }>()
@@ -27,11 +28,11 @@ const emit = defineEmits<{
   (e: 'selected', program: iProgram): void
 }>()
 
-const hasAudio = computed(() => (props.program.audiourl as string).length > 0) 
+const hasAudio = computed(() => (props.program.audiourl as string).length > 0)
 
 const playVideo = () => {
   emit("selected", props.program)
-} 
+}
 
 </script>
 <style scoped>
@@ -39,18 +40,21 @@ const playVideo = () => {
 .-program .-details .-minister,
 .-program .-details .-time,
 .-program .-details .-audio,
-.-program .-details .-ctas .-btn {
+.-program .-details .-ctas .-btn,
+.-program .-details .-ctas .-type {
   background-color: var(--rcnlightbg) !important;
 }
 
 .-program .-details .-name {
   width: 100%;
-  height: 16.8px;
+  height: 19.5px;
 }
+
 .-program .-details .-minister {
   width: 80%;
   height: 19.5px;
 }
+
 .-program .-details .-time {
   width: 40%;
   height: 21.65px;
@@ -86,7 +90,7 @@ const playVideo = () => {
   width: 100%;
   border-radius: 50px;
 }
- 
+
 .-program .-details .-name {
   text-transform: capitalize;
   line-height: 1.2;
@@ -103,6 +107,26 @@ const playVideo = () => {
   align-items: center;
   justify-content: flex-start;
   column-gap: 8px;
+}
+
+.-program .-details .-ctas,
+.-program .-details .-ctas .-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.-program .-details .-ctas .-btns {
+  column-gap: 8px;
+}
+
+.-program .-details .-ctas .-type {
+  font-size: .8em;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 50px;
+  width: 50%;
+  height: 33px;
 }
 
 

@@ -53,10 +53,7 @@ const src = computed(() => props.program?.image ? props.program.image : youTubeT
 
 const playVideo = () => {
   emit("selected", props.program)
-}
-const playAudio = () => { }
-const downloadAudio = () => { }
-const copyLink = () => { }
+} 
 
 </script>
 <style scoped>
@@ -119,6 +116,9 @@ const copyLink = () => { }
   background-color: var(--orange-bg);
   border: 1px dashed var(--rcnaccentorange);
   color: var(--rcnaccentorange);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .-program .-details .-ctas .-btn {
