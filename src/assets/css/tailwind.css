@@ -26,8 +26,12 @@ body,
   --green-bg: #e6f4ea;
   --orange: #f68b1e;
   --orange-bg: #fde7db;
-  --red: #a50e0e;
+  --red: #ff0000;
   --red-bg: #fce8e6;
+  --blue-bg: #bfdbfe;
+  --blue: #0b5cff;
+  --purple-bg: #e9d5ff;
+  --purple: #7e22ce;
   --paystack: #0AA5DB;
   --box-shadow: 0 2px 5px 0 rgb(0 0 0 / 10%);
 }

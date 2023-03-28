@@ -1,5 +1,5 @@
 <template>
-  <div class="-program relative">
+  <div class="-program relative" :data-type="program.type">
     <img :src="src" :alt="program.theme" @click="playVideo" />
     <div class="-details">
       <div class="-name-time">
@@ -123,6 +123,29 @@ const playVideo = () => {
   text-overflow: ellipsis;
 }
 
+.-program[data-type="YouTube Short"] .-details .-ctas .-type {
+  background-color: var(--red-bg);
+  border: 1px dashed var(--red);
+  color: var(--red);
+}
+
+.-program[data-type="10 Hours Prayer"] .-details .-ctas .-type {
+  background-color: var(--green-bg);
+  border: 1px dashed var(--green);
+  color: var(--green);
+}
+
+.-program[data-type="The Convergence"] .-details .-ctas .-type {
+  background-color: var(--blue-bg);
+  border: 1px dashed var(--blue);
+  color: var(--blue);
+}
+.-program[data-type="The Remnant Factor"] .-details .-ctas .-type {
+  background-color: var(--purple-bg);
+  border: 1px dashed var(--purple);
+  color: var(--purple);
+}
+
 .-program .-details .-ctas .-btn {
   padding: unset !important;
   width: 36px;
@@ -140,6 +163,25 @@ const playVideo = () => {
   justify-content: flex-start;
   align-items: flex-start;
   row-gap: 4px;
+}
+
+.-program[data-type="YouTube Short"] .-time {
+  background-color: var(--red);
+}
+
+.-program[data-type="Community Bible Study"] .-time {
+  background-color: var(--rcnaccentorange);
+}
+
+.-program[data-type="10 Hours Prayer"] .-time {
+  background-color: var(--green);
+}
+.-program[data-type="The Convergence"] .-time {
+  background-color: var(--blue);
+}
+
+.-program[data-type="The Remnant Factor"] .-time {
+  background-color: var(--purple);
 }
 
 .-program .-details .-ctas .-minister {
