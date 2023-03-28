@@ -13,7 +13,7 @@
         <div class="-btns"> 
           <div class="-btn"></div>
           <div class="-btn"></div>
-        </div>
+        </div> 
         <div class="-type"></div>
       </div>
     </div>
