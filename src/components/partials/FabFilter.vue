@@ -135,8 +135,7 @@ onMounted(() => show.value = displayCondition())
 }
 
 @media screen and (max-width: 1024px) {
-  .-filter-fab {
-    bottom: 16px;
+  .-filter, .-fab {
     right: 16px;
   }
 }
