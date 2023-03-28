@@ -27,11 +27,6 @@ watch(data, () => {
   setSearchedAndRenderedPrograms(programs)
 })
 
-const setSearchedAndRenderedPrograms = (programs: iProgram[]) => {
-  const { setSearchedPrograms, setRenderedPrograms } = useGlobals()
-  setSearchedPrograms(programs)
-  setRenderedPrograms(programs.slice(0, constants.MAXPROGRAMS))
-}
 
 onMounted(async () => await refresh())
 

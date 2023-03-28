@@ -35,17 +35,24 @@ const { globalState } = useGlobals()
 
 const searchResult = computed(() => {
   const term = searchTerm.value.toLowerCase()
-  return globalState.value.programs?.filter((program: iProgram) => {
+  return globalState.value.programs?.filter((program: iProgram) => programFilterCondition(program, term))
+})
+
+const programFilterCondition = (program: iProgram, term: string) => {
     const themeIdx = program.theme?.toLowerCase().indexOf(term)
     const typeIdx = program.type?.toLowerCase().indexOf(term)
     const ministerIdx = program.minister?.toLowerCase().indexOf(term)
     const datetimeIdx = program.datetime?.toLowerCase().indexOf(term)
 
-    console.log("themeIdx =", themeIdx, "typeIdx =", typeIdx, "ministerIdx =", ministerIdx, "datetimeIdx =", datetimeIdx)
-  })
-})
+    const insideTheme = themeIdx !== -1
+    const insideType = typeIdx !== -1
+    const insideMinister = ministerIdx !== -1
+    const insideDateTime = datetimeIdx !== -1
 
-watch(searchResult, () => console.log("search results", searchResult.value))
+    return insideTheme || insideType || insideMinister || insideDateTime
+}
+
+watch(searchResult, () => setSearchedAndRenderedPrograms(searchResult.value as iProgram[]))
 
 const displayCondition = () => route.name === constants.PROGRAMS
 

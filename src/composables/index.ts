@@ -247,3 +247,8 @@ export const whatsappIcon = (number: string) => {
 
   return `https://api.whatsapp.com/send?phone=${number}&text=Hello`
 }
+export const setSearchedAndRenderedPrograms = (programs: iProgram[]) => {
+  const { setSearchedPrograms, setRenderedPrograms } = useGlobals()
+  setSearchedPrograms(programs)
+  setRenderedPrograms(programs.slice(0, constants.MAXPROGRAMS))
+}

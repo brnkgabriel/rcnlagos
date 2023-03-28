@@ -14,28 +14,24 @@
         </audio>
       </div>
       <div class="-ctas">
-        <NuxtLink v-if="hasAudio" class="-btn -download" download :href="program.audiourl">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-            viewBox="0 0 32 32" class="w-4 h-4">
-            <title>download</title>
-            <path
-              d="M16 18l8-8h-6v-8h-4v8h-6zM23.273 14.727l-2.242 2.242 8.128 3.031-13.158 4.907-13.158-4.907 8.127-3.031-2.242-2.242-8.727 3.273v8l16 6 16-6v-8z">
-            </path>
-          </svg>
-        </NuxtLink>
-        <div class="-btn -play-video" @click="playVideo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-            <path fill-rule="evenodd"
-              d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
-              clip-rule="evenodd" />
-          </svg>
+        <div class="-btns">
+          <div class="-btn -play-video" @click="playVideo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+              <path fill-rule="evenodd"
+                d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="-btn -share" :data-title="program.theme" :data-url="program.videourl" v-share>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+              <path fill-rule="evenodd"
+                d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
         </div>
-        <div class="-btn -share" :data-title="program.theme" :data-url="program.videourl" v-share>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-            <path fill-rule="evenodd"
-              d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
-              clip-rule="evenodd" />
-          </svg>
+        <div class="-type">
+          {{ program.type }}
         </div>
       </div>
     </div>
@@ -104,13 +100,26 @@ const copyLink = () => { }
   overflow: hidden;
 }
 
-.-program .-details .-ctas {
+.-program .-details .-ctas,
+.-program .-details .-ctas .-btns {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+}
+
+.-program .-details .-ctas .-btns {
   column-gap: 8px;
 }
 
+.-program .-details .-ctas .-type {
+  font-size: .8em;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background-color: var(--orange-bg);
+  border: 1px dashed var(--rcnaccentorange);
+  color: var(--rcnaccentorange);
+}
 
 .-program .-details .-ctas .-btn {
   padding: unset !important;
