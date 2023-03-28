@@ -284,7 +284,6 @@ textarea:focus {
   top: 0;
   width: 40px !important;
   height: 40px !important;
-  background-color: var(--mainblue);
   border-top-left-radius: unset;
   border-bottom-left-radius: unset;
   border-top-right-radius: 8px;

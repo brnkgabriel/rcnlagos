@@ -216,3 +216,34 @@ export const vShare = {
     copyBtn.removeEventListener("click", () => handleShare(title, url))
   }
 }
+
+export const vFabFilter = {
+  
+  mounted: (fabFilter: HTMLElement) => {
+    const fab = el(".-fab .-clickable", fabFilter) as HTMLElement;
+    const close = el(".-close", fabFilter) as HTMLElement;
+    [fab, close].forEach((el: HTMLElement) => {
+      el.addEventListener(constants.CLICKEVENT, () => {
+        fabFilter.classList.toggle(constants.SHOW)
+      })
+    })
+  },
+  updated: (fabFilter: HTMLElement) => {
+    const fab = el(".-fab .-clickable", fabFilter) as HTMLElement;
+    const close = el(".-close", fabFilter) as HTMLElement;
+    [fab, close].forEach((el: HTMLElement) => {
+      el.addEventListener(constants.CLICKEVENT, () => {
+        fabFilter.classList.toggle(constants.SHOW)
+      })
+    })
+  },
+  unmounted: (fabFilter: HTMLElement) => {
+    const fab = el(".-fab .-clickable", fabFilter) as HTMLElement;
+    const close = el(".-close", fabFilter) as HTMLElement;
+    [fab, close].forEach((el: HTMLElement) => {
+      el.removeEventListener(constants.CLICKEVENT, () => {
+        fabFilter.classList.toggle(constants.SHOW)
+      })
+    })
+  }
+}

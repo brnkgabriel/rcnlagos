@@ -6,14 +6,14 @@
       <Footer />
     </div>
     <MobileNavigation />
-    <Fab />
+    <FabFilter />
   </div> 
 </template>
 <script setup lang="ts">
 import Header from '../components/partials/Header.vue';
 import Footer from '../components/partials/Footer.vue';
 import MobileNavigation from '../components/partials/MobileNavigation.vue';
-import Fab from "~/components/partials/Fab.vue"
+import FabFilter from "~~/src/components/partials/FabFilter.vue"
 import { iGlobal, iProgram } from '../types';
 
 

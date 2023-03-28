@@ -18,6 +18,8 @@ export const constants = {
   CLOSEMOBILEMENUTYPE: "close mobile menu",
   MOBILENAVIGATIONTYPE: "mobile navigation",
   CLICKEVENT: "click",
+  SHOW: "show",
+  FABTYPE: "fab",
   DATATYPE: "data-type",
   OPEN: "open",
   SOCIALLINK: "social link",
