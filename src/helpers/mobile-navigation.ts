@@ -20,6 +20,11 @@ export class MobileNavigationController {
       case constants.HAMBURGERTYPE: return this.mainContainer.classList.add(constants.OPEN)
       case constants.CLOSEMOBILEMENUTYPE: return this.mainContainer.classList.remove(constants.OPEN)
       case constants.MOBILENAVIGATIONTYPE: return this.mainContainer.classList.remove(constants.OPEN)
+      default: return this.reset()
     }
+  }
+
+  reset() {
+
   }
 }

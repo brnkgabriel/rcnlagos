@@ -886,6 +886,9 @@ onBeforeUnmount(() => {
     width: 100%;
   }
 
+  .-ourvalues .-title-wrap .-txt {
+    width: 100%;
+  }
   .-ourprograms .-programs {
     grid-template-columns: repeat(1, 1fr);
   }
