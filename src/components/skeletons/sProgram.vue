@@ -116,6 +116,7 @@ const playVideo = () => {
   justify-content: space-between;
 }
 
+.-program .-details .-ctas,
 .-program .-details .-ctas .-btns {
   column-gap: 8px;
 }
