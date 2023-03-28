@@ -12,16 +12,23 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
   },
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@kevinmarrec/nuxt-pwa', 
-    '@nuxt/image-edge', 
+    '@kevinmarrec/nuxt-pwa',
+    '@nuxtjs/tailwindcss'
   ],
   pwa: {
     workbox: {
       // the way to enable pwa is to remove "enabled: false" from below
       // enabled: false
     },
-  }
+  }, 
 }

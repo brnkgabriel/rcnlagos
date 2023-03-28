@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+let plugin = require("tailwindcss/plugin")
 module.exports = {
+  darkMode: "class", 
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
+    './assets/**/*.{vue,js,css}',
+    './components/**/*.{vue,js}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
   ], 
   theme: {
     extend: {
@@ -88,7 +91,5 @@ module.exports = {
         xs: "2px"
       }
     }
-  },
-  plugins: [],
+  }
 }
-

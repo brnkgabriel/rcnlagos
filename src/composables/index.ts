@@ -127,7 +127,13 @@ export const head = (headOptions: iHead) => {
       { hid: 'keywords', name: 'keywords', content: 'rcn, rcnlagos, rcn lagos, apostolic, rebirth, transformation, christianity, Matthew 21:13, remnant, network, voice of one, the convergence, threshing floor, 10 hours' },
       { hid: 'google-site-verification', name: 'google-site-verification', content: "CK4Vos3X1FaRfpLVkmu4rlgRX0qlUQiI6vE47Kt5mPg" },
       { hid: "robots", name: "robots", content: "index,follow" }
-    ]
+    ],
+    // link: [
+    //   {
+    //     rel: "stylesheet",
+    //     href: "/css/output.css"
+    //   }
+    // ]
   } 
 }
 
