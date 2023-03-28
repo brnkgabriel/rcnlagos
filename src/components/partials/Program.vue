@@ -157,6 +157,26 @@ const playVideo = () => {
   cursor: pointer;
 }
 
+.-program[data-type="The Remnant Factor"] .-details .-ctas .-btn {
+  background-color: var(--purple); 
+  box-shadow: 0px 4px 20px -5px var(--purple);
+}
+
+.-program[data-type="The Convergence"] .-details .-ctas .-btn {
+  background-color: var(--blue); 
+  box-shadow: 0px 4px 20px -5px var(--blue);
+}
+
+.-program[data-type="10 Hours Prayer"] .-details .-ctas .-btn {
+  background-color: var(--green); 
+  box-shadow: 0px 4px 20px -5px var(--green);
+}
+
+.-program[data-type="YouTube Short"] .-details .-ctas .-btn {
+  background-color: var(--red); 
+  box-shadow: 0px 4px 20px -5px var(--red);
+}
+
 .-program .-details .-name-time {
   display: flex;
   flex-direction: column;
