@@ -105,7 +105,7 @@ onMounted(() => show.value = displayCondition())
   transform: translate(-50%, -50%);
 }
 
-.-search-close { 
+.-search-close {
   display: grid !important;
   grid-template-columns: calc(100% - 57px) 57px;
   justify-content: space-between;
@@ -134,15 +134,14 @@ onMounted(() => show.value = displayCondition())
   justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-
+@media screen and (max-width: 1024px) {
   .-filter-fab {
     bottom: 16px;
     right: 16px;
   }
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 768px) {}
 
 @media screen and (max-width: 768px) {}
 
