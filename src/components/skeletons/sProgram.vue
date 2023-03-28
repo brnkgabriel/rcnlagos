@@ -3,7 +3,7 @@
     <img src="/images/560x315.png" alt="program skeleton image" />
     <div class="-details">
       <div class="-name-time">
-        <h5 class="-subhead -name">{{ program.theme }}</h5>
+        <h5 class="-subhead -name">{{ program.title }}</h5>
         <h5 class="-minister">{{ program.minister }}</h5>
         <div class="-time">{{ program.datetime }}</div>
       </div>

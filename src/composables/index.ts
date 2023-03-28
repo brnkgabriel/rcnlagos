@@ -18,6 +18,7 @@ export const constants = {
   CLOSEMOBILEMENUTYPE: "close mobile menu",
   MOBILENAVIGATIONTYPE: "mobile navigation",
   CLICKEVENT: "click",
+  PLAYEVENT: "play",
   SHOW: "show",
   FABTYPE: "fab",
   DATATYPE: "data-type",
@@ -190,7 +191,7 @@ export const skeletonPrograms: iProgram[] = num2List(8).map((num: number) => ({
   image: "",
   minister: "",
   status: "",
-  theme: "",
+  title: "",
   type: "",
   videourl: ""
 }))

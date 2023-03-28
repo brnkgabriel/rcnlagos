@@ -94,7 +94,7 @@ const data: iData = {
   observer: null,
   observation: (entries: IntersectionObserverEntry[]) => {
     const entry = entries[0]
-    if (!entry.isIntersecting) return 
+    if (!entry.isIntersecting) return
     loadMore()
     entry.target.classList.remove("-lastprogram")
     data.observer?.unobserve(entry.target)
@@ -218,7 +218,7 @@ export const vShare = {
 }
 
 export const vFabFilter = {
-  
+
   mounted: (fabFilter: HTMLElement) => {
     const fab = el(".-fab .-clickable", fabFilter) as HTMLElement;
     const close = el(".-close", fabFilter) as HTMLElement;
@@ -245,5 +245,32 @@ export const vFabFilter = {
         fabFilter.classList.toggle(constants.SHOW)
       })
     })
+  }
+}
+
+const handlePlayEvent = (evt: Event) => {
+  const target = evt.target as HTMLAudioElement
+  const targetTitle = target.getAttribute(constants.DATATITLE) 
+
+  const audioEls = all("audio") as NodeListOf<HTMLAudioElement>
+
+  audioEls.forEach((audioEl: HTMLAudioElement) => {
+    const title = audioEl.getAttribute(constants.DATATITLE)
+    if (!audioEl.paused && title !== targetTitle) {
+      audioEl.pause() 
+    }
+  })
+}
+
+export const vAudio = {
+
+  mounted: (audio: HTMLElement) => {
+    audio.addEventListener(constants.PLAYEVENT, handlePlayEvent)
+  },
+  updated: (audio: HTMLElement) => {
+
+  },
+  unmounted: (audio: HTMLElement) => {
+
   }
 }

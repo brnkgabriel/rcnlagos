@@ -14,7 +14,7 @@
             <DialogPanel
               class="w-full max-w-[45rem] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
               <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
-                {{ program.theme }}
+                {{ program.title }}
               </DialogTitle>
               <div class="mt-2">
                 <iframe :src="src" class="-video"></iframe>

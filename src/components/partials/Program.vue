@@ -1,14 +1,14 @@
 <template>
   <div class="-program relative" :data-type="program.type">
-    <img :src="src" :alt="program.theme" @click="playVideo" />
+    <img :src="src" :alt="program.title" @click="playVideo" />
     <div class="-details">
       <div class="-name-time">
-        <h5 class="-subhead -name">{{ program.theme }}</h5>
+        <h5 class="-subhead -name">{{ program.title }}</h5>
         <h5 class="-minister">{{ program.minister }}</h5>
         <div class="-time">{{ program.datetime }}</div>
       </div>
       <div class="-audio">
-        <audio controls v-if="hasAudio">
+        <audio controls v-if="hasAudio" v-audio :data-title="program.title">
           <source :src="program.audiourl" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
@@ -22,7 +22,7 @@
                 clip-rule="evenodd" />
             </svg>
           </div>
-          <div class="-btn -share" :data-title="program.theme" :data-url="program.videourl" v-share>
+          <div class="-btn -share" :data-title="program.title" :data-url="program.videourl" v-share>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
               <path fill-rule="evenodd"
                 d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
@@ -40,6 +40,7 @@
 <script setup lang="ts">
 import { iProgram } from '~~/src/types';
 import { vShare } from '~/helpers/directives'
+import { vAudio } from '~/helpers/directives';
 const props = defineProps<{
   program: iProgram;
 }>()

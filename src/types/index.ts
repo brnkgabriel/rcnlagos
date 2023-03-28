@@ -69,7 +69,7 @@ export interface iProgram {
   image?: string;
   minister?: string;
   status?: string;
-  theme?: string;
+  title?: string;
   videourl?: string;
   type?: string;
 }
