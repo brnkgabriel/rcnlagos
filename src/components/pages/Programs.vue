@@ -169,6 +169,9 @@ const showProgram = (program: iProgram) => {
   align-items: flex-start;
 }
 
+.-hero-banner .-upcoming-program .-subscribe {
+  padding: 8px 16px;
+}
 
 .-hero-banner .-upcoming-program h5,
 .-hero-banner .-upcoming-program p,

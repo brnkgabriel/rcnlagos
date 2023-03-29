@@ -245,6 +245,12 @@ textarea:focus {
   padding: 0 16px;
 }
 
+@media screen and (max-width: 576px) {
+  .-btn {
+    padding: 12px 16px;
+  }
+}
+
 .lazy-image {
   opacity: 0;
 }
