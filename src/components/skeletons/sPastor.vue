@@ -62,7 +62,9 @@ defineProps<{
   transform: translate(-50%, -50%);
 }
 
-.-pastor .-img .-icon {}
+.-pastor .-img .-icon {
+  width: 100%;
+}
 
 .-pastor .-img .-picture {
   top: 70%;
