@@ -1,5 +1,5 @@
 <template>
-  <div class="-program relative">
+  <div class="-program -posrel">
     <img src="/images/560x315.png" alt="program skeleton image" />
     <div class="-details">
       <div class="-name-time">

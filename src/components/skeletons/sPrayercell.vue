@@ -1,6 +1,6 @@
 <template>
   <div class="-cell">
-    <div class="-img relative">
+    <div class="-img -posrel">
       <p class="-cellname"> </p>
       <img src="/images/678x452.png" alt="prayer" />
     </div>

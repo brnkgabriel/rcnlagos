@@ -1,12 +1,11 @@
 <template>
-  <div class="-program relative">
-    <img
-      :src="program.image">
+  <div class="-program -posrel">
+    <img :src="program.image">
     <div class="-details">
-      <h5 class="-name -subhead w-3/4 h-[16px] bg-rcnbg-900">{{ program.name }}</h5>
-      <p class="-about h-[58px] bg-rcnbg-900 my-2">{{ program.about }}</p>
+      <h5 class="-name -subhead">{{ program.name }}</h5>
+      <p class="-about">{{ program.about }}</p>
     </div>
-    <div class="-time absolute h-[21px] bg-rcnbg-900">{{ program.time }}</div>
+    <div class="-time -posabs">{{ program.time }}</div>
   </div>
 </template>
 <script setup lang="ts">
@@ -16,30 +15,23 @@ defineProps<{
 }>()
 </script>
 <style scoped>
-  .-program {
-  background-color: #fff;
-  border-radius: 4px;
-  padding-bottom: 16px;
-}
-
-.-program .-details {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  row-gap: 8px;
-}
-
-.-program .-details .-about {
-  width: calc(100% - 16px);
-}
-
-.-program img {
-  width: 100%;
+.-name,
+.-about .-time {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 231 236 / var(--tw-bg-opacity));
 }
 
 .-program .-details .-name {
   line-height: 1;
+  width: 75%;
+  height: 16px;
+}
+
+.-program .-details .-about {
+  width: calc(100% - 16px);
+  height: 58px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .-program .-time {
@@ -54,15 +46,32 @@ defineProps<{
   bottom: 8px;
   right: 8px;
   background-color: var(--rcnlightbg) !important;
+  height: 21px;
 }
 
-.-program .-time {
+.-program {
+  background-color: #fff;
+  border-radius: 4px;
+  padding-bottom: 16px;
 }
+
+.-program .-details {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 8px;
+}
+
+.-program img {
+  width: 100%;
+}
+
+.-program .-time {}
 
 @media screen and (max-width: 1024px) {}
 
-@media screen and (max-width: 768px) {
-}
+@media screen and (max-width: 768px) {}
 
 @media screen and (max-width: 576px) {}
 

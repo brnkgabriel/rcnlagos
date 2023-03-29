@@ -1,11 +1,11 @@
 <template>
-  <div class="-pastor relative">
-    <div class="-img relative">
+  <div class="-pastor -posrel">
+    <div class="-img -posrel">
       <img class="-icon" src="/images/680x680.png" alt="icon" /> 
     </div>
     <div class="-detail">
-      <h5 class="-name h-[19.5px] w-full">{{ pastor.name }}</h5>
-      <div class="-cta h-[19.5px] w-3/4">
+      <h5 class="-name">{{ pastor.name }}</h5>
+      <div class="-cta">
         <span></span>
         <span></span>
       </div>
@@ -33,6 +33,8 @@ defineProps<{
   text-transform: capitalize;
   text-align: center;
   background-color: var(--rcnlightbg);
+  width: 100%;
+  height: 19.5px;
 }
 
 .-pastor .-detail {
@@ -72,6 +74,8 @@ defineProps<{
   align-items: center;
   column-gap: 4px;
   background-color: var(--rcnlightbg);
+  width: 75%;
+  height: 19.5px;
 }
 
 .-pastor .-cta span {

@@ -1,17 +1,17 @@
 <template>
-  <div class="-thumbnail relative">
+  <div class="-thumbnail -posrel">
     <div class="-img" :data-blog="blog.title">
       <img src="/images/680x680.png" :alt="blog.title" data-type="blog" :data-blog="blog.title">
     </div>
-    <div class="-details">
+    <div class="-details -posrel">
       <div class="-clickable" :data-blog="blog.title" data-type="blog"></div>
       <div class="-txt">
-        <h5 class="-title bg-rcnbg-900 w-3/4 h-[25px]">{{ blog.title }}</h5>
-        <p class="-subline bg-rcnbg-900 w-full h-[55px]">{{ blog.subline }}</p>
+        <h5 class="-title">{{ blog.title }}</h5>
+        <p class="-subline">{{ blog.subline }}</p>
       </div>
       <div class="-cta">
-        <a href="#blog" class="-btn -readmore h-[32px] w-2/6" data-type="blog" :data-blog="blog.title"></a>
-        <span class="-date bg-rcnbg-900 w-1/4 h-[20px]">{{ blog.datetime }}</span>
+        <a href="#blog" class="-btn -readmore" data-type="blog" :data-blog="blog.title"></a>
+        <span class="-date">{{ blog.datetime }}</span>
       </div>
     </div>
   </div>
@@ -24,6 +24,32 @@ defineProps<{
 }>()
 </script>
 <style scoped>
+.-title,
+.-subline .-date {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 231 236 / var(--tw-bg-opacity));
+}
+
+.-title {
+  width: 75%;
+  height: 25px;
+}
+
+.-subline {
+  width: 100%;
+  height: 55px;
+}
+
+.-date {
+  width: 25%;
+  height: 20px
+}
+
+.-readmore {
+  width: 33.33%;
+  height: 32px;
+}
+
 .-thumbnail {
   display: flex;
   height: calc((100% - 32px)/3);
@@ -87,9 +113,10 @@ defineProps<{
   margin-bottom: 8px !important;
 }
 
-.-thumbnail .-details .-cta > * {
+.-thumbnail .-details .-cta>* {
   background-color: var(--rcnlightbg);
 }
+
 .-thumbnail .-details .-cta .-btn {
   box-shadow: unset !important;
 }
@@ -197,5 +224,4 @@ defineProps<{
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}
-</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
