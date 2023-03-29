@@ -93,7 +93,7 @@ const isLoaded = computed(() => (globalState.value.prayercells as iPrayercell[])
   }
 
   .-prayercells .-hero-banner .-hero-title h1 {
-    font-size: 40px
+    font-size: 32px
   }
 
   .-prayercells .-hero-banner .-hero-title {

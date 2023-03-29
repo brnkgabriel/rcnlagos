@@ -144,3 +144,11 @@ button {
   outline: unset;
   border: unset;
 }
+
+strong {
+  font-weight: bold;
+}
+
+ol {
+  margin-top: 8px;
+}

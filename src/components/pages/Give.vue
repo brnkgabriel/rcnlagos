@@ -88,7 +88,7 @@ const isLoaded = computed(() => (globalState.value.accounts as iAccount[]).lengt
 @media screen and (max-width: 768px) {
 
   .-give .-hero-banner .-hero-title h1 {
-    font-size: 40px
+    font-size: 32px
   }
 
   .-give .-hero-banner .-hero-title {

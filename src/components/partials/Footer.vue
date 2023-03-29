@@ -13,13 +13,14 @@
         <NuxtLink href="/about">RCN Global</NuxtLink>
         <NuxtLink href="/president">RCN President</NuxtLink>
         <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
-        <NuxtLink href="/programs">Programs</NuxtLink> 
+        <NuxtLink href="/programs">Programs</NuxtLink>
       </div>
       <div class="-col">
         <h5 class="-links-category">community</h5>
         <NuxtLink href="/pastors">Pastors</NuxtLink>
         <NuxtLink href="/departments">Departments</NuxtLink>
         <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+        <NuxtLink href="/partner">Remnant Kingdom Stewards</NuxtLink> 
         <NuxtLink href="/contact">Contact Us</NuxtLink>
       </div>
       <div class="-col">

@@ -57,7 +57,7 @@ h5.-subhead {
 @media screen and (max-width: 768px) {
 
   .-head {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 </style>

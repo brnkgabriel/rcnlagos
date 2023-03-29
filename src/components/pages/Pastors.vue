@@ -51,7 +51,7 @@ const isLoaded = computed(() => (globalState.value.pastorates as iPastorate[]).l
 @media screen and (max-width: 768px) {
 
   .-pastors .-headfont {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 

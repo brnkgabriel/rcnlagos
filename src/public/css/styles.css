@@ -112,10 +112,13 @@ textarea:focus {
   padding-bottom: 16px !important;
 }
 
+
 .-subhead {
   font-size: 16px !important;
   font-weight: bold !important;
   font-family: Figtree, Poppins;
+  margin-top: 16px;
+  margin-bottom: 4px;
 }
 
 .-time {

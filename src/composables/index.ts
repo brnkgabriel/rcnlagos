@@ -53,7 +53,8 @@ export const constants = {
   DATATITLE: "data-title",
   MAXPROGRAMS: 4,
   LASTPROGRAMQUERY: `.-lastprogram`,
-  PROGRAMS: "programs"
+  PROGRAMS: "programs",
+  SUBMITPARTNER: "submit partner"
 }
 
 export const operatingSystem = () => {
@@ -258,4 +259,7 @@ export const setSearchedAndRenderedPrograms = (programs: iProgram[]) => {
   const { setSearchedPrograms, setRenderedPrograms } = useGlobals()
   setSearchedPrograms(programs)
   setRenderedPrograms(programs.slice(0, constants.MAXPROGRAMS))
+}
+
+export const dummyFxn = () => { 
 }

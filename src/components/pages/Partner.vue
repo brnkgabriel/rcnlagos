@@ -1,10 +1,220 @@
 <template>
-  <div>
-    <h1>Become a partner</h1>
+  <div class="-partner">
+    <div class="-inner">
+      <div class="-hero-banner -posrel">
+        <div class="-hero-title -posabs">
+          <h1 class="-headfont">Remnant Kingdom Stewards</h1>
+          <p>To raise people passionately committed to the advancement of God's Kingdom by first giving of themselves to
+            the LORD and the resources entrusted in their hands to his work</p>
+        </div>
+        <img class="-desktop" src="/images/partners_1511x495.jpg" alt="partners banner" />
+        <img class="-mobile" src="/images/partners_1000x495.jpg" alt="partners banner" />
+      </div>
+      <div class="-content">
+        <p>This provides a systematic framework for the ministry's partnership initiative in direct fulfilment of the
+          corporate mandate of the network. In view of the various projects embarked upon by the ministry; it necessitates
+          that we strategically build a storehouse of resources in anticipation of the day to day demands of the work. The
+          ministry is saddled with a huge task to bear the yoke side by side the Master, hence the need to create this
+          platform to accommodate the various cares in and out-reach of His divine assignment.</p>
+        <h5 class="-subhead">Vision</h5>
+        <p>Raising strong Kindgom pillars. We aim to raise people passionately committed to the advancement of God's
+          Kingdom by first giving of themselves to the LORD and the resources entrusted in their hands to His work.</p>
+        <h5 class="-subhead">Mission</h5>
+        <div>
+          <p>To effectively mobilize and deploy resources for the building of an Apostolic Community where the weak become
+            strong for an active participation in the Ministry of the Word and Prayers through</p>
+          <ol>
+            <li>- Missions and Outreaches</li>
+            <li>- Church Planting and Support</li>
+            <li>- Welfare and Helps Community</li>
+            <li>- Development Initiatives</li>
+          </ol>
+        </div>
+        <h5 class="-subhead">Scope of Engagement</h5>
+        <p>RCN Remnant Kingdom Stewards (RKS) covers the global network of believers who are committed to the Biblical
+          principles of Righteous Living. Our goal is to connect the committed pillars of the ministry, provide a detailed
+          reporting system and reinforce the set objectives of the ministry. The result is an informed platform for
+          various forms of financial engagement that strengthen the mutuality of our covenant relationship as we see in
+          <strong>2Corinthians 9:6-14</strong>. The early church forged such a synergy in resources in <strong>Acts
+            4:32</strong> that greatly impacted the degree of power available to the Apostles in <strong>Acts
+            4:33</strong> and ensured that no one lacked <strong>Acts 4:34</strong>
+        </p>
+        <h5 class="-subhead">Responsibilities</h5>
+        <div>
+          <p>The committee members are persons in the Ministry who have shared vision with the set man in ensuring that
+            the mandate of the LORD committed to him towards building a strong Apostolic Christian Community is
+            actualized. Our responsibilities therefore are outlined as follows:</p>
+          <ol>
+            <li>- Develop and Manage a database of partners</li>
+            <li>- Organize events for partners such as partners conferences and gala dinner.</li>
+            <li>- Periodic articles and newsletters posted on the website for partners.</li>
+            <li>- Prayer requests and partners' welfare</li>
+            <li>- Reporting and audit of funds from partners</li>
+          </ol>
+        </div>
+        <h5 class="-subhead">Becoming a Partner</h5>
+        <p>Becoming an RKS partner requires a sacrificial commitment from each partner to first give of themselves to God
+          in a consecrated lifestyle. Every act of generousity must be channelled from right and honest living. Every
+          committed partner must be intentional and Spirit-driven. We look forward to being committed to the mandate given
+          to God's servant Apostle Arome Osayi in uplifting him and the ministry before God in prayers, that the work of
+          God may continually advance. We desire volunteered time and skill to fit the needs that arise in-house and
+          commitment from financial resources on periodic basis as each partner is able. Here attached is a detailed form
+          for potential partners to fill with their information, after which a unique membership number will be assigned
+          to each RKS partner so they can, from time to time, be updated with relevant information from the ministry and
+          with respect to their membership status. Robust communication will be established between each partner and the
+          ministry to receive notifications about all our events and outreaches as we progress.</p>
+      </div>
+
+      <h5 class="-subhead">Partner Commitment Form</h5>
+      <div class="-form-bank-details">
+        <form @submit.prevent="dummyFxn" class="-partner-form">
+          <input v-model="name" type="text" placeholder="Name" required />
+          <input v-model="email" type="email" placeholder="Email address" required />
+          <input v-model="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
+            pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
+          <input v-model="address" type="text" placeholder="Address" required />
+          <select name="specialization" id="specialization">
+            <option value="">Specialization #1</option>
+            <option value="">Specialization #2</option>
+            <option value="">Specialization #3</option>
+            <option value="">Specialization #4</option>
+          </select>
+          <button type="submit" class="-btn -posrel">
+            <span class="-clickable -posabs" data-type="submit partner"></span>
+            <span class="-spin-loader"></span>
+            <span class="-txt">submit</span>
+          </button>
+        </form>
+        <div class="-bank-details">
+          bank details
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
+
+const name = ref("")
+const email = ref("")
+const phoneNumber = ref("")
+const address = ref("")
+
+
 </script>
 <style scoped>
-  
+.-partner>.-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+  padding-bottom: 16px;
+}
+
+.-partner .-hero-banner {
+  background-color: black;
+  aspect-ratio: 1511 / 495;
+}
+
+.-partner .-hero-banner .-hero-title {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.-partner .-hero-banner .-hero-title h1,
+.-partner .-hero-banner .-hero-title p {
+  color: white;
+  text-align: center;
+}
+
+.-partner .-hero-banner .-hero-title h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.-partner img {
+  opacity: .2;
+}
+
+.-mobile {
+  display: none;
+}
+
+.-form-bank-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.-partner-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.-bank-details {
+  background-color: var(--rcnaccentblue);
+  color: white;
+}
+
+.-btn .-spin-loader {
+  display: none;
+}
+
+.-loading .-btn .-spin-loader {
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+
+  .-partner .-hero-banner .-hero-title h1 {
+    font-size: 32px
+  }
+
+  .-partner .-hero-banner .-hero-title {
+    width: 90%;
+  }
+
+  .-mobile {
+    display: block;
+  }
+
+  .-desktop {
+    display: none;
+  }
+
+  .-partner .-hero-banner {
+    background-color: black;
+    aspect-ratio: 1000 / 495;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  .-partner-form,
+  .-form-bank-details {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  .-partner .-hero-banner .-hero-title p {
+    font-size: .8em;
+  }
+
+  .-partner .-hero-banner .-hero-title {
+    width: calc(100% - 16px);
+  }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {}
 </style>

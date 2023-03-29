@@ -182,29 +182,6 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
 
 const email = ref("")
 
-const dummyFxn = async () => {
-  console.log("call from dataFxn")
-  // const options = {
-  //   headers: { "Content-type": "multipart/form-data" },
-  //   method: 'POST',
-  //   body: {
-  //     date: new Date().toLocaleString(),
-  //     email: email.value,
-  //     type: constants.SUBSCRIPTION
-  //   }
-  // }
-
-  // try {
-
-  //   const response = await useFetch(constants.POSTAPI, options)
-
-  //   console.log("response data from post", response.data.value)
-  //   console.log("response error from post", response.error.value)
-  // } catch (error: any) {
-  //   console.log("error from post is", error)
-  // }
-}
-
 let controller: Controller
 onMounted(() => {
   controller = new Controller()
@@ -819,6 +796,9 @@ onBeforeUnmount(() => {
 }
 
 @media screen and (max-width: 576px) {
+  .-welcome {
+    font-size: 16px;
+  }
   .-hero-banner {
     row-gap: 8px;
     background-size: cover;
@@ -832,7 +812,7 @@ onBeforeUnmount(() => {
   }
 
   .-hero-header {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .-hero-ctas {
