@@ -223,19 +223,14 @@ export const vFabFilter = {
     const fab = el(".-fab .-clickable", fabFilter) as HTMLElement;
     const close = el(".-close", fabFilter) as HTMLElement;
     [fab, close].forEach((el: HTMLElement) => {
-      el.addEventListener(constants.CLICKEVENT, () => {
+      el.addEventListener(constants.CLICKEVENT, (evt) => {
+        console.log("clicking fab", evt.target)
         fabFilter.classList.toggle(constants.SHOW)
       })
     })
   },
   updated: (fabFilter: HTMLElement) => {
-    const fab = el(".-fab .-clickable", fabFilter) as HTMLElement;
-    const close = el(".-close", fabFilter) as HTMLElement;
-    [fab, close].forEach((el: HTMLElement) => {
-      el.addEventListener(constants.CLICKEVENT, () => {
-        fabFilter.classList.toggle(constants.SHOW)
-      })
-    })
+    
   },
   unmounted: (fabFilter: HTMLElement) => {
     const fab = el(".-fab .-clickable", fabFilter) as HTMLElement;
