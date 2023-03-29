@@ -67,3 +67,5 @@ api: https://script.google.com/macros/s/AKfycbyzfNWhPnxgEcbt4tSiCMKsoSurroruxBs2
     - https://codepen.io/fabghis/pen/qBZZBW?css-preprocessor=sass
     - https://codepen.io/xmalinov/pen/VKrYox
     - https://codepen.io/jdigi/pen/kNQQwQ
+
+#19 - todo feature to stop playing audio when video is selected

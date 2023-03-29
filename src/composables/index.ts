@@ -11,6 +11,7 @@ export const constants = {
   API: "/api/g-data",
   POSTAPI: "/api/p-data",
   SUBSCRIBEAPI: "/api/subscribe",
+  PARTNERAPI: "/api/partner",
   globals: "globals",
   MOBILELINKTYPE: "mobile-link",
   CONTENTTYPE: "content",

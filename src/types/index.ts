@@ -135,6 +135,13 @@ export interface iSubscribe {
   success?: boolean
 }
 
+export interface iPartnerDetails {
+  address?: string;
+  email?: string;
+  name?: string;
+  phoneNumber?: string;
+}
+
 export interface iError {
   message?: string;
 }

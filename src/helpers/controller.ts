@@ -39,6 +39,7 @@ export class Controller {
       case constants.BUTTON: return this.selectedBlog.classList.toggle(constants.ACTIVE)
       case constants.TESTIMONIALBTN: return this.updateTestimonials(target)
       case constants.SUBSCRIBE: return this.subscribeToNewsletter()
+      case constants.SUBMITPARTNER: return this.submitPartnerDetails()
     }
   }
 
@@ -74,7 +75,11 @@ export class Controller {
 
     console.log("testimonial idx is", this.testimonialIdx)
 
-  } 
+  }
+
+  async submitPartnerDetails() {
+    // TODO: find how to reuse subscribeToNewsletter so we don't repeat same code
+  }
 
   async subscribeToNewsletter() {
     const email = this.subscribeInput.value

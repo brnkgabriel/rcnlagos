@@ -67,12 +67,12 @@
 
       <h5 class="-subhead">Partner Commitment Form</h5>
       <div class="-form-bank-details">
-        <form @submit.prevent="dummyFxn" class="-partner-form">
-          <input v-model="name" type="text" placeholder="Name" required />
-          <input v-model="email" type="email" placeholder="Email address" required />
-          <input v-model="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
+        <form @submit.prevent="handleFormSubmission" class="-partner-form">
+          <input v-model="name" name="name" type="text" placeholder="Name" required />
+          <input v-model="email" name="email" type="email" placeholder="Email address" required />
+          <input v-model="phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
             pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
-          <input v-model="address" type="text" placeholder="Address" required />
+          <input v-model="address" name="address" type="text" placeholder="Address" required />
           <select name="specialization" id="specialization">
             <option value="">Specialization #1</option>
             <option value="">Specialization #2</option>
@@ -93,11 +93,19 @@
   </div>
 </template>
 <script setup lang="ts">
+import { iDynamicObject } from '~~/src/types';
+
 
 const name = ref("")
 const email = ref("")
 const phoneNumber = ref("")
 const address = ref("")
+
+const handleFormSubmission = (evt: Event) => {
+  const form = evt.target as HTMLFormElement
+  const formData = new FormData(form)
+  const entries = Object.fromEntries(formData.entries())
+}
 
 
 </script>
