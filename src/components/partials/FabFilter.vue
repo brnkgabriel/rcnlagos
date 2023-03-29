@@ -35,10 +35,10 @@ const { globalState } = useGlobals()
 
 const searchResult = computed(() => {
   const term = searchTerm.value.toLowerCase()
-  // window.scrollTo({
-  //   top: 0,
-  //   behavior: 'smooth'
-  // });
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
   return globalState.value.programs?.filter((program: iProgram) => programFilterCondition(program, term))
 })
 
