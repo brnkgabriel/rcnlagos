@@ -43,6 +43,7 @@
 
 .-logo img {
   height: 40px;
+  width: unset !important;
 }
 
 .-header .-links {
