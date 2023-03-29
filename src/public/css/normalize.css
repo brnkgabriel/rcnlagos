@@ -136,6 +136,9 @@ a {
   text-decoration: unset !important;
 }
 
+img {
+  width: 100%;
+}
 
 button {
   outline: unset;

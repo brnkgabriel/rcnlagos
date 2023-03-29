@@ -63,7 +63,7 @@ const isLoaded = computed(() => (globalState.value.accounts as iAccount[]).lengt
 }
 
 .-give img {
-  opacity: .2;
+  opacity: .2; 
 }
 
 .-mobile {
