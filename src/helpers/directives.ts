@@ -224,7 +224,6 @@ export const vFabFilter = {
     const close = el(".-close", fabFilter) as HTMLElement;
     [fab, close].forEach((el: HTMLElement) => {
       el.addEventListener(constants.CLICKEVENT, (evt) => {
-        console.log("clicking fab", evt.target)
         fabFilter.classList.toggle(constants.SHOW)
       })
     })
