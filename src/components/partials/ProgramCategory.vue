@@ -36,6 +36,7 @@ defineProps<{
 
 .-program .-details .-name {
   line-height: 1;
+  margin-top: unset;
 }
 
 .-program .-time {
