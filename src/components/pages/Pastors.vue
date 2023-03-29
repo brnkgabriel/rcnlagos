@@ -3,8 +3,8 @@
     <div class="-container -inner">
       <h1 class="-headfont">The Pastorates</h1>
       <div class="-catalog">
-        <sPastor v-for="(pastor, idx) in skeletonPastors" :key="idx" :pastor="pastor" />
-        <!-- <Pastor v-if="isLoaded" v-for="(pastor, idx) in globalState.pastorates" :key="idx" :pastor="pastor" /> -->
+        <sPastor v-if="!isLoaded" v-for="(pastor, idx) in skeletonPastors" :key="idx" :pastor="pastor" />
+        <Pastor v-if="isLoaded" v-for="(pastor, idx) in globalState.pastorates" :key="idx" :pastor="pastor" />
       </div>
     </div>
   </div>
