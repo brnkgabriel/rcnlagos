@@ -39,6 +39,9 @@ const searchResult = computed(() => {
     top: 0,
     behavior: 'smooth'
   });
+  if (searchTerm.value === "") {
+    return globalState.value.programs
+  }
   return globalState.value.programs?.filter((program: iProgram) => programFilterCondition(program, term))
 })
 

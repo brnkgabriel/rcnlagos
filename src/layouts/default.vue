@@ -6,7 +6,7 @@
       <Footer />
     </div>
     <MobileNavigation />
-    <FabFilter />
+    <FabFilter v-if="showFilterFab" />
   </div> 
 </template>
 <script setup lang="ts">
@@ -17,8 +17,15 @@ import FabFilter from "~~/src/components/partials/FabFilter.vue"
 import { iGlobal, iProgram } from '../types';
 
 
-const { globalState, setGlobals, setSearchedPrograms, setRenderedPrograms } = useGlobals()
+const { setGlobals } = useGlobals()
 const { data, refresh } = await useLazyFetch(() => constants.API)
+
+const showFilterFab = ref(false)
+
+const route = useRoute()
+
+watchEffect(() => showFilterFab.value = route.name === constants.PROGRAMS ? true : false)
+
 
 watch(data, () => {
   const globals: iGlobal = data.value as iGlobal

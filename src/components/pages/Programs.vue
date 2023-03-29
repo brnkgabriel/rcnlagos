@@ -20,6 +20,7 @@
       <div class="-catalog" v-infinite-scroll>
         <Program v-if="isLoaded" v-for="(program, idx) in globalState.renderedPrograms" :key="idx" :program="program"
           :class="(idx === globalState.renderedPrograms.length - 1) ? '-lastprogram' : ''" @selected="showProgram" />
+        <div v-if="isLoaded && globalState.renderedPrograms.length == 0">No results</div>
         <sProgram v-if="!isLoaded" v-for="(program, idx) in skeletonPrograms" :key="idx" :program="program" />
       </div>
     </div>
