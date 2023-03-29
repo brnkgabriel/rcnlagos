@@ -220,7 +220,7 @@ const showProgram = (program: iProgram) => {
   }
 
   .-hero-banner .-caption .-mainline {
-    font-size: 32;
+    font-size: 32px;
   }
 
   .-mobile {
