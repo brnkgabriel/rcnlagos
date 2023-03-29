@@ -25,7 +25,7 @@ defineProps<{
 </script>
 <style scoped>
 .-title,
-.-subline .-date {
+.-subline, .-date {
   --tw-bg-opacity: 1;
   background-color: rgb(228 231 236 / var(--tw-bg-opacity));
 }
