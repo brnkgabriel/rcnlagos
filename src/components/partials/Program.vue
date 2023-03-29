@@ -1,5 +1,5 @@
 <template>
-  <div class="-program relative" :data-type="program.type">
+  <div class="-program -posrel" :data-type="program.type">
     <img :src="src" :alt="program.title" @click="playVideo" />
     <div class="-details">
       <div class="-name-time">
@@ -124,7 +124,7 @@ const playVideo = () => {
   text-overflow: ellipsis;
 }
 
-.-program[data-type="YouTube Short"] .-details .-ctas .-type {
+/* .-program[data-type="YouTube Short"] .-details .-ctas .-type {
   background-color: var(--red-bg);
   border: 1px dashed var(--red);
   color: var(--red);
@@ -145,7 +145,7 @@ const playVideo = () => {
   background-color: var(--purple-bg);
   border: 1px dashed var(--purple);
   color: var(--purple);
-}
+} */
 
 .-program .-details .-ctas .-btn {
   padding: unset !important;
@@ -158,7 +158,7 @@ const playVideo = () => {
   cursor: pointer;
 }
 
-.-program[data-type="The Remnant Factor"] .-details .-ctas .-btn {
+/* .-program[data-type="The Remnant Factor"] .-details .-ctas .-btn {
   background-color: var(--purple); 
   box-shadow: 0px 4px 20px -5px var(--purple);
 }
@@ -176,7 +176,7 @@ const playVideo = () => {
 .-program[data-type="YouTube Short"] .-details .-ctas .-btn {
   background-color: var(--red); 
   box-shadow: 0px 4px 20px -5px var(--red);
-}
+} */
 
 .-program .-details .-name-time {
   display: flex;
@@ -186,7 +186,7 @@ const playVideo = () => {
   row-gap: 4px;
 }
 
-.-program[data-type="YouTube Short"] .-time {
+/* .-program[data-type="YouTube Short"] .-time {
   background-color: var(--red);
 }
 
@@ -203,7 +203,7 @@ const playVideo = () => {
 
 .-program[data-type="The Remnant Factor"] .-time {
   background-color: var(--purple);
-}
+} */
 
 .-program .-details .-ctas .-minister {
   line-height: 1.2;

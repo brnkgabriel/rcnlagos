@@ -1,5 +1,5 @@
 <template>
-  <div class="font-body text-[13px] -main" data-type="main">
+  <div class="font-body -main" data-type="main">
     <div class="-content" data-type="content">
       <Header />
       <slot></slot>

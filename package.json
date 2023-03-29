@@ -12,11 +12,7 @@
   },
   "devDependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.13.0",
-    "@nuxtjs/tailwindcss": "^6.6.4",
-    "@vitest/coverage-c8": "^0.25.8",
-    "c8": "^7.12.0",
-    "nuxt": "3.0.0",
-    "vitest": "^0.25.8"
+    "nuxt": "3.0.0"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.7",

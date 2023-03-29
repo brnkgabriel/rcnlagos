@@ -6,8 +6,8 @@
         <h1 class="-headfont -mobile">The President</h1>
         <img class="-signature" src="/images/signature.png" alt="rcn signature" />
       </div>
-      <div class="-right relative">
-        <img class="-arome-osayi absolute" src="/images/arome-osayi.png" alt="apostle arome osayi" />
+      <div class="-right -posrel">
+        <img class="-arome-osayi -posabs" src="/images/arome-osayi.png" alt="apostle arome osayi" />
         <img class="-bg-img" src="/images/icon_500x500.png" alt="rcn icon" />
       </div>
     </div>

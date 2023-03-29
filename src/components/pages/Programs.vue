@@ -1,13 +1,13 @@
 <template>
   <div class="-programs" id="programs">
     <ProgramModal ref="programModal" :program="selectedProgram" />
-    <div class="-inner px-4 relative">
-      <div class="-hero-banner relative">
-        <div class="-hero-title absolute -caption">
+    <div class="-inner px-4 -posrel">
+      <div class="-hero-banner -posrel">
+        <div class="-hero-title -posabs -caption">
           <h1 class="-headfont -mainline">Encounter the Word</h1>
           <p class="-subline">Explore our programs and events and get notified of upcoming events.</p>
         </div>
-        <div class="-upcoming-program absolute">
+        <div class="-upcoming-program -posabs">
           <div class="-left">
             <h5 class="-subhead">upcoming program</h5>
             <p>The Convergence | April 21 - 22, 2023</p>
@@ -145,6 +145,7 @@ const showProgram = (program: iProgram) => {
 
 .-hero-banner img {
   opacity: .6;
+  width: 100%;
 }
 
 

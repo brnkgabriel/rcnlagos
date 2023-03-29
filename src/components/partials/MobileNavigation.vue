@@ -1,8 +1,8 @@
 <template>
-  <div class="-mobile-navigation w-full h-full" data-type="mobile navigation">
+  <div class="-mobile-navigation" data-type="mobile navigation">
     <div class="-content">
       <div class="-top">
-        <div class="-close-btn relative" data-type="close mobile menu"></div>
+        <div class="-close-btn -posrel" data-type="close mobile menu"></div>
       </div>
 
       <div class="-links">
@@ -33,6 +33,8 @@ onMounted(() => {
   transform: translate(0%);
   display: flex;
   justify-content: flex-end;
+  width: 100%;
+  height: 100%;
 }
 .-mobile-navigation .-content {
   background-color: var(--rcnaccentblue);

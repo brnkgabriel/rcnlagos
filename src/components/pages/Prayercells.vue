@@ -1,8 +1,8 @@
 <template>
   <div class="-prayercells">
     <div class="-cells-wrap -inner">
-      <div class="-hero-banner relative">
-        <div class="-hero-title absolute">
+      <div class="-hero-banner -posrel">
+        <div class="-hero-title -posabs">
           <h1 class="-headfont">Prayer Cells</h1>
           <p>As iron sharpens iron, so one person sharpens another. RCN Lagos has prayer centers in various locations in
             Lagos

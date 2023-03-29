@@ -1,8 +1,8 @@
 <template>
-  <NuxtLink :href="href" class="-pastor relative">
-    <div class="-img relative">
+  <NuxtLink :href="href" class="-pastor -posrel">
+    <div class="-img -posrel">
       <img class="-icon" src="/images/icon_500x500.png" alt="icon" />
-      <img v-loaded class="-picture absolute opacity-0" :src="pastor.image" :alt="pastor.name" />
+      <img v-loaded class="-picture -posabs opacity-0" :src="pastor.image" :alt="pastor.name" />
     </div>
     <div class="-detail">
       <h5 class="-name">{{ name }}</h5>
@@ -63,7 +63,9 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
   transform: translate(-50%, -50%);
 }
 
-.-pastor .-img .-icon {}
+.-pastor .-img .-icon {
+  width: 100%;
+}
 
 .-pastor .-img .-picture {
   top: 70%;

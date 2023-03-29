@@ -6,8 +6,8 @@
         <h1 class="-headfont -mobile">The Birth of<br />RCN Lagos</h1>
         <img class="-signature" src="/images/signature.png" alt="rcn signature" />
       </div>
-      <div class="-right relative">
-        <img class="-pastor absolute" src="/images/RevAustinUkporhe.png" alt="rev austin ukporhe" />
+      <div class="-right -posrel">
+        <img class="-pastor -posabs" src="/images/RevAustinUkporhe.png" alt="rev austin ukporhe" />
         <img class="-bg-img" src="/images/icon_500x500.png" alt="rcn icon" />
       </div>
     </div>

@@ -2,7 +2,7 @@
   <div class="-header shadow-custom">
     <div class="-inner">
       <NuxtLink href="/" class="-logo">
-        <img class="h-[40px]" src="/images/rcn-logo.png" alt="remnant christian network logo" />
+        <img src="/images/rcn-logo.png" alt="remnant christian network logo" />
       </NuxtLink>
       <div class="-links">
         <NuxtLink href="/">home</NuxtLink>
@@ -12,10 +12,9 @@
         <NuxtLink href="/prayercells">prayer cells</NuxtLink>
         <NuxtLink class="-btn -give" href="/give">give</NuxtLink>
       </div>
-      <div class="-hamburger relative">
+      <div class="-hamburger -posrel">
         <div class="-clickable" data-type="hamburger"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-        class="w-6 h-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
       </div>
@@ -42,6 +41,10 @@
   align-items: center;
 }
 
+.-logo img {
+  height: 40px;
+}
+
 .-header .-links {
   display: flex;
   justify-content: center;
@@ -50,6 +53,11 @@
 }
 .-header .-hamburger {
   display: none;
+}
+
+.-header .-hamburger svg {
+  width: 24px;
+  height: 24px;
 }
 
 .-header .-links a {

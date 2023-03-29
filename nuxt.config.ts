@@ -22,8 +22,7 @@ export default {
     },
   },
   modules: [
-    '@kevinmarrec/nuxt-pwa',
-    '@nuxtjs/tailwindcss'
+    '@kevinmarrec/nuxt-pwa', 
   ],
   pwa: {
     workbox: {

@@ -1,8 +1,8 @@
 <template>
-  <blockquote class="-testimonial absolute">
+  <blockquote class="-testimonial -posabs">
     <p>{{ testimonial.quote }}</p><cite>
       <div class="-img">
-        <img v-loaded class="opacity-0" :src="testimonial.image" :alt="testimonial.name" />
+        <img v-loaded :src="testimonial.image" :alt="testimonial.name" />
       </div>
       <span>{{ testimonial.name }}</span>
     </cite>
@@ -52,7 +52,13 @@ defineProps<{
 
 .-testimonial cite .-img {
   width: 44px;
+  height: 44px;
   border-radius: 50%;
   overflow: hidden;
+}
+.-testimonial cite .-img img {
+  opacity: 0;
+  object-fit: contain;
+  width: 100%;
 }
 </style>

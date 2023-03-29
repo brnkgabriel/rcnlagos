@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full -footer bg-rcntext-500 text-white">
+  <div class="w-full -footer">
     <div class="-inner -links">
       <div class="-col">
-        <img class="h-[40px]" src="/images/rcn-logo-white.png" alt="remnant christian network white logo" />
+        <img src="/images/rcn-logo-white.png" alt="remnant christian network white logo" />
         <p class="m-0">Academy Guest House, Plot 6A Lateef Jakande Rd. Agidingbi 101212, Ikeja</p>
         <a href="tel:+2348186253251" class="-phone">(+234) 818 625 3251</a>
         <a href="tel:+2349061767430" class="-phone">(+234) 906 176 7430</a>
@@ -33,7 +33,7 @@
         <h5 class="-links-category">follow us</h5>
         <div class="-social-links">
           <a href="https://twitter.com/RCNLagos?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-            class="-social-link relative -twitter">
+            class="-social-link -posrel -twitter">
             <div class="-callable" data-type="social link"></div>
             <svg class="kadence-svg-icon kadence-twitter-svg" fill="currentColor" version="1.1"
               xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28">
@@ -43,7 +43,7 @@
               </path>
             </svg>
           </a>
-          <a href="https://facebook.com/RCNLagos/?_rdc=1&_rdr" class="-social-link relative -facebook">
+          <a href="https://facebook.com/RCNLagos/?_rdc=1&_rdr" class="-social-link -posrel -facebook">
             <div class="-callable" data-type="social link"></div>
             <svg class="kadence-svg-icon kadence-facebook-svg" fill="currentColor" version="1.1"
               xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -53,7 +53,7 @@
               </path>
             </svg>
           </a>
-          <a href="https://www.instagram.com/rcnlagos/?hl=en" class="-social-link relative -instagram">
+          <a href="https://www.instagram.com/rcnlagos/?hl=en" class="-social-link -posrel -instagram">
             <div class="-callable" data-type="social link"></div>
             <svg class="kadence-svg-icon kadence-instagram-svg" fill="currentColor" version="1.1"
               xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -63,7 +63,7 @@
               </path>
             </svg>
           </a>
-          <a href="https://www.youtube.com/channel/UC1ySHTn2eyeNEtYpB3-ZILw" class="-social-link relative -youtube">
+          <a href="https://www.youtube.com/channel/UC1ySHTn2eyeNEtYpB3-ZILw" class="-social-link -posrel -youtube">
             <div class="-callable" data-type="social link"></div>
             <svg class="kadence-svg-icon kadence-youtube-svg" fill="currentColor" version="1.1"
               xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -73,7 +73,7 @@
               </path>
             </svg>
           </a>
-          <a href="https://t.me/rcnlagos" class="-social-link relative -telegram">
+          <a href="https://t.me/rcnlagos" class="-social-link -posrel -telegram">
             <div class="-callable" data-type="social link"></div>
             <svg fill="none" height="1168.4659" width="1413.144" viewBox="0 0 282.62881 233.69319" version="1.1" id="svg6" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs10" /><path d="m 17.327469,101.77394 c 0,0 125.000001,-51.299996 168.352001,-69.363996 16.619,-7.225 72.977,-30.3469998 72.977,-30.3469998 0,0 26.012,-10.115 23.844,14.4509998 -0.723,10.116 -6.503,45.52 -12.283,83.814996 -8.671,54.191 -18.064,113.439 -18.064,113.439 0,0 -1.445,16.619 -13.728,19.509 -12.283,2.89 -32.515,-10.115 -36.127,-13.006 -2.891,-2.167 -54.191,-34.682 -72.977,-50.578 -5.058,-4.335 -10.838,-13.005 0.722,-23.121 26.012,-23.844 57.081,-53.467996 75.867,-72.253996 8.671,-8.671 17.341,-28.902 -18.786,-4.336 -51.3,35.404996 -101.878001,68.641996 -101.878001,68.641996 0,0 -11.561,7.225 -33.237,0.722 -21.677,-6.502 -46.9660003,-15.173 -46.9660003,-15.173 0,0 -17.3399997,-10.838 12.2840003,-22.399 z" fill="#ffffff" id="path4" /></svg>
           </a>
@@ -99,6 +99,11 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
 <style scoped>
 .-footer {
   overflow: hidden;
+  background-color: var(--rcntext);
+}
+
+.-footer img {
+  height: 40px;
 }
 .-footer .-links {
   padding-top: 24px;
@@ -113,11 +118,13 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   flex-direction: column;
   align-items: flex-start;
   row-gap: 4px;
+  color: white;
 }
 
 .-col a {
   display: block;
   width: 100%;
+  color: white;
 }
 
 .-col.-somedia-partner {

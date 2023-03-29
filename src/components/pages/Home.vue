@@ -11,13 +11,13 @@
         <NuxtLink href="/about" class="-btn -know-more">know more</NuxtLink>
       </div>
     </div>
-    <div class="-home-slider relative -row -inner">
-      <div class="-rebirth-priesthood-transformation absolute">
+    <div class="-home-slider -posrel -row -inner">
+      <div class="-rebirth-priesthood-transformation -posabs">
         <p class="-txt -rebirth">rebirth</p>
         <p class="-txt -priesthood">priesthood</p>
         <p class="-txt -transformation">transformation</p>
       </div>
-      <div class="-sliders absolute" v-slide>
+      <div class="-sliders -posabs" v-slide>
         <img v-if="globalState.sliders?.length === 0" class="active" src="/images/1326x602.png"
           alt="homepage slider skeleton" />
         <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''"
@@ -43,7 +43,7 @@
     <div class="-ourprograms -row">
       <div class="-inner">
 
-        <div class="-title-wrap flex-col">
+        <div class="-title-wrap">
           <h5 class="-txt -subhead">our programs</h5>
           <p class="-subline">Join us in God's presence</p>
         </div>
@@ -56,8 +56,8 @@
       </div>
     </div>
     <div class="-latestmessage -row -inner">
-      <div class="-meet-our-pastors relative">
-        <div class="-note absolute">
+      <div class="-meet-our-pastors -posrel">
+        <div class="-note -posabs">
           <div class="-title">
             <h5 class="-meet-our">meet our</h5>
             <h3 class="-pastors -headfont">pastors</h3>
@@ -83,16 +83,16 @@
         </div>
       </div>
     </div>
-    <div class="-blog relative -row">
+    <div class="-blog -posrel -row">
       <div class="-blog-wrap -inner">
 
-        <div class="-title-wrap flex-col">
+        <div class="-title-wrap">
           <h5 class="-txt -subhead">blog</h5>
           <p class="-subline">A community board seasoned to rejuvinate your heart</p>
         </div>
         <div class="-content">
-          <div class="-content-item -selected relative">
-            <div class="-post absolute">
+          <div class="-content-item -selected -posrel">
+            <div class="-post -posabs">
               <div class="-directionalbutton" data-type="button"></div>
               <div class="-postcontent" v-html="reorderedBlogs[0]?.htmlContent"></div>
             </div>
@@ -112,16 +112,16 @@
         </div>
       </div>
     </div>
-    <div class="-testify relative -row">
+    <div class="-testify -posrel -row">
       <div class="-inner">
         <div class="-title-wrap">
           <h5 class="-txt -subhead">testimonials</h5>
           <p class="-subline">Read the life inspiring encounters of our members</p>
         </div>
-        <div class="-testimonials relative">
+        <div class="-testimonials -posrel">
           <div class="-directionalbutton -prev absolute" data-dir="prev" data-type="testimonialbtn"></div>
           <div class="-directionalbutton -next absolute" data-dir="next" data-type="testimonialbtn"></div>
-          <div class="-wrap relative">
+          <div class="-wrap -posrel">
             <TestimonialCard v-for="(testimonial, idx) in globalState.testimonials" :class="idx === 0 ? 'active' : ''"
               :key="idx" :testimonial="testimonial" />
           </div>
@@ -131,7 +131,7 @@
         </div>
       </div>
     </div>
-    <div class="-subscription-upcoming relative px-4 -row -inner">
+    <div class="-subscription-upcoming -posrel px-4 -row -inner">
       <div class="-subup -subscription">
         <div class="-title-wrap">
           <h5 class="-txt -subhead">join our community</h5>
@@ -139,8 +139,8 @@
         </div>
         <form @submit.prevent="dummyFxn" class="-form-field">
           <input v-model="email" type="email" class="-subscribe" placeholder="Email address" required />
-          <button type="submit" class="-btn relative">
-            <span class="-clickable absolute" data-type="subscribe"></span>
+          <button type="submit" class="-btn -posrel">
+            <span class="-clickable -posabs" data-type="subscribe"></span>
             <span class="-spin-loader"></span>
             <span class="-txt">subscribe</span>
           </button>

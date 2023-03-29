@@ -1,8 +1,8 @@
 <template>
   <div class="-give">
     <div class="-inner">
-      <div class="-hero-banner relative">
-        <div class="-hero-title absolute">
+      <div class="-hero-banner -posrel">
+        <div class="-hero-title -posabs">
           <h1 class="-headfont">Give</h1>
           <p>You are welcome to be a part of what the LORD is doing at RCN Lagos. Kindly find below our account details</p>
         </div>

@@ -1,11 +1,11 @@
 <template>
-  <div class="-program relative shadow-custom">
+  <div class="-program -posrel shadow-custom">
     <img v-loaded class="opacity-0" :src="program.image">
     <div class="-details">
       <h5 class="-name -subhead">{{ program.name }}</h5>
       <p class="-about">{{ program.about }}</p>
     </div>
-    <div class="-time absolute">{{ program.time }}</div>
+    <div class="-time -posabs">{{ program.time }}</div>
   </div>
 </template>
 <script setup lang="ts">

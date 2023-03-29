@@ -1,6 +1,6 @@
 <template>
   <div class="-cell">
-    <div class="-img relative">
+    <div class="-img -posrel">
       <a target="_blank" :href="whatsappIcon(cell.phoneNumber as string)" class="-clickable"></a>
       <p class="-cellname">{{ cell.name }}</p>
       <img src="/images/prayer_678x452.jpeg" alt="prayer" />

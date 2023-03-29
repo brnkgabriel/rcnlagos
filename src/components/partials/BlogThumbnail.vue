@@ -1,9 +1,9 @@
 <template>
-  <div class="-thumbnail relative">
+  <div class="-thumbnail -posrel">
     <div class="-img" :data-blog="blog.title">
       <img :src="blog.thumbnail" :alt="blog.title" data-type="blog" :data-blog="blog.title">
     </div>
-    <div class="-details">
+    <div class="-details -posrel">
       <div class="-clickable" :data-blog="blog.title" data-type="blog"></div>
       <div class="-txt">
         <h5 class="-title">{{ blog.title }}</h5>
