@@ -134,6 +134,7 @@ onMounted(() => show.value = displayCondition())
 
 .-search-close input {
   padding-left: 40px;
+  width: 100%;
 }
 
 .-search-close .-close {
