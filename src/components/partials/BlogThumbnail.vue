@@ -122,7 +122,10 @@ defineProps<{
     position: absolute;
     top: 0;
     left: 0;
-  }
+    height: 100%;
+    margin-top: unset;
+    padding: unset;
+}
 
   .-thumbnail .-details .-txt {
     position: absolute;
@@ -139,8 +142,11 @@ defineProps<{
     line-height: 1.1;
     padding: 8px;
     font-weight: 500;
-    white-space: nowrap;
+    white-space: initial;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
     overflow: hidden;
   }
 
