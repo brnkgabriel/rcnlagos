@@ -140,6 +140,9 @@ a {
   text-decoration: unset !important;
 }
 
+p {
+  font-size: 13px !important;
+}
 a:hover,a:active,a:focus {
   color: currentColor;
 }
