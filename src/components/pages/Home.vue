@@ -6,7 +6,7 @@
       <p class="-about px-4">We are a ministry with a single minded focus on restoring the prayer commission of the church
         in fulfillment of
         Jesus' proclamation in Matthew 21:13 that <strong>My house shall be called the house of prayer</strong></p>
-      <div class="-hero-ctas px-4">
+      <div class="-hero-ctas">
         <a href="https://www.youtube.com/@RCNLagos/streams" class="-btn -stream-live">stream live</a>
         <NuxtLink href="/about" class="-btn -know-more">know more</NuxtLink>
       </div>
@@ -48,10 +48,10 @@
           <p class="-subline">Join us in God's presence</p>
         </div>
         <div class="-programs">
-          <sProgramCategory v-if="!isRemoteDataLoaded" v-for="(program, idx) in skeletonProgramCategories" :program="program"
-            :key="idx" />
-          <ProgramCategory v-if="isRemoteDataLoaded" v-for="(program, idx) in globalState.programCategories" :program="program"
-            :key="idx" />
+          <sProgramCategory v-if="!isRemoteDataLoaded" v-for="(program, idx) in skeletonProgramCategories"
+            :program="program" :key="idx" />
+          <ProgramCategory v-if="isRemoteDataLoaded" v-for="(program, idx) in globalState.programCategories"
+            :program="program" :key="idx" />
         </div>
       </div>
     </div>
@@ -799,6 +799,7 @@ onBeforeUnmount(() => {
   .-welcome {
     font-size: 16px;
   }
+
   .-hero-banner {
     row-gap: 8px;
     background-size: cover;
@@ -815,15 +816,17 @@ onBeforeUnmount(() => {
     font-size: 32px;
   }
 
+  .-hero-ctas,
+  .-hero-ctas a {
+    width: 100%;
+  }
+
   .-hero-ctas {
     column-gap: unset;
     row-gap: 8px;
     flex-direction: column;
-  }
-
-  .-hero-ctas,
-  .-hero-ctas a {
-    width: 100%;
+    width: calc(100% - 32px);
+    margin: 0 auto;
   }
 
   .-home-slider {
@@ -869,6 +872,7 @@ onBeforeUnmount(() => {
   .-ourvalues .-title-wrap .-txt {
     width: 100%;
   }
+
   .-ourprograms .-programs {
     grid-template-columns: repeat(1, 1fr);
   }

@@ -116,9 +116,9 @@ const playVideo = () => {
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 50px;
-  background-color: var(--orange-bg);
-  border: 1px dashed var(--rcnaccentorange);
-  color: var(--rcnaccentorange);
+  background-color: var(--rcnlightbg);
+  border: 1px dashed var(--rcnaccentblue);
+  color: var(--rcnaccentblue);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
