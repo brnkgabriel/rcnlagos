@@ -148,6 +148,7 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  color: white;
 }
 
 .-social-links {
