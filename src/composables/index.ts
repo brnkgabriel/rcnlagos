@@ -12,6 +12,7 @@ export const constants = {
   POSTAPI: "/api/p-data",
   SUBSCRIBEAPI: "/api/subscribe",
   PARTNERAPI: "/api/partner",
+  CONTACTAPI: "/api/contactus",
   globals: "globals",
   MOBILELINKTYPE: "mobile-link",
   CONTENTTYPE: "content",
@@ -40,11 +41,13 @@ export const constants = {
   FAILEDTOFETCH: "Failed to fetch",
   SUBSCRIPTIONSTATUSQUERY: ".-subscription-upcoming .-subup .-status",
   PARTNERSTATUSQUERY: ".-partner-form .-status",
+  CONTACTUSSTATUSQUERY: ".-contact-form .-status",
   SUBSCRIPTION: "email subscription",
   TESTIMONIALQUERY: ".-testimonial",
   SELECTEDBLOGIMGWRAPQUERY: ".-blog .-content .-selected .-imgwrap",
   SUBSCRIPTIONWRAPQUERY: ".-subscription-upcoming .-subup",
   PARTNERWRAPQUERY: ".-partner-form",
+  CONTACTUSWRAPQUERY: ".-contact-form",
   SELECTEDBLOGQUERY: ".-blog .-content .-selected",
   SUBSCRIBEINPUTQUERY: ".-subscription-upcoming .-subup input",
   SELECTEDPOSTCONTENT: ".-blog .-content .-selected .-postcontent",
@@ -60,7 +63,9 @@ export const constants = {
   SUBMITPARTNER: "submit partner",
   RCNLAGOSCOLLECTION: "rcnlagos",
   SUBSCRIBERSID: "subscribers",
-  PARTNERSID: "partners"
+  PARTNERSID: "partners",
+  CONTACTUSID: "contactus",
+
 }
 
 export const operatingSystem = () => {
@@ -271,7 +276,7 @@ export const dummyFxn = () => {
 }
 
 
-export const postForm = async (apiOptions: iApiOptions, messages: iMessage) => {
+export const postForm = async (apiOptions: iApiOptions, messages: iMessage, api: string) => {
 
   apiOptions.wrapperHTML?.classList.add("-loading")
   const options = {
@@ -287,7 +292,7 @@ export const postForm = async (apiOptions: iApiOptions, messages: iMessage) => {
   }
 
   try { 
-    const { data } = await useFetch(constants.SUBSCRIBEAPI, options)
+    const { data } = await useFetch(api, options)
     const remoteData = data.value as iSubscribe
     handleResponse(remoteData, apiOptions)
   } catch (error: any) {

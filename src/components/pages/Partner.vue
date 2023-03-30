@@ -132,7 +132,7 @@ const handleFormSubmission = (evt: Event) => {
     statusHTML: el(constants.PARTNERSTATUSQUERY) as HTMLElement
   }
 
-  postForm(apiOptions, messages)
+  postForm(apiOptions, messages, constants.PARTNERAPI)
 }
 
 
@@ -235,14 +235,14 @@ const handleFormSubmission = (evt: Event) => {
     aspect-ratio: 1000 / 495;
   }
 
-}
-
-@media screen and (max-width: 576px) {
 
   .-partner-form,
   .-form-bank-details {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+@media screen and (max-width: 576px) {
 
   .-specialization {
     grid-column-start: 1;

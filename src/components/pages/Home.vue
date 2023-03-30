@@ -199,7 +199,7 @@ const handleSubscription = () => {
     wrapperHTML: el(constants.SUBSCRIPTIONWRAPQUERY) as HTMLElement,
     statusHTML: el(constants.SUBSCRIPTIONSTATUSQUERY) as HTMLElement,
   }
-  postForm(apiOptions, messages)
+  postForm(apiOptions, messages, constants.SUBSCRIBEAPI)
 }
 
 let controller: Controller
