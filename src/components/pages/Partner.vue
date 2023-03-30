@@ -87,7 +87,21 @@
           <p class="-status" data-type="error"></p>
         </form>
         <div class="-bank-details">
-          bank details
+          <h5 class="-subhead">Account Details</h5>
+          <div class="-account">
+            <p class="-key">Account Name:</p>
+            <p class="-value">Remnant Christian Network Ministry</p>
+            <p class="-key">Bank Name:</p>
+            <p class="-value">First Bank PLC</p>
+            <p class="-key">NGN:</p>
+            <p class="-value">2031730750</p>
+            <p class="-key">USD:</p>
+            <p class="-value">2031730183</p>
+            <p class="-key">GBP:</p>
+            <p class="-value">2031730217</p>
+            <p class="-key">EUR:</p>
+            <p class="-value">2031730200</p>
+          </div>
         </div>
       </div>
     </div>
@@ -96,13 +110,14 @@
 <script setup lang="ts">
 import { iApiOptions, iMessage } from '~~/src/types';
 
+const { globalState } = useGlobals()
 
 const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
   const formData = new FormData(form)
   const entries = Object.fromEntries(formData.entries())
 
-  const messages: iMessage = { 
+  const messages: iMessage = {
     errorMessage: "You're already a partner",
     successMessage: "Successfully submitted"
   }
@@ -179,6 +194,15 @@ const handleFormSubmission = (evt: Event) => {
 .-bank-details {
   background-color: var(--rcnaccentblue);
   color: white;
+  padding: 16px;
+}
+
+.-bank-details .-subhead {}
+
+.-bank-details .-account {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 16px;
 }
 
 .-specialization {
