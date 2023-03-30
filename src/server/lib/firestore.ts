@@ -23,8 +23,20 @@ export const queryByCollection = async (col: string) => {
   return docs
 }
 
-export const set = async (col: string, document: Object) => {
-  await setDoc(doc(collection(firestoredb, col)), document, { merge: true })
+export const set = async (options: iOptions) => {
+
+  const { col, data, id, successMessage } = options
+  try {
+    const docRef = doc(firestoredb, col as string, id as string)
+    const snapData:DocumentData = {}
+    snapData[data.email] = data
+    await setDoc(docRef, snapData, { merge: true })
+    const response = { error: false, success: true, message: successMessage }
+    return response
+  } catch (error: any) {
+    const response = { error: true, success: false, message: error.message }
+    return response
+  }
 }
 
 export const add = async (col: string, document: Object) => {

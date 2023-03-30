@@ -7,9 +7,9 @@ export default defineEventHandler(async (event: H3Event) => {
     const query = getQuery(event) as iQuery
     const data = await readBody(event) as any
 
-    // const options: iOptions = { ...query, data }
+    const options: iOptions = { ...query, data }
 
-    const response = await set(query.col as string, data)
+    const response = await set(options)
 
     return response
   } catch (error: any) {
