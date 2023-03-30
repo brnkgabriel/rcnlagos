@@ -1,4 +1,4 @@
-import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iSubscribe, iApiOptions } from "../types"
+import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iSubscribe, iApiOptions, iMessage } from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -39,10 +39,12 @@ export const constants = {
   INTERNALSERVERERROR: "500 Internal Server Error (/api/p-data)",
   FAILEDTOFETCH: "Failed to fetch",
   SUBSCRIPTIONSTATUSQUERY: ".-subscription-upcoming .-subup .-status",
+  PARTNERSTATUSQUERY: ".-partner-form .-status",
   SUBSCRIPTION: "email subscription",
   TESTIMONIALQUERY: ".-testimonial",
   SELECTEDBLOGIMGWRAPQUERY: ".-blog .-content .-selected .-imgwrap",
   SUBSCRIPTIONWRAPQUERY: ".-subscription-upcoming .-subup",
+  PARTNERWRAPQUERY: ".-partner-form",
   SELECTEDBLOGQUERY: ".-blog .-content .-selected",
   SUBSCRIBEINPUTQUERY: ".-subscription-upcoming .-subup input",
   SELECTEDPOSTCONTENT: ".-blog .-content .-selected .-postcontent",
@@ -269,7 +271,7 @@ export const dummyFxn = () => {
 }
 
 
-export const subscribeToNewsletter = async (apiOptions: iApiOptions) => {
+export const postForm = async (apiOptions: iApiOptions, messages: iMessage) => {
 
   apiOptions.wrapperHTML?.classList.add("-loading")
   const options = {
@@ -279,7 +281,8 @@ export const subscribeToNewsletter = async (apiOptions: iApiOptions) => {
     body: apiOptions.dataToStore,
     params: {
       col: apiOptions.collection,
-      id: apiOptions.id
+      id: apiOptions.id,
+      ...messages
     }
   }
 

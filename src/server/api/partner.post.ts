@@ -1,11 +1,11 @@
 import { H3Event, getQuery, readBody } from "h3"
-import { iOptions, iPartnerDetails, iQuery, iSubscribe } from "~~/src/types"
+import { iOptions, iQuery, iSubscribe } from "~~/src/types"
 import { checkAndStoreDoc } from "../lib/firestore"
 
 export default defineEventHandler(async (event: H3Event) => {
   try {
     const query = getQuery(event) as iQuery
-    const data = await readBody(event) as iPartnerDetails
+    const data = await readBody(event) as any
 
     const options: iOptions = { ...query, data }
 

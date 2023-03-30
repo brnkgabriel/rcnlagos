@@ -173,33 +173,33 @@ import sProgramCategory from "../skeletons/sProgramCategory.vue";
 import BlogThumbnail from "../partials/BlogThumbnail.vue";
 import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import TestimonialCard from "../partials/TestimonialCard.vue";
-import { iApiOptions, iBlog } from "~~/src/types";
+import { iApiOptions, iBlog, iMessage } from "~~/src/types";
 import { Controller } from "~~/src/helpers/controller";
 
 const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programCategories?.length as number) > 0)
 const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
 
-const email = ref("") 
+const email = ref("")
 
 const handleSubscription = () => {
- 
-  const apiOptions:iApiOptions = {
+
+  const messages: iMessage = {
+    errorMessage: "You've already subscribed",
+    successMessage: "Successfully subscribed"
+  }
+
+  const apiOptions: iApiOptions = {
     collection: constants.RCNLAGOSCOLLECTION,
     id: constants.SUBSCRIBERSID,
     dataToStore: {
       date: new Date().toLocaleString(),
-      email: email.value,
-      type: constants.SUBSCRIPTION,
-      errorMessage: "You've already subscribed",
-      successMessage: "Successfully subscribed"
+      email: email.value
     },
     wrapperHTML: el(constants.SUBSCRIPTIONWRAPQUERY) as HTMLElement,
     statusHTML: el(constants.SUBSCRIPTIONSTATUSQUERY) as HTMLElement,
   }
-
-  console.log("firing submit event", Date.now())
-  subscribeToNewsletter(apiOptions)
+  postForm(apiOptions, messages)
 }
 
 let controller: Controller
@@ -628,47 +628,6 @@ onBeforeUnmount(() => {
 
 .-subscription-upcoming .-subup.-loading {
   pointer-events: none;
-}
-
-.-subscription-upcoming .-subup .-btn .-txt {
-  display: block;
-}
-
-.-subscription-upcoming .-subup.-loading .-btn .-txt {
-  display: none;
-}
-
-.-subscription-upcoming .-subup .-btn .-spin-loader {
-  display: none;
-}
-
-.-subscription-upcoming .-subup.-loading .-btn .-spin-loader {
-  display: block;
-  margin: 0 auto;
-}
-
-
-.-subscription-upcoming .-subup .-status {
-  padding: 16px;
-  border-radius: 16px;
-  border: 2px dashed var(--green);
-  display: none;
-  width: 100%;
-}
-
-.-subscription-upcoming .-subup.-show-status .-status {
-  display: block;
-}
-
-.-subscription-upcoming .-subup .-status[data-type="error"] {
-  background-color: var(--red-bg);
-  color: var(--red);
-  border-color: var(--red);
-}
-
-.-subscription-upcoming .-subup .-status[data-type="success"] {
-  background-color: var(--green-bg);
-  color: var(--green);
 }
 
 .footer-social-wrap .-partner-btn {

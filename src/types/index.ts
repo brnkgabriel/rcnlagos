@@ -153,6 +153,8 @@ export interface iQuery {
 
 export interface iOptions extends iQuery {
   data?: any;
+  errorMessage?: string;
+  successMessage?: string;
 }
 
 export interface iApiOptions {
@@ -161,6 +163,9 @@ export interface iApiOptions {
   dataToStore?: any;
   wrapperHTML?: HTMLElement;
   statusHTML?: HTMLElement,
+}
+
+export interface iMessage {
   errorMessage?: string;
   successMessage?: string;
 }

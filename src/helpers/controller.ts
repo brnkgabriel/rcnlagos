@@ -1,13 +1,10 @@
-import { iBlog, iSubscribe } from "../types";
+import { iBlog } from "../types";
 
 export class Controller {
   private selectedBlogImgWrap: HTMLElement;
   private selectedBlog: HTMLElement;
   private selectedPostContent: HTMLElement;
   private siteContent: HTMLElement;
-  private subscriptionWrap: HTMLElement;
-  private subscribeInput: HTMLInputElement;
-  private subscriptionStatus: HTMLElement;
   private testimonialIdx: number = 0
 
   constructor() {
@@ -16,9 +13,6 @@ export class Controller {
     this.selectedBlog = el(constants.SELECTEDBLOGQUERY) as HTMLElement
     this.selectedPostContent = el(constants.SELECTEDPOSTCONTENT) as HTMLElement
     this.siteContent = el(constants.SITECONTENT) as HTMLElement
-    this.subscriptionWrap = el(constants.SUBSCRIPTIONWRAPQUERY) as HTMLElement
-    this.subscribeInput = el(constants.SUBSCRIBEINPUTQUERY) as HTMLInputElement
-    this.subscriptionStatus = el(constants.SUBSCRIPTIONSTATUSQUERY) as HTMLElement
   }
 
 
@@ -38,8 +32,6 @@ export class Controller {
       case constants.BLOG: return this.updateBlog(target)
       case constants.BUTTON: return this.selectedBlog.classList.toggle(constants.ACTIVE)
       case constants.TESTIMONIALBTN: return this.updateTestimonials(target)
-      // case constants.SUBSCRIBE: return this.subscribeToNewsletter()
-      // case constants.SUBMITPARTNER: return this.submitPartnerDetails()
     }
   }
 
@@ -76,45 +68,4 @@ export class Controller {
     console.log("testimonial idx is", this.testimonialIdx)
 
   }
-
-  async submitPartnerDetails() {
-    // TODO: find how to reuse subscribeToNewsletter so we don't repeat same code
-  }
-
-  async subscribeToNewsletter() {
-    const email = this.subscribeInput.value
-    if (email.length > 0) {
-      this.subscriptionWrap.classList.add("-loading")
-      const options = {
-        // headers: { "Content-type": "multipart/form-data" },
-        headers: { "Content-type": "application/json" },
-        method: 'POST',
-        body: {
-          date: new Date().toLocaleString(),
-          email,
-          type: constants.SUBSCRIPTION
-        },
-        params: {
-          col: "rcnlagos",
-          id: "subscribers"
-        }
-      }
-  
-      const { data } = await useFetch(constants.SUBSCRIBEAPI, options)
-      
-      const remoteData = data.value as iSubscribe
-  
-      this.subscriptionWrap.classList.remove("-loading") 
-      this.handleResponse(remoteData)
-    }
-  }
-
-  handleResponse(data: iSubscribe) { 
-    this.subscriptionWrap.classList.remove("-loading")
-    this.subscriptionStatus.textContent = data.message as string
-    this.subscriptionStatus.setAttribute("data-type", data.error ? constants.ERROR : constants.SUCCESS)
-
-    this.subscriptionWrap.classList.add("-show-status")
-    setTimeout(() => this.subscriptionWrap.classList.remove("-show-status"), 4000);
-  } 
 }

@@ -3,12 +3,14 @@
    License: none (public domain)
 */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   vertical-align: middle;
-  transition: all .2s cubic-bezier(.165,.84,.44,1);
+  transition: all .2s cubic-bezier(.165, .84, .44, 1);
   scroll-behavior: smooth;
   outline: unset;
   text-rendering: optimizeLegibility;
@@ -17,7 +19,9 @@
   backface-visibility: hidden;
 }
 
-*, :after, :before {
+*,
+:after,
+:before {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -39,7 +43,7 @@
   --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgba(59,130,246,.5);
+  --tw-ring-color: rgba(59, 130, 246, .5);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -69,7 +73,7 @@
   --rcnaccentorange: #DA561D;
   --rcnaccentblue: #171332;
   --rcntext: #42526E;
-  --darkgray:#CBD5E0;
+  --darkgray: #CBD5E0;
   --mainorange: #EC6600;
   --maindark: #333333;
   --rcnlighterbg: #F1F3F5;
@@ -86,4 +90,65 @@
   --purple: #7e22ce;
   --paystack: #0AA5DB;
   --box-shadow: 0 2px 5px 0 rgb(0 0 0 / 10%);
+}
+
+
+
+.-status {
+  padding: 16px;
+  border-radius: 16px;
+  border: 2px dashed var(--green);
+  display: none;
+  width: 100%;
+}
+
+.-show-status .-status {
+  display: block;
+}
+
+.-status[data-type="error"] {
+  background-color: var(--red-bg);
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.-status[data-type="success"] {
+  background-color: var(--green-bg);
+  color: var(--green);
+}
+
+
+
+.-btn .-txt {
+  display: block;
+}
+
+.-loading .-btn .-txt {
+  display: none;
+}
+
+.-spin-loader {
+  width: 16px;
+  height: 16px;
+  display: block;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin-loader .25s infinite linear;
+}
+
+@keyframes spin-loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.-btn .-spin-loader {
+  display: none;
+}
+
+.-loading .-btn .-spin-loader {
+  display: block;
+  margin: 0 auto;
 }

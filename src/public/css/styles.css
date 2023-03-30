@@ -196,21 +196,6 @@ ol {
   transform: translate(-50%, -55%) rotate(-135deg);
 }
 
-.-spin-loader {
-  width: 16px;
-  height: 16px;
-  border: 2px solid white;
-  border-radius: 50%;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  animation: spin-loader .25s infinite linear;
-}
-
-@keyframes spin-loader {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 .fade-in-out {
   animation: fadeInOut 3s ease-in-out;

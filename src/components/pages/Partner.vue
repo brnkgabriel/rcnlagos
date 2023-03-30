@@ -68,22 +68,23 @@
       <h5 class="-subhead">Partner Commitment Form</h5>
       <div class="-form-bank-details">
         <form @submit.prevent="handleFormSubmission" class="-partner-form">
-          <input v-model="name" name="name" type="text" placeholder="Name" required />
-          <input v-model="email" name="email" type="email" placeholder="Email address" required />
-          <input v-model="phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
+          <input name="name" type="text" placeholder="Name" required />
+          <input name="email" type="email" placeholder="Email address" required />
+          <input name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
             pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
-          <input v-model="address" name="address" type="text" placeholder="Address" required />
-          <select name="specialization" id="specialization">
-            <option value="">Specialization #1</option>
-            <option value="">Specialization #2</option>
-            <option value="">Specialization #3</option>
-            <option value="">Specialization #4</option>
+          <input name="address" type="text" placeholder="Address" required />
+          <select name="specialization" id="specialization" class="-specialization">
+            <option value="specialization 1">Specialization #1</option>
+            <option value="specialization 2">Specialization #2</option>
+            <option value="specialization 3">Specialization #3</option>
+            <option value="specialization 4">Specialization #4</option>
           </select>
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit partner"></span>
             <span class="-spin-loader"></span>
             <span class="-txt">submit</span>
           </button>
+          <p class="-status" data-type="error"></p>
         </form>
         <div class="-bank-details">
           bank details
@@ -93,18 +94,30 @@
   </div>
 </template>
 <script setup lang="ts">
-import { iDynamicObject } from '~~/src/types';
+import { iApiOptions, iMessage } from '~~/src/types';
 
-
-const name = ref("")
-const email = ref("")
-const phoneNumber = ref("")
-const address = ref("")
 
 const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
   const formData = new FormData(form)
   const entries = Object.fromEntries(formData.entries())
+
+  const messages: iMessage = { 
+    errorMessage: "You're already a partner",
+    successMessage: "Successfully submitted"
+  }
+  const apiOptions: iApiOptions = {
+    collection: constants.RCNLAGOSCOLLECTION,
+    id: constants.PARTNERSID,
+    dataToStore: {
+      ...entries,
+      date: new Date().toLocaleString(),
+    },
+    wrapperHTML: el(constants.PARTNERWRAPQUERY) as HTMLElement,
+    statusHTML: el(constants.PARTNERSTATUSQUERY) as HTMLElement
+  }
+
+  postForm(apiOptions, messages)
 }
 
 
@@ -168,13 +181,9 @@ const handleFormSubmission = (evt: Event) => {
   color: white;
 }
 
-.-btn .-spin-loader {
-  display: none;
-}
-
-.-loading .-btn .-spin-loader {
-  display: block;
-  margin: 0 auto;
+.-specialization {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 @media screen and (max-width: 1024px) {}
@@ -209,6 +218,11 @@ const handleFormSubmission = (evt: Event) => {
   .-partner-form,
   .-form-bank-details {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .-specialization {
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 }
 

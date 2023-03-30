@@ -39,7 +39,7 @@ export const del = async (col: string, id: string) => {
 }
 
 export const checkAndStoreDoc = async (options: iOptions) => {
-  const { col, data, id } = options
+  const { col, data, id, errorMessage, successMessage } = options
   const docRef = doc(firestoredb, col as string, id as string)
   const docSnap = await getDoc(docRef)
   let snapData: DocumentData = docSnap.data() as DocumentData
@@ -50,14 +50,14 @@ export const checkAndStoreDoc = async (options: iOptions) => {
 
   let response: iSubscribe
   if (data.email in snapData) {
-    response = { error: true, success: false, message: data.errorMessage }
+    response = { error: true, success: false, message: errorMessage }
     return response
   }
 
   try {
     snapData[data.email] = data
     await setDoc(docRef, snapData, { merge: true })
-    response = { error: false, success: true, message: data.successMessage }
+    response = { error: false, success: true, message: successMessage }
     return response
   } catch (error: any) {
     response = { error: true, success: false, message: error.message }
