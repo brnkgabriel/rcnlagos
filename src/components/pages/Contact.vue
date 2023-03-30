@@ -15,7 +15,7 @@
           <input class="-email" name="email" type="email" placeholder="Email address" required />
           <input class="-phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
             pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
-          <textarea class="-message" placeholder="Message" name="inquiry" id="" cols="30" rows="3" required></textarea>
+          <textarea class="-message" placeholder="Message" name="inquiry" required></textarea>
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit"></span>
             <span class="-spin-loader"></span>
@@ -168,18 +168,17 @@ const handleFormSubmission = (evt: Event) => {
 
   .-contact-form,
   .-form-contact-us {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr)
   }
-}
 
-@media screen and (max-width: 576px) {
-
-
-  .-specialization {
+  .-phoneNumber,
+  .-message {
     grid-column-start: 1;
     grid-column-end: 2;
   }
 }
+
+@media screen and (max-width: 576px) {}
 
 @media screen and (max-width: 420px) {
 
