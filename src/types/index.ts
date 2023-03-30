@@ -154,3 +154,11 @@ export interface iQuery {
 export interface iOptions extends iQuery {
   data?: any;
 }
+
+export interface iApiOptions {
+  collection?: string;
+  id?: string;
+  dataToStore?: any;
+  wrapperHTML?: HTMLElement;
+  statusHTML?: HTMLElement
+}

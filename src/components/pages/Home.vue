@@ -137,7 +137,7 @@
           <h5 class="-txt -subhead">join our community</h5>
           <p class="-subline">Get the latest updates about our programs, blogs and other public related activities</p>
         </div>
-        <form @submit.prevent="dummyFxn" class="-form-field">
+        <form @submit.prevent="handleSubscription" class="-form-field">
           <input v-model="email" type="email" class="-subscribe" placeholder="Email address" required />
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="subscribe"></span>
@@ -160,7 +160,7 @@
             src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving-2.png?alt=media&amp;token=37de2dfa-bc4f-4794-b3c8-8f7a35e16c83"
             alt="upcoming event">
         </div>
-        <a href="#" type="submit" class="-btn -upcoming-register-btn">register</a>
+        <NuxtLink href="/registration" type="submit" class="-btn -upcoming-register-btn">register</NuxtLink>
       </div>
     </div>
   </div>
@@ -173,14 +173,31 @@ import sProgramCategory from "../skeletons/sProgramCategory.vue";
 import BlogThumbnail from "../partials/BlogThumbnail.vue";
 import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import TestimonialCard from "../partials/TestimonialCard.vue";
-import { iBlog } from "~~/src/types";
+import { iApiOptions, iBlog } from "~~/src/types";
 import { Controller } from "~~/src/helpers/controller";
 
 const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programCategories?.length as number) > 0)
 const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
 
-const email = ref("")
+const email = ref("") 
+
+const handleSubscription = () => {
+ 
+  const apiOptions:iApiOptions = {
+    collection: constants.RCNLAGOSCOLLECTION,
+    id: constants.SUBSCRIBERSID,
+    dataToStore: {
+      date: new Date().toLocaleString(),
+      email,
+      type: constants.SUBSCRIPTION
+    },
+    wrapperHTML: el(constants.SUBSCRIPTIONWRAPQUERY) as HTMLElement,
+    statusHTML: el(constants.SUBSCRIPTIONSTATUSQUERY) as HTMLElement
+  }
+
+  subscribeToNewsletter(apiOptions)
+}
 
 let controller: Controller
 onMounted(() => {

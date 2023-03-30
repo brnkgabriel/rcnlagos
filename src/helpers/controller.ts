@@ -38,8 +38,8 @@ export class Controller {
       case constants.BLOG: return this.updateBlog(target)
       case constants.BUTTON: return this.selectedBlog.classList.toggle(constants.ACTIVE)
       case constants.TESTIMONIALBTN: return this.updateTestimonials(target)
-      case constants.SUBSCRIBE: return this.subscribeToNewsletter()
-      case constants.SUBMITPARTNER: return this.submitPartnerDetails()
+      // case constants.SUBSCRIBE: return this.subscribeToNewsletter()
+      // case constants.SUBMITPARTNER: return this.submitPartnerDetails()
     }
   }
 

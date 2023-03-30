@@ -1,8 +1,8 @@
-import {iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory} from "../types"
+import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iSubscribe, iApiOptions } from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
- 
+
 
 export const obj2Str = (obj: iDynamicObject) => Object.keys(obj)
   .reduce((acc, cur) => acc + `${cur}:${obj[cur]};`, "")
@@ -55,7 +55,10 @@ export const constants = {
   MAXPROGRAMS: 4,
   LASTPROGRAMQUERY: `.-lastprogram`,
   PROGRAMS: "programs",
-  SUBMITPARTNER: "submit partner"
+  SUBMITPARTNER: "submit partner",
+  RCNLAGOSCOLLECTION: "rcnlagos",
+  SUBSCRIBERSID: "subscribers",
+  PARTNERSID: "partners"
 }
 
 export const operatingSystem = () => {
@@ -100,7 +103,7 @@ export const useGlobals = () => {
 
   return { globalState, setGlobals, setRenderedPrograms, addToRenderedPrograms, setSearchedPrograms }
 }
- 
+
 interface iHead {
   name?: string;
   description?: string;
@@ -136,16 +139,16 @@ export const head = (headOptions: iHead) => {
         href: "/css/styles.css"
       }
     ]
-  } 
+  }
 }
 
 export const getMachineId = () => {
-    
+
   let machineId = localStorage.getItem('MachineId');
-  
+
   if (!machineId) {
-      machineId = Date.now().toString()
-      localStorage.setItem('MachineId', machineId);
+    machineId = Date.now().toString()
+    localStorage.setItem('MachineId', machineId);
   }
 
   return machineId;
@@ -193,7 +196,7 @@ export const skeletonPrayercells: iPrayercell[] = num2List(8).map((num: number) 
   status: " "
 }))
 
-export const skeletonPrograms: iProgram[] = num2List(8).map((num: number) => ({ 
+export const skeletonPrograms: iProgram[] = num2List(8).map((num: number) => ({
   audiourl: "",
   datetime: "",
   image: "",
@@ -204,8 +207,8 @@ export const skeletonPrograms: iProgram[] = num2List(8).map((num: number) => ({
   videourl: ""
 }))
 
-export const reorder = (list:any[]) => { 
-  return list.sort((a:any, b:any) => +new Date(b.datetime) - +new Date(a.datetime))
+export const reorder = (list: any[]) => {
+  return list.sort((a: any, b: any) => +new Date(b.datetime) - +new Date(a.datetime))
 }
 
 export const youTubeThumbnail = (link: string) => {
@@ -213,7 +216,7 @@ export const youTubeThumbnail = (link: string) => {
   return `https://img.youtube.com/vi/${id}/0.jpg`
 }
 
-const obtainYouTubeID = (link:string) => {
+const obtainYouTubeID = (link: string) => {
   const url = new URL(link)
   const search = url.search.split("?v=")
   let searchTarget = ""
@@ -250,7 +253,7 @@ export const phone = (number: string) => {
 }
 
 export const whatsappIcon = (number: string) => {
-  
+
   const num = phone(number)
   number = num.slice(1, num.length)
 
@@ -262,5 +265,40 @@ export const setSearchedAndRenderedPrograms = (programs: iProgram[]) => {
   setRenderedPrograms(programs.slice(0, constants.MAXPROGRAMS))
 }
 
-export const dummyFxn = () => { 
+export const dummyFxn = () => {
 }
+
+
+export const subscribeToNewsletter = async (apiOptions: iApiOptions) => {
+
+  apiOptions.wrapperHTML?.classList.add("-loading")
+  const options = {
+    // headers: { "Content-type": "multipart/form-data" },
+    headers: { "Content-type": "application/json" },
+    method: 'POST',
+    body: apiOptions.dataToStore,
+    params: {
+      col: apiOptions.collection,
+      id: apiOptions.id
+    }
+  }
+
+  try { 
+    const { data, error } = await useFetch(constants.SUBSCRIBEAPI, options)
+    const remoteData = data.value as iSubscribe
+    handleResponse(remoteData, apiOptions)
+  } catch (error: any) {
+    console.error(error)
+  }
+
+  apiOptions.wrapperHTML?.classList.remove("-loading")
+}
+
+const handleResponse = (data: iSubscribe, apiOptions: iApiOptions) => {
+  apiOptions.wrapperHTML?.classList.remove("-loading");
+  (apiOptions.statusHTML as HTMLElement).textContent = data.message as string;
+  (apiOptions.statusHTML as HTMLElement).setAttribute("data-type", data.error ? constants.ERROR : constants.SUCCESS)
+
+  apiOptions.wrapperHTML?.classList.add("-show-status")
+  setTimeout(() => apiOptions.wrapperHTML?.classList.remove("-show-status"), 4000);
+} 
