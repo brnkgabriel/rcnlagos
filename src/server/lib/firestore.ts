@@ -44,22 +44,20 @@ export const checkAndStoreDoc = async (options: iOptions) => {
   const docSnap = await getDoc(docRef)
   let snapData: DocumentData = docSnap.data() as DocumentData
 
-  if (!snapData) {
+  if (snapData === undefined) {
     snapData = {}
   }
 
   let response: iSubscribe
   if (data.email in snapData) {
-    response = { error: true, success: false, message: "Email already exists" }
+    response = { error: true, success: false, message: data.errorMessage }
     return response
   }
 
   try {
     snapData[data.email] = data
     await setDoc(docRef, snapData, { merge: true })
-    // const colRef = collection(firestoredb, options.col as string)
-    // await addDoc(colRef, snapData)
-    response = { error: false, success: true, message: "Successfully subscribed" }
+    response = { error: false, success: true, message: data.successMessage }
     return response
   } catch (error: any) {
     response = { error: true, success: false, message: error.message }

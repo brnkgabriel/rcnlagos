@@ -189,13 +189,16 @@ const handleSubscription = () => {
     id: constants.SUBSCRIBERSID,
     dataToStore: {
       date: new Date().toLocaleString(),
-      email,
-      type: constants.SUBSCRIPTION
+      email: email.value,
+      type: constants.SUBSCRIPTION,
+      errorMessage: "You've already subscribed",
+      successMessage: "Successfully subscribed"
     },
     wrapperHTML: el(constants.SUBSCRIPTIONWRAPQUERY) as HTMLElement,
-    statusHTML: el(constants.SUBSCRIPTIONSTATUSQUERY) as HTMLElement
+    statusHTML: el(constants.SUBSCRIPTIONSTATUSQUERY) as HTMLElement,
   }
 
+  console.log("firing submit event", Date.now())
   subscribeToNewsletter(apiOptions)
 }
 

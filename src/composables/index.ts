@@ -284,7 +284,7 @@ export const subscribeToNewsletter = async (apiOptions: iApiOptions) => {
   }
 
   try { 
-    const { data, error } = await useFetch(constants.SUBSCRIBEAPI, options)
+    const { data } = await useFetch(constants.SUBSCRIBEAPI, options)
     const remoteData = data.value as iSubscribe
     handleResponse(remoteData, apiOptions)
   } catch (error: any) {

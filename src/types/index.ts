@@ -160,5 +160,7 @@ export interface iApiOptions {
   id?: string;
   dataToStore?: any;
   wrapperHTML?: HTMLElement;
-  statusHTML?: HTMLElement
+  statusHTML?: HTMLElement,
+  errorMessage?: string;
+  successMessage?: string;
 }
