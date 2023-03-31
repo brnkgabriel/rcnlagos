@@ -6,13 +6,45 @@
       </div>
 
       <div class="-links">
-        <NuxtLink data-type="mobile-link" href="/">home</NuxtLink>
-        <NuxtLink data-type="mobile-link" href="/about">about</NuxtLink>
-        <NuxtLink data-type="mobile-link" href="/programs">programs</NuxtLink>
-        <NuxtLink data-type="mobile-link" href="/blog">blog</NuxtLink>
-        <NuxtLink data-type="mobile-link" href="/prayercells">prayer cells</NuxtLink>
-        <NuxtLink data-type="mobile-link" href="/partner">remnant kingdom stewards</NuxtLink>
-        <NuxtLink data-type="mobile-link" class="-btn -give" href="/give">give</NuxtLink>
+        <NuxtLink href="/">home</NuxtLink>
+        <h5 class="-dropdown">
+          <div class="-name">
+            <span>ministry</span>
+            <span class="-icon"></span>
+          </div>
+          <div class="-col" data-name="ministry">
+            <NuxtLink href="/about">RCN Global</NuxtLink>
+            <NuxtLink href="/president">RCN President</NuxtLink>
+            <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
+            <NuxtLink href="/programs">Programs</NuxtLink>
+          </div>
+        </h5>
+        <h5 class="-dropdown">
+          <div class="-name">
+            <span>community</span>
+            <span class="-icon"></span>
+          </div>
+          <div class="-col" data-name="community">
+            <NuxtLink href="/pastors">Pastors</NuxtLink>
+            <NuxtLink href="/departments">Departments</NuxtLink>
+            <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+            <NuxtLink href="/partner">Remnant Kingdom Stewards</NuxtLink>
+            <NuxtLink href="/contact">Contact Us</NuxtLink>
+          </div>
+        </h5>
+        <h5 class="-dropdown">
+          <div class="-name">
+            <span>resources</span>
+            <span class="-icon"></span>
+          </div>
+          <div class="-col" data-name="resources">
+            <NuxtLink href="/blog">Blog</NuxtLink>
+            <NuxtLink href="/request">Prayer Request</NuxtLink>
+            <NuxtLink href="/testimony">Give Testimony</NuxtLink>
+            <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
+          </div>
+        </h5>
+        <NuxtLink class="-btn -give" href="/give">give</NuxtLink>
       </div>
     </div>
   </div>
@@ -37,6 +69,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
 }
+
 .-mobile-navigation .-content {
   background-color: var(--rcnaccentblue);
   height: 100%;
@@ -96,7 +129,8 @@ onMounted(() => {
   padding: 0 16px;
 }
 
-.-links a {
+.-links a,
+.-links h5 {
   border-bottom: 1px solid rgba(101, 101, 101, 0.2);
   height: 48px;
   display: flex;
@@ -107,10 +141,56 @@ onMounted(() => {
   font-weight: 600;
 }
 
+.-links h5 {
+  flex-direction: column;
+  align-items: flex-start;
+  height: max-content;
+}
+
+.-links h5 .-name {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
+}
+
 .-links a.router-link-active {
   color: var(--rcnaccentorange);
 }
 
+.-dropdown .-col {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-left: 16px;
+}
+
+.-dropdown:hover .-col {
+  height: 100%;
+}
+
+.-dropdown .-icon {
+  width: 6px;
+  height: 6px;
+  position: relative;
+}
+
+.-dropdown .-icon::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border: 2px solid white;
+  border-top: unset;
+  border-left: unset;
+  transform: translate(0%, -40%) rotate(45deg);
+}
+
+.-dropdown:hover .-icon::after {
+  transform: translate(0%, 40%) rotate(-135deg);
+}
 @media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 768px) {}
