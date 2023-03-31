@@ -97,6 +97,7 @@ onMounted(() => {
 .-top.-hide-back-btn {
   justify-content: flex-end;
 }
+
 .-top.-hide-back-btn .-back-btn {
   display: none;
 }
@@ -148,8 +149,8 @@ onMounted(() => {
 
 .-back-btn .-icon {
   position: relative;
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
 }
 
 .-back-btn .-txt {
@@ -174,10 +175,10 @@ onMounted(() => {
 
 .-back-btn .-icon::after {
   border: unset;
-  width: 13px;
+  width: 16px;
   height: 2px;
   background-color: white;
-  transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-40%, -50%) rotate(0deg);
 }
 
 .-links {
