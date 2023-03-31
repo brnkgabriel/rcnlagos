@@ -21,6 +21,7 @@ export const constants = {
   MOBILENAVIGATIONTYPE: "mobile navigation",
   WITHSUBMENUTYPE: "withsubmenu",
   BACKBUTTONTYPE: "back button",
+  MOBILEMENUTYPE: "mobile menu",
   HOME: "home",
   CLICKEVENT: "click",
   PLAYEVENT: "play",

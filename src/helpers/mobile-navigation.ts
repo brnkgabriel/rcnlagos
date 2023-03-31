@@ -22,6 +22,7 @@ export class MobileNavigationController {
       case constants.MOBILENAVIGATIONTYPE: return this.mainContainer.classList.remove(constants.OPEN) 
       case constants.WITHSUBMENUTYPE: return this.handleSubmenu(target)
       case constants.BACKBUTTONTYPE: return this.updateLinks(constants.HOME)
+      case constants.MOBILEMENUTYPE: return this.mainContainer.classList.remove(constants.OPEN)
       default: return this.reset()
     }
   }

@@ -152,3 +152,16 @@
   display: block;
   margin: 0 auto;
 }
+
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 576px) {}
+
+@media screen and (max-width: 420px) {}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+  h1.-headfont {
+    font-size: 28px !important;
+  }
+}

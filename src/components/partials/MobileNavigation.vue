@@ -11,7 +11,7 @@
       </div>
 
       <div class="-links -posabs active" data-name="home">
-        <NuxtLink href="/">home</NuxtLink>
+        <NuxtLink href="/" data-type="mobile menu">home</NuxtLink>
         <div class="-dropdown -posrel">
           <span class="-clickable" data-type="withsubmenu" data-name="ministry"></span>
           <span>ministry</span>
@@ -31,25 +31,25 @@
       </div>
       <div class="-links -posabs" data-name="ministry">
         <h5 class="-name">ministry</h5>
-        <NuxtLink href="/about">RCN Global</NuxtLink>
-        <NuxtLink href="/president">RCN President</NuxtLink>
-        <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
-        <NuxtLink href="/programs">Programs</NuxtLink>
-        <NuxtLink href="/blog">Blog</NuxtLink>
+        <NuxtLink href="/about" data-type="mobile menu">RCN Global</NuxtLink>
+        <NuxtLink href="/president" data-type="mobile menu">RCN President</NuxtLink>
+        <NuxtLink href="/lagos" data-type="mobile menu">RCN Lagos</NuxtLink>
+        <NuxtLink href="/programs" data-type="mobile menu">Programs</NuxtLink>
+        <NuxtLink href="/blog" data-type="mobile menu">Blog</NuxtLink>
       </div>
       <div class="-links -posabs" data-name="community">
         <h5 class="-name">community</h5>
-        <NuxtLink href="/pastors">Pastors</NuxtLink>
-        <NuxtLink href="/departments">Departments</NuxtLink>
-        <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
-        <NuxtLink href="/partner">Remnant Kingdom Stewards</NuxtLink>
+        <NuxtLink href="/pastors" data-type="mobile menu">Pastors</NuxtLink>
+        <NuxtLink href="/departments" data-type="mobile menu">Departments</NuxtLink>
+        <NuxtLink href="/prayercells" data-type="mobile menu">Prayer Cells</NuxtLink>
+        <NuxtLink href="/partner" data-type="mobile menu">Remnant Kingdom Stewards</NuxtLink>
       </div>
       <div class="-links -posabs" data-name="resources">
         <h5 class="-name">resources</h5>
-        <NuxtLink href="/contact">Contact Us</NuxtLink>
-        <NuxtLink href="/request">Prayer Request</NuxtLink>
-        <NuxtLink href="/testimony">Give Testimony</NuxtLink>
-        <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
+        <NuxtLink href="/contact" data-type="mobile menu">Contact Us</NuxtLink>
+        <NuxtLink href="/request" data-type="mobile menu">Prayer Request</NuxtLink>
+        <NuxtLink href="/testimony" data-type="mobile menu">Give Testimony</NuxtLink>
+        <NuxtLink href="/privacy" data-type="mobile menu">Privacy Policy</NuxtLink>
       </div>
     </div>
   </div>
