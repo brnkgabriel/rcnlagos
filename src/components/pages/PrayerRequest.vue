@@ -15,7 +15,7 @@
           <input class="-email" name="email" type="email" placeholder="Email address" required />
           <input class="-phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
             pattern="[0-9]{4}[0-9]{3}[0-9]{4}" /> 
-          <textarea class="-message" placeholder="Your Testimony" name="testimony" required></textarea>
+          <textarea class="-message" placeholder="Your Prayer Request" name="prayerrequest" required></textarea>
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit"></span>
             <span class="-spin-loader"></span>
