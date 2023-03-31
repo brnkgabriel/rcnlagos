@@ -14,6 +14,7 @@
         <NuxtLink href="/president">RCN President</NuxtLink>
         <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
         <NuxtLink href="/programs">Programs</NuxtLink>
+        <NuxtLink href="/blog">Blog</NuxtLink>
       </div>
       <div class="-col">
         <h5 class="-links-category">community</h5>
@@ -21,11 +22,10 @@
         <NuxtLink href="/departments">Departments</NuxtLink>
         <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
         <NuxtLink href="/partner">Remnant Kingdom Stewards</NuxtLink> 
-        <NuxtLink href="/contact">Contact Us</NuxtLink>
       </div>
       <div class="-col">
         <h5 class="-links-category">resources</h5>
-        <NuxtLink href="/blog">Blog</NuxtLink>
+        <NuxtLink href="/contact">Contact Us</NuxtLink>
         <NuxtLink href="/request">Prayer Request</NuxtLink>
         <NuxtLink href="/testimony">Give Testimony</NuxtLink>
         <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
