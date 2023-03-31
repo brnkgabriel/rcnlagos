@@ -128,7 +128,6 @@
   width: max-content;
   border-top: 2px solid var(--rcntext);
   border-radius: 4px;
-  padding: 8px;
   transform: translateY(-200%);
 }
 
