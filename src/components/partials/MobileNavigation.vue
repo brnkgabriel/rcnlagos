@@ -241,7 +241,7 @@ onMounted(() => {
   border: 2px solid white;
   border-top: unset;
   border-left: unset;
-  transform: translate(0%, -20%) rotate(-45deg);
+  transform: translate(0%, 0%) rotate(-45deg);
 }
 
 
