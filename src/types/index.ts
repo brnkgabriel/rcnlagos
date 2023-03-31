@@ -61,6 +61,7 @@ export interface iPrayercell {
   status?: string;
   coordinator?: string;
   phoneNumber?: string;
+  meetingTime?: string;
 }
 
 export interface iProgram {

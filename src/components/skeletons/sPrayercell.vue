@@ -13,10 +13,14 @@
         <div class="-title"></div>
         <p class="-address"></p>
       </div>
-      <div class="-ctas">
-        <div class="-btn"></div>
-        <div class="-btn"></div>
-        <div class="-btn"></div>
+      <div class="-ctas-time">
+
+        <div class="-ctas">
+          <div class="-btn"></div>
+          <div class="-btn"></div>
+        </div>
+
+        <div class="-time"></div>
       </div>
     </div>
   </div>
@@ -28,6 +32,7 @@
 .-title,
 .-coordinator,
 .-address,
+.-time,
 .-ctas .-btn {
   background-color: var(--rcnlightbg);
 }
@@ -53,6 +58,25 @@
 .-address {
   height: 55px;
   width: 100%;
+}
+
+
+.-ctas-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 8px;
+}
+
+.-time {
+  height: 22px;
+  width: 30%;
 }
 
 .-ctas .-btn {
@@ -107,7 +131,6 @@
 
 .-cell .-img {
   aspect-ratio: 560 / 315;
-  background-color: black;
 }
 
 .-cell .-img img {
