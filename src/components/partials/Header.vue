@@ -132,11 +132,13 @@
 }
 
 .-col a {
-  width: 100%;
-  align-items: flex-start !important;
+  width: 100%; 
   justify-content: flex-start !important;
 }
 
+.-col a:hover {
+  background-color: var(--rcnlightbg);
+}
 .-dropdown:hover .-col {
   transform: translateY(0%);
 }
