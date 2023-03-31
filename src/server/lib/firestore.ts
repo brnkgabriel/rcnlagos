@@ -5,7 +5,7 @@ import {
   Timestamp,
   DocumentData
 } from "firebase/firestore"
-import { iOptions, iSubscribe } from "~~/src/types"
+import { iOptions, iResponse } from "~~/src/types"
 import { firestoredb } from "./firebase"
 
 export const queryByCollection = async (col: string) => {
@@ -60,7 +60,7 @@ export const checkAndStoreDoc = async (options: iOptions) => {
     snapData = {}
   }
 
-  let response: iSubscribe
+  let response: iResponse
   if (data.email in snapData) {
     response = { error: true, success: false, message: errorMessage }
     return response

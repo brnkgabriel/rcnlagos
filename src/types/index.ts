@@ -129,7 +129,7 @@ export interface iGlobal {
   searchedPrograms: iProgram[];
 }
 
-export interface iSubscribe {
+export interface iResponse {
   error?: boolean;
   message?: string;
   success?: boolean

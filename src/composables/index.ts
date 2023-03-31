@@ -1,4 +1,4 @@
-import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iSubscribe, iApiOptions, iMessage } from "../types"
+import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iResponse, iApiOptions, iMessage } from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -13,6 +13,7 @@ export const constants = {
   SUBSCRIBEAPI: "/api/subscribe",
   PARTNERAPI: "/api/partner",
   CONTACTAPI: "/api/contactus",
+  TESTIMONYAPI: "/api/testimony",
   globals: "globals",
   MOBILELINKTYPE: "mobile-link",
   CONTENTTYPE: "content",
@@ -47,12 +48,14 @@ export const constants = {
   SUBSCRIPTIONSTATUSQUERY: ".-subscription-upcoming .-subup .-status",
   PARTNERSTATUSQUERY: ".-partner-form .-status",
   CONTACTUSSTATUSQUERY: ".-contact-form .-status",
+  TESTIMONYSTATUSQUERY: ".-testimony-form .-status",
   SUBSCRIPTION: "email subscription",
   TESTIMONIALQUERY: ".-testimonial",
   SELECTEDBLOGIMGWRAPQUERY: ".-blog .-content .-selected .-imgwrap",
   SUBSCRIPTIONWRAPQUERY: ".-subscription-upcoming .-subup",
   PARTNERWRAPQUERY: ".-partner-form",
   CONTACTUSWRAPQUERY: ".-contact-form",
+  TESTIMONYWRAPQUERY: ".-testimony-form",
   SELECTEDBLOGQUERY: ".-blog .-content .-selected",
   SUBSCRIBEINPUTQUERY: ".-subscription-upcoming .-subup input",
   SELECTEDPOSTCONTENT: ".-blog .-content .-selected .-postcontent",
@@ -72,6 +75,7 @@ export const constants = {
   SUBSCRIBERSID: "subscribers",
   PARTNERSID: "partners",
   CONTACTUSID: "contactus",
+  TESTIMONYID: "testimonies",
   HIDE: "-hide",
   HIDEBACKBTN: "-hide-back-btn"
 }
@@ -301,7 +305,7 @@ export const postForm = async (apiOptions: iApiOptions, messages: iMessage, api:
 
   try { 
     const { data } = await useFetch(api, options)
-    const remoteData = data.value as iSubscribe
+    const remoteData = data.value as iResponse
     handleResponse(remoteData, apiOptions)
   } catch (error: any) {
     console.error(error)
@@ -310,7 +314,7 @@ export const postForm = async (apiOptions: iApiOptions, messages: iMessage, api:
   apiOptions.wrapperHTML?.classList.remove("-loading")
 }
 
-const handleResponse = (data: iSubscribe, apiOptions: iApiOptions) => {
+const handleResponse = (data: iResponse, apiOptions: iApiOptions) => {
   apiOptions.wrapperHTML?.classList.remove("-loading");
   (apiOptions.statusHTML as HTMLElement).textContent = data.message as string;
   (apiOptions.statusHTML as HTMLElement).setAttribute("data-type", data.error ? constants.ERROR : constants.SUCCESS)
