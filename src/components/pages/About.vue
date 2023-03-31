@@ -58,6 +58,9 @@
           doctrine and living out the truth of God's Word as it is in the Holy Scriptures</p>
       </div>
     </div>
+    <div class="-cta">
+      <a href="https://rcnministry.org/" class="-btn">RCN Global Homepage</a>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -149,6 +152,13 @@
   display: none;
 }
 
+.-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
 @media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 768px) {
@@ -196,6 +206,11 @@
 
   .-footnotes {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .-cta .-btn {
+    width: calc(100% - 32px);
+    text-align: center;
   }
 }
 
