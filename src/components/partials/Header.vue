@@ -1,22 +1,49 @@
 <template>
   <div class="-header shadow-custom">
-    <div class="-inner">
+    <div class="-inner -posrel">
       <NuxtLink href="/" class="-logo">
         <img src="/images/rcn-logo.png" alt="remnant christian network logo" />
       </NuxtLink>
       <div class="-links">
         <NuxtLink href="/">home</NuxtLink>
-        <NuxtLink href="/about">about</NuxtLink>
-        <NuxtLink href="/programs">programs</NuxtLink>
-        <NuxtLink href="/blog">blog</NuxtLink>
-        <NuxtLink href="/prayercells">prayer cells</NuxtLink>
+        <h5 class="-dropdown -posrel">
+          <span>ministry</span>
+          <span class="-icon"></span>
+          <div class="-col -posabs" data-name="ministry">
+            <NuxtLink href="/about">RCN Global</NuxtLink>
+            <NuxtLink href="/president">RCN President</NuxtLink>
+            <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
+            <NuxtLink href="/programs">Programs</NuxtLink>
+          </div>
+        </h5>
+        <h5 class="-dropdown -posrel">
+          <span>community</span>
+          <span class="-icon"></span>
+          <div class="-col -posabs" data-name="community">
+            <NuxtLink href="/pastors">Pastors</NuxtLink>
+            <NuxtLink href="/departments">Departments</NuxtLink>
+            <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+            <NuxtLink href="/partner">Remnant Kingdom Stewards</NuxtLink>
+            <NuxtLink href="/contact">Contact Us</NuxtLink>
+          </div>
+        </h5>
+        <h5 class="-dropdown -posrel">
+          <span>resources</span>
+          <span class="-icon"></span>
+          <div class="-col -posabs" data-name="resources">
+            <NuxtLink href="/blog">Blog</NuxtLink>
+            <NuxtLink href="/request">Prayer Request</NuxtLink>
+            <NuxtLink href="/testimony">Give Testimony</NuxtLink>
+            <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
+          </div>
+        </h5>
         <NuxtLink class="-btn -give" href="/give">give</NuxtLink>
       </div>
       <div class="-hamburger -posrel">
         <div class="-clickable" data-type="hamburger"></div>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-      </svg>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
       </div>
     </div>
   </div>
@@ -25,7 +52,6 @@
 
 </script>
 <style scoped>
-
 .-header {
   position: sticky;
   left: 0;
@@ -33,6 +59,7 @@
   z-index: 5;
   background-color: white;
 }
+
 .-header .-inner {
   padding-top: 16px;
   padding-bottom: 16px;
@@ -50,8 +77,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
 }
+
 .-header .-hamburger {
   display: none;
 }
@@ -61,24 +88,86 @@
   height: 24px;
 }
 
-.-header .-links a {
+.-header .-links a,
+.-dropdown {
   text-transform: uppercase;
   font-weight: 600;
   color: var(--rcntext);
-  padding: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .-header .-links .-give {
   padding: 4px 16px;
+  height: unset;
 }
 
 .-header .-links a.router-link-active {
   color: var(--rcnaccentorange);
 }
 
+
+.-dropdown {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  top: 100%;
+  left: 0%;
+  background-color: white;
+  width: -moz-max-content;
+  width: max-content;
+  border-top: 2px solid var(--rcntext);
+  border-radius: 4px;
+  padding: 8px;
+  transform: translateY(-200%);
+}
+
+.-col a {
+  width: 100%;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+
+.-dropdown:hover .-col {
+  transform: translateY(0%);
+}
+
+.-dropdown .-icon {
+  width: 6px;
+  height: 6px;
+  position: relative;
+}
+
+.-dropdown .-icon::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--rcntext);
+  border-top: unset;
+  border-left: unset;
+  transform: translate(0%, -40%) rotate(45deg);
+}
+
+.-dropdown:hover .-icon::after {
+  transform: translate(0%, 40%) rotate(-135deg);
+}
+
 @media screen and (max-width: 1024px) {
   .-header .-links {
     display: none;
   }
+
   .-header .-hamburger {
     display: flex;
     justify-content: center;
