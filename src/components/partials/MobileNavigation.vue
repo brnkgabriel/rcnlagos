@@ -27,7 +27,7 @@
           <span>resources</span>
           <span class="-icon"></span>
         </div>
-        <NuxtLink class="-btn -give" href="/give">give</NuxtLink>
+        <NuxtLink class="-btn -give" href="/give" data-type="mobile menu">give</NuxtLink>
       </div>
       <div class="-links -posabs" data-name="ministry">
         <h5 class="-name">ministry</h5>
