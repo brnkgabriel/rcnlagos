@@ -19,11 +19,15 @@ export const constants = {
   HAMBURGERTYPE: "hamburger",
   CLOSEMOBILEMENUTYPE: "close mobile menu",
   MOBILENAVIGATIONTYPE: "mobile navigation",
+  WITHSUBMENUTYPE: "withsubmenu",
+  BACKBUTTONTYPE: "back button",
+  HOME: "home",
   CLICKEVENT: "click",
   PLAYEVENT: "play",
   SHOW: "show",
   FABTYPE: "fab",
   DATATYPE: "data-type",
+  DATANAME: "data-name",
   OPEN: "open",
   SOCIALLINK: "social link",
   ACTIVE: "active",
@@ -53,6 +57,8 @@ export const constants = {
   SELECTEDPOSTCONTENT: ".-blog .-content .-selected .-postcontent",
   SITECONTENT: "#__nuxt",
   BLOGTHUMBNAILSQUERY: ".-blog .-content .-thumbnails",
+  MOBILENAVIGATIONLINKSQUERY: ".-mobile-navigation .-links",
+  MOBILENAVIGATIONTOPQUERY: ".-mobile-navigation .-top",
   DEFAULTVIDEO: "",
   DEFAULTAUDIO: "",
   DATAURL: "data-url",
@@ -65,7 +71,8 @@ export const constants = {
   SUBSCRIBERSID: "subscribers",
   PARTNERSID: "partners",
   CONTACTUSID: "contactus",
-
+  HIDE: "-hide",
+  HIDEBACKBTN: "-hide-back-btn"
 }
 
 export const operatingSystem = () => {

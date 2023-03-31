@@ -156,6 +156,7 @@ const handleFormSubmission = (evt: Event) => {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  width: calc(100% - 32px);
 }
 
 .-partner .-hero-banner .-hero-title h1,

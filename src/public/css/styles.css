@@ -131,6 +131,15 @@ ol {
   padding-bottom: 16px !important;
 }
 
+.-hide {
+  display: none !important;
+}
+
+.-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  transition: unset;
+}
 
 .-subhead {
   font-size: 16px !important;

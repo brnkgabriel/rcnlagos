@@ -1,50 +1,55 @@
 <template>
   <div class="-mobile-navigation" data-type="mobile navigation">
-    <div class="-content">
-      <div class="-top">
+    <div class="-content -posrel">
+      <div class="-top -hide-back-btn">
+        <div class="-back-btn -posrel">
+          <span class="-clickable" data-type="back button"></span>
+          <span class="-icon"></span>
+          <span class="-txt">back</span>
+        </div>
         <div class="-close-btn -posrel" data-type="close mobile menu"></div>
       </div>
 
-      <div class="-links">
+      <div class="-links -posabs active" data-name="home">
         <NuxtLink href="/">home</NuxtLink>
-        <h5 class="-dropdown">
-          <div class="-name">
-            <span>ministry</span>
-            <span class="-icon"></span>
-          </div>
-          <div class="-col" data-name="ministry">
-            <NuxtLink href="/about">RCN Global</NuxtLink>
-            <NuxtLink href="/president">RCN President</NuxtLink>
-            <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
-            <NuxtLink href="/programs">Programs</NuxtLink>
-          </div>
-        </h5>
-        <h5 class="-dropdown">
-          <div class="-name">
-            <span>community</span>
-            <span class="-icon"></span>
-          </div>
-          <div class="-col" data-name="community">
-            <NuxtLink href="/pastors">Pastors</NuxtLink>
-            <NuxtLink href="/departments">Departments</NuxtLink>
-            <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
-            <NuxtLink href="/partner">Remnant Kingdom Stewards</NuxtLink>
-            <NuxtLink href="/contact">Contact Us</NuxtLink>
-          </div>
-        </h5>
-        <h5 class="-dropdown">
-          <div class="-name">
-            <span>resources</span>
-            <span class="-icon"></span>
-          </div>
-          <div class="-col" data-name="resources">
-            <NuxtLink href="/blog">Blog</NuxtLink>
-            <NuxtLink href="/request">Prayer Request</NuxtLink>
-            <NuxtLink href="/testimony">Give Testimony</NuxtLink>
-            <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
-          </div>
-        </h5>
+        <div class="-dropdown -posrel">
+          <span class="-clickable" data-type="withsubmenu" data-name="ministry"></span>
+          <span>ministry</span>
+          <span class="-icon"></span>
+        </div>
+        <div class="-dropdown -posrel">
+          <span class="-clickable" data-type="withsubmenu" data-name="community"></span>
+          <span>community</span>
+          <span class="-icon"></span>
+        </div>
+        <div class="-dropdown -posrel">
+          <span class="-clickable" data-type="withsubmenu" data-name="resources"></span>
+          <span>resources</span>
+          <span class="-icon"></span>
+        </div>
         <NuxtLink class="-btn -give" href="/give">give</NuxtLink>
+      </div>
+      <div class="-links -posabs" data-name="ministry">
+        <h5 class="-name">ministry</h5>
+        <NuxtLink href="/about">RCN Global</NuxtLink>
+        <NuxtLink href="/president">RCN President</NuxtLink>
+        <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
+        <NuxtLink href="/programs">Programs</NuxtLink>
+      </div>
+      <div class="-links -posabs" data-name="community">
+        <h5 class="-name">community</h5>
+        <NuxtLink href="/pastors">Pastors</NuxtLink>
+        <NuxtLink href="/departments">Departments</NuxtLink>
+        <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
+        <NuxtLink href="/partner">Remnant Kingdom Stewards</NuxtLink>
+        <NuxtLink href="/contact">Contact Us</NuxtLink>
+      </div>
+      <div class="-links -posabs" data-name="resources">
+        <h5 class="-name">resources</h5>
+        <NuxtLink href="/blog">Blog</NuxtLink>
+        <NuxtLink href="/request">Prayer Request</NuxtLink>
+        <NuxtLink href="/testimony">Give Testimony</NuxtLink>
+        <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
       </div>
     </div>
   </div>
@@ -86,13 +91,21 @@ onMounted(() => {
   display: flex;
   padding: 8px 16px;
   align-items: center;
+  justify-content: space-between;
+}
+
+.-top.-hide-back-btn {
   justify-content: flex-end;
+}
+.-top.-hide-back-btn .-back-btn {
+  display: none;
 }
 
 .-close-btn {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  position: relative;
 }
 
 .-close-btn::before,
@@ -123,14 +136,65 @@ onMounted(() => {
   transform: translate(-50%, -50%) rotate(135deg);
 }
 
+.-back-btn {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 4px;
+  column-gap: 8px;
+  padding: 8px 0;
+  cursor: pointer;
+  padding-right: 8px;
+}
+
+.-back-btn .-icon {
+  position: relative;
+  width: 13px;
+  height: 13px;
+}
+
+.-back-btn .-txt {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.-back-btn .-icon::before,
+.-back-btn .-icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid white;
+  border-bottom: unset;
+  border-right: unset;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.-back-btn .-icon::after {
+  border: unset;
+  width: 13px;
+  height: 2px;
+  background-color: white;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
 .-links {
   display: flex;
   flex-direction: column;
-  padding: 0 16px;
+  width: calc(100% - 32px);
+  left: 50%;
+  transform: translateX(200%);
+}
+
+.-links.active {
+  transform: translateX(-50%);
 }
 
 .-links a,
-.-links h5 {
+.-dropdown span,
+.-links .-name {
   border-bottom: 1px solid rgba(101, 101, 101, 0.2);
   height: 48px;
   display: flex;
@@ -141,23 +205,18 @@ onMounted(() => {
   font-weight: 600;
 }
 
-.-links h5 {
-  flex-direction: column;
-  align-items: flex-start;
-  height: max-content;
-}
-
-.-links h5 .-name {
-  height: 48px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-  cursor: pointer;
+.-links .-name {
+  color: rgba(255, 255, 255, .2);
 }
 
 .-links a.router-link-active {
   color: var(--rcnaccentorange);
+}
+
+.-dropdown {
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
 }
 
 .-dropdown .-col {
@@ -165,10 +224,6 @@ onMounted(() => {
   height: 0;
   overflow: hidden;
   padding-left: 16px;
-}
-
-.-dropdown:hover .-col {
-  height: 100%;
 }
 
 .-dropdown .-icon {
@@ -185,12 +240,10 @@ onMounted(() => {
   border: 2px solid white;
   border-top: unset;
   border-left: unset;
-  transform: translate(0%, -40%) rotate(45deg);
+  transform: translate(0%, -20%) rotate(-45deg);
 }
 
-.-dropdown:hover .-icon::after {
-  transform: translate(0%, 40%) rotate(-135deg);
-}
+
 @media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 768px) {}
