@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Request />
+    <PrayerRequest />
   </div>
 </template>
 <script setup lang="ts">
-import Request from '../components/pages/Request.vue';
+import PrayerRequest from '../components/pages/PrayerRequest.vue';
 definePageMeta({
   layout: "default"
 })

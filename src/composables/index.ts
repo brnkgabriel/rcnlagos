@@ -14,6 +14,7 @@ export const constants = {
   PARTNERAPI: "/api/partner",
   CONTACTAPI: "/api/contactus",
   TESTIMONYAPI: "/api/testimony",
+  PRAYERREQUESTAPI: "/api/prayerrequest",
   globals: "globals",
   MOBILELINKTYPE: "mobile-link",
   CONTENTTYPE: "content",
@@ -49,6 +50,7 @@ export const constants = {
   PARTNERSTATUSQUERY: ".-partner-form .-status",
   CONTACTUSSTATUSQUERY: ".-contact-form .-status",
   TESTIMONYSTATUSQUERY: ".-testimony-form .-status",
+  PRAYERREQUESTSTATUSQUERY: ".-prayer-request-form .-status",
   SUBSCRIPTION: "email subscription",
   TESTIMONIALQUERY: ".-testimonial",
   SELECTEDBLOGIMGWRAPQUERY: ".-blog .-content .-selected .-imgwrap",
@@ -56,6 +58,7 @@ export const constants = {
   PARTNERWRAPQUERY: ".-partner-form",
   CONTACTUSWRAPQUERY: ".-contact-form",
   TESTIMONYWRAPQUERY: ".-testimony-form",
+  PRAYERREQUESTWRAPQUERY: ".-prayer-request-form",
   SELECTEDBLOGQUERY: ".-blog .-content .-selected",
   SUBSCRIBEINPUTQUERY: ".-subscription-upcoming .-subup input",
   SELECTEDPOSTCONTENT: ".-blog .-content .-selected .-postcontent",
@@ -76,6 +79,7 @@ export const constants = {
   PARTNERSID: "partners",
   CONTACTUSID: "contactus",
   TESTIMONYID: "testimonies",
+  PRAYERREQUESTID: "prayerrequests",
   HIDE: "-hide",
   HIDEBACKBTN: "-hide-back-btn"
 }
