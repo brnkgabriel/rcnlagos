@@ -17,6 +17,7 @@
           <span>ministry</span>
           <span class="-icon"></span>
         </div>
+        <NuxtLink href="/programs" data-type="mobile menu">Programs</NuxtLink>
         <div class="-dropdown -posrel">
           <span class="-clickable" data-type="withsubmenu" data-name="community"></span>
           <span>community</span>
@@ -36,7 +37,6 @@
         <NuxtLink href="/lagos" data-type="mobile menu">RCN Lagos</NuxtLink>
         <NuxtLink href="/blog" data-type="mobile menu">Blog</NuxtLink>
       </div>
-      <NuxtLink href="/programs" data-type="mobile menu">Programs</NuxtLink>
       <div class="-links -posabs" data-name="community">
         <h5 class="-name">community</h5>
         <NuxtLink href="/pastors" data-type="mobile menu">Pastors</NuxtLink>
