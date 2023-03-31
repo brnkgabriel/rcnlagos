@@ -13,10 +13,10 @@
             <NuxtLink href="/about">RCN Global</NuxtLink>
             <NuxtLink href="/president">RCN President</NuxtLink>
             <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
-            <NuxtLink href="/programs">Programs</NuxtLink>
             <NuxtLink href="/blog">Blog</NuxtLink>
           </div>
         </h5>
+        <NuxtLink href="/programs">Programs</NuxtLink>
         <h5 class="-dropdown -posrel">
           <span>community</span>
           <span class="-icon"></span>
