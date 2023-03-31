@@ -21,7 +21,7 @@
         <NuxtLink href="/pastors">Pastors</NuxtLink>
         <NuxtLink href="/departments">Departments</NuxtLink>
         <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
-        <NuxtLink href="/partner">Remnant Kingdom Stewards</NuxtLink> 
+        <NuxtLink href="/partner">Kingdom Stewards</NuxtLink> 
       </div>
       <div class="-col">
         <h5 class="-links-category">resources</h5>
@@ -29,7 +29,7 @@
         <NuxtLink href="/request">Prayer Request</NuxtLink>
         <NuxtLink href="/testimony">Give Testimony</NuxtLink>
         <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
-        <NuxtLink href="/sitemap.xml">Sitemap</NuxtLink>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
       <div class="-col -somedia-partner">
         <h5 class="-links-category">follow us</h5>
