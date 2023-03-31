@@ -1,49 +1,87 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
-  <url>
-    <loc>https://rcnlagos.netlify.app/</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>1.00</priority>
-  </url> 
-  <url>
-    <loc>https://rcnlagos.netlify.app/blog</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/prayercells</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/give</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/about</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url> 
-  <url>
-    <loc>https://rcnlagos.netlify.app/request</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/testimony</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/programs</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://rcnlagos.netlify.app/pastors</loc>
-    <lastmod>2023-03-21T06:32:48+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+<loc>https://rcnlagos.netlify.app/</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/about</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/president</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/lagos</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/programs</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/blog</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/pastors</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/departments</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/prayercells</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/partner</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/contact</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/request</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/testimony</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/privacy</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/give</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/pastors/austin-ukporhe</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://rcnlagos.netlify.app/registration</loc>
+<lastmod>2023-03-31T14:27:20+00:00</lastmod>
+<priority>0.80</priority>
+</url>
 </urlset>
