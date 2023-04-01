@@ -31,4 +31,19 @@ export default {
 .gdpr-top-bar a {
   color: #007bff;
 }
+
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 576px) {
+  .gdpr-top-bar {
+    flex-direction: column;
+    column-gap: unset;
+    row-gap: 4px;
+  }
+}
+
+@media screen and (max-width: 420px) {}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {}
 </style>
