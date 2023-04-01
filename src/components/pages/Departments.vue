@@ -1,5 +1,6 @@
 <template>
   <div class="-departments">
+    <DepartmentModal ref="departmentModal" :department="selectedDepartment" />
     <div class="-cells-wrap -inner">
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
@@ -10,7 +11,7 @@
         <img class="-mobile" src="/images/1000x495.jpg" alt="mobile banner" />
       </div>
       <div class="-cells">
-        <Department v-if="isLoaded" v-for="(department, idx) in globalState.departments" :key="idx" :department="department" />
+        <Department v-if="isLoaded" v-for="(department, idx) in globalState.departments" :key="idx" :department="department" @selected="showDepartment" />
         <sDepartment v-if="!isLoaded" v-for="(_, idx) in skeletonDepartments" :key="idx" />
       </div>
     </div> 
@@ -20,10 +21,20 @@
 import { iDepartment } from '~~/src/types';
 import Department from "~/components/partials/Department.vue"
 import sDepartment from "~/components/skeletons/sDepartment.vue"
+import DepartmentModal from "~/components/partials/DepartmentModal.vue"
 
 const { globalState } = useGlobals()
 
+const departmentModal = ref()
+
+const selectedDepartment = ref<iDepartment>(skeletonDepartments[0])
+
 const isLoaded = computed(() => (globalState.value.departments as iDepartment[]).length > 0)
+
+const showDepartment = (program: iDepartment) => {
+  departmentModal.value.isOpen = true
+  selectedDepartment.value = program
+}
 </script>
 <style scoped>
 .-departments {

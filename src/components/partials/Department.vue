@@ -5,7 +5,7 @@
       <h5 class="-subhead">{{ department.name }}</h5>
       <p class="-description" v-html="department.about"></p>
     <div class="-cta">
-      <div class="-btn -readmore">read more</div>
+      <div class="-btn -readmore" @click="selectDepartment">read more</div>
     </div>
     </div>
   </div>
@@ -17,6 +17,15 @@ import { vLoaded } from '~~/src/helpers/directives';
 const props = defineProps<{
   department: iDepartment
 }>()
+
+const emit = defineEmits<{
+  (e: 'selected', department: iDepartment): void
+}>()
+
+
+const selectDepartment = () => {
+  emit("selected", props.department)
+} 
 </script>
 <style scoped>
   .-department {
