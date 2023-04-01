@@ -1,4 +1,4 @@
-import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iResponse, iApiOptions, iMessage } from "../types"
+import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iResponse, iApiOptions, iMessage, iDepartment } from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -230,9 +230,13 @@ export const skeletonPrograms: iProgram[] = num2List(8).map((num: number) => ({
   videourl: ""
 }))
 
-export const reorder = (list: any[]) => {
-  return list.sort((a: any, b: any) => +new Date(b.datetime) - +new Date(a.datetime))
-}
+export const skeletonDepartments: iDepartment[] = num2List(8).map((num: number) => ({
+  about: "",
+  image: "",
+  name: "",
+  prop: "",
+  status: ""
+}))
 
 export const youTubeThumbnail = (link: string) => {
   const id = obtainYouTubeID(link)
