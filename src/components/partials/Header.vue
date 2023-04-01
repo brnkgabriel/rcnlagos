@@ -119,7 +119,7 @@ import Search from './Search.vue';
 }
 
 .-col {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   top: 100%;
@@ -129,8 +129,15 @@ import Search from './Search.vue';
   width: max-content;
   border-top: 2px solid var(--rcntext);
   border-radius: 4px;
-  transform: translateY(-200%);
+  transform: translateY(200%); 
+  transition: all .2s cubic-bezier(.165,.84,.44,1);
 }
+
+.-dropdown:hover .-col {
+  display: flex;
+  transform: translateY(0%); 
+}
+ 
 
 .-col a {
   width: 100%;
@@ -139,10 +146,6 @@ import Search from './Search.vue';
 
 .-col a:hover {
   background-color: var(--rcnlightbg);
-}
-
-.-dropdown:hover .-col {
-  transform: translateY(0%);
 }
 
 .-dropdown .-icon {
