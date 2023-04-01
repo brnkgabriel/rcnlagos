@@ -13,10 +13,10 @@
             <NuxtLink href="/about">RCN Global</NuxtLink>
             <NuxtLink href="/president">RCN President</NuxtLink>
             <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
-            <NuxtLink href="/blog">Blog</NuxtLink>
           </div>
         </h5>
         <NuxtLink href="/programs">Programs</NuxtLink>
+        <NuxtLink href="/blog">Blog</NuxtLink>
         <h5 class="-dropdown -posrel">
           <span>community</span>
           <span class="-icon"></span>
@@ -132,13 +132,14 @@
 }
 
 .-col a {
-  width: 100%; 
+  width: 100%;
   justify-content: flex-start !important;
 }
 
 .-col a:hover {
   background-color: var(--rcnlightbg);
 }
+
 .-dropdown:hover .-col {
   transform: translateY(0%);
 }
