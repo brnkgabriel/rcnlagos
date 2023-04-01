@@ -193,7 +193,7 @@ export const skeletonBlogs: iBlog[] = num2List(3).map((num: number) => ({
   thumbnail: "/images/680x680.png",
   title: " "
 }))
-export const skeletonPastors: iPastorate[] = num2List(6).map((num: number) => ({
+export const skeletonPastors: iPastorate[] = num2List(10).map((num: number) => ({
   image: "/images/680x680.png",
   name: " ",
   profile: " ",

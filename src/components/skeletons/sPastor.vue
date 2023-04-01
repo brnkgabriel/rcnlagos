@@ -1,7 +1,7 @@
 <template>
   <div class="-pastor -posrel">
     <div class="-img -posrel">
-      <img class="-icon" src="/images/680x680.png" alt="icon" /> 
+      <img class="-icon" src="/images/680x680.png" alt="icon" />
     </div>
     <div class="-detail">
       <h5 class="-name">{{ pastor.name }}</h5>
@@ -54,6 +54,7 @@ defineProps<{
   overflow: hidden;
   background-color: white;
   box-shadow: var(--box-shadow);
+  width: 80%;
 }
 
 .-pastor .-picture {
@@ -85,4 +86,11 @@ defineProps<{
 }
 
 .-pastor .-icon {}
+
+@media screen and (max-width: 576px) {
+
+  .-pastor .-img {
+    width: 100%;
+  }
+}
 </style>
