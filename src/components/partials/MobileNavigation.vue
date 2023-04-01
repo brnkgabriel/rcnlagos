@@ -49,7 +49,6 @@
         <NuxtLink href="/contact" data-type="mobile menu">Contact Us</NuxtLink>
         <NuxtLink href="/request" data-type="mobile menu">Prayer Request</NuxtLink>
         <NuxtLink href="/testimony" data-type="mobile menu">Give Testimony</NuxtLink>
-        <NuxtLink href="/privacy" data-type="mobile menu">Privacy Policy</NuxtLink>
       </div>
     </div>
   </div>
