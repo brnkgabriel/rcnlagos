@@ -1,6 +1,7 @@
 <template>
   <div class="font-body -main" data-type="main">
     <div class="-content" data-type="content">
+      <GDPRTopBar />
       <Header />
       <slot></slot>
       <Footer />
@@ -14,6 +15,7 @@ import Header from '../components/partials/Header.vue';
 import Footer from '../components/partials/Footer.vue';
 import MobileNavigation from '../components/partials/MobileNavigation.vue';
 import FabFilter from "~~/src/components/partials/FabFilter.vue"
+import GDPRTopBar from '../components/partials/GDPRTopBar.vue';
 import { iGlobal, iProgram } from '../types';
 
 
