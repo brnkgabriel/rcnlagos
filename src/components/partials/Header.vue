@@ -3,7 +3,8 @@
     <div class="-inner -posrel">
       <NuxtLink href="/" class="-logo">
         <img src="/images/rcn-logo.png" alt="remnant christian network logo" />
-      </NuxtLink>
+      </NuxtLink> 
+      <Search />
       <div class="-links">
         <NuxtLink href="/">home</NuxtLink>
         <h5 class="-dropdown -posrel">
@@ -33,7 +34,7 @@
           <div class="-col -posabs" data-name="resources">
             <NuxtLink href="/contact">Contact Us</NuxtLink>
             <NuxtLink href="/request">Prayer Request</NuxtLink>
-            <NuxtLink href="/testimony">Give Testimony</NuxtLink> 
+            <NuxtLink href="/testimony">Give Testimony</NuxtLink>
           </div>
         </h5>
         <NuxtLink class="-btn -give" href="/give">give</NuxtLink>
@@ -48,7 +49,7 @@
   </div>
 </template>
 <script setup lang="ts">
-
+import Search from './Search.vue';
 </script>
 <style scoped>
 .-header {
@@ -65,6 +66,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 16px;
 }
 
 .-logo img {
