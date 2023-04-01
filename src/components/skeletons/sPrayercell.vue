@@ -7,7 +7,7 @@
     <div class="-details">
       <div class="-cell-row">
         <div class="-title"></div>
-        <h5 class="-subhead -coordinator"></h5>
+        <h5 class="-coordinator"></h5>
       </div>
       <div class="-cell-row">
         <div class="-title"></div>

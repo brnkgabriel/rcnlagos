@@ -36,7 +36,7 @@ const selectDepartment = () => {
   }
 
   .-department .-subhead {
-    margin-top: unset !important;
+    margin: unset !important;
   }
 
   .-department img {

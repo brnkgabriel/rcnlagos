@@ -81,6 +81,7 @@ const props = defineProps<{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: unset !important;
 }
 
 .-cell .-cellname {

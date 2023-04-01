@@ -154,7 +154,8 @@ defineExpose({
 }
 
 .-footer .-description {
-  
+  max-height: 180px;
+  overflow-y: auto;
 }
 
 .-close-btn {
@@ -202,13 +203,7 @@ defineExpose({
 
 @media screen and (max-width: 768px) {}
 
-@media screen and (max-width: 576px) {
-
-
-  .-footer .-description {
-    height: 200px;
-    overflow: auto;
-  }
+@media screen and (max-width: 576px) { 
 
   .-close-btn {
     width: 100%;
