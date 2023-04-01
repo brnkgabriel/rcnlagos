@@ -237,6 +237,9 @@ export const skeletonDepartments: iDepartment[] = num2List(8).map((num: number) 
   prop: "",
   status: ""
 }))
+export const reorder = (list: any[]) => {
+  return list.sort((a: any, b: any) => +new Date(b.datetime) - +new Date(a.datetime))
+}
 
 export const youTubeThumbnail = (link: string) => {
   const id = obtainYouTubeID(link)
