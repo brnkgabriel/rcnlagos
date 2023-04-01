@@ -198,12 +198,14 @@ const handleFormSubmission = (evt: Event) => {
   padding: 16px;
 }
 
-.-bank-details .-subhead {}
+.-bank-details .-subhead {
+  margin: unset !important;
+}
 
 .-bank-details .-account {
   display: grid;
   grid-template-columns: 40% 60%;
-  gap: 16px;
+  gap: 8px;
 }
 
 .-specialization {
