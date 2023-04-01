@@ -55,6 +55,7 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
   overflow: hidden;
   background-color: white;
   box-shadow: var(--box-shadow);
+  width: 80%;
 }
 
 .-pastor .-picture {
@@ -118,7 +119,11 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
 
 @media screen and (max-width: 768px) {}
 
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+  .-pastor .-img {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 420px) {}
 

@@ -44,7 +44,7 @@ const isLoaded = computed(() => (globalState.value.pastorates as iPastorate[]).l
 
 @media screen and (max-width: 1024px) {
   .-pastors .-catalog {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -52,6 +52,9 @@ const isLoaded = computed(() => (globalState.value.pastorates as iPastorate[]).l
 
   .-pastors .-headfont {
     font-size: 32px;
+  }
+  .-pastors .-catalog {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
