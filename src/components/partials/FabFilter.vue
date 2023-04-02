@@ -14,6 +14,15 @@
         <div class="-close -subhead" data-type="fab">Close</div>
       </div>
       <hr />
+      <div class="-categories">
+        <div
+          class="-category"
+          v-for="(category, idx) in globalState?.programCategories"
+          :key="idx"
+          :data-name="category.name"
+          @click="selectCategory(category)"
+          :data-type="constants.PROGRAMCATEGORYTYPE">{{ category.name }}</div>
+      </div>
     </div>
     <div class="-fab -btn -posrel">
       <span class="-clickable" data-type="fab"></span>
@@ -26,7 +35,7 @@
 </template>
 <script setup lang="ts">
 import { vFabFilter } from '~~/src/helpers/directives';
-import { iProgram } from '~~/src/types';
+import { iProgram, iProgramCategory } from '~~/src/types';
 
 const show = ref(false)
 const searchTerm = ref("")
@@ -46,22 +55,29 @@ const searchResult = computed(() => {
 })
 
 const programFilterCondition = (program: iProgram, term: string) => {
-    const themeIdx = program.title?.toLowerCase().indexOf(term)
-    const typeIdx = program.type?.toLowerCase().indexOf(term)
-    const ministerIdx = program.minister?.toLowerCase().indexOf(term)
-    const datetimeIdx = program.datetime?.toLowerCase().indexOf(term)
+  const themeIdx = program.title?.toLowerCase().indexOf(term)
+  const typeIdx = program.type?.toLowerCase().indexOf(term)
+  const ministerIdx = program.minister?.toLowerCase().indexOf(term)
+  const datetimeIdx = program.datetime?.toLowerCase().indexOf(term)
 
-    const insideTheme = themeIdx !== -1
-    const insideType = typeIdx !== -1
-    const insideMinister = ministerIdx !== -1
-    const insideDateTime = datetimeIdx !== -1
+  const insideTheme = themeIdx !== -1
+  const insideType = typeIdx !== -1
+  const insideMinister = ministerIdx !== -1
+  const insideDateTime = datetimeIdx !== -1
 
-    return insideTheme || insideType || insideMinister || insideDateTime
+  return insideTheme || insideType || insideMinister || insideDateTime
 }
 
 watch(searchResult, () => setSearchedAndRenderedPrograms(searchResult.value as iProgram[]))
 
 const displayCondition = () => route.name === constants.PROGRAMS
+const selectCategory = (category: iProgramCategory) => {
+  const categories = all(`.-category[data-type="${constants.PROGRAMCATEGORYTYPE}"]`)
+  const selection = el(`.-category[data-name="${category.name}"]`)
+  categories.forEach(category => category.classList.remove(constants.ACTIVE))
+  selection?.classList.add(constants.ACTIVE)
+  searchTerm.value = category.name as string
+}
 
 watch(route, () => show.value = displayCondition())
 
@@ -124,7 +140,7 @@ onMounted(() => show.value = displayCondition())
   grid-template-columns: calc(100% - 57px) 57px;
   justify-content: space-between;
   align-items: center;
-  margin: 16px auto;
+  margin: 8px auto;
 }
 
 .-search-form {}
@@ -149,8 +165,31 @@ onMounted(() => show.value = displayCondition())
   justify-content: center;
 }
 
+.-categories {
+  padding: 16px;
+  height: 108px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.-categories .-category {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: var(--rcnlightbg);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+.-categories .-category.active {
+  background-color: var(--rcnaccentblue);
+  color: white;
+}
+
 @media screen and (max-width: 1024px) {
-  .-filter, .-fab {
+
+  .-filter,
+  .-fab {
     right: 16px;
   }
 }

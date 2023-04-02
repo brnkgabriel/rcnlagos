@@ -21,6 +21,7 @@ export const constants = {
   HAMBURGERTYPE: "hamburger",
   CLOSEMOBILEMENUTYPE: "close mobile menu",
   MOBILENAVIGATIONTYPE: "mobile navigation",
+  PROGRAMCATEGORYTYPE: "program category",
   WITHSUBMENUTYPE: "withsubmenu",
   BACKBUTTONTYPE: "back button",
   MOBILEMENUTYPE: "mobile menu",

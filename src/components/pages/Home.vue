@@ -72,8 +72,8 @@
           </div>
         </div>
         <img v-loaded class="loaded"
-          src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/images%2Frev-austin.png?alt=media&amp;token=e26f1901-2347-4c6d-9714-1dbdc1602fa6"
-          alt="">
+          src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/pastors%2FRevAustin_Transparent.png?alt=media&token=85780386-65da-4100-88f8-f3de69d351c9"
+          alt="Rev. Austin Transparent Picture">
       </div>
       <div class="-message">
         <iframe class="-video" :src="latestMessage"></iframe>
