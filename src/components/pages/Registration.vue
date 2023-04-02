@@ -9,13 +9,14 @@
         <img class="-desktop" src="/images/partners_1511x495.jpg" alt="partners banner" />
         <img class="-mobile" src="/images/partners_1000x495.jpg" alt="partners banner" />
       </div>
-      <div class="-form-registration-us">
+      <div v-if="showForm" class="-form-registration-us">
         <form @submit.prevent="handleFormSubmission" class="-registration-form">
-          <select name="program" id="program" class="-program">
-            <option value="" selected disabled>Select program...</option>
-            <option value="specialization 1">The Convergence</option>
-            <option value="specialization 2">IEC 2023</option>
-          </select>
+          <div class="-programs">
+            <div class="-program -form-control" v-for="(program, idx) in globalState.upcomingPrograms" :key="idx">
+              <input type="radio" :id="'option' + idx" name="program" :value="program.title" checked>
+              <label :for="'option' + idx">{{ program.title }}</label>
+            </div>
+          </div>
           <input class="-name" name="name" type="text" placeholder="Name" required />
           <input class="-email" name="email" type="email" placeholder="Email address" required />
           <input class="-phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
@@ -31,13 +32,13 @@
             <option value="" selected>Do you need accommodation?</option>
             <option value="Lagos Island">Yes</option>
             <option value="Lagos Mainland">No, I will sort myself out</option>
-            <option value="Outside Lagos">Maybe</option> 
+            <option value="Outside Lagos">Maybe</option>
           </select>
           <select name="areYouAttending" id="areYouAttending" class="-areYouAttending">
             <option value="" selected>Are you attending for the first time?</option>
             <option value="Lagos Island">Yes</option>
             <option value="Lagos Mainland">No</option>
-            <option value="Outside Lagos">Not Sure</option> 
+            <option value="Outside Lagos">Not Sure</option>
           </select>
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit"></span>
@@ -52,10 +53,15 @@
   </div>
 </template>
 <script setup lang="ts">
-import { iApiOptions, iMessage } from '~~/src/types';
+import { iApiOptions, iMessage, iUpcomingProgram } from '~~/src/types';
 import GetInTouch from '../partials/GetInTouch.vue';
 
 const { globalState } = useGlobals()
+
+const showForm = computed(() => {
+  const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
+  return upcomingPrograms.length > 0
+})
 
 const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
@@ -103,6 +109,22 @@ const handleFormSubmission = (evt: Event) => {
   z-index: 1;
 }
 
+.-programs {}
+
+.-programs .-program {
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--rcnlightbg);
+  color: var(--rcnaccentblue);
+  font-weight: bold;
+}
+
+.-programs .-program.active {
+  background-color: var(--rcnaccentblue);
+  color: white;
+}
+
 .-registration .-hero-banner .-hero-title h1,
 .-registration .-hero-banner .-hero-title p {
   color: white;
@@ -140,7 +162,7 @@ const handleFormSubmission = (evt: Event) => {
   resize: none;
 }
 
-.-program {
+.-programs {
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -174,13 +196,13 @@ const handleFormSubmission = (evt: Event) => {
   .-form-registration-us {
     grid-template-columns: repeat(1, 1fr)
   }
-  
 
-.-program {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
- 
+
+  .-program {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
 }
 
 @media screen and (max-width: 576px) {}

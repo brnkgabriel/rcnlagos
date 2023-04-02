@@ -4,7 +4,7 @@ export default defineEventHandler(async (event: H3Event) => {
   try {
     const query = getQuery(event) as any
     // const path = query.path
-    const url = `https://script.google.com/macros/s/AKfycbwf8U1aEal8_PwuTDujpRaZDv8-SbefiwJyxinVKPcD4zNFaQC-T7HxXPISSUa8sSZoeA/exec`
+    const url = `https://script.google.com/macros/s/AKfycbwBb7ZEHPM6NZ4umdqDHY-AiPENkyp8r1yCz0DqnabTzIcAbYHq02mlfswUbKQrZDJg7Q/exec`
     const response = await fetch(url)
     const data = response.json()
     return data
