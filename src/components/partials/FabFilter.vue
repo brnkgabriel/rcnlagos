@@ -178,8 +178,7 @@ onMounted(() => show.value = displayCondition())
   padding: 8px 16px;
   border-radius: 4px;
   background-color: var(--rcnlightbg);
-  cursor: pointer;
-  box-shadow: var(--box-shadow);
+  cursor: pointer; 
 }
 .-categories .-category.active {
   background-color: var(--rcnaccentblue);

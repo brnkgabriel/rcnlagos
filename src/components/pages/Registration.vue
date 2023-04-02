@@ -12,7 +12,7 @@
       <div v-if="showForm" class="-form-registration-us">
         <form @submit.prevent="handleFormSubmission" class="-registration-form">
           <div class="-programs">
-            <div class="-program -form-control" v-for="(program, idx) in globalState.upcomingPrograms" :key="idx" :data-name="program.title">
+            <div class="-program -form-control" v-for="(program, idx) in globalState.upcomingPrograms" :key="idx" :data-name="program.title" :class="idx===0?'active':''">
               <input type="radio" :id="'option' + idx" name="program" :value="program.title" :checked="idx === 0">
               <label :for="'option' + idx" @click="changeProgram(program)">{{ program.title }}</label>
             </div>
@@ -126,7 +126,6 @@ const handleFormSubmission = (evt: Event) => {
 .-programs .-program {
   padding: 8px 16px;
   border-radius: 4px;
-  box-shadow: var(--box-shadow);
   background-color: var(--rcnlightbg);
   color: var(--rcnaccentblue);
   font-weight: bold;
