@@ -13,7 +13,7 @@
         <form @submit.prevent="handleFormSubmission" class="-registration-form">
           <div class="-programs">
             <div class="-program -form-control" v-for="(program, idx) in globalState.upcomingPrograms" :key="idx">
-              <input type="radio" :id="'option' + idx" name="program" :value="program.title" checked>
+              <input type="radio" :id="'option' + idx" name="program" :value="program.title" :checked="idx === 0">
               <label :for="'option' + idx">{{ program.title }}</label>
             </div>
           </div>
@@ -109,7 +109,11 @@ const handleFormSubmission = (evt: Event) => {
   z-index: 1;
 }
 
-.-programs {}
+.-programs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
 
 .-programs .-program {
   padding: 8px 16px;
@@ -118,6 +122,18 @@ const handleFormSubmission = (evt: Event) => {
   background-color: var(--rcnlightbg);
   color: var(--rcnaccentblue);
   font-weight: bold;
+  position: relative;
+}
+.-programs .-program label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .-programs .-program.active {
@@ -198,9 +214,10 @@ const handleFormSubmission = (evt: Event) => {
   }
 
 
-  .-program {
+  .-programs {
     grid-column-start: 1;
     grid-column-end: 2;
+    grid-template-columns: repeat(1, 1fr);
   }
 
 }
