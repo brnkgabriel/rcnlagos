@@ -30,15 +30,15 @@
           </select>
           <select name="needAccommodation" id="needAccommodation" class="-needAccommodation">
             <option value="" selected>Do you need accommodation?</option>
-            <option value="Lagos Island">Yes</option>
-            <option value="Lagos Mainland">No, I will sort myself out</option>
-            <option value="Outside Lagos">Maybe</option>
+            <option value="Yes">Yes</option>
+            <option value="No, I will sort myself out">No, I will sort myself out</option>
+            <option value="Maybe">Maybe</option>
           </select>
-          <select name="areYouAttending" id="areYouAttending" class="-areYouAttending">
+          <select name="firstTimer" id="firstTimer" class="-firstTimer">
             <option value="" selected>Are you attending for the first time?</option>
-            <option value="Lagos Island">Yes</option>
-            <option value="Lagos Mainland">No</option>
-            <option value="Outside Lagos">Not Sure</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Not Sure">Not Sure</option>
           </select>
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit"></span>
@@ -71,27 +71,27 @@ const changeProgram = (program: iUpcomingProgram) => {
 }
 
 const handleFormSubmission = (evt: Event) => {
-  console.log("handle form submission")
-  // const form = evt.target as HTMLFormElement
-  // const formData = new FormData(form)
-  // const entries = Object.fromEntries(formData.entries())
+  const form = evt.target as HTMLFormElement
+  const formData = new FormData(form)
+  const entries = Object.fromEntries(formData.entries())
+  console.log("form entries are", entries)
 
-  // const messages: iMessage = {
-  //   errorMessage: "Already requested",
-  //   successMessage: "Successfully submitted"
-  // }
-  // const apiOptions: iApiOptions = {
-  //   collection: constants.RCNLAGOSCOLLECTION,
-  //   id: constants.CONTACTUSID,
-  //   dataToStore: {
-  //     ...entries,
-  //     date: new Date().toLocaleString(),
-  //   },
-  //   wrapperHTML: el(constants.CONTACTUSWRAPQUERY) as HTMLElement,
-  //   statusHTML: el(constants.CONTACTUSSTATUSQUERY) as HTMLElement
-  // }
+  const messages: iMessage = {
+    errorMessage: "Already submitted",
+    successMessage: "Successfully submitted"
+  }
+  const apiOptions: iApiOptions = {
+    collection: constants.RCNLAGOSCOLLECTION,
+    id: constants.REGISTRATIONID,
+    dataToStore: {
+      ...entries,
+      date: new Date().toLocaleString(),
+    },
+    wrapperHTML: el(constants.REGISTRATIONWRAPQUERY) as HTMLElement,
+    statusHTML: el(constants.REGISTRATIONSTATUSQUERY) as HTMLElement
+  }
 
-  // postForm(apiOptions, messages, constants.CONTACTAPI)
+  postForm(apiOptions, messages, constants.REGISTRATIONAPI)
 }
 
 
