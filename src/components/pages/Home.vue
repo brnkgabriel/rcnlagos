@@ -11,24 +11,28 @@
         <NuxtLink href="/about" class="-btn -know-more">know more</NuxtLink>
       </div>
     </div>
-    <div class="-home-slider -posrel -row -inner">
-      <div v-if="!shouldShowVideoSlider" class="-rebirth-priesthood-transformation -posabs">
+    <div v-if="shouldShowVideoSlider" class="-home-video-slider -posrel -row -inner">
+      <!-- <video autoplay controls loop playsinline class="-video-tag">
+        <source :src="videoSliderURL" type="video/mp4">
+        Your browser does not support the video tag.
+      </video> -->
+      <iframe :src="videoSliderURL"></iframe>
+    </div>
+    <div v-if="shouldShowVideoSlider" class="-programRegistration -row -inner">
+      <NuxtLink href="/registration" class="-btn">Register</NuxtLink>
+    </div>
+    <div v-if="!shouldShowVideoSlider" class="-home-slider -posrel -row -inner">
+      <div class="-rebirth-priesthood-transformation -posabs">
         <p class="-txt -rebirth">rebirth</p>
         <p class="-txt -priesthood">priesthood</p>
         <p class="-txt -transformation">transformation</p>
       </div>
-      <div v-if="!shouldShowVideoSlider" class="-sliders -posabs" v-slide>
+      <div class="-sliders -posabs" v-slide>
         <img v-if="globalState.sliders?.length === 0" class="active" src="/images/1326x602.png"
           alt="homepage slider skeleton" />
         <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''"
           :src="slider.image" :alt="slider.slideNo" />
       </div>
-      <div v-if="shouldShowVideoSlider" class="-video -posabs">
-        <iframe :src="videoSliderURL"></iframe>
-      </div>
-    </div>
-    <div v-if="shouldShowVideoSlider" class="-programRegistration -row -inner">
-      <NuxtLink href="/registration" class="-btn">Register</NuxtLink>
     </div>
     <div class="-ourvalues -row -inner">
       <div class="-title-wrap">
@@ -199,11 +203,10 @@ const videoSliderURL = computed(() => {
   if (upcomingPrograms.length > 0) {
     const url = upcomingPrograms[0].videourl as string
     return youTubeLinkToEmbedLinkAutoplay(url)
+    // return url
   }
   return ""
 })
-
-watch(globalState, () => console.log("globalState is", globalState.value))
 
 const email = ref("")
 
@@ -234,7 +237,7 @@ const handleSubscription = () => {
 let controller: Controller
 onMounted(() => {
   controller = new Controller()
-  controller.start()
+  controller.start() 
 })
 
 onBeforeUnmount(() => {
@@ -294,23 +297,22 @@ onBeforeUnmount(() => {
   aspect-ratio: 1512 / 602;
 }
 
+.-home-video-slider {
+  aspect-ratio: 560 / 315;
+  padding: unset !important;
+}
+
+.-home-video-slider iframe,
+.-home-video-slider video {
+  width: 100%;
+  height: 100%;
+}
+
 .-home-slider .-sliders {
   width: 87.7%;
   height: 100%;
   top: 0;
   right: 0;
-}
-
-.-home-slider .-video {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.-home-slider .-video iframe {
-  width: 100%;
-  height: 100%;
 }
 
 .-programRegistration {
