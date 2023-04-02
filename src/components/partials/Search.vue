@@ -52,7 +52,7 @@ onMounted(() => show.value = displayCondition())
 </script>
 <style scoped>
 .-search-form {
-  
+  width: 35%;
 }
 
 .-search-form svg {
@@ -64,6 +64,12 @@ onMounted(() => show.value = displayCondition())
 input {
   padding-left: 40px;
   width: 100%;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .-search-form {
+    width: 22.5%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
