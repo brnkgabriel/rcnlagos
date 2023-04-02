@@ -4,10 +4,12 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Registration</h1>
-          <p>Kindly register for the upcoming program below</p>
+          <p v-if="showForm">Kindly register for the {{ globalState.upcomingPrograms[0].title }} below</p>
         </div>
-        <img class="-desktop" src="/images/partners_1511x495.jpg" alt="partners banner" />
-        <img class="-mobile" src="/images/partners_1000x495.jpg" alt="partners banner" />
+        <img v-if="showForm" class="-desktop" :src="globalState.upcomingPrograms[0].desktopBanner" alt="desktop banner" />
+        <img v-if="showForm" class="-mobile" :src="globalState.upcomingPrograms[0].mobileBanner" alt="mobile banner" />
+        <img v-if="!showForm" class="-desktop" src="/images/1511x495.jpg" alt="desktop banner" />
+        <img v-if="!showForm" class="-mobile" src="/images/1000x495.jpg" alt="mobile banner" />
       </div>
       <div class="-form-registration-us"> 
         <sRegistrationForm v-if="!showForm" />
@@ -18,7 +20,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { iApiOptions, iMessage, iUpcomingProgram } from '~~/src/types';
+import { iUpcomingProgram } from '~~/src/types';
 import GetInTouch from '../partials/GetInTouch.vue';
 import RegistrationForm from '../partials/RegistrationForm.vue'
 import sRegistrationForm from '../skeletons/sRegistrationForm.vue'

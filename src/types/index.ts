@@ -174,8 +174,8 @@ export interface iMessage {
 
 export interface iUpcomingProgram {
   datetime?: string;
-  image?: string;
-  metadata?: string;
+  desktopBanner?: string;
+  mobileBanner?: string;
   status?: string;
   title?: string;
   videourl?: string;
