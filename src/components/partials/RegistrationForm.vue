@@ -11,20 +11,20 @@
     <input class="-email" name="email" type="email" placeholder="Email address" required />
     <input class="-phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
       pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
-    <select name="joiningFrom" id="joiningFrom" class="-joiningFrom">
+    <select name="joiningFrom" id="joiningFrom" class="-joiningFrom" required>
       <option value="" selected>Where are you joining from?</option>
       <option value="Lagos Island">Lagos Island</option>
       <option value="Lagos Mainland">Lagos Mainland</option>
       <option value="Outside Lagos">Outside Lagos</option>
       <option value="Online">Online</option>
     </select>
-    <select name="needAccommodation" id="needAccommodation" class="-needAccommodation">
+    <select name="needAccommodation" id="needAccommodation" class="-needAccommodation" required>
       <option value="" selected>Do you need accommodation?</option>
       <option value="Yes">Yes</option>
       <option value="No, I will sort myself out">No, I will sort myself out</option>
       <option value="Maybe">Maybe</option>
     </select>
-    <select name="firstTimer" id="firstTimer" class="-firstTimer">
+    <select name="firstTimer" id="firstTimer" class="-firstTimer" required>
       <option value="" selected>Are you attending for the first time?</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -40,15 +40,9 @@
 </template>
 <script setup lang="ts">
 
-import { iApiOptions, iMessage, iUpcomingProgram } from '~~/src/types';
-import GetInTouch from '../partials/GetInTouch.vue';
+import { iApiOptions, iMessage, iUpcomingProgram } from '~~/src/types'; 
 
-const { globalState } = useGlobals()
-
-const showForm = computed(() => {
-  const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
-  return upcomingPrograms.length > 0
-})
+const { globalState } = useGlobals() 
 
 const changeProgram = (program: iUpcomingProgram) => {
   const selectedProgram = el(`.-program[data-name="${program.title}"]`)
@@ -64,7 +58,7 @@ const handleFormSubmission = (evt: Event) => {
   console.log("form entries are", entries)
 
   const messages: iMessage = {
-    errorMessage: "Already submitted",
+    errorMessage: "Already registered",
     successMessage: "Successfully submitted"
   }
   const apiOptions: iApiOptions = {
