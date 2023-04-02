@@ -72,13 +72,7 @@
           <input name="email" type="email" placeholder="Email address" required />
           <input name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
             pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
-          <input name="address" type="text" placeholder="Address" required />
-          <select name="specialization" id="specialization" class="-specialization">
-            <option value="specialization 1">Specialization #1</option>
-            <option value="specialization 2">Specialization #2</option>
-            <option value="specialization 3">Specialization #3</option>
-            <option value="specialization 4">Specialization #4</option>
-          </select>
+          <input name="address" type="text" placeholder="Address" required /> 
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit partner"></span>
             <span class="-spin-loader"></span>
@@ -206,12 +200,7 @@ const handleFormSubmission = (evt: Event) => {
   display: grid;
   grid-template-columns: 40% 60%;
   gap: 8px;
-}
-
-.-specialization {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
+} 
 
 @media screen and (max-width: 1024px) {}
 
@@ -245,12 +234,7 @@ const handleFormSubmission = (evt: Event) => {
   }
 }
 
-@media screen and (max-width: 576px) {
-
-  .-specialization {
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
+@media screen and (max-width: 576px) { 
 }
 
 @media screen and (max-width: 420px) {
