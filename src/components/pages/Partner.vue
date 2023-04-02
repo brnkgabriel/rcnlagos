@@ -72,7 +72,7 @@
           <input name="email" type="email" placeholder="Email address" required />
           <input name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
             pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
-          <input name="address" type="text" placeholder="Address" required /> 
+          <input name="address" type="text" placeholder="Address" required />
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit partner"></span>
             <span class="-spin-loader"></span>
@@ -96,6 +96,7 @@
             <p class="-key">EUR:</p>
             <p class="-value">2031730200</p>
           </div>
+          <NuxtLink href="/give" class="-btn">Give</NuxtLink>
         </div>
       </div>
     </div>
@@ -194,6 +195,19 @@ const handleFormSubmission = (evt: Event) => {
   background-color: var(--rcnaccentblue);
   color: white;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
+.-bank-details .-btn {
+  background-color: white;
+  color: var(--rcnaccentblue) !important;
+  font-weight: bold;
+  box-shadow: 0px 4px 20px -5px white;
 }
 
 .-bank-details .-subhead {
@@ -204,7 +218,8 @@ const handleFormSubmission = (evt: Event) => {
   display: grid;
   grid-template-columns: 40% 60%;
   gap: 8px;
-} 
+  width: 100%;
+}
 
 @media screen and (max-width: 1024px) {}
 
@@ -230,17 +245,22 @@ const handleFormSubmission = (evt: Event) => {
     background-color: black;
     aspect-ratio: 1000 / 495;
   }
- 
+
   .-form-bank-details {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .-partner-form .-btn {
     width: 100%;
   }
+
+  .-bank-details .-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-@media screen and (max-width: 576px) { 
-}
+@media screen and (max-width: 576px) {}
 
 @media screen and (max-width: 420px) {
 
