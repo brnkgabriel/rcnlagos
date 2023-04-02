@@ -4,13 +4,13 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Registration</h1>
-          <p>Kindly register for the upcoming events below</p>
+          <p>Kindly register for the upcoming program below</p>
         </div>
         <img class="-desktop" src="/images/partners_1511x495.jpg" alt="partners banner" />
         <img class="-mobile" src="/images/partners_1000x495.jpg" alt="partners banner" />
       </div>
-      <div v-if="showForm" class="-form-registration-us">
-        <form @submit.prevent="handleFormSubmission" class="-registration-form">
+      <div class="-form-registration-us">
+        <!-- <form @submit.prevent="handleFormSubmission" class="-registration-form">
           <div class="-programs">
             <div class="-program -form-control" v-for="(program, idx) in globalState.upcomingPrograms" :key="idx" :data-name="program.title" :class="idx===0?'active':''">
               <input type="radio" :id="'option' + idx" name="program" :value="program.title" :checked="idx === 0">
@@ -46,7 +46,8 @@
             <span class="-txt">submit</span>
           </button>
           <p class="-status" data-type="error"></p>
-        </form>
+        </form> -->
+        <RegistrationForm v-if="showForm" />
         <GetInTouch />
       </div>
     </div>
@@ -55,6 +56,7 @@
 <script setup lang="ts">
 import { iApiOptions, iMessage, iUpcomingProgram } from '~~/src/types';
 import GetInTouch from '../partials/GetInTouch.vue';
+import RegistrationForm from '../partials/RegistrationForm.vue'
 
 const { globalState } = useGlobals()
 
