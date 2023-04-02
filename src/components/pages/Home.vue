@@ -76,7 +76,7 @@
           alt="">
       </div>
       <div class="-message">
-        <iframe class="-video" src="https://www.youtube.com/embed/1MkkwkXdvGk"></iframe>
+        <iframe class="-video" :src="latestMessage"></iframe>
         <div class="-note">
           <h5 class="-watch-latest-message -headfont">watch latest message</h5>
           <NuxtLink href="/programs" class="-see-all-messages -btn">see all messages</NuxtLink>
@@ -173,12 +173,19 @@ import sProgramCategory from "../skeletons/sProgramCategory.vue";
 import BlogThumbnail from "../partials/BlogThumbnail.vue";
 import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import TestimonialCard from "../partials/TestimonialCard.vue";
-import { iApiOptions, iBlog, iMessage } from "~~/src/types";
+import { iApiOptions, iBlog, iMessage, iProgram } from "~~/src/types";
 import { Controller } from "~~/src/helpers/controller";
 
 const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programCategories?.length as number) > 0)
 const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
+const latestMessage = computed(() => {
+  if ((globalState.value.programs as iProgram[]).length > 0) {
+    const url = (globalState.value.programs as iProgram[])[0].videourl
+    return youTubeLinkToEmbedLink(url as string) 
+  }
+  return "https://www.youtube.com/embed/1MkkwkXdvGk"
+})
 
 const email = ref("")
 
