@@ -55,7 +55,107 @@ textarea {
   padding: 0.4em 0.5em;
   max-width: 100%;
   background: white;
-  box-shadow: 0px 0px 0px -7px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px -7px rgba(0, 0, 0, 0); 
+}
+
+/* @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"],
+  textarea { 
+    font-size: 16px !important;
+  }
+
+}
+  
+@media only screen and (max-device-width: 896px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"],
+  textarea { 
+    font-size: 16px !important;
+  }
+}   */
+/* Target all iPhones */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-device-pixel-ratio: 3) { 
+    select,
+    textarea,
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"],
+    input[type="search"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="range"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="color"],
+    textarea { 
+      font-size: 16px !important;
+    }
+}
+
+/* Target all iPads */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    select,
+    textarea,
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"],
+    input[type="search"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="range"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="color"],
+    textarea { 
+      font-size: 16px !important;
+    }
 }
 
 select:focus,
@@ -114,6 +214,7 @@ ol {
 .h-6 {
   height: 24px !important;
 }
+
 .-headfont {
   font-family: Figtree, Poppins;
 }
@@ -159,6 +260,7 @@ ol {
   font-weight: 600;
   letter-spacing: .3px;
 }
+
 .-clickable {
   position: absolute;
   width: 100%;
@@ -214,9 +316,11 @@ ol {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
