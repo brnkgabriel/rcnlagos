@@ -72,7 +72,7 @@ import Search from './Search.vue';
 
 .-logo img {
   height: 40px;
-  width: unset !important;
+  width: 73.3px !important;
 }
 
 .-header .-links {

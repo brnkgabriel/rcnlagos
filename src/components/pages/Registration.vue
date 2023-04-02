@@ -12,9 +12,9 @@
       <div v-if="showForm" class="-form-registration-us">
         <form @submit.prevent="handleFormSubmission" class="-registration-form">
           <div class="-programs">
-            <div class="-program -form-control" v-for="(program, idx) in globalState.upcomingPrograms" :key="idx">
+            <div class="-program -form-control" v-for="(program, idx) in globalState.upcomingPrograms" :key="idx" :data-name="program.title">
               <input type="radio" :id="'option' + idx" name="program" :value="program.title" :checked="idx === 0">
-              <label :for="'option' + idx">{{ program.title }}</label>
+              <label :for="'option' + idx" @click="changeProgram(program)">{{ program.title }}</label>
             </div>
           </div>
           <input class="-name" name="name" type="text" placeholder="Name" required />
@@ -62,6 +62,13 @@ const showForm = computed(() => {
   const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
   return upcomingPrograms.length > 0
 })
+
+const changeProgram = (program: iUpcomingProgram) => {
+  const selectedProgram = el(`.-program[data-name="${program.title}"]`)
+  const allPrograms = all('.-program')
+  allPrograms.forEach(program => program.classList.remove(constants.ACTIVE))
+  selectedProgram?.classList.add(constants.ACTIVE)
+}
 
 const handleFormSubmission = (evt: Event) => {
   console.log("handle form submission")
