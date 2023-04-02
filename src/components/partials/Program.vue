@@ -41,6 +41,9 @@
 import { iProgram } from '~~/src/types';
 import { vShare } from '~/helpers/directives'
 import { vAudio } from '~/helpers/directives';
+import { useGtag } from "vue-gtag-next"
+
+const { event } = useGtag()
 const props = defineProps<{
   program: iProgram;
 }>()
@@ -53,6 +56,11 @@ const src = computed(() => props.program?.image ? props.program.image : youTubeT
 
 
 const playVideo = () => {
+  event('programspage_playvideo', {
+    'title': props.program.title,
+    'type': props.program.type,
+    'value': 1
+  })
   emit("selected", props.program)
 } 
 

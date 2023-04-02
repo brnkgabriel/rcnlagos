@@ -36,6 +36,9 @@
 <script setup lang="ts">
 import { vFabFilter } from '~~/src/helpers/directives';
 import { iProgram, iProgramCategory } from '~~/src/types';
+import { useGtag } from "vue-gtag-next"
+
+const { event } = useGtag()
 
 const show = ref(false)
 const searchTerm = ref("")
@@ -72,6 +75,11 @@ watch(searchResult, () => setSearchedAndRenderedPrograms(searchResult.value as i
 
 const displayCondition = () => route.name === constants.PROGRAMS
 const selectCategory = (category: iProgramCategory) => {
+  event('programspage_fabfilter', {
+    'category': category.name,
+    'time': category.time,
+    'value': 1
+  })
   const categories = all(`.-category[data-type="${constants.PROGRAMCATEGORYTYPE}"]`)
   const selection = el(`.-category[data-name="${category.name}"]`)
   categories.forEach(category => category.classList.remove(constants.ACTIVE))

@@ -34,6 +34,9 @@ import Program from '../partials/Program.vue';
 import sProgram from '../skeletons/sProgram.vue';
 import ProgramModal from '../partials/ProgramModal.vue';
 import { vInfiniteScroll } from "~/helpers/directives"
+import { useGtag } from "vue-gtag-next"
+
+const { event } = useGtag()
 
 const { globalState } = useGlobals()
 
@@ -48,6 +51,11 @@ const showUpcoming = computed(() => {
 const programModal = ref()
 
 const showProgram = (program: iProgram) => {
+  event('programspage_selectprogram', {
+    'title': program.title,
+    'type': program.type,
+    'value': 1
+  })
   programModal.value.isOpen = true
   selectedProgram.value = program
 }

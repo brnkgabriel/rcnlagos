@@ -22,6 +22,9 @@ import { iDepartment } from '~~/src/types';
 import Department from "~/components/partials/Department.vue"
 import sDepartment from "~/components/skeletons/sDepartment.vue"
 import DepartmentModal from "~/components/partials/DepartmentModal.vue"
+import { useGtag } from "vue-gtag-next"
+
+const { event } = useGtag()
 
 const { globalState } = useGlobals()
 
@@ -31,9 +34,13 @@ const selectedDepartment = ref<iDepartment>(skeletonDepartments[0])
 
 const isLoaded = computed(() => (globalState.value.departments as iDepartment[]).length > 0)
 
-const showDepartment = (program: iDepartment) => {
+const showDepartment = (department: iDepartment) => {
+  event('departmentspage_viewdepartment', {
+    'name': department.name,
+    'value': 1
+  })
   departmentModal.value.isOpen = true
-  selectedDepartment.value = program
+  selectedDepartment.value = department
 }
 </script>
 <style scoped>

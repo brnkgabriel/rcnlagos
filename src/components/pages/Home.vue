@@ -170,6 +170,9 @@ import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import TestimonialCard from "../partials/TestimonialCard.vue";
 import { iApiOptions, iBlog, iMessage, iProgram, iUpcomingProgram } from "~~/src/types";
 import { Controller } from "~~/src/helpers/controller";
+import { useGtag } from "vue-gtag-next"
+
+const { event } = useGtag()
 
 const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programCategories?.length as number) > 0)
@@ -206,6 +209,10 @@ const email = ref("")
 
 const handleSubscription = () => {
 
+  event('homepage_subscription', {
+    'name': "subscribed",
+    'value': 1
+  })
   const messages: iMessage = {
     errorMessage: "You've already subscribed",
     successMessage: "Successfully subscribed"

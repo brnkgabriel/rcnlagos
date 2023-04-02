@@ -32,13 +32,22 @@
 <script setup lang="ts">
 import { iApiOptions, iMessage } from '~~/src/types';
 import GetInTouch from '../partials/GetInTouch.vue';
+import { useGtag } from "vue-gtag-next"
 
+const { event } = useGtag()
 const { globalState } = useGlobals()
+
 
 const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
   const formData = new FormData(form)
   const entries = Object.fromEntries(formData.entries())
+  event('contactuspage_form', {
+    'name': entries.name,
+    'email': entries.email,
+    'phoneNumber': entries.phoneNumber,
+    'value': 1
+  })
 
   const messages: iMessage = {
     errorMessage: "Already requested",

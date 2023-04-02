@@ -4,7 +4,9 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Prayer Request</h1>
-          <p>Submit your prayer request and join a community of believers who believe in the power of intercession and experience the peace that comes from knowing you are never alone in your struggles, and that God hears your every prayer.</p>
+          <p>Submit your prayer request and join a community of believers who believe in the power of intercession and
+            experience the peace that comes from knowing you are never alone in your struggles, and that God hears your
+            every prayer.</p>
         </div>
         <img class="-desktop" src="/images/partners_1511x495.jpg" alt="partners banner" />
         <img class="-mobile" src="/images/partners_1000x495.jpg" alt="partners banner" />
@@ -14,7 +16,7 @@
           <input class="-name" name="name" type="text" placeholder="Name" required />
           <input class="-email" name="email" type="email" placeholder="Email address" required />
           <input class="-phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
-            pattern="[0-9]{4}[0-9]{3}[0-9]{4}" /> 
+            pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
           <textarea class="-message" placeholder="Your Prayer Request" name="prayerrequest" required></textarea>
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit"></span>
@@ -31,6 +33,9 @@
 <script setup lang="ts">
 import { iApiOptions, iMessage } from '~~/src/types';
 import GetInTouch from '../partials/GetInTouch.vue';
+import { useGtag } from "vue-gtag-next"
+
+const { event } = useGtag()
 
 const { globalState } = useGlobals()
 
@@ -38,6 +43,13 @@ const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
   const formData = new FormData(form)
   const entries = Object.fromEntries(formData.entries())
+
+  event('prayerrequestpage_form', {
+    'name': entries.name,
+    'email': entries.email,
+    'phoneNumber': entries.phoneNumber,
+    'value': 1
+  })
 
   const messages: iMessage = {
     errorMessage: "Already requested",
@@ -112,7 +124,7 @@ const handleFormSubmission = (evt: Event) => {
   gap: 16px;
   width: 100%;
 }
- 
+
 
 .-phoneNumber,
 .-subject,
@@ -177,5 +189,4 @@ const handleFormSubmission = (evt: Event) => {
 
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {}
-</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
