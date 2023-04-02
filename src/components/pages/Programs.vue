@@ -5,17 +5,19 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs -caption">
           <h1 class="-headfont -mainline">Encounter the Word</h1>
-          <p class="-subline">Explore our programs and events and get notified of upcoming events.</p>
+          <p class="-subline">Explore our programs and get notified of upcoming programs.</p>
         </div>
         <div class="-upcoming-program -posabs">
           <div class="-left">
             <h5 class="-subhead">upcoming program</h5>
-            <p>The Convergence | April 21 - 22, 2023</p>
+            <p v-if="showUpcoming">{{ globalState.upcomingPrograms[0].title }}</p>
           </div>
           <NuxtLink href="/registration" class="-btn -subscribe">Register</NuxtLink>
         </div>
-        <img class="-desktop" src="/images/programs_1511x495.jpg" alt="prayercell banner" />
-        <img class="-mobile" src="/images/programs_1500x844.jpg" alt="prayercell banner" />
+        <img v-if="showUpcoming" class="-desktop" :src="globalState.upcomingPrograms[0].desktopBanner" alt="desktop banner" />
+        <img v-if="showUpcoming" class="-mobile" :src="globalState.upcomingPrograms[0].mobileBanner" alt="mobile banner" />
+        <img v-if="!showUpcoming" class="-desktop" src="/images/1511x495.jpg" alt="desktop banner" />
+        <img v-if="!showUpcoming" class="-mobile" src="/images/1000x495.jpg" alt="mobile banner" />
       </div>
       <div class="-catalog" v-infinite-scroll>
         <Program v-if="isLoaded" v-for="(program, idx) in globalState.renderedPrograms" :key="idx" :program="program"
@@ -27,7 +29,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { iProgram } from '~~/src/types';
+import { iProgram, iUpcomingProgram } from '~~/src/types';
 import Program from '../partials/Program.vue';
 import sProgram from '../skeletons/sProgram.vue';
 import ProgramModal from '../partials/ProgramModal.vue';
@@ -37,6 +39,10 @@ const { globalState } = useGlobals()
 
 const selectedProgram = ref<iProgram>(skeletonPrograms[0])
 const isLoaded = computed(() => (globalState.value.programs as iProgram[]).length)
+const showUpcoming = computed(() => {
+  const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
+  return upcomingPrograms.length > 0
+}) 
 
 
 const programModal = ref()
@@ -127,7 +133,7 @@ const showProgram = (program: iProgram) => {
 .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
-}
+} 
 
 .-hero-banner .-caption .-mainline {
   color: white;
@@ -145,7 +151,7 @@ const showProgram = (program: iProgram) => {
 }
 
 .-hero-banner img {
-  opacity: .6;
+  opacity: .2;
   width: 100%;
 }
 
