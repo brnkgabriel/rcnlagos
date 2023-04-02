@@ -12,16 +12,19 @@
       </div>
     </div>
     <div class="-home-slider -posrel -row -inner">
-      <div class="-rebirth-priesthood-transformation -posabs">
+      <div v-if="!shouldShowVideoSlider" class="-rebirth-priesthood-transformation -posabs">
         <p class="-txt -rebirth">rebirth</p>
         <p class="-txt -priesthood">priesthood</p>
         <p class="-txt -transformation">transformation</p>
       </div>
-      <div class="-sliders -posabs" v-slide>
+      <div v-if="!shouldShowVideoSlider" class="-sliders -posabs" v-slide>
         <img v-if="globalState.sliders?.length === 0" class="active" src="/images/1326x602.png"
           alt="homepage slider skeleton" />
         <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''"
           :src="slider.image" :alt="slider.slideNo" />
+      </div>
+      <div v-if="shouldShowVideoSlider" class="-video -posabs">
+        <iframe :src="videoSliderURL"></iframe>
       </div>
     </div>
     <div class="-ourvalues -row -inner">
@@ -162,7 +165,7 @@ import sProgramCategory from "../skeletons/sProgramCategory.vue";
 import BlogThumbnail from "../partials/BlogThumbnail.vue";
 import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import TestimonialCard from "../partials/TestimonialCard.vue";
-import { iApiOptions, iBlog, iMessage, iProgram } from "~~/src/types";
+import { iApiOptions, iBlog, iMessage, iProgram, iUpcomingProgram } from "~~/src/types";
 import { Controller } from "~~/src/helpers/controller";
 
 const { globalState } = useGlobals()
@@ -174,6 +177,26 @@ const latestMessage = computed(() => {
     return youTubeLinkToEmbedLink(url as string)
   }
   return "https://www.youtube.com/embed/1MkkwkXdvGk"
+})
+
+const shouldShowVideoSlider = computed(() => {
+  const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
+  console.log("upcomingPrograms", upcomingPrograms)
+  if (upcomingPrograms.length > 0) {
+    const isFuture = Date.now() < +new Date(upcomingPrograms[0].datetime as string)
+    return isFuture ? true : false
+  }
+  return false
+})
+
+const videoSliderURL = computed(() => {
+  const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
+  console.log("upcomingPrograms", upcomingPrograms)
+  if (upcomingPrograms.length > 0) {
+    const url = upcomingPrograms[0].videourl as string
+    return youTubeLinkToEmbedLinkAutoplay(url)
+  }
+  return ""
 })
 
 watch(globalState, () => console.log("globalState is", globalState.value))
@@ -268,6 +291,18 @@ onBeforeUnmount(() => {
   height: 100%;
   top: 0;
   right: 0;
+}
+
+.-home-slider .-video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.-home-slider .-video iframe {
+  width: 100%;
+  height: 100%;
 }
 
 .-home-slider .-sliders img {

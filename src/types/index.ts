@@ -128,6 +128,7 @@ export interface iGlobal {
   accounts?: iAccount[];
   renderedPrograms: iProgram[];
   searchedPrograms: iProgram[];
+  upcomingPrograms: iUpcomingProgram[];
 }
 
 export interface iResponse {
@@ -169,4 +170,13 @@ export interface iApiOptions {
 export interface iMessage {
   errorMessage?: string;
   successMessage?: string;
+}
+
+export interface iUpcomingProgram {
+  datetime?: string;
+  image?: string;
+  metadata?: string;
+  status?: string;
+  title?: string;
+  videourl?: string;
 }

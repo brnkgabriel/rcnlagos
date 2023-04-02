@@ -270,6 +270,15 @@ export const youTubeLinkToEmbedLink = (link: string) => {
   return ""
 }
 
+
+export const youTubeLinkToEmbedLinkAutoplay = (link: string) => {
+  if (link.length > 0) {
+    const id = obtainYouTubeID(link)
+    return `https://www.youtube.com/embed/${id}?autoplay=1`
+  }
+  return ""
+}
+
 export const slug = (pastor: iPastorate) => pastor.name?.toLowerCase().split(" ").join("-")
 
 export const phone = (number: string) => {
