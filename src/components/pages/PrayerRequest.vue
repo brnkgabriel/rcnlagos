@@ -23,21 +23,14 @@
           </button>
           <p class="-status" data-type="error"></p>
         </form>
-        <div class="-prayer-request-details">
-          <h5 class="-subhead">Get in touch</h5>
-          <div class="-prayer-request-channels">
-            <p>Academy Guest House, Plot 6A Lateef Jakande Rd. Agidingbi 101212, Ikeja</p>
-            <a href="tel:+2348186253251" class="-phone">(+234) 818 625 3251</a>
-            <a href="tel:+2349061767430" class="-phone">(+234) 906 176 7430</a>
-            <a href="mailto:info@rcnlagos.org?subject=Ministry Inquiries" class="-email">info@rcnlagos.org</a>
-          </div>
-        </div>
+        <GetInTouch />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { iApiOptions, iMessage } from '~~/src/types';
+import GetInTouch from '../partials/GetInTouch.vue';
 
 const { globalState } = useGlobals()
 
@@ -119,21 +112,7 @@ const handleFormSubmission = (evt: Event) => {
   gap: 16px;
   width: 100%;
 }
-
-.-prayer-request-details {
-  background-color: var(--rcnaccentblue);
-  color: white;
-  padding: 16px;
-}
-
-.-prayer-request-details .-subhead {}
-
-.-prayer-request-details .-prayer-request-channels {
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-  align-items: flex-start;
-}
+ 
 
 .-phoneNumber,
 .-subject,

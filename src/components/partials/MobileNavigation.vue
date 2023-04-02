@@ -49,6 +49,7 @@
         <NuxtLink href="/contact" data-type="mobile menu">Contact Us</NuxtLink>
         <NuxtLink href="/request" data-type="mobile menu">Prayer Request</NuxtLink>
         <NuxtLink href="/testimony" data-type="mobile menu">Give Testimony</NuxtLink>
+        <NuxtLink href="/registration" data-type="mobile menu">Register for Program</NuxtLink>
       </div>
     </div>
   </div>

@@ -35,6 +35,7 @@
             <NuxtLink href="/contact">Contact Us</NuxtLink>
             <NuxtLink href="/request">Prayer Request</NuxtLink>
             <NuxtLink href="/testimony">Give Testimony</NuxtLink>
+            <NuxtLink href="/registration">Register for Program</NuxtLink>
           </div>
         </h5>
         <NuxtLink class="-btn -give" href="/give">give</NuxtLink>

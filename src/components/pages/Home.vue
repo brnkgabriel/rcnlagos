@@ -151,17 +151,6 @@
           <NuxtLink class="underline font-semibold" href="/privacy">Privacy Policy</NuxtLink>
         </p>
       </div>
-      <div class="-subup -upcoming">
-        <div class="-title-wrap">
-          <h5 class="-txt -subhead">upcoming event</h5>
-        </div>
-        <div class="-img">
-          <img decoding="async" class="-upcoming-img"
-            src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/sermon%2Fconcerning-giving-and-receiving-2.png?alt=media&amp;token=37de2dfa-bc4f-4794-b3c8-8f7a35e16c83"
-            alt="upcoming event">
-        </div>
-        <NuxtLink href="/registration" type="submit" class="-btn -upcoming-register-btn">register</NuxtLink>
-      </div>
     </div>
   </div>
 </template>
@@ -182,10 +171,12 @@ const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs a
 const latestMessage = computed(() => {
   if ((globalState.value.programs as iProgram[]).length > 0) {
     const url = (globalState.value.programs as iProgram[])[0].videourl
-    return youTubeLinkToEmbedLink(url as string) 
+    return youTubeLinkToEmbedLink(url as string)
   }
   return "https://www.youtube.com/embed/1MkkwkXdvGk"
 })
+
+watch(globalState, () => console.log("globalState is", globalState.value))
 
 const email = ref("")
 
@@ -593,15 +584,15 @@ onBeforeUnmount(() => {
 
 .-subscription-upcoming {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 16px;
-  max-width: 768px;
+  max-width: 576px;
   align-items: center;
 }
 
 .-subscription-upcoming .-subup {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   row-gap: 8px;
 }
@@ -621,14 +612,13 @@ onBeforeUnmount(() => {
 
 .-subscription-upcoming .-subup .-form-field .-btn,
 .-upcoming-register-btn {
-  width: 100%;
   text-align: center;
 }
 
 .-subscription-upcoming .-subup .-form-field {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   row-gap: 8px;
   width: 100%;
 }
@@ -953,6 +943,10 @@ onBeforeUnmount(() => {
   .-see-all-messages {
     width: 100%;
     text-align: center;
+  }
+
+  .-subscription-upcoming .-subup .-form-field .-btn {
+    width: 100%;
   }
 }
 
