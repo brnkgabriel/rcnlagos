@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      message: "We use cookies to improve your experience on our site.",
+      message: "We use cookies to improve our site experience.",
       privacyPolicyText: "Privacy Policy",
       privacyPolicyLink: "/privacy"
     };
