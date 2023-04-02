@@ -27,6 +27,9 @@
         <iframe :src="videoSliderURL"></iframe>
       </div>
     </div>
+    <div v-if="shouldShowVideoSlider" class="-programRegistration -row -inner">
+      <NuxtLink href="/registration" class="-btn">Register</NuxtLink>
+    </div>
     <div class="-ourvalues -row -inner">
       <div class="-title-wrap">
         <span class="-horizontal-line"></span>
@@ -181,7 +184,6 @@ const latestMessage = computed(() => {
 
 const shouldShowVideoSlider = computed(() => {
   const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
-  console.log("upcomingPrograms", upcomingPrograms)
   if (upcomingPrograms.length > 0) {
     const isFuture = Date.now() < +new Date(upcomingPrograms[0].datetime as string)
     return isFuture ? true : false
@@ -191,7 +193,6 @@ const shouldShowVideoSlider = computed(() => {
 
 const videoSliderURL = computed(() => {
   const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
-  console.log("upcomingPrograms", upcomingPrograms)
   if (upcomingPrograms.length > 0) {
     const url = upcomingPrograms[0].videourl as string
     return youTubeLinkToEmbedLinkAutoplay(url)
@@ -303,6 +304,12 @@ onBeforeUnmount(() => {
 .-home-slider .-video iframe {
   width: 100%;
   height: 100%;
+}
+
+.-programRegistration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .-home-slider .-sliders img {
@@ -864,6 +871,12 @@ onBeforeUnmount(() => {
 
   .-home-slider .-sliders {
     width: 100%;
+  }
+
+
+  .-programRegistration .-btn {
+    width: 100%;
+    text-align: center;
   }
 
   .-ourvalues .-values {
