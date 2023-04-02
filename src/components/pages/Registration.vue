@@ -64,26 +64,27 @@ const showForm = computed(() => {
 })
 
 const handleFormSubmission = (evt: Event) => {
-  const form = evt.target as HTMLFormElement
-  const formData = new FormData(form)
-  const entries = Object.fromEntries(formData.entries())
+  console.log("handle form submission")
+  // const form = evt.target as HTMLFormElement
+  // const formData = new FormData(form)
+  // const entries = Object.fromEntries(formData.entries())
 
-  const messages: iMessage = {
-    errorMessage: "Already requested",
-    successMessage: "Successfully submitted"
-  }
-  const apiOptions: iApiOptions = {
-    collection: constants.RCNLAGOSCOLLECTION,
-    id: constants.CONTACTUSID,
-    dataToStore: {
-      ...entries,
-      date: new Date().toLocaleString(),
-    },
-    wrapperHTML: el(constants.CONTACTUSWRAPQUERY) as HTMLElement,
-    statusHTML: el(constants.CONTACTUSSTATUSQUERY) as HTMLElement
-  }
+  // const messages: iMessage = {
+  //   errorMessage: "Already requested",
+  //   successMessage: "Successfully submitted"
+  // }
+  // const apiOptions: iApiOptions = {
+  //   collection: constants.RCNLAGOSCOLLECTION,
+  //   id: constants.CONTACTUSID,
+  //   dataToStore: {
+  //     ...entries,
+  //     date: new Date().toLocaleString(),
+  //   },
+  //   wrapperHTML: el(constants.CONTACTUSWRAPQUERY) as HTMLElement,
+  //   statusHTML: el(constants.CONTACTUSSTATUSQUERY) as HTMLElement
+  // }
 
-  postForm(apiOptions, messages, constants.CONTACTAPI)
+  // postForm(apiOptions, messages, constants.CONTACTAPI)
 }
 
 
