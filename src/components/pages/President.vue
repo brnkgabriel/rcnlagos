@@ -138,6 +138,8 @@
   position: absolute;
   height: 100%;
   border-radius: 50%;
+  visibility: visible;
+  opacity: 1;
 }
 
 
