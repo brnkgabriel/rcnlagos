@@ -11,6 +11,7 @@
       </div>
       <div class="-blog-wrap">
         <BlogPartial v-if="isRemoteDataLoaded" :blogs="blogs" />
+        <sBlogPartial v-if="!isRemoteDataLoaded" :blogs="skeletonBlogs" />
       </div>
     </div>
   </div>
@@ -18,6 +19,7 @@
 <script setup lang="ts">
 import { useGtag } from "vue-gtag-next"
 import BlogPartial from "../partials/BlogPartial.vue";
+import sBlogPartial from "../skeletons/sBlogPartial.vue";
 import { iBlog } from "~~/src/types";
 
 const { event } = useGtag()

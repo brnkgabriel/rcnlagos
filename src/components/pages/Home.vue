@@ -117,7 +117,8 @@
             <BlogThumbnail v-if="isRemoteDataLoaded" v-for="(blog, idx) in reorderedBlogs" :key="idx" :blog="blog" />
           </div>
         </div> -->
-        <BlogPartial v-if="blogs.length > 0" :blogs="blogs" />
+        <BlogPartial v-if="isRemoteDataLoaded" :blogs="blogs" />
+        <sBlogPartial v-if="!isRemoteDataLoaded" :blogs="skeletonBlogs"/>
         <div class="-bottom">
           <NuxtLink href="/blog" class="-visitblog -btn">visit our blog</NuxtLink>
         </div>
@@ -171,6 +172,7 @@ import { vSlide, vLoaded } from "~~/src/helpers/directives"
 import ProgramCategory from "../partials/ProgramCategory.vue";
 import sProgramCategory from "../skeletons/sProgramCategory.vue";
 import BlogPartial from "../partials/BlogPartial.vue";
+import sBlogPartial from "../skeletons/sBlogPartial.vue";
 // import BlogThumbnail from "../partials/BlogThumbnail.vue";
 // import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import TestimonialCard from "../partials/TestimonialCard.vue";
