@@ -4,7 +4,7 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Prayer Cells</h1>
-          <p>As iron sharpens iron, so one person sharpens another. RCN Lagos has prayer centers in various locations in
+          <p class="-subline">As iron sharpens iron, so one person sharpens another. RCN Lagos has prayer centers in various locations in
             Lagos
             for the purpose of convenience and continual fellowship. We meet once every week. Check out the details below.
           </p>
@@ -129,12 +129,7 @@ const isLoaded = computed(() => (globalState.value.prayercells as iPrayercell[])
   .-cells {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
-  }
-
-  .-prayercells .-hero-banner .-hero-title p {
-    font-size: .8em;
-  }
-
+  } 
   .-prayercells .-hero-banner .-hero-title {
     width: calc(100% - 16px);
   }

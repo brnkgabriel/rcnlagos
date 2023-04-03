@@ -4,7 +4,7 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Registration</h1>
-          <p v-if="showForm">Kindly register for the {{ globalState.upcomingPrograms[0].title }} below</p>
+          <p class="-subline" v-if="showForm">Kindly register for the {{ globalState.upcomingPrograms[0].title }} below</p>
         </div>
         <img v-if="showForm" class="-desktop" :src="globalState.upcomingPrograms[0].desktopBanner" alt="desktop banner" />
         <img v-if="showForm" class="-mobile" :src="globalState.upcomingPrograms[0].mobileBanner" alt="mobile banner" />
@@ -124,11 +124,7 @@ const showForm = computed(() => {
 
 @media screen and (max-width: 576px) {}
 
-@media screen and (max-width: 420px) {
-
-  .-registration .-hero-banner .-hero-title p {
-    font-size: .8em;
-  }
+@media screen and (max-width: 420px) { 
 
   .-registration .-hero-banner .-hero-title {
     width: calc(100% - 16px);

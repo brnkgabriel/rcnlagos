@@ -4,7 +4,7 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Give</h1>
-          <p>You are welcome to be a part of what the LORD is doing at RCN Lagos. Kindly find below our account details</p>
+          <p class="-subline">You are welcome to be a part of what the LORD is doing at RCN Lagos. Kindly find below our account details</p>
         </div>
         <img class="-desktop" src="/images/prayercells_1511x495.jpg" alt="prayercell banner" />
         <img class="-mobile" src="/images/prayercells_1000x495.jpg" alt="prayercell banner" />
@@ -121,11 +121,7 @@ const isLoaded = computed(() => (globalState.value.accounts as iAccount[]).lengt
 
 }
 
-@media screen and (max-width: 420px) {
-
-  .-give .-hero-banner .-hero-title p {
-    font-size: .8em;
-  }
+@media screen and (max-width: 420px) { 
 
   .-give .-hero-banner .-hero-title {
     width: calc(100% - 16px);

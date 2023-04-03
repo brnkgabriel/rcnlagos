@@ -4,7 +4,7 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Remnant Kingdom Stewards</h1>
-          <p>To raise people passionately committed to the advancement of God's Kingdom by first giving of themselves to
+          <p class="-subline">To raise people passionately committed to the advancement of God's Kingdom by first giving of themselves to
             the LORD and the resources entrusted in their hands to his work</p>
         </div>
         <img class="-desktop" src="/images/partners_1511x495.jpg" alt="partners banner" />
@@ -272,11 +272,7 @@ const handleFormSubmission = (evt: Event) => {
 
 @media screen and (max-width: 576px) {}
 
-@media screen and (max-width: 420px) {
-
-  .-partner .-hero-banner .-hero-title p {
-    font-size: .8em;
-  }
+@media screen and (max-width: 420px) { 
 
   .-partner .-hero-banner .-hero-title {
     width: calc(100% - 16px);

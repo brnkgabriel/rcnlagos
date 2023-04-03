@@ -4,8 +4,8 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Prayer Request</h1>
-          <p>Submit your prayer request and join a community of believers who believe in the power of intercession and
-            experience the peace that comes from knowing you are never alone in your struggles, and that God hears your
+          <p class="-subline">Submit your request and
+            experience the peace that comes from knowing you are never alone, and that God hears your
             every prayer.</p>
         </div>
         <img class="-desktop" src="/images/partners_1511x495.jpg" alt="partners banner" />
@@ -177,11 +177,7 @@ const handleFormSubmission = (evt: Event) => {
 
 @media screen and (max-width: 576px) {}
 
-@media screen and (max-width: 420px) {
-
-  .-prayer-request .-hero-banner .-hero-title p {
-    font-size: .8em;
-  }
+@media screen and (max-width: 420px) { 
 
   .-prayer-request .-hero-banner .-hero-title {
     width: calc(100% - 16px);

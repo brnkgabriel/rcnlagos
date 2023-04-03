@@ -4,7 +4,7 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Testimony</h1>
-          <p>Your story could be the one that inspires someone else to turn their life towards Christ. Join us in spreading the Good News and glorifying God through the power of personal testimonies.</p>
+          <p class="-subline">Join us in spreading the Good News and glorifying God through the power of personal testimonies.</p>
         </div>
         <img class="-desktop" src="/images/partners_1511x495.jpg" alt="partners banner" />
         <img class="-mobile" src="/images/partners_1000x495.jpg" alt="partners banner" />
@@ -173,11 +173,7 @@ const handleFormSubmission = (evt: Event) => {
 
 @media screen and (max-width: 576px) {}
 
-@media screen and (max-width: 420px) {
-
-  .-testimony .-hero-banner .-hero-title p {
-    font-size: .8em;
-  }
+@media screen and (max-width: 420px) { 
 
   .-testimony .-hero-banner .-hero-title {
     width: calc(100% - 16px);

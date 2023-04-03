@@ -5,7 +5,7 @@
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
           <h1 class="-headfont">Departments</h1>
-          <p>Explore our diverse ministries, including choir, children's programs, logistics, media and publicity etc. Find your place to serve, grow, and connect with God and others.</p>
+          <p class="-subline">Explore our diverse ministries, including choir, children's programs, logistics, media and publicity etc. Find your place to serve, grow, and connect with God and others.</p>
         </div>
         <img class="-desktop" src="/images/1511x495.jpg" alt="desktop banner" />
         <img class="-mobile" src="/images/1000x495.jpg" alt="mobile banner" />
@@ -144,11 +144,7 @@ const showDepartment = (department: iDepartment) => {
   .-cells {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
-  }
-
-  .-departments .-hero-banner .-hero-title p {
-    font-size: .8em;
-  }
+  } 
 
   .-departments .-hero-banner .-hero-title {
     width: calc(100% - 16px);
