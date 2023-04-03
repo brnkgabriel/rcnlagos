@@ -100,7 +100,7 @@
           <h5 class="-txt -subhead">blog</h5>
           <p class="-subline">A community board seasoned to rejuvinate your heart</p>
         </div>
-        <div class="-content">
+        <!-- <div class="-content">
           <div class="-content-item -selected -posrel">
             <div class="-post -posabs">
               <div class="-directionalbutton" data-type="button"></div>
@@ -116,7 +116,8 @@
             <sBlogThumbnail v-if="!isRemoteDataLoaded" v-for="(blog, idx) in skeletonBlogs" :key="idx" :blog="blog" />
             <BlogThumbnail v-if="isRemoteDataLoaded" v-for="(blog, idx) in reorderedBlogs" :key="idx" :blog="blog" />
           </div>
-        </div>
+        </div> -->
+        <BlogPartial v-if="blogs.length > 0" :blogs="blogs" />
         <div class="-bottom">
           <NuxtLink href="/blog" class="-visitblog -btn">visit our blog</NuxtLink>
         </div>
@@ -169,8 +170,9 @@
 import { vSlide, vLoaded } from "~~/src/helpers/directives"
 import ProgramCategory from "../partials/ProgramCategory.vue";
 import sProgramCategory from "../skeletons/sProgramCategory.vue";
-import BlogThumbnail from "../partials/BlogThumbnail.vue";
-import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
+import BlogPartial from "../partials/BlogPartial.vue";
+// import BlogThumbnail from "../partials/BlogThumbnail.vue";
+// import sBlogThumbnail from "../skeletons/sBlogThumbnail.vue";
 import TestimonialCard from "../partials/TestimonialCard.vue";
 import { iApiOptions, iBlog, iMessage, iProgram, iUpcomingProgram } from "~~/src/types";
 import { Controller } from "~~/src/helpers/controller";
@@ -180,7 +182,8 @@ const { event } = useGtag()
 
 const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programCategories?.length as number) > 0)
-const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
+// const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
+const blogs = computed(() => (globalState.value.blogs as iBlog[]).slice(0,3))
 const latestMessage = computed(() => {
   if ((globalState.value.programs as iProgram[]).length > 0) {
     const url = (globalState.value.programs as iProgram[])[0].videourl
@@ -523,7 +526,7 @@ onBeforeUnmount(() => {
   background-color: var(--rcnlighterbg);
 }
 
-.-blog .-content {
+/* .-blog .-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -578,7 +581,7 @@ onBeforeUnmount(() => {
 .-blog .-selected.active .-post {
   transform: translateY(0%);
   background-color: rgba(0, 0, 0, .8);
-}
+} */
 
 .-bottom {
   display: flex;
@@ -787,12 +790,12 @@ onBeforeUnmount(() => {
     font-size: .9em;
   }
 
-  .-blog .-thumbnails {
+  /* .-blog .-thumbnails {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     grid-template-rows: calc((100% - 16px)/2) calc((100% - 16px)/2);
-  }
+  } */
 
   .-testify .-testimonials .-wrap {
     width: 80%;
@@ -937,7 +940,7 @@ onBeforeUnmount(() => {
     padding-top: unset;
   }
 
-  .-blog .-content {
+  /* .-blog .-content {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 94.444vw 31vw;
@@ -954,7 +957,7 @@ onBeforeUnmount(() => {
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-  }
+  } */
 
   .-bottom .-btn {
     width: 100%;

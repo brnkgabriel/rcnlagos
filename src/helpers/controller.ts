@@ -29,8 +29,8 @@ export class Controller {
     const type = target.getAttribute("data-type")
 
     switch (type) {
-      case constants.BLOG: return this.updateBlog(target)
-      case constants.BUTTON: return this.selectedBlog.classList.toggle(constants.ACTIVE)
+      // case constants.BLOG: return this.updateBlog(target)
+      // case constants.BUTTON: return this.selectedBlog.classList.toggle(constants.ACTIVE)
       case constants.TESTIMONIALBTN: return this.updateTestimonials(target)
     }
   }

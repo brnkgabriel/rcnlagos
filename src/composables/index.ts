@@ -86,7 +86,10 @@ export const constants = {
   TESTIMONYID: "testimonies",
   PRAYERREQUESTID: "prayerrequests",
   HIDE: "-hide",
-  HIDEBACKBTN: "-hide-back-btn"
+  HIDEBACKBTN: "-hide-back-btn",
+  UP: "up",
+  DOWN: "down",
+  MID: "mid"
 }
 
 export const operatingSystem = () => {
