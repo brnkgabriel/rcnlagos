@@ -24,7 +24,7 @@
           </button>
           <p class="-status" data-type="error"></p>
         </form>
-        <GetInTouch />
+        <GetInTouch class="-getintouch" />
       </div>
     </div>
   </div>
@@ -110,9 +110,8 @@ const handleFormSubmission = (evt: Event) => {
 }
 
 .-form-contact-us {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  display: flex;
+  column-gap: 16px;
   width: 100%;
 }
 
@@ -121,6 +120,11 @@ const handleFormSubmission = (evt: Event) => {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   width: 100%;
+  flex: 1;
+}
+
+.-getintouch {
+  flex: 1;
 }
  
 
@@ -159,6 +163,12 @@ const handleFormSubmission = (evt: Event) => {
     background-color: black;
     aspect-ratio: 1000 / 495;
   }
+  
+.-form-contact-us {
+  flex-direction: column;
+  column-gap: unset;
+  row-gap: 16px;
+}
 
   .-contact-form,
   .-form-contact-us {
