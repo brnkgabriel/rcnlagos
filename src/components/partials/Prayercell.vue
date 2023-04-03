@@ -138,7 +138,11 @@ const props = defineProps<{
   column-gap: 8px;
 }
 
-
+.-cell .-details .-ctas-time .-time {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .-cell .-details .-ctas a {
   width: 36px;
   height: 36px;
