@@ -15,7 +15,7 @@
         <img class="-signature" src="/images/signature.png" alt="rcn signature" />
       </div>
       <div class="-right -posrel">
-        <img v-loaded class="-pastor -posabs" :src="pastor?.image" :alt="pastor?.name" />
+        <img class="-pastor -posabs" :src="pastor?.image" :alt="pastor?.name" />
         <img class="-bg-img" src="/images/icon_500x500.png" alt="rcn icon" />
       </div>
     </div>
