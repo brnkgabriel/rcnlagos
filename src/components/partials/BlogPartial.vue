@@ -177,6 +177,7 @@ const setState = (state: string) => {
   align-items: flex-start;
   justify-content: space-between;
   height: 100%;
+  row-gap: 16px;
 } 
 
 @media screen and (max-width: 1024px) { 
