@@ -29,22 +29,6 @@ const searchResult = computed(() => {
   return globalState.value.programs?.filter((program: iProgram) => programFilterCondition(program, term))
 })
 
-const programFilterCondition = (program: iProgram, term: string) => {
-  const themeIdx = program.title?.toLowerCase().indexOf(term)
-  const typeIdx = program.type?.toLowerCase().indexOf(term)
-  const ministerIdx = program.minister?.toLowerCase().indexOf(term)
-  const datetimeIdx = program.datetime?.toLowerCase().indexOf(term)
-  const metadataIdx = program.metadata?.toLowerCase().indexOf(term)
-
-  const insideTheme = themeIdx !== -1
-  const insideType = typeIdx !== -1
-  const insideMinister = ministerIdx !== -1
-  const insideDateTime = datetimeIdx !== -1
-  const insideMetadata = metadataIdx !== -1
-
-  return insideTheme || insideType || insideMinister || insideDateTime || insideMetadata
-}
-
 watch(searchResult, () => setSearchedAndRenderedPrograms(searchResult.value as iProgram[]))
 const displayCondition = () => route.name === constants.PROGRAMS
 

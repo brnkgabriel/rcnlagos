@@ -350,3 +350,21 @@ const handleResponse = (data: iResponse, apiOptions: iApiOptions) => {
   apiOptions.wrapperHTML?.classList.add("-show-status")
   setTimeout(() => apiOptions.wrapperHTML?.classList.remove("-show-status"), 4000);
 } 
+
+
+
+export const programFilterCondition = (program: iProgram, term: string) => {
+  const themeIdx = program.title?.toLowerCase().indexOf(term)
+  const typeIdx = program.type?.toLowerCase().indexOf(term)
+  const ministerIdx = program.minister?.toLowerCase().indexOf(term)
+  const datetimeIdx = program.datetime?.toLowerCase().indexOf(term)
+  const metadataIdx = program.metadata?.toLowerCase().indexOf(term)
+
+  const insideTheme = themeIdx !== -1
+  const insideType = typeIdx !== -1
+  const insideMinister = ministerIdx !== -1
+  const insideDateTime = datetimeIdx !== -1
+  const insideMetadata = metadataIdx !== -1
+
+  return insideTheme || insideType || insideMinister || insideDateTime || insideMetadata
+}
