@@ -125,12 +125,8 @@ const showProgram = (program: iProgram) => {
   font-weight: 600;
 }
 
-.-hero-banner .-caption {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  left: 8px;
-  row-gap: 16px;
+.-hero-banner .-caption { 
+  left: 8px; 
   top: 40%;
   transform: translateY(-50%);
   width: calc(100% - 16px);

@@ -1,6 +1,7 @@
 <template>
   <div class="-program -posrel" :data-type="program.type">
-    <img :src="src" :alt="program.title" @click="playVideo" />
+    <img v-if="hasVideo" :src="src" :alt="program.title" @click="playVideo" />
+    <img v-if="!hasVideo" :src="src" :alt="program.title" />
     <div class="-details">
       <div class="-name-time">
         <h5 class="-subhead -name">{{ program.title }}</h5>
@@ -15,14 +16,23 @@
       </div>
       <div class="-ctas">
         <div class="-btns">
-          <div class="-btn -play-video" @click="playVideo">
+          <NuxtLink v-if="hasAudio" class="-btn -download" download :href="program.audiourl">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+            viewBox="0 0 32 32" class="w-4 h-4">
+            <title>download</title>
+            <path
+              d="M16 18l8-8h-6v-8h-4v8h-6zM23.273 14.727l-2.242 2.242 8.128 3.031-13.158 4.907-13.158-4.907 8.127-3.031-2.242-2.242-8.727 3.273v8l16 6 16-6v-8z">
+            </path>
+          </svg>
+        </NuxtLink>
+          <div v-if="hasVideo" class="-btn -play-video" @click="playVideo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
               <path fill-rule="evenodd"
                 d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
                 clip-rule="evenodd" />
             </svg>
           </div>
-          <div class="-btn -share" :data-title="program.title" :data-url="program.videourl" v-share>
+          <div class="-btn -share" :data-title="program.title" :data-url="(hasVideo ? program.videourl : program.audiourl)" v-share>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
               <path fill-rule="evenodd"
                 d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
@@ -53,6 +63,7 @@ const emit = defineEmits<{
 
 const hasAudio = computed(() => (props.program.audiourl as string).length > 0)
 const src = computed(() => props.program?.image ? props.program.image : youTubeThumbnail(props.program.videourl as string))
+const hasVideo = computed(() => (props.program?.videourl as string).length > 0)
 
 
 const playVideo = () => {
@@ -96,7 +107,7 @@ const playVideo = () => {
 }
 
 .-program .-details .-name {
-  text-transform: capitalize;
+  text-transform: uppercase;
   line-height: 1.2;
   white-space: initial;
   text-overflow: ellipsis;

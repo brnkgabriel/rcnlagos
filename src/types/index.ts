@@ -73,6 +73,7 @@ export interface iProgram {
   title?: string;
   videourl?: string;
   type?: string;
+  metadata?: string;
 }
 
 export interface iSlider {
