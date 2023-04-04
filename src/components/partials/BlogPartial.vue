@@ -45,10 +45,10 @@ const toggleState = () => {
     case constants.DOWN:
       dataState.value = constants.UP
       singleBtnState.value = constants.UP
-      break 
+      break
     default:
       break;
-  } 
+  }
 }
 
 const setState = (state: string) => {
@@ -58,7 +58,6 @@ const setState = (state: string) => {
 
 </script>
 <style scoped>
-
 .-content {
   display: flex;
   justify-content: space-between;
@@ -72,7 +71,7 @@ const setState = (state: string) => {
 }
 
 .-content .-content-item.-thumbnails {
-  
+
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -87,6 +86,7 @@ const setState = (state: string) => {
   transform: translate(-1150%, -50%);
   column-gap: 16px;
 }
+
 /* ========================= start down ======================== */
 .-selected .-post {
   background-color: rgba(0, 0, 0, .8);
@@ -98,7 +98,7 @@ const setState = (state: string) => {
 }
 
 .-post .-main {
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 
@@ -107,6 +107,7 @@ const setState = (state: string) => {
   transform: unset;
   left: unset;
 }
+
 .-selected .-post .-mid .-directionalbutton.-down::before {
   transform: translate(-50%, -55%) rotate(-135deg);
 }
@@ -123,7 +124,8 @@ const setState = (state: string) => {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
-} 
+}
+
 /* ========================= start down ======================== */
 
 
@@ -140,9 +142,11 @@ const setState = (state: string) => {
 [data-state="mid"] .-post {
   transform: translateY(50%);
 }
+
 [data-state="mid"] .-post .-postcontent {
   opacity: 1 !important;
 }
+
 /* ========================= start mid ======================== */
 
 /* ========================= start up ======================== */
@@ -159,9 +163,11 @@ const setState = (state: string) => {
 [data-state="up"] .-post {
   transform: translateY(0);
 }
+
 [data-state="up"] .-post .-postcontent {
   opacity: 1 !important;
 }
+
 /* ========================= start up ======================== */
 
 
@@ -178,21 +184,41 @@ const setState = (state: string) => {
   justify-content: space-between;
   height: 100%;
   row-gap: 16px;
-} 
-
-@media screen and (max-width: 1024px) { 
 }
 
-@media screen and (max-width: 768px) { 
-  .-thumbnails {
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+  /* .-thumbnails {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     grid-template-rows: calc((100% - 16px)/2) calc((100% - 16px)/2);
+  } */
+
+  .-thumbnails {
+    display: block;
+  }
+
+  .-thumbnails .-thumbnail {
+    width: 100%;
+    display: inline-block;
+    aspect-ratio: 500 / 500;
+    width: calc(50% - 8px);
+    height: unset;
+    margin: 8px;
+  }
+
+  .-thumbnails .-thumbnail:nth-child(2n - 1) {
+    margin-left: unset;
+  }
+
+  .-thumbnails .-thumbnail:nth-child(2n) {
+    margin-right: unset;
   }
 }
 
-@media screen and (max-width: 576px) { 
+@media screen and (max-width: 576px) {
   .-content {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -205,26 +231,37 @@ const setState = (state: string) => {
     width: 100%;
   }
 
-
-  /* .-thumbnails {
-    width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  } */
-  
   .-thumbnails {
-    display: flex !important;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    column-gap: 16px;
-    flex-direction: row;
+    white-space: nowrap;
+    overflow-y: hidden !important;
+    overflow-x: auto !important
   }
- 
+  
+  .-thumbnails .-thumbnail {
+    width: 100%;
+    display: inline-block; 
+    width: calc((100% - 32px) / 3);
+    height: unset;
+    margin: 8px;
+  }
+
+  .-thumbnails .-thumbnail:nth-child(2n - 1) {
+    margin-left: 8px;
+  }
+
+  .-thumbnails .-thumbnail:nth-child(2n) {
+    margin-right: 8px;
+  }
+
+  .-thumbnails .-thumbnail:first-child {
+    margin-left: unset;
+  }
+  
+  .-thumbnails .-thumbnail:last-child {
+    margin-right: unset;
+  }
 }
 
-@media screen and (max-width: 420px) { 
-}
+@media screen and (max-width: 420px) {}
 
-@media screen and (min-width: 320px) and (max-width: 420px) { 
-}
-</style>
+@media screen and (min-width: 320px) and (max-width: 420px) {}</style>
