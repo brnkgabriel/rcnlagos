@@ -65,7 +65,7 @@
           ministry to receive notifications about all our events and outreaches as we progress.</p>
       </div>
 
-      <h5 class="-subhead">Partner Commitment Form</h5>
+      <h5 class="-subhead -pcf">Partner Commitment Form</h5>
       <div class="-form-bank-details">
         <form @submit.prevent="handleFormSubmission" class="-partner-form">
           <input name="name" type="text" placeholder="Name" required />
@@ -143,6 +143,11 @@ const handleFormSubmission = (evt: Event) => {
 
 </script>
 <style scoped>
+
+.-pcf {
+  text-align: center;
+  width: 100%;
+}
 .-partner>.-inner {
   display: flex;
   flex-direction: column;
