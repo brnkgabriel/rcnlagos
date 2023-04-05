@@ -15,13 +15,9 @@
       </div>
       <hr />
       <div class="-categories">
-        <div
-          class="-category"
-          v-for="(category, idx) in globalState?.programCategories"
-          :key="idx"
-          :data-name="category.name"
-          @click="selectCategory(category)"
-          :data-type="constants.PROGRAMCATEGORYTYPE">{{ category.name }}</div>
+        <div class="-category" v-for="(category, idx) in globalState?.programCategories" :key="idx"
+          :data-name="category.name" @click="selectCategory(category)" :data-type="constants.PROGRAMCATEGORYTYPE">{{
+            category.name }}</div>
       </div>
     </div>
     <div class="-fab -btn -posrel">
@@ -44,13 +40,16 @@ const show = ref(false)
 const searchTerm = ref("")
 const route = useRoute()
 const { globalState } = useGlobals()
+const displayCondition = () => route.name === constants.PROGRAMS
 
 const searchResult = computed(() => {
   const term = searchTerm.value.toLowerCase()
-  window.scrollTo({
-    top: 200,
-    behavior: 'smooth'
-  });
+  if (displayCondition()) {
+    window.scrollTo({
+      top: 200,
+      behavior: 'smooth'
+    });
+  }
   if (searchTerm.value === "") {
     return globalState.value.programs
   }
@@ -59,7 +58,6 @@ const searchResult = computed(() => {
 
 watch(searchResult, () => setSearchedAndRenderedPrograms(searchResult.value as iProgram[]))
 
-const displayCondition = () => route.name === constants.PROGRAMS
 const selectCategory = (category: iProgramCategory) => {
   event('programspage_fabfilter', {
     'category': category.name,
@@ -172,8 +170,9 @@ onMounted(() => show.value = displayCondition())
   padding: 8px 16px;
   border-radius: 4px;
   background-color: var(--rcnlightbg);
-  cursor: pointer; 
+  cursor: pointer;
 }
+
 .-categories .-category.active {
   background-color: var(--rcnaccentblue);
   color: white;

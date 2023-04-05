@@ -16,13 +16,16 @@ const show = ref(false)
 const searchTerm = ref("")
 const route = useRoute()
 const { globalState } = useGlobals()
+const displayCondition = () => route.name === constants.PROGRAMS
 
 const searchResult = computed(() => {
   const term = searchTerm.value.toLowerCase()
-  window.scrollTo({
-    top: 200,
-    behavior: 'smooth'
-  });
+  if (displayCondition()) { 
+    window.scrollTo({
+      top: 200,
+      behavior: 'smooth'
+    });
+  }
   if (searchTerm.value === "") {
     return globalState.value.programs
   }
@@ -30,7 +33,6 @@ const searchResult = computed(() => {
 })
 
 watch(searchResult, () => setSearchedAndRenderedPrograms(searchResult.value as iProgram[]))
-const displayCondition = () => route.name === constants.PROGRAMS
 
 watch(route, () => show.value = displayCondition())
 
@@ -65,7 +67,7 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-  
+
   .-search-form {
     width: 70%;
   }
@@ -79,7 +81,7 @@ input {
 
 @media screen and (max-width: 420px) {}
 
-@media screen and (min-width: 320px) and (max-width: 420px) { 
+@media screen and (min-width: 320px) and (max-width: 420px) {
   .-search-form {
     width: 46.875%;
   }
