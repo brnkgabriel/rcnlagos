@@ -22,8 +22,8 @@ export default {
     },
   },
   modules: [
-    '@kevinmarrec/nuxt-pwa', 
-  ],
+    '@kevinmarrec/nuxt-pwa'
+  ], 
   pwa: {
     workbox: {
       // the way to enable pwa is to remove "enabled: false" from below

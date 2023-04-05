@@ -20,7 +20,7 @@ const { globalState } = useGlobals()
 const searchResult = computed(() => {
   const term = searchTerm.value.toLowerCase()
   window.scrollTo({
-    top: 0,
+    top: 200,
     behavior: 'smooth'
   });
   if (searchTerm.value === "") {
