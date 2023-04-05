@@ -124,7 +124,7 @@ const unobserveAll = () => {
 const initializeObserver = (ele: Element, from: string) => {
   // not specifying root means the document is the root
   // basically your root is the element that scrolls
-  const options = { threshold: 1 }
+  const options = { threshold: .5 }
   data.observer = new IntersectionObserver(data.observation, options)
   const last = el(constants.LASTPROGRAMQUERY, ele as HTMLElement)
   if (last) data.observer.observe(last as Element)
