@@ -368,3 +368,17 @@ export const programFilterCondition = (program: iProgram, term: string) => {
 
   return insideTheme || insideType || insideMinister || insideDateTime || insideMetadata
 }
+
+export const useSearch = (globalState: iGlobal, searchTerm: string, condition: Function) => {
+  const term = searchTerm.toLowerCase()
+  if (condition()) {
+    window.scrollTo({
+      top: 200,
+      behavior: 'smooth'
+    });
+  }
+  if (searchTerm === "") {
+    return globalState.programs
+  }
+  return globalState.programs?.filter((program: iProgram) => programFilterCondition(program, term))
+}

@@ -18,19 +18,7 @@ const route = useRoute()
 const { globalState } = useGlobals()
 const displayCondition = () => route.name === constants.PROGRAMS
 
-const searchResult = computed(() => {
-  const term = searchTerm.value.toLowerCase()
-  if (displayCondition()) { 
-    window.scrollTo({
-      top: 200,
-      behavior: 'smooth'
-    });
-  }
-  if (searchTerm.value === "") {
-    return globalState.value.programs
-  }
-  return globalState.value.programs?.filter((program: iProgram) => programFilterCondition(program, term))
-})
+const searchResult = computed(() => useSearch(globalState.value, searchTerm.value, displayCondition))
 
 watch(searchResult, () => setSearchedAndRenderedPrograms(searchResult.value as iProgram[]))
 
