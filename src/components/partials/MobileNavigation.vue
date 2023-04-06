@@ -29,6 +29,7 @@
           <span>resources</span>
           <span class="-icon"></span>
         </div>
+        <NuxtLink class="-btn -streamlive" href="https://www.youtube.com/@RCNLagos/streams" target="_blank" data-type="mobile menu">stream live</NuxtLink>
         <NuxtLink class="-btn -give" href="/give" data-type="mobile menu">give</NuxtLink>
       </div>
       <div class="-links -posabs" data-name="ministry">
@@ -188,6 +189,7 @@ onMounted(() => {
   width: calc(100% - 32px);
   left: 50%;
   transform: translateX(200%);
+  row-gap: 8px;
 }
 
 .-links.active {
@@ -245,6 +247,10 @@ onMounted(() => {
   transform: translate(0%, 0%) rotate(-45deg);
 }
 
+.-streamlive {
+  background-color: var(--red); 
+  box-shadow: 0px 4px 20px -5px var(--red);
+}
 
 @media screen and (max-width: 1024px) {}
 
