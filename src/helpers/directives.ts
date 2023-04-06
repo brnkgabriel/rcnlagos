@@ -262,8 +262,8 @@ export const vAudio = {
     audio.addEventListener(constants.PLAYEVENT, handlePlayEvent)
   },
   updated: (audio: HTMLAudioElement) => {
-    const audioUrl = audio.getAttribute("data-audiourl")
-    audio.src = audioUrl as string
+    // const audioUrl = audio.getAttribute("data-audiourl")
+    // audio.src = audioUrl as string
   },
   unmounted: (audio: HTMLElement) => {
     audio.removeEventListener(constants.PLAYEVENT, handlePlayEvent)
