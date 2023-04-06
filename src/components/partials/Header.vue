@@ -13,6 +13,7 @@
           <div class="-col -posabs" data-name="ministry">
             <NuxtLink href="/about">RCN Global</NuxtLink>
             <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
+            <NuxtLink href="https://www.adullam.ng/" target="_blank">Adullam</NuxtLink>
           </div>
         </h5>
         <NuxtLink href="/programs">Programs</NuxtLink>

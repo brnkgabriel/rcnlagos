@@ -11,13 +11,14 @@
       <div class="-col">
         <h5 class="-links-category">ministry</h5>
         <NuxtLink href="/about">RCN Global</NuxtLink>
-        <NuxtLink href="/president">RCN President</NuxtLink>
         <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
+        <NuxtLink href="https://www.adullam.ng/" target="_blank">Adullam</NuxtLink>
         <NuxtLink href="/programs">Programs</NuxtLink>
         <NuxtLink href="/blog">Blog</NuxtLink>
       </div>
       <div class="-col">
         <h5 class="-links-category">community</h5>
+        <NuxtLink href="/president">RCN President</NuxtLink>
         <NuxtLink href="/pastors">Pastors</NuxtLink>
         <NuxtLink href="/departments">Departments</NuxtLink>
         <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
