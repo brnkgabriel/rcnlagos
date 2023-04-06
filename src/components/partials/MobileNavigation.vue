@@ -29,7 +29,8 @@
           <span>resources</span>
           <span class="-icon"></span>
         </div>
-        <NuxtLink class="-btn -streamlive" href="https://www.youtube.com/@RCNLagos/streams" target="_blank" data-type="mobile menu">stream live</NuxtLink>
+        <NuxtLink class="-btn -streamlive" href="https://www.youtube.com/@RCNLagos/streams" target="_blank">stream live</NuxtLink>
+        <NuxtLink class="-btn -mixlr" href="https://rcnlagos.mixlr.com/" target="_blank" >mixlr</NuxtLink>
         <NuxtLink class="-btn -give" href="/give" data-type="mobile menu">give</NuxtLink>
       </div>
       <div class="-links -posabs" data-name="ministry">
@@ -184,12 +185,18 @@ onMounted(() => {
 }
 
 .-links {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   width: calc(100% - 32px);
   left: 50%;
   transform: translateX(200%);
-  row-gap: 8px;
+  gap: 8px;
+  height: calc(100vh - 88px);
+  overflow: auto;
+  padding-bottom: 16px;
+}
+
+.-links > * {
+  height: 48px;
 }
 
 .-links.active {
@@ -248,8 +255,14 @@ onMounted(() => {
 }
 
 .-streamlive {
-  background-color: var(--red); 
+  background-color: var(--red);
   box-shadow: 0px 4px 20px -5px var(--red);
+}
+
+.-mixlr {
+  background-color: white !important;
+  box-shadow: 0px 4px 20px -5px white !important;
+  color: var(--red) !important;
 }
 
 @media screen and (max-width: 1024px) {}
