@@ -9,7 +9,7 @@
         <div class="-time">{{ program.datetime }}</div>
       </div>
       <div class="-audio">
-        <audio controls v-if="hasAudio" v-audio :data-title="program.title">
+        <audio controls v-if="hasAudio" v-audio :data-title="program.title" :data-audiourl="program.audiourl">
           <source :src="program.audiourl" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>

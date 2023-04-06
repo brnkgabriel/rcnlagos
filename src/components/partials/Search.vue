@@ -20,7 +20,10 @@ const displayCondition = () => route.name === constants.PROGRAMS
 
 const searchResult = computed(() => useSearch(globalState.value, searchTerm.value, displayCondition))
 
-watch(searchResult, () => setSearchedAndRenderedPrograms(searchResult.value as iProgram[]))
+watch(searchResult, () => {
+  setSearchedAndRenderedPrograms(searchResult.value as iProgram[])
+  console.log("rendered programs", globalState.value.renderedPrograms)
+})
 
 watch(route, () => show.value = displayCondition())
 
