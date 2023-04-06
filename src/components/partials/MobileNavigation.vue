@@ -186,6 +186,8 @@ onMounted(() => {
 
 .-links {
   display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 48px;
   width: calc(100% - 32px);
   left: 50%;
   transform: translateX(200%);
