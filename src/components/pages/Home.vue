@@ -82,7 +82,7 @@
           </div>
         </div>
         <img v-loaded class="loaded"
-          src="https://firebasestorage.googleapis.com/v0/b/rcnlagos-f152a.appspot.com/o/pastors%2FRevAustin_Transparent.png?alt=media&token=85780386-65da-4100-88f8-f3de69d351c9"
+          src="/images/RevAustin_Transparent.png"
           alt="Rev. Austin Transparent Picture">
       </div>
       <div class="-message">
@@ -451,6 +451,7 @@ onBeforeUnmount(() => {
   width: 45%;
   row-gap: 32px;
   transform: translateY(-50%);
+  z-index: 3;
 }
 
 .-latestmessage .-meet-our-pastors .-note .-meet-our {
