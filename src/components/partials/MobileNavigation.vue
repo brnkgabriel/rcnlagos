@@ -34,11 +34,11 @@
       <div class="-links -posabs" data-name="ministry">
         <h5 class="-name">ministry</h5>
         <NuxtLink href="/about" data-type="mobile menu">RCN Global</NuxtLink>
-        <NuxtLink href="/president" data-type="mobile menu">RCN President</NuxtLink>
         <NuxtLink href="/lagos" data-type="mobile menu">RCN Lagos</NuxtLink>
       </div>
       <div class="-links -posabs" data-name="community">
         <h5 class="-name">community</h5>
+        <NuxtLink href="/president" data-type="mobile menu">RCN President</NuxtLink>
         <NuxtLink href="/pastors" data-type="mobile menu">Pastors</NuxtLink>
         <NuxtLink href="/departments" data-type="mobile menu">Departments</NuxtLink>
         <NuxtLink href="/prayercells" data-type="mobile menu">Prayer Cells</NuxtLink>

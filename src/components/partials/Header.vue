@@ -12,7 +12,6 @@
           <span class="-icon"></span>
           <div class="-col -posabs" data-name="ministry">
             <NuxtLink href="/about">RCN Global</NuxtLink>
-            <NuxtLink href="/president">RCN President</NuxtLink>
             <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
           </div>
         </h5>
@@ -22,6 +21,7 @@
           <span>community</span>
           <span class="-icon"></span>
           <div class="-col -posabs" data-name="community">
+            <NuxtLink href="/president">RCN President</NuxtLink>
             <NuxtLink href="/pastors">Pastors</NuxtLink>
             <NuxtLink href="/departments">Departments</NuxtLink>
             <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>

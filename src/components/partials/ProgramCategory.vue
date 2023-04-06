@@ -11,6 +11,7 @@
 <script setup lang="ts">
 import { iProgramCategory } from "~~/src/types/index"
 import { vLoaded } from "~~/src/helpers/directives";
+
 defineProps<{
   program: iProgramCategory
 }>()
