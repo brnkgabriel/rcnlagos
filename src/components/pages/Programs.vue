@@ -7,10 +7,10 @@
           <h1 class="-headfont -mainline">Encounter the Word</h1>
           <p class="-subline">Explore our programs and get notified of upcoming programs.</p>
         </div>
-        <div class="-upcoming-program -posabs">
+        <div class="-upcoming-program -posabs" v-if="showUpcoming">
           <div class="-left">
             <h5 class="-subhead">upcoming program</h5>
-            <p v-if="showUpcoming">{{ globalState.upcomingPrograms[0].title }}</p>
+            <p>{{ globalState.upcomingPrograms[0].title }}</p>
           </div>
           <NuxtLink href="/registration" class="-btn -subscribe">Register</NuxtLink>
         </div>

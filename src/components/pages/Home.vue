@@ -81,9 +81,7 @@
             <NuxtLink href="/pastors" class="-btn -meetallpastors">meet all pastors</NuxtLink>
           </div>
         </div>
-        <img v-loaded class="loaded"
-          src="/images/RevAustin_Transparent.png"
-          alt="Rev. Austin Transparent Picture">
+        <img v-loaded class="loaded" src="/images/RevAustin_Transparent.png" alt="Rev. Austin Transparent Picture">
       </div>
       <div class="-message">
         <iframe class="-video" :src="latestMessage"></iframe>
@@ -118,7 +116,7 @@
           </div>
         </div> -->
         <BlogPartial v-if="isRemoteDataLoaded" :blogs="blogs" />
-        <sBlogPartial v-if="!isRemoteDataLoaded" :blogs="skeletonBlogs"/>
+        <sBlogPartial v-if="!isRemoteDataLoaded" :blogs="skeletonBlogs" />
         <div class="-bottom">
           <NuxtLink href="/blog" class="-visitblog -btn">visit our blog</NuxtLink>
         </div>
@@ -185,7 +183,7 @@ const { event } = useGtag()
 const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programCategories?.length as number) > 0)
 // const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
-const blogs = computed(() => (globalState.value.blogs as iBlog[]).slice(0,3))
+const blogs = computed(() => (globalState.value.blogs as iBlog[]).slice(0, 3))
 const latestMessage = computed(() => {
   if ((globalState.value.programs as iProgram[]).length > 0) {
     const url = (globalState.value.programs as iProgram[])[0].videourl
@@ -242,7 +240,7 @@ const handleSubscription = () => {
 let controller: Controller
 onMounted(() => {
   controller = new Controller()
-  controller.start() 
+  controller.start()
 })
 
 onBeforeUnmount(() => {
@@ -303,8 +301,11 @@ onBeforeUnmount(() => {
 }
 
 .-home-video-slider {
-  aspect-ratio: 560 / 315;
+  aspect-ratio: 560/315;
   padding: unset !important;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .-home-video-slider iframe,

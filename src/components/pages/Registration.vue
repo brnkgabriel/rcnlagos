@@ -6,10 +6,10 @@
           <h1 class="-headfont">Registration</h1>
           <p class="-subline" v-if="showForm">Kindly register for the {{ globalState.upcomingPrograms[0].title }} below</p>
         </div>
-        <img v-if="showForm" class="-desktop" :src="globalState.upcomingPrograms[0].desktopBanner" alt="desktop banner" />
-        <img v-if="showForm" class="-mobile" :src="globalState.upcomingPrograms[0].mobileBanner" alt="mobile banner" />
         <img v-if="!showForm" class="-desktop" src="/images/1511x495.jpg" alt="desktop banner" />
         <img v-if="!showForm" class="-mobile" src="/images/1000x495.jpg" alt="mobile banner" />
+        <img v-if="showForm" class="-desktop" :src="globalState.upcomingPrograms[0].desktopBanner" alt="desktop banner" />
+        <img v-if="showForm" class="-mobile" :src="globalState.upcomingPrograms[0].mobileBanner" alt="mobile banner" />
       </div>
       <div class="-form-registration-us"> 
         <sRegistrationForm v-if="!showForm" />
