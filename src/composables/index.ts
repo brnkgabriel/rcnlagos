@@ -286,7 +286,7 @@ export const youTubeLinkToEmbedLinkAutoplay = (link: string) => {
   return ""
 }
 
-export const slug = (pastor: iPastorate) => pastor.name?.toLowerCase().split(" ").join("-")
+export const slug = (data: any) => data.name ? data.name?.toLowerCase().split(" ").join("-") : data.title?.toLowerCase().split(" ").join("-")
 
 export const phone = (number: string) => {
   if (!number) return "tel:"

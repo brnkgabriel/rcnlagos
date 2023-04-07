@@ -9,7 +9,7 @@
         <div class="-time">{{ program.datetime }}</div>
       </div>
       <div class="-audio">
-        <audio controls v-if="hasAudio" v-audio :data-title="program.title" :data-audiourl="program.audiourl" :key="program.title">
+        <audio controls v-if="hasAudio" v-audio :data-title="program.title" :data-audiourl="program.audiourl" :key="key">
           <source :src="program.audiourl" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
@@ -32,7 +32,7 @@
                 clip-rule="evenodd" />
             </svg>
           </div>
-          <div class="-btn -share" :data-title="program.title" :data-url="(hasVideo ? program.videourl : program.audiourl)" v-share :key="program.title">
+          <div class="-btn -share" :data-title="program.title" :data-url="(hasVideo ? program.videourl : program.audiourl)" v-share :key="key">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
               <path fill-rule="evenodd"
                 d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
@@ -64,6 +64,7 @@ const emit = defineEmits<{
 const hasAudio = computed(() => (props.program.audiourl as string).length > 0)
 const src = computed(() => props.program?.image ? props.program.image : youTubeThumbnail(props.program.videourl as string))
 const hasVideo = computed(() => (props.program?.videourl as string).length > 0)
+const key = computed(() => `${Date.now()} - ${slug(props.program)}`)
 
 
 const playVideo = () => {
