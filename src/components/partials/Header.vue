@@ -2,7 +2,7 @@
   <div class="-header shadow-custom">
     <div class="-inner -posrel">
       <NuxtLink href="/" class="-logo">
-        <img src="/images/rcn-logo.png" alt="remnant christian network logo" />
+        <img src="https://ik.imagekit.io/hbofcejtvx/rcnlagos/others/rcn-logo.png?updatedAt=1680969623539" alt="remnant christian network logo" />
       </NuxtLink> 
       <Search />
       <div class="-links">

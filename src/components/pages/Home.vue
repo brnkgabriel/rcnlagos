@@ -82,7 +82,7 @@
         <img v-loaded class="loaded" src="/images/RevAustin_Transparent.png" alt="Rev. Austin Transparent Picture" loading="lazy"/>
       </div>
       <div class="-message">
-        <iframe class="-video" :src="latestMessage"></iframe>
+        <iframe class="-video" v-if="latestMessage" :src="latestMessage"></iframe>
         <div class="-note">
           <h5 class="-watch-latest-message -headfont">watch latest message</h5>
           <NuxtLink href="/programs" class="-see-all-messages -btn">see all messages</NuxtLink>
@@ -187,7 +187,7 @@ const latestMessage = computed(() => {
     const url = (globalState.value.programs as iProgram[])[0].videourl
     return youTubeLinkToEmbedLink(url as string)
   }
-  return "https://www.youtube.com/embed/1MkkwkXdvGk"
+  return false
 })
 
 const shouldShowVideoSlider = computed(() => {
