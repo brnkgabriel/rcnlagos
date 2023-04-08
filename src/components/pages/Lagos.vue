@@ -7,7 +7,7 @@
         <img class="-signature" src="/images/signature.png" alt="rcn signature" />
       </div>
       <div class="-right -posrel">
-        <img class="-pastor -posabs" src="/images/RevAustinUkporhe.png" alt="rev austin ukporhe" />
+        <img class="-pastor -posabs" src="https://ik.imagekit.io/hbofcejtvx/rcnlagos/pastors/RevAustinUkporhe_Suit.png?updatedAt=1680968779369" alt="rev austin ukporhe" />
         <img class="-bg-img" src="/images/icon_500x500.png" alt="rcn icon" />
       </div>
     </div>

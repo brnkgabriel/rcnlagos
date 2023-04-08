@@ -7,7 +7,7 @@
         <img class="-signature" src="/images/signature.png" alt="rcn signature" />
       </div>
       <div class="-right -posrel">
-        <img class="-arome-osayi -posabs" src="/images/arome-osayi.jpg" alt="apostle arome osayi" />
+        <img class="-arome-osayi -posabs" src="https://ik.imagekit.io/hbofcejtvx/rcnlagos/pastors/ApostleAromeOsayi.jpg?updatedAt=1680968735781" alt="apostle arome osayi" />
         <img class="-bg-img" src="/images/icon_500x500.png" alt="rcn icon" />
       </div>
     </div>
