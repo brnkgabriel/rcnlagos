@@ -44,6 +44,7 @@ const showForm = computed(() => {
 .-registration .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 }
 
 .-registration .-hero-banner .-hero-title {

@@ -83,6 +83,7 @@ const handleFormSubmission = (evt: Event) => {
 .-prayer-request .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 }
 
 .-prayer-request .-hero-banner .-hero-title {

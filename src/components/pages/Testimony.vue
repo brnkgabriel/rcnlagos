@@ -80,6 +80,7 @@ const handleFormSubmission = (evt: Event) => {
 .-testimony .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 }
 
 .-testimony .-hero-banner .-hero-title {

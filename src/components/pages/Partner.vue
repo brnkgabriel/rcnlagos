@@ -159,6 +159,7 @@ const handleFormSubmission = (evt: Event) => {
 .-partner .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 }
 
 .-partner .-hero-banner .-hero-title {

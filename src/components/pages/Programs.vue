@@ -137,6 +137,7 @@ const showProgram = (program: iProgram) => {
 .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 } 
 
 .-hero-banner .-caption .-mainline {

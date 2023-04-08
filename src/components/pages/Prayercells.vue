@@ -43,6 +43,7 @@ const isLoaded = computed(() => (globalState.value.prayercells as iPrayercell[])
 .-prayercells .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 }
 
 .-prayercells .-hero-banner .-hero-title {

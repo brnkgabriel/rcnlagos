@@ -41,6 +41,7 @@ const blogs = computed(() => globalState.value.blogs as iBlog[])
 .-blog .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 }
 
 .-blog .-hero-banner .-hero-title {

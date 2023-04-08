@@ -58,6 +58,7 @@ const showDepartment = (department: iDepartment) => {
 .-departments .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 }
 
 .-departments .-hero-banner .-hero-title {

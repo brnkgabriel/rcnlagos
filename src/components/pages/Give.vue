@@ -42,6 +42,7 @@ const isLoaded = computed(() => (globalState.value.accounts as iAccount[]).lengt
 .-give .-hero-banner {
   background-color: black;
   aspect-ratio: 1511 / 495;
+  width: 100%;
 }
 
 .-give .-hero-banner .-hero-title {
