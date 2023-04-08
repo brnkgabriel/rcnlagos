@@ -26,6 +26,7 @@ export const constants = {
   WITHSUBMENUTYPE: "withsubmenu",
   BACKBUTTONTYPE: "back button",
   MOBILEMENUTYPE: "mobile menu",
+  RCNLAGOSWHATSAPPNUMBER: "08186253251",
   HOME: "home",
   CLICKEVENT: "click",
   PLAYEVENT: "play",

@@ -25,12 +25,10 @@
             </svg>
           </NuxtLink>
           <NuxtLink target="_blank" :href="whatsappIcon(cell.phoneNumber as string)" class="-btn -whatsapp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-              <path fill-rule="evenodd"
-                d="M5.337 21.718a6.707 6.707 0 01-.533-.074.75.75 0 01-.44-1.223 3.73 3.73 0 00.814-1.686c.023-.115-.022-.317-.254-.543C3.274 16.587 2.25 14.41 2.25 12c0-5.03 4.428-9 9.75-9s9.75 3.97 9.75 9c0 5.03-4.428 9-9.75 9-.833 0-1.643-.097-2.417-.279a6.721 6.721 0 01-4.246.997z"
-                clip-rule="evenodd" />
+            <svg height="1792" viewBox="0 0 1792 1792" width="1792" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1113 974q13 0 97.5 44t89.5 53q2 5 2 15 0 33-17 76-16 39-71 65.5t-102 26.5q-57 0-190-62-98-45-170-118t-148-185q-72-107-71-194v-8q3-91 74-158 24-22 52-22 6 0 18 1.5t19 1.5q19 0 26.5 6.5t15.5 27.5q8 20 33 88t25 75q0 21-34.5 57.5t-34.5 46.5q0 7 5 15 34 73 102 137 56 53 151 101 12 7 22 7 15 0 54-48.5t52-48.5zm-203 530q127 0 243.5-50t200.5-134 134-200.5 50-243.5-50-243.5-134-200.5-200.5-134-243.5-50-243.5 50-200.5 134-134 200.5-50 243.5q0 203 120 368l-79 233 242-77q158 104 345 104zm0-1382q153 0 292.5 60t240.5 161 161 240.5 60 292.5-60 292.5-161 240.5-240.5 161-292.5 60q-195 0-365-94l-417 134 136-405q-108-178-108-389 0-153 60-292.5t161-240.5 240.5-161 292.5-60z" />
             </svg>
-
           </NuxtLink>
           <NuxtLink target="_blank" :href="phone(cell.phoneNumber as string)" class="-btn -phone">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
@@ -131,6 +129,7 @@ const props = defineProps<{
   justify-content: space-between;
   align-items: center;
 }
+
 .-cell .-details .-ctas {
   display: flex;
   align-items: center;
@@ -143,6 +142,7 @@ const props = defineProps<{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .-cell .-details .-ctas a {
   width: 36px;
   height: 36px;
@@ -153,11 +153,14 @@ const props = defineProps<{
   border-radius: 50%;
 }
 
+.-cell .-details .-ctas a svg {
+  fill: white;
+}
+
 @media screen and (min-width: 420px) and (max-width: 576px) {}
 
 @media screen and (max-width: 768px) {
   .-cell .-details>h5 {
     font-size: 14px !important;
   }
-}
-</style>
+}</style>
