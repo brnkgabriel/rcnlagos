@@ -253,7 +253,7 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: center;
   height: 400px;
-  background: url("/images/cover.png") no-repeat;
+  background: url("https://ik.imagekit.io/hbofcejtvx/rcnlagos/others/cover.png?updatedAt=1680970882166") no-repeat;
   background-position-y: 15%;
   background-position-x: center;
   background-size: 80%;
