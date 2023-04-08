@@ -51,12 +51,13 @@ defineProps<{
 }
 
 .-thumbnail {
-  display: flex;
-  height: calc((100% - 32px)/3);
-  align-items: flex-start;
-  column-gap: 16px;
+  background-color: white;
   border-radius: 4px;
-  width: 100%;
+  box-shadow: var(--box-shadow);
+  height: calc((100% - 32px) / 3);
+  display: grid;
+  grid-template-columns: calc((100% - 48px) / 3) calc((200% - 48px) / 3);
+  gap: 16px;
 }
 
 .-thumbnail .-img {
@@ -68,7 +69,7 @@ defineProps<{
   border-radius: 4px;
   display: unset !important;
   max-width: unset !important;
-  height: 100% !important;
+  width: 100%;
 }
 
 .-thumbnail .-details {
