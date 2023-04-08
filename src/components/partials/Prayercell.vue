@@ -157,6 +157,11 @@ const props = defineProps<{
   fill: white;
 }
 
+.-cell .-details .-ctas a.-whatsapp svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
 @media screen and (min-width: 420px) and (max-width: 576px) {}
 
 @media screen and (max-width: 768px) {

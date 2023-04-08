@@ -180,6 +180,10 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   height: 13px;
   fill: white;
 }
+.-social-links .-social-link.-whatsapp svg {
+  width: 16px;
+  height: 16px;
+}
 
 .-partner-btn {
   background-color: white;
