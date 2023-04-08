@@ -1,6 +1,6 @@
 <template>
   <div class="-program -posrel shadow-custom">
-    <img v-loaded class="opacity-0" :src="program.image">
+    <img v-loaded class="opacity-0" :src="program.image" loading="lazy"/>
     <div class="-details">
       <h5 class="-name -subhead">{{ program.name }}</h5>
       <p class="-about">{{ program.about }}</p>

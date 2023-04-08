@@ -4,10 +4,10 @@
       <div class="-left">
         <h1 class="-headfont -desktop">Remnant<br />Christian<br />Network</h1>
         <h1 class="-headfont -mobile">Remnant Christian<br />Network</h1>
-        <img class="-signature" src="/images/signature.png" alt="rcn signature" />
+        <img class="-signature" src="/images/signature.png" alt="rcn signature" loading="lazy" />
       </div>
       <div class="-right">
-        <img src="/images/icon_500x500.png" alt="rcn icon" />
+        <img src="/images/icon_500x500.png" alt="rcn icon" loading="lazy" />
       </div>
     </div>
 

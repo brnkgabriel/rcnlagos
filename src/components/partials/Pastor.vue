@@ -56,6 +56,7 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
   background-color: white;
   box-shadow: var(--box-shadow);
   width: 80%;
+  aspect-ratio: 500 / 500;
 }
 
 .-pastor .-picture {
@@ -70,6 +71,7 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
 
 .-pastor .-img .-picture {
   width: 100%;
+  height: 100%;
 }
 
 .-pastor .-cta {

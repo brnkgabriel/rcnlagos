@@ -73,8 +73,33 @@ export const vSelected = {
   }
 }
 
+// const compressImg = async (imgElement: HTMLImageElement) => {
+//   const src = imgElement.getAttribute("src") 
+//   const rect = imgElement.getBoundingClientRect()
+
+//   const response = await fetch(src as string)
+//   const blob = await response.blob()
+//   const blobURL = URL.createObjectURL(blob)
+//   const img: HTMLImageElement = new Image()
+//   img.src = blobURL
+
+  
+//   const parent = imgElement.parentElement as HTMLElement
+//   const canvas = document.createElement("canvas")
+//   canvas.width = rect.width
+//   canvas.height = rect.height
+
+//   const mimeType = img.mimeType
+//   const quality = 50
+
+//   parent.innerHTML = ""
+//   parent.appendChild(canvas)
+
+// }
+
 const loaded = (ele: Element) => {
   const img = ele as HTMLImageElement
+  // compressImg(img)
   img.onload = () => img.classList.add("loaded")
 }
 

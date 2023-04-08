@@ -1,7 +1,7 @@
 <template>
   <div class="-thumbnail -posrel">
     <div class="-img" :data-blog="blog.title">
-      <img :src="blog.thumbnail" :alt="blog.title" data-type="blog" :data-blog="blog.title">
+      <img :src="blog.thumbnail" :alt="blog.title" data-type="blog" :data-blog="blog.title" loading="lazy"/>
     </div>
     <div class="-details -posrel">
       <div class="-clickable" :data-blog="blog.title" data-type="blog"></div>
@@ -18,6 +18,7 @@
 </template>
 <script setup lang="ts">
 import { iBlog } from '~~/src/types';
+import { vLoaded } from '~~/src/helpers/directives';
 
 defineProps<{
   blog: iBlog

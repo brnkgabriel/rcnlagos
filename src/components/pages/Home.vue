@@ -28,10 +28,8 @@
         <p class="-txt -transformation">transformation</p>
       </div>
       <div class="-sliders -posabs" v-slide>
-        <img v-if="globalState.sliders?.length === 0" class="active" src="/images/1326x602.png"
-          alt="homepage slider skeleton" />
-        <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''"
-          :src="slider.image" :alt="slider.slideNo" />
+        <img v-if="globalState.sliders?.length === 0" class="active" src="/images/1326x602.png" loading="lazy" alt="homepage slider skeleton" />
+        <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''" loading="lazy" :src="slider.image" :alt="slider.slideNo" />
       </div>
     </div>
     <div class="-ourvalues -row -inner">
@@ -81,7 +79,7 @@
             <NuxtLink href="/pastors" class="-btn -meetallpastors">meet all pastors</NuxtLink>
           </div>
         </div>
-        <img v-loaded class="loaded" src="/images/RevAustin_Transparent.png" alt="Rev. Austin Transparent Picture">
+        <img v-loaded class="loaded" src="/images/RevAustin_Transparent.png" alt="Rev. Austin Transparent Picture" loading="lazy"/>
       </div>
       <div class="-message">
         <iframe class="-video" :src="latestMessage"></iframe>
