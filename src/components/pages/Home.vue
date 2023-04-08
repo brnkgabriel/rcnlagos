@@ -79,7 +79,7 @@
             <NuxtLink href="/pastors" class="-btn -meetallpastors">meet all pastors</NuxtLink>
           </div>
         </div>
-        <img v-loaded class="loaded" src="/images/RevAustin_Transparent.png" alt="Rev. Austin Transparent Picture" loading="lazy"/>
+        <img v-loaded class="loaded" src="https://ik.imagekit.io/hbofcejtvx/rcnlagos/others/RevAustin_Transparent.png?updatedAt=1680970465083" alt="Rev. Austin Transparent Picture" loading="lazy"/>
       </div>
       <div class="-message">
         <iframe class="-video" v-if="latestMessage" :src="latestMessage"></iframe>
