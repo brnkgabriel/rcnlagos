@@ -182,9 +182,13 @@ const { globalState } = useGlobals()
 const isRemoteDataLoaded = computed(() => (globalState.value.programCategories?.length as number) > 0)
 // const reorderedBlogs = computed<iBlog[]>(() => reorder(globalState.value.blogs as iBlog[]))
 const blogs = computed(() => (globalState.value.blogs as iBlog[]).slice(0, 3))
+
 const latestMessage = computed(() => {
   if ((globalState.value.programs as iProgram[]).length > 0) {
-    const url = (globalState.value.programs as iProgram[])[0].videourl
+    const programs = globalState.value.programs as iProgram[]
+    const url1 = (programs)[0].videourl
+    const url2 = (programs)[1].videourl
+    const url = url1 === "" ? url2 : url1
     return youTubeLinkToEmbedLink(url as string)
   }
   return false
@@ -206,7 +210,7 @@ const videoSliderURL = computed(() => {
     return youTubeLinkToEmbedLinkAutoplay(url)
     // return url
   }
-  return ""
+  return "https://www.youtube.com/embed/Zv5V6AA74Zs"
 })
 
 const email = ref("")
