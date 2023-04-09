@@ -20,6 +20,11 @@ a {
   text-decoration: unset !important;
 }
 
+button {
+  outline: unset !important;
+  border: unset !important;
+}
+
 input,
 select,
 optgroup,
