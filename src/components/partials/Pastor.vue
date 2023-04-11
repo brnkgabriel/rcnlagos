@@ -38,6 +38,10 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
   font-weight: 600;
   text-transform: capitalize;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .-pastor .-detail {
