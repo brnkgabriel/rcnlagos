@@ -191,6 +191,7 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   font-weight: bold;
   box-shadow: 0px 4px 20px -5px #fff !important;
   width: 196px !important;
+  text-align: center;
   white-space: nowrap;
 }
 
