@@ -269,14 +269,22 @@ export const vFabFilter = {
 
 const handlePlayEvent = (evt: Event) => {
   const target = evt.target as HTMLAudioElement
-  const targetTitle = target.getAttribute(constants.DATATITLE) 
+  const targetTitle = target.getAttribute(constants.DATATITLE)
+  stopAllAudio(targetTitle as string)
+}
+
+export const stopAllAudio = (toPlayTitle?: string) => {
 
   const audioEls = all("audio") as NodeListOf<HTMLAudioElement>
 
   audioEls.forEach((audioEl: HTMLAudioElement) => {
-    const title = audioEl.getAttribute(constants.DATATITLE)
-    if (!audioEl.paused && title !== targetTitle) {
-      audioEl.pause() 
+    if (toPlayTitle === undefined) {
+      audioEl.pause()
+    } else {
+      const title = audioEl.getAttribute(constants.DATATITLE)
+      if (!audioEl.paused && title !== toPlayTitle) {
+        audioEl.pause() 
+      }
     }
   })
 }

@@ -49,7 +49,7 @@
 </template>
 <script setup lang="ts">
 import { iProgram } from '~~/src/types';
-import { vShare } from '~/helpers/directives'
+import { stopAllAudio, vShare } from '~/helpers/directives'
 import { vAudio } from '~/helpers/directives';
 import { useGtag } from "vue-gtag-next"
 
@@ -68,6 +68,7 @@ const key = computed(() => `${Date.now()} - ${slug(props.program)}`)
 
 
 const playVideo = () => {
+  stopAllAudio()
   event('programspage_playvideo', {
     'title': props.program.title,
     'type': props.program.type,
