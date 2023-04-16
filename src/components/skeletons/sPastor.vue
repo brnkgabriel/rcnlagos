@@ -5,6 +5,7 @@
     </div>
     <div class="-detail">
       <h5 class="-name">{{ pastor.name }}</h5>
+      <h5 class="-name">{{ pastor.name }}</h5>
       <div class="-cta">
         <span></span>
         <span></span>
@@ -20,12 +21,16 @@ defineProps<{
 }>()
 </script>
 <style scoped>
-.-pastor {
+.-pastor { 
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 12px;
+  row-gap: 8px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  padding: 8px;
 }
 
 .-pastor .-name {
@@ -43,8 +48,7 @@ defineProps<{
   align-items: center;
   row-gap: 4px;
   padding: 8px;
-  background-color: white;
-  box-shadow: var(--box-shadow);
+  background-color: white; 
   border-radius: 4px;
   width: 90%;
 }
@@ -52,8 +56,7 @@ defineProps<{
 .-pastor .-img {
   border-radius: 50%;
   overflow: hidden;
-  background-color: white;
-  box-shadow: var(--box-shadow);
+  background-color: white; 
   width: 80%;
 }
 
