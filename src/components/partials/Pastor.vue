@@ -78,6 +78,7 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
 
 .-pastor .-img .-picture {
   width: 100%; 
+  border-radius: 50%;
 }
 
 .-pastor .-cta {
