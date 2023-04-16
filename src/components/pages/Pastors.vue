@@ -39,7 +39,7 @@ const isLoaded = computed(() => (globalState.value.pastorates as iPastorate[]).l
 .-pastors .-catalog {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 32px;
+  gap: 16px; 
 }
 
 @media screen and (max-width: 1024px) {

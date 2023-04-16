@@ -5,7 +5,10 @@
       <img v-loaded class="-picture -posabs opacity-0" :src="pastor.image" :alt="pastor.name" />
     </div>
     <div class="-detail">
-      <h5 class="-name">{{ name }}</h5>
+      <div class="-name"> 
+        <h5 class="-title">{{ pastor.title }}</h5>
+        <h5 class="-names">{{ pastor.name }}</h5>
+      </div>
       <div class="-cta">
         <span>view profile</span>
         <span class="-right-arrow"></span>
@@ -20,8 +23,7 @@ import { vLoaded } from '~~/src/helpers/directives';
 const props = defineProps<{
   pastor: iPastorate
 }>()
-
-const name = ref(`${props.pastor.title} ${props.pastor.name}`)
+ 
 const href = ref(`/pastors/${slug(props.pastor)}`)
 </script>
 
@@ -31,7 +33,11 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 12px;
+  row-gap: 8px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  padding: 8px;
 }
 
 .-pastor .-name {
@@ -49,24 +55,21 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
   flex-direction: column;
   row-gap: 4px;
   padding: 8px;
-  background-color: white;
-  box-shadow: var(--box-shadow);
+  background-color: white; 
   border-radius: 4px;
 }
 
-.-pastor .-img {
-  border-radius: 50%;
+.-pastor .-img { 
   overflow: hidden;
   background-color: white;
-  box-shadow: var(--box-shadow);
   width: 80%;
-  aspect-ratio: 500 / 500;
+  aspect-ratio: 500 / 500; 
 }
 
 .-pastor .-picture {
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 }
 
 .-pastor .-img .-icon {
@@ -74,8 +77,7 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
 }
 
 .-pastor .-img .-picture {
-  width: 100%;
-  height: 100%;
+  width: 100%; 
 }
 
 .-pastor .-cta {
@@ -86,7 +88,9 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
 }
 
 .-pastor .-cta span {
-  text-transform: uppercase;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 600;
 }
 
 .-pastor .-cta .-right-arrow {
@@ -106,17 +110,17 @@ const href = ref(`/pastors/${slug(props.pastor)}`)
 .-pastor .-cta .-right-arrow::before {
   width: 6px;
   height: 6px;
-  border: 1px solid var(--rcntext);
+  border: 2px solid var(--rcntext);
   border-left: unset;
   border-bottom: unset;
-  transform: translate(-35%, -50%) rotate(45deg);
+  transform: translate(-20%, -55%) rotate(45deg);
 }
 
 .-pastor .-cta .-right-arrow::after {
-  width: 12px;
-  height: 1px;
+  width: 8px;
+  height: 2px;
   background-color: var(--rcntext);
-  transform: translate(-45%, -50%);
+  transform: translate(-50%, -55%);
 }
 
 .-pastor .-icon {}
