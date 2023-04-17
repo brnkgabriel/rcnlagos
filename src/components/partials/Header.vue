@@ -13,7 +13,7 @@
           <div class="-col -posabs" data-name="ministry">
             <NuxtLink href="/about">RCN Global</NuxtLink>
             <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
-            <NuxtLink href="#" @click="openWindow('https://www.adullam.ng/')">Adullam</NuxtLink>
+            <NuxtLink href="/adullam">Adullam</NuxtLink>
           </div>
         </h5>
         <NuxtLink href="/programs">Programs</NuxtLink>
