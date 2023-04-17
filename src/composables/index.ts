@@ -383,3 +383,5 @@ export const useSearch = (globalState: iGlobal, searchTerm: string, condition: F
   }
   return globalState.programs?.filter((program: iProgram) => programFilterCondition(program, term))
 }
+
+export const openWindow = (url: string) => window.open(url)

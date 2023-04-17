@@ -13,7 +13,7 @@
           <div class="-col -posabs" data-name="ministry">
             <NuxtLink href="/about">RCN Global</NuxtLink>
             <NuxtLink href="/lagos">RCN Lagos</NuxtLink>
-            <NuxtLink href="https://www.adullam.ng/" target="_blank">Adullam</NuxtLink>
+            <NuxtLink href="#" @click="openWindow('https://www.adullam.ng/')">Adullam</NuxtLink>
           </div>
         </h5>
         <NuxtLink href="/programs">Programs</NuxtLink>
@@ -52,6 +52,7 @@
 </template>
 <script setup lang="ts">
 import Search from './Search.vue';
+
 </script>
 <style scoped>
 .-header {
