@@ -80,7 +80,7 @@
           </div>
         </div>
         <img v-loaded class="loaded" src="https://ik.imagekit.io/hbofcejtvx/rcnlagos/others/RevAustin_Transparent.png?updatedAt=1680970465083" alt="Rev. Austin Transparent Picture" loading="lazy"/>
-      </div>
+      </div> 
       <div class="-message">
         <iframe class="-video" v-if="latestMessage" :src="latestMessage"></iframe>
         <div class="-note">
@@ -518,7 +518,7 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .-latestmessage .-note .-watch-latest-message {
