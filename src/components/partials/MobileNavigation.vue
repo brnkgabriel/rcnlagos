@@ -37,7 +37,7 @@
         <h5 class="-name">ministry</h5>
         <NuxtLink href="/about" data-type="mobile menu">RCN Global</NuxtLink>
         <NuxtLink href="/lagos" data-type="mobile menu">RCN Lagos</NuxtLink>
-        <NuxtLink href="/adullam" data-type="mobile menu">Adullam</NuxtLink>
+        <NuxtLink href="https://www.adullam.ng/" target="_blank" data-type="mobile menu">Adullam</NuxtLink>
       </div>
       <div class="-links -posabs" data-name="community">
         <h5 class="-name">community</h5>
