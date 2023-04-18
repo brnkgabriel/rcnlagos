@@ -267,6 +267,8 @@ onBeforeUnmount(() => {
 
 .-welcome {
   font-size: 29px;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .-hero-header {
