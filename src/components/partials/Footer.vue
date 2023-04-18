@@ -143,6 +143,7 @@ const copyright = computed(() => `© ${new Date().getFullYear()} RCN Lagos. All 
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.2em;
+  white-space: nowrap;
 }
 
 .-copyright {
