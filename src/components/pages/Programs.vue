@@ -56,8 +56,8 @@ const showProgram = (program: iProgram) => {
     'type': program.type,
     'value': 1
   })
-  programModal.value.isOpen = true
   selectedProgram.value = program
+  programModal.value.openModal()
 }
 
 </script>

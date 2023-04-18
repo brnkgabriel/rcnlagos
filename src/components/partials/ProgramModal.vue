@@ -1,5 +1,5 @@
 <template>
-  <TransitionRoot appear :show="isOpen" as="template">
+  <TransitionRoot appear :show="isOpen" as="template" :key="Date.now()">
     <Dialog as="div" @close="closeModal" class="-dialog">
       <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100"
         leave="duration-200 ease-in" leave-from="opacity-100" leave-to="opacity-0">
@@ -61,10 +61,11 @@ function closeModal() {
 }
 function openModal() {
   isOpen.value = true
+  src.value = youTubeLinkToEmbedLink(props.program.videourl as string)
 }
 
 defineExpose({
-  isOpen
+  openModal
 })
 </script>
 <style scoped>
