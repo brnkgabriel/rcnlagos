@@ -11,17 +11,17 @@
         <NuxtLink href="/about" class="-btn -know-more">know more</NuxtLink>
       </div>
     </div>
-    <div v-if="shouldShowVideoSlider" class="-home-video-slider -posrel -row -inner">
+    <div v-if="showByNextProgram" class="-home-video-slider -posrel -row -inner">
       <!-- <video autoplay controls loop playsinline class="-video-tag">
         <source :src="videoSliderURL" type="video/mp4">
         Your browser does not support the video tag.
       </video> -->
       <iframe :src="videoSliderURL"></iframe>
     </div>
-    <div v-if="shouldShowVideoSlider" class="-programRegistration -row -inner">
+    <div v-if="showByNextProgram" class="-programRegistration -row -inner">
       <NuxtLink href="/registration" class="-btn">Register</NuxtLink>
     </div>
-    <div v-if="!shouldShowVideoSlider" class="-home-slider -posrel -row -inner">
+    <div v-if="!showByNextProgram" class="-home-slider -posrel -row -inner">
       <div class="-rebirth-priesthood-transformation -posabs">
         <p class="-txt -rebirth">rebirth</p>
         <p class="-txt -priesthood">priesthood</p>
@@ -190,15 +190,6 @@ const latestMessage = computed(() => {
     const url2 = (programs)[1].videourl
     const url = url1 === "" ? url2 : url1
     return youTubeLinkToEmbedLink(url as string)
-  }
-  return false
-})
-
-const shouldShowVideoSlider = computed(() => {
-  const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
-  if (upcomingPrograms.length > 0) {
-    const isFuture = Date.now() < +new Date(upcomingPrograms[0].datetime as string)
-    return isFuture ? true : false
   }
   return false
 })

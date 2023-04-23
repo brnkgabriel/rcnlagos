@@ -1,4 +1,4 @@
-import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iResponse, iApiOptions, iMessage, iDepartment } from "../types"
+import { iAccount, iBlog, iDynamicObject, iProgram, iGlobal, iPastorate, iPrayercell, iProgramCategory, iResponse, iApiOptions, iMessage, iDepartment, iUpcomingProgram } from "../types"
 
 export const imgSrc = (url: string) => url.length > 0 ? url : '/icons/avatar.svg'
 export const num2List = (num: number) => Array.from(Array(num).keys())
@@ -385,3 +385,13 @@ export const useSearch = (globalState: iGlobal, searchTerm: string, condition: F
 }
 
 export const openWindow = (url: string) => window.open(url)
+
+export const showByNextProgram = computed(() => {
+  const { globalState } = useGlobals()
+  const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
+  if (upcomingPrograms.length > 0) {
+    const isFuture = Date.now() < +new Date(upcomingPrograms[0].datetime as string)
+    return isFuture ? true : false
+  }
+  return false
+})

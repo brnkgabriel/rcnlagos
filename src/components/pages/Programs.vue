@@ -7,17 +7,17 @@
           <h1 class="-headfont -mainline">Encounter the Word</h1>
           <p class="-subline">Explore our programs and get notified of upcoming programs.</p>
         </div>
-        <div class="-upcoming-program -posabs" v-if="showUpcoming">
+        <div class="-upcoming-program -posabs" v-if="showByNextProgram">
           <div class="-left">
             <h5 class="-subhead">upcoming program</h5>
             <p>{{ globalState.upcomingPrograms[0].title }}</p>
           </div>
           <NuxtLink href="/registration" class="-btn -subscribe">Register</NuxtLink>
         </div>
-        <img v-if="showUpcoming" class="-desktop" :src="globalState.upcomingPrograms[0].desktopBanner" alt="desktop banner" />
-        <img v-if="showUpcoming" class="-mobile" :src="globalState.upcomingPrograms[0].mobileBanner" alt="mobile banner" />
-        <img v-if="!showUpcoming" class="-desktop" src="/images/1511x495.jpg" alt="desktop banner" />
-        <img v-if="!showUpcoming" class="-mobile" src="/images/1000x495.jpg" alt="mobile banner" />
+        <img v-if="showByNextProgram" class="-desktop" :src="globalState.upcomingPrograms[0].desktopBanner" alt="desktop banner" />
+        <img v-if="showByNextProgram" class="-mobile" :src="globalState.upcomingPrograms[0].mobileBanner" alt="mobile banner" />
+        <img v-if="!showByNextProgram" class="-desktop" src="/images/1511x495.jpg" alt="desktop banner" />
+        <img v-if="!showByNextProgram" class="-mobile" src="/images/1000x495.jpg" alt="mobile banner" />
       </div>
       <div class="-catalog" v-infinite-scroll>
         <Program v-if="isLoaded" v-for="(program, idx) in globalState.renderedPrograms" :key="idx" :program="program"
@@ -42,12 +42,6 @@ const { globalState } = useGlobals()
 
 const selectedProgram = ref<iProgram>(skeletonPrograms[0])
 const isLoaded = computed(() => (globalState.value.programs as iProgram[]).length)
-const showUpcoming = computed(() => {
-  const upcomingPrograms = globalState.value.upcomingPrograms ? (globalState.value?.upcomingPrograms as iUpcomingProgram[]) : []
-  return upcomingPrograms.length > 0
-}) 
-
-
 const programModal = ref()
 
 const showProgram = (program: iProgram) => {
