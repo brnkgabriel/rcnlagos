@@ -25,8 +25,12 @@ const { data, refresh } = await useLazyFetch(() => constants.API)
 const showFilterFab = ref(false)
 
 const route = useRoute()
+
+const displayCondition = () => route.name === constants.PROGRAMS || route.name === constants.OURPROGRAMMES || route.name === constants.SERMONS2
  
-watchEffect(() => showFilterFab.value = route.name === constants.PROGRAMS ? true : false)
+watch(route, () => {
+  showFilterFab.value = displayCondition() ? true : false 
+})
 
 
 watch(data, () => {
@@ -37,7 +41,10 @@ watch(data, () => {
 })
 
 
-onMounted(async () => await refresh())
+onMounted(async () => {
+  showFilterFab.value = displayCondition() ? true : false 
+  await refresh()
+})
 
 </script>
 <style scoped>

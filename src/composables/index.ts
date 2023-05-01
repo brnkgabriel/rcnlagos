@@ -78,6 +78,8 @@ export const constants = {
   MAXPROGRAMS: 4,
   LASTPROGRAMQUERY: `.-lastprogram`,
   PROGRAMS: "programs",
+  OURPROGRAMMES: "ourprogrammes",
+  SERMONS2: "sermons-2",
   SUBMITPARTNER: "submit partner",
   RCNLAGOSCOLLECTION: "rcnlagos",
   SUBSCRIBERSID: "subscribers",

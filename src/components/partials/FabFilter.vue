@@ -15,9 +15,8 @@
       </div>
       <hr />
       <div class="-categories">
-        <div class="-category" v-for="(category, idx) in globalState?.programCategories" :key="idx"
-          :data-name="category.name" @click="selectCategory(category)" :data-type="constants.PROGRAMCATEGORYTYPE">{{
-            category.name }}</div>
+        <div class="-category" v-for="(category, idx) in (globalState?.programCategories as iProgramCategory[])" :key="idx"
+          :data-name="category.name" @click="selectCategory(category)" :data-type="constants.PROGRAMCATEGORYTYPE">{{ category.name }}</div>
       </div>
     </div>
     <div class="-fab -btn -posrel">
@@ -39,8 +38,8 @@ const { event } = useGtag()
 const show = ref(false)
 const searchTerm = ref("")
 const route = useRoute()
-const { globalState } = useGlobals()
-const displayCondition = () => route.name === constants.PROGRAMS
+const { globalState } = useGlobals() 
+const displayCondition = () => route.name === constants.PROGRAMS || route.name === constants.OURPROGRAMMES || route.name === constants.SERMONS2
 
 const searchResult = computed(() => useSearch(globalState.value, searchTerm.value, displayCondition)) 
 
@@ -59,7 +58,10 @@ const selectCategory = (category: iProgramCategory) => {
   searchTerm.value = category.name as string
 }
 
-watch(route, () => show.value = displayCondition())
+watch(route, () => {
+  console.log("route name is", route.name)
+  show.value = displayCondition()
+})
 
 onMounted(() => show.value = displayCondition())
 </script>
