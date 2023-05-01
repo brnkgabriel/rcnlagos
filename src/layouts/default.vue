@@ -25,7 +25,7 @@ const { data, refresh } = await useLazyFetch(() => constants.API)
 const showFilterFab = ref(false)
 
 const route = useRoute()
-
+ 
 watchEffect(() => showFilterFab.value = route.name === constants.PROGRAMS ? true : false)
 
 
