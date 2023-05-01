@@ -13,6 +13,7 @@ export default defineNuxtPlugin(nuxtApp => {
     testimonials: [],
     accounts: [],
     renderedPrograms: [],
-    searchedPrograms: []
+    searchedPrograms: [],
+    upcomingPrograms: []
   }))
 })

@@ -63,7 +63,6 @@
           He believes that in the years to come, people from all nations of the world will come to the RCN Embassy which
           is the ministry’s international headquarters domiciled in Makurdi, Benue State, Nigeria to experience the true
           God as well as get in tune with accurate apostolic patterns that they can replicate in their different nations.
-          The RCN Embassy is currently under construction.
         </p>
 
         <p>
@@ -77,7 +76,7 @@
 
         <p>
           Arome Osayi is an apostle of the Lord Jesus Christ, author, mentor, entrepreneur and philanthropist. He is
-          married to Dinna, and their union is blessed with two children
+          married to Dinna, and their union is blessed with three children
         </p>
       </div>
     </div>
