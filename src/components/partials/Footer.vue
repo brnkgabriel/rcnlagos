@@ -30,7 +30,7 @@
         <NuxtLink href="/request">Prayer Request</NuxtLink>
         <NuxtLink href="/testimony">Give Testimony</NuxtLink>
         <NuxtLink href="/privacy">Privacy Policy</NuxtLink>
-        <a href="https://rcnlagos.netlify.app/sitemap.xml">Sitemap</a>
+        <a href="https://rcnlagos.org/sitemap.xml">Sitemap</a>
       </div>
       <div class="-col -somedia-partner">
         <h5 class="-links-category">follow us</h5>

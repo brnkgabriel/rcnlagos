@@ -12,7 +12,7 @@ export default defineNuxtPlugin(nuxtApp => {
         user_id: getMachineId(),
         send_page_view: false,
         linker: {
-          domain: ['rcnlagos.netlify.app']
+          domain: ['rcnlagos.org']
         }
       }
     }
