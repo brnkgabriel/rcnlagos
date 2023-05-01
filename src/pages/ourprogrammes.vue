@@ -1,12 +1,10 @@
 <template>
   <div>
-    Loading...
+    <Programs />
   </div>
 </template>
 <script setup lang="ts">
-
-navigateTo(constants.PROGRAMS)
-
+import Programs from '../components/pages/Programs.vue';
 definePageMeta({
   layout: "default"
 })
