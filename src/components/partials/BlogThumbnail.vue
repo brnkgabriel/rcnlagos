@@ -1,7 +1,7 @@
 <template>
   <div class="-thumbnail -posrel">
     <div class="-img" :data-blog="blog.title">
-      <img :src="blog.thumbnail" :alt="blog.title" data-type="blog" :data-blog="blog.title" loading="lazy"/>
+      <img :src="blog.thumbnail" :alt="blog.title" data-type="blog" :data-blog="blog.title" loading="lazy" />
     </div>
     <div class="-details -posrel">
       <div class="-clickable" :data-blog="blog.title" data-type="blog"></div>
@@ -126,7 +126,7 @@ defineProps<{
     height: 100%;
     margin-top: unset;
     padding: unset;
-}
+  }
 
   .-thumbnail .-details .-txt {
     position: absolute;
@@ -135,19 +135,16 @@ defineProps<{
   }
 
   .-thumbnail .-details .-title {
-    margin: unset !important;
-    font-size: .9em;
-    text-align: center;
-    width: 100%;
     color: #fff;
-    line-height: 1.1;
-    padding: 8px;
+    font-size: .9em;
     font-weight: 500;
-    white-space: initial;
+    line-height: 1.2;
+    margin: unset !important;
+    padding: 8px;
+    text-align: center;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    white-space: nowrap;
+    width: 100%;
     overflow: hidden;
   }
 
