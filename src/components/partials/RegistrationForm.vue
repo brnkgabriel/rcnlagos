@@ -9,8 +9,7 @@
     </div>
     <input class="-name" name="name" type="text" placeholder="Name" required />
     <input class="-email" name="email" type="email" placeholder="Email address" required />
-    <input class="-phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
-      pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
+    <PhoneNumberInput @entered="handlePhoneNumber" />
     <select name="joiningFrom" id="joiningFrom" class="-joiningFrom" required>
       <option value="" selected>Where are you joining from?</option>
       <option value="Lagos Island">Lagos Island</option>
@@ -41,8 +40,12 @@
 <script setup lang="ts">
 
 import { iApiOptions, iMessage, iUpcomingProgram } from '~~/src/types'; 
+import PhoneNumberInput from './PhoneNumberInput.vue';
 
 const { globalState } = useGlobals() 
+
+const pNumber = ref("")
+const handlePhoneNumber = (number: string) => pNumber.value = number
 
 const changeProgram = (program: iUpcomingProgram) => {
   const selectedProgram = el(`.-program[data-name="${program.title}"]`)
@@ -55,7 +58,7 @@ const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
   const formData = new FormData(form)
   const entries = Object.fromEntries(formData.entries())
-  console.log("form entries are", entries)
+  entries.phoneNumber = pNumber.value
 
   const messages: iMessage = {
     errorMessage: "Already registered",

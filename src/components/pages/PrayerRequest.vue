@@ -15,8 +15,7 @@
         <form @submit.prevent="handleFormSubmission" class="-prayer-request-form">
           <input class="-name" name="name" type="text" placeholder="Name" required />
           <input class="-email" name="email" type="email" placeholder="Email address" required />
-          <input class="-phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number (e.g. 08012345678)" required
-            pattern="[0-9]{4}[0-9]{3}[0-9]{4}" />
+          <PhoneNumberInput @entered="handlePhoneNumber" />
           <textarea class="-message" placeholder="Your Prayer Request" name="prayerrequest" required></textarea>
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit"></span>
@@ -33,16 +32,22 @@
 <script setup lang="ts">
 import { iApiOptions, iMessage } from '~~/src/types';
 import GetInTouch from '../partials/GetInTouch.vue';
+import PhoneNumberInput from '../partials/PhoneNumberInput.vue';
 import { useGtag } from "vue-gtag-next"
 
 const { event } = useGtag()
 
 const { globalState } = useGlobals()
 
+const pNumber = ref("")
+const handlePhoneNumber = (number: string) => pNumber.value = number
+
 const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
   const formData = new FormData(form)
   const entries = Object.fromEntries(formData.entries())
+  
+  entries.phoneNumber = pNumber.value
 
   event('prayerrequestpage_form', {
     'name': entries.name,

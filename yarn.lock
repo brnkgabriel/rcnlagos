@@ -1726,6 +1726,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/intl-tel-input@npm:^17.0.6":
+  version: 17.0.6
+  resolution: "@types/intl-tel-input@npm:17.0.6"
+  dependencies:
+    "@types/jquery": "*"
+  checksum: 892238b3812a97250843f9fdeba643362f40e46fbbc06a5fcba46f001ea9608b10214ccd02ae765ddf2a74d7e4aede016a7a6ea0d8af5655083ba49c0a9036a4
+  languageName: node
+  linkType: hard
+
+"@types/jquery@npm:*":
+  version: 3.5.16
+  resolution: "@types/jquery@npm:3.5.16"
+  dependencies:
+    "@types/sizzle": "*"
+  checksum: 13c995f15d1c2f1d322103dc1cb0a22b95eecc3e7546f00279b8731aea21d7ec04550af40e609ee48e755d4e11bf61c25b4aa9f53df3bcbec4b8fe8e81471732
+  languageName: node
+  linkType: hard
+
 "@types/long@npm:^4.0.1":
   version: 4.0.2
   resolution: "@types/long@npm:4.0.2"
@@ -1744,6 +1762,13 @@ __metadata:
   version: 1.20.2
   resolution: "@types/resolve@npm:1.20.2"
   checksum: 61c2cad2499ffc8eab36e3b773945d337d848d3ac6b7b0a87c805ba814bc838ef2f262fc0f109bfd8d2e0898ff8bd80ad1025f9ff64f1f71d3d4294c9f14e5f6
+  languageName: node
+  linkType: hard
+
+"@types/sizzle@npm:*":
+  version: 2.3.3
+  resolution: "@types/sizzle@npm:2.3.3"
+  checksum: 586a9fb1f6ff3e325e0f2cc1596a460615f0bc8a28f6e276ac9b509401039dd242fa8b34496d3a30c52f5b495873922d09a9e76c50c2ab2bcc70ba3fb9c4e160
   languageName: node
   linkType: hard
 
@@ -4301,6 +4326,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"intl-tel-input@npm:^18.1.5":
+  version: 18.1.5
+  resolution: "intl-tel-input@npm:18.1.5"
+  checksum: adb497ecd484132b6ff772d376f4e8983f76d0ca25ce00f652aca5cae4affb8b6e0623dc025d3a2140607e09a04ec28b1a79c469c2cb99f3ac537753c05f3f79
+  languageName: node
+  linkType: hard
+
 "ioredis@npm:^5.3.1":
   version: 5.3.1
   resolution: "ioredis@npm:5.3.1"
@@ -4596,6 +4628,13 @@ __metadata:
   dependencies:
     readable-stream: ^2.0.5
   checksum: 822c54c6b87701a6491c70d4fabc4cafcf0f87d6b656af168ee7bb3c45de9128a801cb612e6eeeefc64d298a7524a698dd49b13b0121ae50c2ae305f0dcc5310
+  languageName: node
+  linkType: hard
+
+"libphonenumber-js@npm:^1.10.12":
+  version: 1.10.28
+  resolution: "libphonenumber-js@npm:1.10.28"
+  checksum: 3a3aac653265751822b495d30c1196a072c52612fb2b7cf0efe38b0ad25a48df2a0bf2220fb7066af1a1734b9cd9ba78ddaf758da5194422bbb57c4c592c381a
   languageName: node
   linkType: hard
 
@@ -6250,11 +6289,14 @@ __metadata:
     "@kevinmarrec/nuxt-pwa": ^0.13.0
     "@nuxt/kit": 3.2.3
     "@nuxt/schema": 3.2.3
+    "@types/intl-tel-input": ^17.0.6
     base64-arraybuffer: ^1.0.2
     firebase: ^9.18.0
+    intl-tel-input: ^18.1.5
     nuxt: 3.0.0
     vue-gtag-next: ^1.14.0
     vue-picture-cropper: ^0.6.0
+    vue-tel-input: ^8.1.1
   languageName: unknown
   linkType: soft
 
@@ -7582,7 +7624,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.2.45":
+"vue-tel-input@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "vue-tel-input@npm:8.1.1"
+  dependencies:
+    libphonenumber-js: ^1.10.12
+    vue: ^3.2.47
+  checksum: 2152ead0c121e4dae8e0263c0a1f7cddb5b3f8e24074ca59bfff9e7d14ed0172722ab52bfbcda0a7e9310b20935268bf06595f7ef3db6d738d0947dcbbbbe608
+  languageName: node
+  linkType: hard
+
+"vue@npm:^3.2.45, vue@npm:^3.2.47":
   version: 3.2.47
   resolution: "vue@npm:3.2.47"
   dependencies:
