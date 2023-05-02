@@ -28,8 +28,10 @@
         <p class="-txt -transformation">transformation</p>
       </div>
       <div class="-sliders -posabs" v-slide>
-        <img v-if="globalState.sliders?.length === 0" class="active" src="/images/1326x602.png" loading="lazy" alt="homepage slider skeleton" />
-        <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''" loading="lazy" :src="slider.image" :alt="slider.slideNo" />
+        <img v-if="globalState.sliders?.length === 0" class="active" src="/images/1326x602.png" loading="lazy"
+          alt="homepage slider skeleton" />
+        <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''" loading="lazy"
+          :src="slider.image" :alt="slider.slideNo" />
       </div>
     </div>
     <div class="-ourvalues -row -inner">
@@ -79,8 +81,10 @@
             <NuxtLink href="/pastors" class="-btn -meetallpastors">meet all pastors</NuxtLink>
           </div>
         </div>
-        <img v-loaded class="loaded" src="https://ik.imagekit.io/hbofcejtvx/rcnlagos/others/RevAustin_Transparent.png?updatedAt=1680970465083" alt="Rev. Austin Transparent Picture" loading="lazy"/>
-      </div> 
+        <img v-loaded class="loaded"
+          src="https://ik.imagekit.io/hbofcejtvx/rcnlagos/others/RevAustin_Transparent.png?updatedAt=1680970465083"
+          alt="Rev. Austin Transparent Picture" loading="lazy" />
+      </div>
       <div class="-message">
         <iframe class="-video" v-if="latestMessage" :src="latestMessage"></iframe>
         <div class="-note">
@@ -926,7 +930,8 @@ onBeforeUnmount(() => {
 
   .-latestmessage .-meet-our-pastors .-note .-about {
     line-height: 1.5 !important;
-    font-size: .8em;
+    font-size: .7em;
+    width: 70%;
   }
 
   .-latestmessage .-meet-our-pastors .-note .-pastors {
@@ -1013,6 +1018,7 @@ onBeforeUnmount(() => {
   .-latestmessage .-meet-our-pastors .-note .-about {
     font-size: .6em;
     letter-spacing: .5px;
+    width: 100%;
   }
 
   .-latestmessage .-meet-our-pastors .-note {
@@ -1047,5 +1053,4 @@ onBeforeUnmount(() => {
     font-size: 11px;
     padding: 8px;
   }
-}
-</style>
+}</style>
