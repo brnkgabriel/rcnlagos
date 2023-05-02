@@ -9,7 +9,7 @@
     </div>
     <input class="-name" name="name" type="text" placeholder="Name" required />
     <input class="-email" name="email" type="email" placeholder="Email address" required />
-    <PhoneNumberInput @entered="handlePhoneNumber" />
+    <PhoneNumberInput class="-phoneNumber" @entered="handlePhoneNumber" />
     <select name="joiningFrom" id="joiningFrom" class="-joiningFrom" required>
       <option value="" selected>Where are you joining from?</option>
       <option value="Lagos Island">Lagos Island</option>

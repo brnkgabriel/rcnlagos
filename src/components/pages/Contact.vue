@@ -13,7 +13,7 @@
         <form @submit.prevent="handleFormSubmission" class="-contact-form">
           <input class="-name" name="name" type="text" placeholder="Name" required />
           <input class="-email" name="email" type="email" placeholder="Email address" required />
-          <PhoneNumberInput @entered="handlePhoneNumber" />
+          <PhoneNumberInput class="-phoneNumber" @entered="handlePhoneNumber" />
           <input class="-subject" name="subject" type="text" placeholder="Subject" required />
           <textarea class="-message" placeholder="Message" name="inquiry" required></textarea>
           <button type="submit" class="-btn -posrel">
@@ -125,8 +125,7 @@ const handleFormSubmission = (evt: Event) => {
   gap: 16px;
   width: 100%;
 }
-
-
+ 
 .-phoneNumber,
 .-subject,
 .-message {

@@ -70,7 +70,7 @@
         <form @submit.prevent="handleFormSubmission" class="-partner-form">
           <input name="name" type="text" placeholder="Name" required />
           <input name="email" type="email" placeholder="Email address" required />
-          <PhoneNumberInput @entered="handlePhoneNumber" />
+          <PhoneNumberInput class="-phoneNumber" @entered="handlePhoneNumber" />
           <input name="address" type="text" placeholder="Address" required />
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit partner"></span>
@@ -202,14 +202,14 @@ const handleFormSubmission = (evt: Event) => {
 }
 
 .-partner-form {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 16px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
 }
 
 .-partner-form .-btn {
   justify-self: center;
+  width: 50%;
 }
 
 .-bank-details {

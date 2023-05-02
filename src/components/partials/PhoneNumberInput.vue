@@ -1,5 +1,5 @@
 <template>
-  <input ref="phoneInputRef" class="-phoneNumber" name="phoneNumber" type="tel" placeholder="Phone number" required v-model="phoneNumberRef" />
+  <input ref="phoneInputRef" name="phoneNumber" type="tel" placeholder="Phone number" required v-model="phoneNumberRef" />
 </template>
 <script setup lang="ts">
 
@@ -34,4 +34,24 @@ onMounted(() => {
   });
 })
 
-</script>
+</script> 
+
+<style scoped>
+/* .iti {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 100%;
+}
+
+.itiinput {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .iti {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+} */
+</style>

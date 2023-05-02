@@ -15,7 +15,7 @@
         <form @submit.prevent="handleFormSubmission" class="-prayer-request-form">
           <input class="-name" name="name" type="text" placeholder="Name" required />
           <input class="-email" name="email" type="email" placeholder="Email address" required />
-          <PhoneNumberInput @entered="handlePhoneNumber" />
+          <PhoneNumberInput class="-phoneNumber" @entered="handlePhoneNumber" />
           <textarea class="-message" placeholder="Your Prayer Request" name="prayerrequest" required></textarea>
           <button type="submit" class="-btn -posrel">
             <span class="-clickable -posabs" data-type="submit"></span>
