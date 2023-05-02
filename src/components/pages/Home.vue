@@ -921,8 +921,7 @@ onBeforeUnmount(() => {
     height: 100%;
     left: 0;
     top: 0;
-    transform: unset !important;
-    background-color: rgba(0, 0, 0, .5);
+    transform: unset !important; 
     border-radius: 4px;
     row-gap: 8px;
     padding: 8px;
@@ -1019,6 +1018,9 @@ onBeforeUnmount(() => {
     font-size: .6em;
     letter-spacing: .5px;
     width: 100%;
+  }
+  .-latestmessage .-meet-our-pastors>.-note { 
+    background-color: rgba(0, 0, 0, .5); 
   }
 
   .-latestmessage .-meet-our-pastors .-note {
