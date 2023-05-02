@@ -2,7 +2,7 @@
   <Home />
 </template>
 <script setup lang="ts"> 
-import Home from '../components/pages/Home.vue';
+import Home from '../../components/pages/Home.vue';
 definePageMeta({
   layout: "default"
 })
