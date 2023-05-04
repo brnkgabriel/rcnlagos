@@ -1,5 +1,5 @@
 <template>
-  <input ref="phoneInputRef" name="phoneNumber" type="tel" placeholder="Phone number" required v-model="phoneNumberRef" />
+  <input ref="phoneInputRef" name="phoneNumber" type="tel" placeholder="(832)-310-8276" required v-model="phoneNumberRef" />
 </template>
 <script setup lang="ts">
 
