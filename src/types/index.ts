@@ -115,6 +115,8 @@ export interface iAccount {
   currencyName?: string;
   currencySymbol?: string;
   status?: string;
+  sortCode?: string;
+  swiftCode?: string;
 }
 
 export interface iGlobal {
