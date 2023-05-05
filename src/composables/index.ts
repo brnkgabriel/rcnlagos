@@ -8,8 +8,7 @@ export const obj2Str = (obj: iDynamicObject) => Object.keys(obj)
   .reduce((acc, cur) => acc + `${cur}:${obj[cur]};`, "")
 
 export const constants = {
-  API: "/api/g-data",
-  POSTAPI: "/api/p-data",
+  API: "/api/g-data", 
   SUBSCRIBEAPI: "/api/subscribe",
   PARTNERAPI: "/api/partner",
   CONTACTAPI: "/api/contactus",
