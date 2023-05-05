@@ -242,9 +242,28 @@ const handleFormSubmission = (evt: Event) => {
   width: 100%;
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  
+  .-form-bank-details {
+    display: flex;
+  }
+  .-partner-form, .-bank-details {
+    width: 50%;
+  }
+  
+  .-partner-form input {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 768px) {
+
+  .-form-bank-details {
+    display: grid;
+  }
+  .-partner-form, .-bank-details {
+    width: 100%;
+  }
 
   .-partner .-hero-banner .-hero-title h1 {
     font-size: 32px

@@ -143,9 +143,28 @@ const handleFormSubmission = (evt: Event) => {
   resize: none;
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  
+  .-prayer-request-form-wrap {
+    display: flex;
+  }
+  .-prayer-request-form, .-getintouch {
+    width: 50%;
+  }
+  
+  .-prayer-request-form input {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 768px) {
+
+  .-prayer-request-form-wrap {
+    display: grid;
+  }
+  .-prayer-request-form, .-getintouch {
+    width: 100%;
+  }
 
   .-prayer-request .-hero-banner .-hero-title h1 {
     font-size: 32px

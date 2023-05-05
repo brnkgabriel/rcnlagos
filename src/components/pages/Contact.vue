@@ -137,10 +137,28 @@ const handleFormSubmission = (evt: Event) => {
   resize: none;
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  
+  .-form-contact-us {
+    display: flex;
+  }
+  .-contact-form, .-getintouch {
+    width: 50%;
+  }
+  
+  .-contact-form input {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 768px) {
 
+  .-form-contact-us {
+    display: grid;
+  }
+  .-contact-form, .-getintouch {
+    width: 100%;
+  }
   .-contact .-hero-banner .-hero-title h1 {
     font-size: 32px
   }

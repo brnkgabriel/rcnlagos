@@ -138,10 +138,28 @@ const handleFormSubmission = (evt: Event) => {
 .-message {
   resize: none;
 }
-
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  
+  .-testimony-form-wrap {
+    display: flex;
+  }
+  .-testimony-form, .-getintouch {
+    width: 50%;
+  }
+  
+  .-testimony-form input {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 768px) {
+
+  .-testimony-form-wrap {
+    display: grid;
+  }
+  .-testimony-form, .-getintouch {
+    width: 100%;
+  }
 
   .-testimony .-hero-banner .-hero-title h1 {
     font-size: 32px
