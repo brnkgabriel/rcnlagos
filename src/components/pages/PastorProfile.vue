@@ -46,7 +46,7 @@ const pastor = computed<iPastorate>(() => {
 
 
 useHead(head({
-  name: `${pastor.value.name} | RCN Lagos`,
+  name: `${pastor.value?.name ? pastor.value.name : "Pastor"} | RCN Lagos`,
 }))
 </script>
 <style scoped>
