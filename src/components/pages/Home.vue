@@ -48,6 +48,7 @@
         <p>resilience</p>
         <p>forbearance</p>
         <p>faithfulness</p>
+        <p>integrity</p>
       </div>
     </div>
     <div class="-ourprograms -row">
