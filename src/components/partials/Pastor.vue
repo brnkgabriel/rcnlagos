@@ -28,7 +28,6 @@ import { vLoaded } from '~~/src/helpers/directives';
 const props = defineProps<{
   pastor: iPastorate
 }>()
-
 const href = ref(`/pastors/${slug(props.pastor)}`)
 </script>
 
