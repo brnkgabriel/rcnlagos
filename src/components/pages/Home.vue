@@ -42,13 +42,13 @@
       </div>
       <div class="-values">
         <p>dedication</p>
+        <p>integrity</p>
         <p>relevance</p>
         <p>excellence</p>
         <p>accountability</p>
         <p>resilience</p>
         <p>forbearance</p>
         <p>faithfulness</p>
-        <p>integrity</p>
       </div>
     </div>
     <div class="-ourprograms -row">
