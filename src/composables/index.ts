@@ -79,6 +79,7 @@ export const constants = {
   PROGRAMS: "programs",
   OURPROGRAMMES: "ourprogrammes",
   SERMONS2: "sermons-2",
+  SERMONS: "sermons",
   SUBMITPARTNER: "submit partner",
   RCNLAGOSCOLLECTION: "rcnlagos",
   SUBSCRIBERSID: "subscribers",

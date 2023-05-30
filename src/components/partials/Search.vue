@@ -16,7 +16,7 @@ const show = ref(false)
 const searchTerm = ref("")
 const route = useRoute()
 const { globalState } = useGlobals()
-const displayCondition = () => route.name === constants.PROGRAMS || route.name === constants.OURPROGRAMMES || route.name === constants.SERMONS2
+const displayCondition = () => route.name === constants.PROGRAMS || route.name === constants.OURPROGRAMMES || route.name === constants.SERMONS2 || route.name === constants.SERMONS
 
 const searchResult = computed(() => useSearch(globalState.value, searchTerm.value, displayCondition))
 

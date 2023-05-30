@@ -16,7 +16,7 @@
             <NuxtLink href="https://www.adullam.ng/">Adullam</NuxtLink>
           </div>
         </h5>
-        <NuxtLink href="/programs">Programs</NuxtLink>
+        <NuxtLink href="/sermons">Sermons</NuxtLink>
         <NuxtLink href="/blog">Blog</NuxtLink>
         <h5 class="-dropdown -posrel">
           <span>community</span>

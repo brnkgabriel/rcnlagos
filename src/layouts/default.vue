@@ -26,7 +26,7 @@ const showFilterFab = ref(false)
 
 const route = useRoute()
 
-const displayCondition = () => route.name === constants.PROGRAMS || route.name === constants.OURPROGRAMMES || route.name === constants.SERMONS2
+const displayCondition = () => route.name === constants.PROGRAMS || route.name === constants.OURPROGRAMMES || route.name === constants.SERMONS2 || route.name === constants.SERMONS
  
 watch(route, () => {
   showFilterFab.value = displayCondition() ? true : false 

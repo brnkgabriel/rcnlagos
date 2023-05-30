@@ -17,7 +17,7 @@
           <span>ministry</span>
           <span class="-icon"></span>
         </div>
-        <NuxtLink href="/programs" data-type="mobile menu">Programs</NuxtLink>
+        <NuxtLink href="/sermons" data-type="mobile menu">Sermons</NuxtLink>
         <NuxtLink href="/blog" data-type="mobile menu">Blog</NuxtLink>
         <div class="-dropdown -posrel">
           <span class="-clickable" data-type="withsubmenu" data-name="community"></span>
