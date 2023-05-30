@@ -22,7 +22,7 @@
       <NuxtLink href="/registration" class="-btn">Register</NuxtLink>
     </div>
     <div v-if="!showByNextProgram" class="-home-slider -posrel -row -inner">
-      <div class="-rebirth-priesthood-transformation -posabs">
+      <div class="-rebirth-priesthood-transformation -posabs desktop">
         <p class="-txt -rebirth">rebirth</p>
         <p class="-txt -priesthood">priesthood</p>
         <p class="-txt -transformation">transformation</p>
@@ -33,6 +33,11 @@
         <img v-for="(slider, idx) in globalState.sliders" :key="idx" :class="idx === 0 ? 'active' : ''" loading="lazy"
           :src="slider.image" :alt="slider.slideNo" />
       </div>
+    </div>
+    <div class="-rebirth-priesthood-transformation mobile">
+      <p class="-txt -rebirth">rebirth</p>
+      <p class="-txt -priesthood">priesthood</p>
+      <p class="-txt -transformation">transformation</p>
     </div>
     <div class="-ourvalues -row -inner">
       <div class="-title-wrap">
@@ -348,6 +353,10 @@ onBeforeUnmount(() => {
   flex-direction: column;
   row-gap: 8px;
   z-index: 1;
+}
+
+.-rebirth-priesthood-transformation.mobile {
+  display: none;
 }
 
 .-rebirth-priesthood-transformation .-txt {
@@ -876,6 +885,15 @@ onBeforeUnmount(() => {
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+
+  .-rebirth-priesthood-transformation.desktop {
+    display: none;
+  }
+  
+  .-rebirth-priesthood-transformation.mobile {
+    display: flex;
+    margin-top: 8px;
   }
 
   .-rebirth-priesthood-transformation .-txt {
