@@ -141,10 +141,11 @@ const setState = (state: string) => {
 
 [data-state="mid"] .-post {
   transform: translateY(50%);
-}
+} 
 
 [data-state="mid"] .-post .-postcontent {
   opacity: 1 !important;
+  height: 50% !important;
 }
 
 /* ========================= start mid ======================== */
