@@ -128,8 +128,6 @@ const setState = (state: string) => {
 
 /* ========================= start down ======================== */
 
-
-
 /* ========================= start mid ======================== */
 [data-state="mid"] .-post .-mid {
   transform: translate(-50%, -50%);
