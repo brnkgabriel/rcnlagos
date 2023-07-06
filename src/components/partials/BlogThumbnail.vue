@@ -82,13 +82,14 @@ defineProps<{
 .-thumbnail .-details .-title {
   margin: unset !important;
   font-weight: 600;
-    white-space: initial;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-} 
+  white-space: initial;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 .-thumbnail .-details .-subline {
   white-space: initial;
   text-overflow: ellipsis;

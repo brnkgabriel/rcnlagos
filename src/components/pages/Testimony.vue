@@ -28,7 +28,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { iApiOptions, iMessage } from '~~/src/types';
+import { iApiOptions, iMessage, iPhone } from '~~/src/types';
 import GetInTouchVue from '../partials/GetInTouch.vue';
 import PhoneNumberInput from '../partials/PhoneNumberInput.vue';
 import { useGtag } from "vue-gtag-next"
@@ -37,15 +37,23 @@ const { event } = useGtag()
 
 const { globalState } = useGlobals()
 
-const pNumber = ref("")
-const handlePhoneNumber = (number: string) => pNumber.value = number
+const pNumber = ref<iPhone>({
+  countryCode: "",
+  countryName: "",
+  phoneNumber: ""
+})
+const handlePhoneNumber = (iphone: iPhone) => pNumber.value = iphone
 
 const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
   const formData = new FormData(form)
   const entries = Object.fromEntries(formData.entries())
   
-  entries.phoneNumber = pNumber.value
+  console.log("pnumber", pNumber.value)
+  entries.phoneNumber = pNumber.value.phoneNumber
+  entries.countryCode = pNumber.value.countryCode
+  entries.countryName = pNumber.value.countryName
+
   event('prayerrequestpage_form', {
     'name': entries.name,
     'email': entries.email,

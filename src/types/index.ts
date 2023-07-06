@@ -183,3 +183,9 @@ export interface iUpcomingProgram {
   title?: string;
   videourl?: string;
 }
+
+export interface iPhone {
+  countryName: string;
+  countryCode: string;
+  phoneNumber: string;
+}

@@ -39,13 +39,17 @@
 </template>
 <script setup lang="ts">
 
-import { iApiOptions, iMessage, iUpcomingProgram } from '~~/src/types'; 
+import { iApiOptions, iMessage, iPhone, iUpcomingProgram } from '~~/src/types'; 
 import PhoneNumberInput from './PhoneNumberInput.vue';
 
 const { globalState } = useGlobals() 
 
-const pNumber = ref("")
-const handlePhoneNumber = (number: string) => pNumber.value = number
+const pNumber = ref<iPhone>({
+  countryCode: "",
+  countryName: "",
+  phoneNumber: ""
+})
+const handlePhoneNumber = (iphone: iPhone) => pNumber.value = iphone
 
 const changeProgram = (program: iUpcomingProgram) => {
   const selectedProgram = el(`.-program[data-name="${program.title}"]`)
@@ -58,7 +62,9 @@ const handleFormSubmission = (evt: Event) => {
   const form = evt.target as HTMLFormElement
   const formData = new FormData(form)
   const entries = Object.fromEntries(formData.entries())
-  entries.phoneNumber = pNumber.value
+  entries.phoneNumber = pNumber.value.phoneNumber
+  entries.countryCode = pNumber.value.countryCode
+  entries.countryName = pNumber.value.countryName
 
   const messages: iMessage = {
     errorMessage: "Already registered",
