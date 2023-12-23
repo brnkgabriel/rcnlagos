@@ -6,10 +6,10 @@ settings:
 
 dependencies:
   '@headlessui/vue':
-    specifier: ^1.7.7
+    specifier: ^1.7.16
     version: 1.7.16(vue@3.3.13)
   '@heroicons/vue':
-    specifier: ^2.0.13
+    specifier: ^2.1.1
     version: 2.1.1(vue@3.3.13)
   '@nuxt/kit':
     specifier: 3.2.3
@@ -21,19 +21,19 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2
   firebase:
-    specifier: ^9.18.0
+    specifier: ^9.23.0
     version: 9.23.0
   intl-tel-input:
-    specifier: ^18.1.5
+    specifier: ^18.3.3
     version: 18.3.3
   vue-gtag-next:
     specifier: ^1.14.0
     version: 1.14.0(vue@3.3.13)
   vue-picture-cropper:
-    specifier: ^0.6.0
+    specifier: ^0.6.2
     version: 0.6.2(vue@3.3.13)
   vue-tel-input:
-    specifier: ^8.1.1
+    specifier: ^8.3.1
     version: 8.3.1
 
 devDependencies:
