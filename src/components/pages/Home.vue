@@ -42,18 +42,18 @@
     <div class="-ourvalues -row -inner">
       <div class="-title-wrap">
         <span class="-horizontal-line"></span>
-        <h5 class="-txt -subhead">our values</h5>
+        <h5 class="-txt -subhead">our values (AFFIRRED)</h5>
         <span class="-horizontal-line"></span>
       </div>
       <div class="-values">
-        <p>dedication</p>
-        <p>integrity</p>
-        <p>relevance</p>
-        <p>excellence</p>
         <p>accountability</p>
-        <p>resilience</p>
         <p>forbearance</p>
         <p>faithfulness</p>
+        <p>integrity</p>
+        <p>relevance</p>
+        <p>resilience</p>
+        <p>excellence</p>
+        <p>dedication</p>
       </div>
     </div>
     <div class="-ourprograms -row">
