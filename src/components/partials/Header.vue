@@ -26,7 +26,7 @@
             <NuxtLink href="/pastors">Pastors</NuxtLink>
             <NuxtLink href="/departments">Departments</NuxtLink>
             <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
-            <NuxtLink href="/partner">Kingdom Stewards</NuxtLink>
+            <NuxtLink href="/partner">Partner With Us</NuxtLink>
           </div>
         </h5>
         <h5 class="-dropdown -posrel">

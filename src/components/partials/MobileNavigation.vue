@@ -45,7 +45,7 @@
         <NuxtLink href="/pastors" data-type="mobile menu">Pastors</NuxtLink>
         <NuxtLink href="/departments" data-type="mobile menu">Departments</NuxtLink>
         <NuxtLink href="/prayercells" data-type="mobile menu">Prayer Cells</NuxtLink>
-        <NuxtLink href="/partner" data-type="mobile menu">Kingdom Stewards</NuxtLink>
+        <NuxtLink href="/partner" data-type="mobile menu">Partner With Us</NuxtLink>
       </div>
       <div class="-links -posabs" data-name="resources">
         <h5 class="-name">resources</h5>

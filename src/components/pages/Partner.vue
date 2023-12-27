@@ -3,7 +3,7 @@
     <div class="-inner">
       <div class="-hero-banner -posrel">
         <div class="-hero-title -posabs">
-          <h1 class="-headfont">Remnant Kingdom Stewards</h1>
+          <h1 class="-headfont">Partner With Us</h1>
           <p class="-subline">To raise people passionately committed to the advancement of God's Kingdom by first giving of themselves to
             the LORD and the resources entrusted in their hands to his work</p>
         </div>

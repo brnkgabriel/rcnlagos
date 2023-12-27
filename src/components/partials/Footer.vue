@@ -22,7 +22,7 @@
         <NuxtLink href="/pastors">Pastors</NuxtLink>
         <NuxtLink href="/departments">Departments</NuxtLink>
         <NuxtLink href="/prayercells">Prayer Cells</NuxtLink>
-        <NuxtLink href="/partner">Kingdom Stewards</NuxtLink> 
+        <NuxtLink href="/partner">Partner With Us</NuxtLink> 
       </div>
       <div class="-col">
         <h5 class="-links-category">resources</h5>
